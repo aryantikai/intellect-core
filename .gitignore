@@ -1,0 +1,12 @@
+# Whitelist .gitignore — ignore EVERYTHING by default.
+# This protects Solutions/ (confidential client work), internal .md docs
+# and the old nexcore backup from ever being committed or published.
+/*
+
+# Allow only the public website files (the deployable static site)
+!/.gitignore
+!/index.html
+!/favicon.svg
+!/logo.svg
+!/robots.txt
+!/sitemap.xml
