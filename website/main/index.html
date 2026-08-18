@@ -79,14 +79,14 @@ p{margin:0 0 1rem}
 ::selection{background:var(--accent);color:#04121b}
 
 .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.section{padding:clamp(76px,11vw,150px) 0}
+.section{padding:clamp(90px,12.5vw,172px) 0}
 .center{text-align:center}
 .muted{color:var(--text-muted)}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--accent);border-radius:2px}
 .lead{font-size:clamp(1.08rem,1.6vw,1.24rem);color:var(--text-muted)}
-.section-head{max-width:var(--maxw-text);margin:0 auto clamp(48px,6vw,72px)}
+.section-head{max-width:var(--maxw-text);margin:0 auto clamp(58px,7vw,88px)}
 .section-head.center .eyebrow{justify-content:center}
 
 /* Buttons */
@@ -174,7 +174,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .hero .lead{max-width:640px;margin:0 auto}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
 .hero-sub{margin-top:22px;font-size:.9rem;color:var(--text-dim)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:820px;margin:clamp(46px,6vw,64px) auto 0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;margin:clamp(54px,6.5vw,72px) auto 0}
 @media(max-width:640px){.hero-stats{grid-template-columns:1fr;max-width:340px}}
 .hstat{background:color-mix(in srgb,var(--bg-elev) 72%,transparent);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;transition:border-color .3s,transform .3s var(--ease)}
 .hstat:hover{border-color:var(--border-strong);transform:translateY(-3px)}
@@ -196,7 +196,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .mq-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7;margin-left:1.6rem}
 
 /* Before / after */
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto;align-items:stretch}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto;align-items:stretch}
 @media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
 .ba{border-radius:var(--radius-lg);padding:30px;border:1px solid var(--border);background:var(--bg-soft)}
 .ba.after{border-color:rgba(46,139,255,.35);background:linear-gradient(170deg,rgba(46,139,255,.07),transparent);box-shadow:var(--glow)}
@@ -243,7 +243,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .demo-run svg{width:13px;height:13px}
 
 /* Services */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:980px;margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:980px;margin:0 auto}
 @media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
 .svc{display:flex;gap:18px;align-items:flex-start;padding:24px;border-radius:var(--radius);border:1px solid transparent;transition:background .3s,border-color .3s,transform .3s var(--ease)}
 .svc:hover{background:var(--bg-soft);border-color:var(--border);transform:translateY(-3px)}
@@ -276,7 +276,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .rcard.loss .rv-num{color:var(--bad)}
 
 /* Tool stack */
-.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1040px;margin:0 auto}
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
 @media(max-width:900px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.stack-grid{grid-template-columns:1fr}}
 .scat{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .3s,transform .3s var(--ease)}
@@ -406,7 +406,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:30px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:680px){.footer-grid{grid-template-columns:1fr;gap:26px}}
 .footer-about p{color:var(--text-muted);font-size:.92rem;max-width:300px;margin-top:14px}
 .footer-grid h4{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px;font-family:var(--font)}
@@ -414,7 +415,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .footer-grid ul li{margin-bottom:10px}
 .footer-grid ul a{color:var(--text-muted);font-size:.92rem;transition:color .2s}
 .footer-grid ul a:hover{color:var(--accent)}
-.footer-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center;margin-top:44px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer-legal{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.footer-legal a{color:var(--text-dim);transition:color .2s}
+.footer-legal a:hover{color:var(--accent)}
 
 /* Reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -446,17 +450,14 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
               <a class="mega-item" href="#svc-data"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span><b data-i18n="svc.data">Data &amp; Dashboards</b><span data-i18n="mega.data.d">Clean pipelines &amp; realtime KPIs</span></span></a>
               <a class="mega-item" href="#svc-api"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><span><b data-i18n="svc.api">API &amp; Integrations</b><span data-i18n="mega.api.d">Every system you use, connected</span></span></a>
               <a class="mega-item" href="#svc-strategy"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b data-i18n="svc.strategy">AI Strategy &amp; Roadmap</b><span data-i18n="mega.strategy.d">A prioritised, board-ready plan</span></span></a>
-              <a class="mega-item" href="#svc-process" style="grid-column:1/-1"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><span><b data-i18n="svc.process">Process Mapping &amp; Flows</b><span data-i18n="mega.process.d">Your workflows mapped into clear flowcharts &mdash; automate with us or hand off to anyone</span></span></a>
+              <a class="mega-item" href="#svc-process" style="grid-column:1/-1"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><span><b data-i18n="svc.process">Process Mapping &amp; Flows</b><span data-i18n="mega.process.d">Your workflows mapped into clear flowcharts. Automate with us or hand off to anyone</span></span></a>
             </div>
-            <a class="mega-foot" href="technical/demo/index.html" target="_blank" rel="noopener"><span data-i18n="mega.foot">Try Core Parse, our document AI — open the full demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="mega-foot" href="technical/demo/index.html" target="_blank" rel="noopener"><span data-i18n="mega.foot">Try Core Parse, our document AI. Open the full demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </li>
         <li><a class="nav-link" href="#demo">Live demo</a></li>
-        <li><a class="nav-link" href="#roi" data-i18n="nav.roi">ROI calculator</a></li>
-        <li><a class="nav-link" href="#stack" data-i18n="nav.stack">Tool stack</a></li>
         <li><a class="nav-link" href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
         <li><a class="nav-link" href="#faq">FAQ</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-actions">
@@ -481,7 +482,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="pill rv vis"><span class="dot"></span> <span data-i18n="hero.pill">AI &amp; Automation Studio · Suriname &amp; worldwide</span></div>
       <h1 class="rv vis" data-i18n="hero.h1">Work <em>smarter</em>,<br>not harder.</h1>
       <p class="type-line rv vis" aria-live="off"><span data-i18n="hero.type">We automate your</span> <span class="tw" id="typeWord">bank statements</span><span class="caret" aria-hidden="true"></span></p>
-      <p class="lead rv vis" data-i18n="hero.lead">Custom AI and automation that takes the retyping, sorting and searching off your team &mdash; built around your business, live in weeks, proven in production.</p>
+      <p class="lead rv vis" data-i18n="hero.lead">Custom AI and automation that takes the retyping, sorting and searching off your team. Built around your business, live in weeks, proven in production.</p>
       <div class="hero-cta rv vis">
         <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta.quickscan">Get your free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#demo" class="btn btn-ghost btn-lg" data-i18n="hero.watch">Watch it work</a>
@@ -524,7 +525,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     <div class="container">
       <div class="section-head center rv">
         <div class="eyebrow" data-i18n="shift.eyebrow">The shift</div>
-        <h2 data-i18n="shift.h2">Where your week goes &mdash; and where it could go</h2>
+        <h2 data-i18n="shift.h2">Where your week goes, and where it could go</h2>
         <p class="lead" data-i18n="shift.lead">Every hour spent retyping, sorting and searching is an hour not spent on customers, strategy and growth.</p>
       </div>
       <div class="ba-grid">
@@ -537,7 +538,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
             <li><span class="mk">✕</span><span data-i18n="shift.b1"><b>Half a day per month</b> retyping bank statements into the ledger, line by line.</span></li>
             <li><span class="mk">✕</span><span data-i18n="shift.b2"><b>Hours of digging</b> through folders and inboxes to find one policy or contract clause.</span></li>
             <li><span class="mk">✕</span><span data-i18n="shift.b3"><b>Copy-paste reports</b> assembled by hand, already outdated the day they land.</span></li>
-            <li><span class="mk">✕</span><span data-i18n="shift.b4"><b>Errors from fatigue</b> &mdash; typos and missed entries that cost real money to fix.</span></li>
+            <li><span class="mk">✕</span><span data-i18n="shift.b4"><b>Errors from fatigue</b>: typos and missed entries that cost real money to fix.</span></li>
           </ul>
         </div>
         <div class="ba after rv d2">
@@ -546,10 +547,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
             <div><h3 data-i18n="shift.a.h3">With Intellect Core</h3><small data-i18n="shift.a.small">The intelligent core at work</small></div>
           </div>
           <ul>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a1"><b>Statements ingest themselves</b> &mdash; read, categorised and exported in one click.</span></li>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a2"><b>Ask your documents</b> &mdash; AI answers from your own files in seconds, with sources.</span></li>
+            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a1"><b>Statements ingest themselves</b>: read, categorised and exported in one click.</span></li>
+            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a2"><b>Ask your documents</b> and get AI answers from your own files in seconds, with sources.</span></li>
             <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a3"><b>Reports build themselves</b> from live data, on schedule, every time.</span></li>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a4"><b>Runs 24/7 without fatigue</b> &mdash; consistent output, a human always in control.</span></li>
+            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a4"><b>Runs 24/7 without fatigue</b>: consistent output, with a human always in control.</span></li>
           </ul>
         </div>
       </div>
@@ -596,13 +597,13 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <p class="lead" data-i18n="svcs.lead">From a single automation to a full platform. Every solution is custom-built, delivered from concept to production, and handed over so your team owns it.</p>
       </div>
       <div class="svc-grid">
-        <div class="svc rv" id="svc-automation"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><div><h3 data-i18n="svc.automation">Process Automation</h3><p data-i18n="svcs.automation.p">Bank statements, invoices, approvals and multi-system workflows that run 24/7 &mdash; the manual labour simply stops.</p></div></div>
+        <div class="svc rv" id="svc-automation"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><div><h3 data-i18n="svc.automation">Process Automation</h3><p data-i18n="svcs.automation.p">Bank statements, invoices, approvals and multi-system workflows that run 24/7. The manual labour simply stops.</p></div></div>
         <div class="svc rv d1" id="svc-ai"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></span><div><h3 data-i18n="svc.ai">Custom AI Systems</h3><p data-i18n="svcs.ai.p">Document extraction, AI agents and decision support built around your business logic, tools and data.</p></div></div>
-        <div class="svc rv" id="svc-chatbots"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg></span><div><h3 data-i18n="svc.chatbots">Chatbots &amp; Assistants</h3><p data-i18n="svcs.chatbots.p">WhatsApp and web bots trained on your company data &mdash; instant answers for your team or your customers.</p></div></div>
+        <div class="svc rv" id="svc-chatbots"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg></span><div><h3 data-i18n="svc.chatbots">Chatbots &amp; Assistants</h3><p data-i18n="svcs.chatbots.p">WhatsApp and web bots trained on your company data, with instant answers for your team or your customers.</p></div></div>
         <div class="svc rv d1" id="svc-data"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><div><h3 data-i18n="svc.data">Data &amp; Dashboards</h3><p data-i18n="svcs.data.p">Raw data turned into clean pipelines and realtime KPIs, so decisions run on numbers instead of gut feeling.</p></div></div>
-        <div class="svc rv" id="svc-api"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><div><h3 data-i18n="svc.api">API &amp; Integrations</h3><p data-i18n="svcs.api.p">CRMs, ERPs, payments, messaging &mdash; connected into one seamless flow so nothing gets retyped twice.</p></div></div>
+        <div class="svc rv" id="svc-api"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><div><h3 data-i18n="svc.api">API &amp; Integrations</h3><p data-i18n="svcs.api.p">CRMs, ERPs, payments and messaging, connected into one seamless flow so nothing gets retyped twice.</p></div></div>
         <div class="svc rv d1" id="svc-strategy"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3 data-i18n="svc.strategy">AI Strategy &amp; Roadmap</h3><p data-i18n="svcs.strategy.p">We map your processes, find the highest-ROI opportunities and hand you a prioritised, board-ready roadmap.</p></div></div>
-        <div class="svc wide rv d2" id="svc-process"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><div><h3 data-i18n="svc.process">Process Mapping &amp; Flows</h3><p data-i18n="svcs.process.p">Every automation starts with a clear picture. We map how work really flows through your business into sharp visual flowcharts and step-by-step process documentation &mdash; a blueprint you can automate with us, improve internally, or hand to any other party to execute.</p></div></div>
+        <div class="svc wide rv d2" id="svc-process"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><div><h3 data-i18n="svc.process">Process Mapping &amp; Flows</h3><p data-i18n="svcs.process.p">Every automation starts with a clear picture. We map how work really flows through your business into sharp visual flowcharts and step-by-step process documentation. It's a blueprint you can automate with us, improve internally, or hand to any other party to execute.</p></div></div>
       </div>
     </div>
   </section>
@@ -613,7 +614,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="section-head center rv">
         <div class="eyebrow" data-i18n="roi.eyebrow">Do the math</div>
         <h2 data-i18n="roi.h2">What is busywork costing you?</h2>
-        <p class="lead" data-i18n="roi.lead">Slide to your situation. Most clients are surprised &mdash; then relieved that the fix costs a fraction of the leak.</p>
+        <p class="lead" data-i18n="roi.lead">Slide to your situation. Most clients are surprised, then relieved that the fix costs a fraction of the leak.</p>
       </div>
       <div class="roi rv">
         <div>
@@ -625,7 +626,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
             <label for="roiRate"><span data-i18n="roi.l2">Average cost per hour (USD)</span><output id="roiRateVal">$15</output></label>
             <input type="range" id="roiRate" min="5" max="100" step="1" value="15" aria-label="Average cost per hour in US dollars">
           </div>
-          <p class="roi-note" data-i18n="roi.note">Assumes automation takes over ~90% of the manual work &mdash; in line with what we see after handover. Exact numbers come out of your free quickscan.</p>
+          <p class="roi-note" data-i18n="roi.note">Assumes automation takes over ~90% of the manual work, in line with what we see after handover. Exact numbers come out of your free quickscan.</p>
         </div>
         <div class="roi-out">
           <div class="rcard loss"><div class="rl" data-i18n="roi.c1">What this work costs you<br><b>per year</b></div><div class="rv-num" id="roiYear">$0</div></div>
@@ -642,7 +643,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="section-head center rv">
         <div class="eyebrow" data-i18n="stack.eyebrow">Tool stack</div>
         <h2 data-i18n="stack.h2">The technology we build with</h2>
-        <p class="lead" data-i18n="stack.lead">A curated stack of frontier AI, automation platforms and proven infrastructure &mdash; picked per project, never one-size-fits-all.</p>
+        <p class="lead" data-i18n="stack.lead">A curated stack of frontier AI, automation platforms and proven infrastructure, picked per project, never one-size-fits-all.</p>
       </div>
       <div class="stack-grid">
         <div class="scat rv">
@@ -703,67 +704,9 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <h2 data-i18n="how.h2">From first call to live system, without the risk</h2>
       </div>
       <div class="steps">
-        <div class="step rv"><div class="num">1</div><h3><span data-i18n="how.s1.h3">Quickscan</span> <span class="free" data-i18n="how.free">Free</span></h3><p data-i18n="how.s1.p">A 30-minute look at where your hours leak. You walk away with a one-page plan: what to automate, hours saved, and what it takes &mdash; whether you hire us or not.</p></div>
-        <div class="step rv d1"><div class="num">2</div><h3 data-i18n="how.s2.h3">Build in weeks</h3><p data-i18n="how.s2.p">Short cycles with a demo every week, so you see real progress from week one. First automations go live in about a week; full systems in 3&ndash;6.</p></div>
+        <div class="step rv"><div class="num">1</div><h3><span data-i18n="how.s1.h3">Quickscan</span> <span class="free" data-i18n="how.free">Free</span></h3><p data-i18n="how.s1.p">A 30-minute look at where your hours leak. You walk away with a one-page plan: what to automate, hours saved, and what it takes, whether you hire us or not.</p></div>
+        <div class="step rv d1"><div class="num">2</div><h3 data-i18n="how.s2.h3">Build in weeks</h3><p data-i18n="how.s2.p">Short cycles with a demo every week, so you see real progress from week one. First automations go live in about a week; full systems in 3-6.</p></div>
         <div class="step rv d2"><div class="num">3</div><h3 data-i18n="how.s3.h3">Launch &amp; own it</h3><p data-i18n="how.s3.p">Live with monitoring and error handling, plus documentation and handover so your team runs it. Optional care plan if you'd rather we keep it sharp.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI GAP -->
-  <section id="impact" class="section" style="padding-top:0">
-    <div class="container">
-      <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="gap.eyebrow">The AI gap</div>
-        <h2 data-i18n="gap.h2">The cost of standing still</h2>
-        <p class="lead" data-i18n="gap.lead">Worldwide, companies that put AI to work compound their lead every year. In Suriname adoption is still early &mdash; which makes moving first a genuine head start.</p>
-      </div>
-      <div class="chart-wrap rv">
-        <div class="chart-legend">
-          <span class="lg"><span class="sw ai"></span> <span data-i18n="gap.lg1">Companies using AI</span></span>
-          <span class="lg"><span class="sw no"></span> <span data-i18n="gap.lg2">Companies without AI</span></span>
-          <span class="chart-illus" data-i18n="gap.lg3">Illustrative trend</span>
-        </div>
-        <svg class="ai-chart" viewBox="0 0 800 410" role="img" aria-label="Line chart comparing the growth of companies using AI versus companies without AI from 2020 to 2026. AI adopters grow steeply while non-adopters stay nearly flat, and the gap between them widens every year.">
-          <defs>
-            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" style="stop-color:var(--accent)"/>
-              <stop offset="1" style="stop-color:var(--accent-2)"/>
-            </linearGradient>
-            <linearGradient id="gapGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" style="stop-color:var(--accent);stop-opacity:.22"/>
-              <stop offset="1" style="stop-color:var(--accent);stop-opacity:.02"/>
-            </linearGradient>
-          </defs>
-          <line class="grid-line" x1="56" y1="59"  x2="776" y2="59"/>
-          <line class="grid-line" x1="56" y1="131" x2="776" y2="131"/>
-          <line class="grid-line" x1="56" y1="203" x2="776" y2="203"/>
-          <line class="grid-line" x1="56" y1="275" x2="776" y2="275"/>
-          <line class="axis-line" x1="56" y1="347" x2="776" y2="347"/>
-          <text class="ylab" x="46" y="63"  text-anchor="end">300</text>
-          <text class="ylab" x="46" y="135" text-anchor="end">250</text>
-          <text class="ylab" x="46" y="207" text-anchor="end">200</text>
-          <text class="ylab" x="46" y="279" text-anchor="end">150</text>
-          <text class="ylab" x="46" y="351" text-anchor="end">100</text>
-          <text class="xlab" x="56"  y="370" text-anchor="middle">2020</text>
-          <text class="xlab" x="176" y="370" text-anchor="middle">2021</text>
-          <text class="xlab" x="296" y="370" text-anchor="middle">2022</text>
-          <text class="xlab" x="416" y="370" text-anchor="middle">2023</text>
-          <text class="xlab" x="536" y="370" text-anchor="middle">2024</text>
-          <text class="xlab" x="656" y="370" text-anchor="middle">2025</text>
-          <text class="xlab" x="776" y="370" text-anchor="middle">2026</text>
-          <path class="gap-fill" d="M56 347 176 321 296 290 416 246 536 189 656 124 776 59 L776 326 656 328 536 330 416 333 296 336 176 341 56 347 Z"/>
-          <path class="cl cl-no" d="M56 347 176 341 296 336 416 333 536 330 656 328 776 326"/>
-          <path class="cl cl-ai" d="M56 347 176 321 296 290 416 246 536 189 656 124 776 59"/>
-          <circle class="cl-dot" cx="776" cy="59"  r="5" fill="var(--accent)"/>
-          <circle class="cl-dot" cx="776" cy="326" r="5" fill="var(--text-dim)"/>
-        </svg>
-        <div class="chart-stats">
-          <div class="cstat hl"><div class="cv">65%</div><div class="clbl"><span data-i18n="gap.c1">of organisations worldwide now use AI regularly, nearly double in a year</span><span class="csrc">McKinsey, 2024</span></div></div>
-          <div class="cstat hl"><div class="cv">$15.7T</div><div class="clbl"><span data-i18n="gap.c2">potential boost to the global economy by 2030</span><span class="csrc">PwC</span></div></div>
-          <div class="cstat"><div class="cv" data-i18n="gap.c3v">Early days</div><div class="clbl" data-i18n="gap.c3">AI adoption in Suriname is still low &mdash; a real head start for the businesses that move first</div></div>
-        </div>
-        <p class="chart-note" data-i18n="gap.note">The line above is an illustrative depiction of a well-documented pattern, not a single dataset. The cited figures are real: McKinsey, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024" target="_blank" rel="noopener noreferrer"><em>The state of AI</em> (2024)</a>, and PwC, <em>Sizing the Prize</em> (Global AI Study, +14% to global GDP by 2030).</p>
       </div>
     </div>
   </section>
@@ -780,7 +723,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span>
         <div class="wt">
           <b data-i18n="wedge.b">The fast start: Bank Statement Automation</b>
-          <span data-i18n="wedge.s">Any bank, any currency &mdash; statements read, categorised and ledger-ready in one click. Live in about a week. The most popular first project for accountants and SMBs.</span>
+          <span data-i18n="wedge.s">Any bank, any currency: statements read, categorised and ledger-ready in one click. Live in about a week. The most popular first project for accountants and SMBs.</span>
         </div>
         <div class="wp"><span data-i18n="wedge.p">from $350</span><small data-i18n="wedge.small">fixed price · ~1 week</small></div>
         <a href="#contact" class="btn btn-primary" data-i18n="wedge.cta">Start here</a>
@@ -802,7 +745,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f1">Full custom AI solution for a team or process</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f2">Up to 5 integrations · advanced dashboard</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f3">3&ndash;6 weeks · 3 months support · source code</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f3">3-6 weeks · 3 months support · source code</span></li>
           </ul>
           <a href="#contact" class="btn btn-primary" style="justify-content:center;width:100%" data-i18n="p.quote">Get a quote</a>
         </div>
@@ -817,7 +760,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
           <a href="#contact" class="btn btn-ghost" style="justify-content:center" data-i18n="p3.cta">Talk to us</a>
         </div>
       </div>
-      <p class="price-note" data-i18n="price.note">Not sure which fits? Take the free quickscan &mdash; we'll recommend the smallest thing that solves your problem. Ongoing care plans from $150/month.</p>
+      <p class="price-note" data-i18n="price.note">Not sure which fits? Take the free quickscan. We'll recommend the smallest thing that solves your problem. Ongoing care plans from $150/month.</p>
     </div>
   </section>
 
@@ -831,27 +774,27 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="faq-list rv">
         <details class="faq">
           <summary><span data-i18n="faq.q1">Is AI reliable enough for real business data?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a1">That's exactly why we design every system with a human at the wheel and output you can verify &mdash; our document AI reports its own confidence per field, and anything uncertain is flagged for review instead of silently guessed. Want proof? The free quickscan runs on <em>your</em> data, so you see the accuracy before you spend anything.</p>
+          <p class="fa" data-i18n="faq.a1">That's exactly why we design every system with a human at the wheel and output you can verify. Our document AI reports its own confidence per field, and anything uncertain is flagged for review instead of silently guessed. Want proof? The free quickscan runs on <em>your</em> data, so you see the accuracy before you spend anything.</p>
         </details>
         <details class="faq">
           <summary><span data-i18n="faq.q2">What does something like this cost?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a2">First automations start at $350 fixed. But the better question is what the manual work costs now: use the calculator above &mdash; most projects pay for themselves within weeks. We quote fixed prices wherever possible, so there are no surprise hours on an invoice.</p>
+          <p class="fa" data-i18n="faq.a2">First automations start at $350 fixed. But the better question is what the manual work costs now: use the calculator above. Most projects pay for themselves within weeks. We quote fixed prices wherever possible, so there are no surprise hours on an invoice.</p>
         </details>
         <details class="faq">
           <summary><span data-i18n="faq.q3">How long before we see results?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a3">A first automation is typically live in about a week. Larger systems take 3&ndash;6 weeks, with a working demo every week so you see progress from day one &mdash; never a black box that "will be ready eventually".</p>
+          <p class="fa" data-i18n="faq.a3">A first automation is typically live in about a week. Larger systems take 3-6 weeks, with a working demo every week so you see progress from day one, never a black box that "will be ready eventually".</p>
         </details>
         <details class="faq">
           <summary><span data-i18n="faq.q4">Can our team run it without you afterwards?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a4">Yes &mdash; that's the standard. Every project ships with documentation, a walkthrough and a proper handover so it's yours, not a dependency on us. If you'd rather we keep it monitored and improving, care plans start at $150/month, but they're optional.</p>
+          <p class="fa" data-i18n="faq.a4">Yes, that's the standard. Every project ships with documentation, a walkthrough and a proper handover so it's yours, not a dependency on us. If you'd rather we keep it monitored and improving, care plans start at $150/month, but they're optional.</p>
         </details>
         <details class="faq">
           <summary><span data-i18n="faq.q5">Our data is sensitive. How do you handle that?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a5">Your data stays in your systems and your accounts &mdash; we build inside your environment with least-access principles, and nothing is shared with third parties. We're happy to sign an NDA before the first conversation.</p>
+          <p class="fa" data-i18n="faq.a5">Your data stays in your systems and your accounts. We build inside your environment with least-access principles, and nothing is shared with third parties. We're happy to sign an NDA before the first conversation.</p>
         </details>
         <details class="faq">
           <summary><span data-i18n="faq.q6">We don't know what to automate first.</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a6">Perfect &mdash; that's what the free quickscan is for. In 30 minutes we look at where your team's hours actually go, and you get a one-page plan ranking the opportunities by hours saved. Even if you never hire us, you'll know exactly where the leak is.</p>
+          <p class="fa" data-i18n="faq.a6">Perfect, that's what the free quickscan is for. In 30 minutes we look at where your team's hours actually go, and you get a one-page plan ranking the opportunities by hours saved. Even if you never hire us, you'll know exactly where the leak is.</p>
         </details>
       </div>
     </div>
@@ -863,7 +806,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="cta-band rv">
         <div class="eyebrow" style="justify-content:center" data-i18n="band.eyebrow">Ready to start?</div>
         <h2 data-i18n="band.h2">Your business, <span class="gradient-text">supercharged by AI</span></h2>
-        <p data-i18n="band.p">One free 30-minute quickscan is all it takes to see what your busywork really costs &mdash; and how fast it disappears.</p>
+        <p data-i18n="band.p">One free 30-minute quickscan is all it takes to see what your busywork really costs, and how fast it disappears.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta.quickscan">Get your free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
@@ -878,7 +821,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <div>
           <div class="eyebrow" data-i18n="c.eyebrow">The next 30 minutes could save you thousands</div>
           <h2 data-i18n="cta.quickscan">Get your free quickscan</h2>
-          <p class="muted" data-i18n="c.p">Tell us where the time goes in your business. We'll show you what's automatable, what it saves, and what it takes &mdash; in plain language, no obligation, no jargon.</p>
+          <p class="muted" data-i18n="c.p">Tell us where the time goes in your business. We'll show you what's automatable, what it saves, and what it takes, in plain language, no obligation, no jargon.</p>
           <div class="ways">
             <div class="way"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b data-i18n="c.email">Email</b><span>hello@intellectcore.com</span></div></div>
             <!-- TODO: replace the number below with your real WhatsApp number (incl. country code, no +) -->
@@ -897,7 +840,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
             <div class="fg"><label for="cMsg" data-i18n="f.msg">Where does your team lose the most time?</label><textarea id="cMsg" name="message" required placeholder="e.g. retyping bank statements, answering the same emails, building monthly reports…" data-i18n-ph="ph.msg"></textarea></div>
             <button class="btn btn-primary" id="sbtn" type="submit" style="width:100%;justify-content:center"><span data-i18n="f.submit">Claim my free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <div class="form-msg" id="formOk" data-i18n="f.ok">✓ Sent! We'll be in touch within 24 hours.</div>
-            <div class="form-msg" id="formErr" data-i18n="f.err">⚠ Something went wrong &mdash; please email hello@intellectcore.com.</div>
+            <div class="form-msg" id="formErr" data-i18n="f.err">⚠ Something went wrong. Please email hello@intellectcore.com.</div>
           </form>
         </div>
       </div>
@@ -913,11 +856,17 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#04121b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V4.4M12 12 5.5 16M12 12 18.5 16"/><circle cx="12" cy="4.4" r="1.7" fill="#04121b" stroke="none"/><circle cx="5.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="18.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="12" cy="12" r="2.7" fill="#04121b" stroke="none"/></svg></span><span><b>Intellect</b> <span class="ac">Core</span></span></a>
         <p data-i18n="ft.about">The intelligent core of your business: custom AI, automation and data, from concept to production.</p>
       </div>
-      <div><h4 data-i18n="ft.explore">Explore</h4><ul><li><a href="#demo">Live demo</a></li><li><a href="#services">Services</a></li><li><a href="#about" data-i18n="ft.aboutlink">About us</a></li><li><a href="#roi" data-i18n="nav.roi">ROI calculator</a></li><li><a href="#stack" data-i18n="nav.stack">Tool stack</a></li><li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="technical/demo/index.html" target="_blank" rel="noopener">Core Parse demo ↗</a></li></ul></div>
-      <div><h4 data-i18n="ft.touch">Get in touch</h4><ul><li><a href="#contact" data-i18n="ft.quickscan">Free quickscan</a></li><li><a href="mailto:hello@intellectcore.com">hello@intellectcore.com</a></li></ul></div>
+      <div><h4 data-i18n="ft.nav">Navigation</h4><ul><li><a href="#demo">Live demo</a></li><li><a href="#about" data-i18n="ft.aboutlink">About us</a></li><li><a href="#roi" data-i18n="nav.roi">ROI calculator</a></li><li><a href="#stack" data-i18n="nav.stack">Tool stack</a></li><li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4 data-i18n="ft.services">Services</h4><ul><li><a href="#svc-automation" data-i18n="svc.automation">Process Automation</a></li><li><a href="#svc-ai" data-i18n="svc.ai">Custom AI Systems</a></li><li><a href="#svc-chatbots" data-i18n="svc.chatbots">Chatbots &amp; Assistants</a></li><li><a href="#svc-data" data-i18n="svc.data">Data &amp; Dashboards</a></li><li><a href="#svc-api" data-i18n="svc.api">API &amp; Integrations</a></li><li><a href="#svc-strategy" data-i18n="svc.strategy">AI Strategy &amp; Roadmap</a></li><li><a href="#svc-process" data-i18n="svc.process">Process Mapping &amp; Flows</a></li></ul></div>
+      <div><h4 data-i18n="ft.touch">Contact</h4><ul><li><a href="#contact" data-i18n="ft.quickscan">Free quickscan</a></li><li><a href="mailto:hello@intellectcore.com">hello@intellectcore.com</a></li><li><a href="technical/demo/index.html" target="_blank" rel="noopener">Core Parse demo ↗</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span data-i18n="ft.rights">© 2026 Intellect Core. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="privacybeleid.html" data-i18n="ft.privacy">Privacy policy</a>
+        <span aria-hidden="true">·</span>
+        <a href="algemene-voorwaarden.html" data-i18n="ft.terms">Terms &amp; conditions</a>
+      </nav>
       <span data-i18n="c.loc.s">Suriname · serving clients globally</span>
     </div>
   </div>
@@ -953,38 +902,38 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     "svc.process":"Procesmapping &amp; flows",
     "mega.automation.d":"Bankafschriften, facturen &amp; workflows op de automatische piloot",
     "mega.ai.d":"Document-AI, agents &amp; beslissingsondersteuning",
-    "mega.chatbots.d":"WhatsApp- en webbots op je bedrijfsdata",
+    "mega.chatbots.d":"WhatsApp- en webbots op uw bedrijfsdata",
     "mega.data.d":"Schone pipelines &amp; realtime KPI's",
-    "mega.api.d":"Al je systemen met elkaar verbonden",
+    "mega.api.d":"Al uw systemen met elkaar verbonden",
     "mega.strategy.d":"Een geprioriteerd, boardroom-klaar plan",
-    "mega.process.d":"Je workflows in heldere flowcharts &mdash; automatiseer met ons of laat een ander uitvoeren",
-    "mega.foot":"Probeer Core Parse, onze document-AI — open de volledige demo",
+    "mega.process.d":"Uw workflows in heldere flowcharts. Automatiseer met ons of laat een ander uitvoeren",
+    "mega.foot":"Probeer Core Parse, onze document-AI. Open de volledige demo",
     "hero.pill":"AI- &amp; automatiseringsstudio · Suriname &amp; wereldwijd",
     "hero.h1":"Werk <em>slimmer</em>,<br>niet harder.",
-    "hero.type":"Wij automatiseren je",
-    "hero.lead":"Custom AI en automatisering die het overtypen, sorteren en zoeken bij je team weghaalt &mdash; gebouwd rond jouw bedrijf, live in weken, bewezen in productie.",
-    "cta.quickscan":"Vraag je gratis quickscan aan",
+    "hero.type":"Wij automatiseren uw",
+    "hero.lead":"Custom AI en automatisering die het overtypen, sorteren en zoeken bij uw team weghaalt. Gebouwd rond uw bedrijf, live in weken, bewezen in productie.",
+    "cta.quickscan":"Vraag uw gratis quickscan aan",
     "hero.watch":"Zie het werken",
-    "hero.sub":"30 minuten · je krijgt een besparingsplan van één A4 · vrijblijvend",
+    "hero.sub":"30 minuten · u krijgt een besparingsplan van één A4 · vrijblijvend",
     "hero.s1":"uur per week vrijgespeeld door een typisch geautomatiseerd proces",
     "hero.s2":"extractienauwkeurigheid van onze document-AI in productie",
-    "hero.s3":"van kick-off tot je eerste automatisering live draait",
+    "hero.s3":"van kick-off tot uw eerste automatisering live draait",
     "hero.days":"dagen",
     "shift.eyebrow":"De omslag",
-    "shift.h2":"Waar je week naartoe gaat &mdash; en waar die naartoe kán",
+    "shift.h2":"Waar uw week naartoe gaat, en waar die naartoe kán",
     "shift.lead":"Elk uur dat opgaat aan overtypen, sorteren en zoeken is een uur dat niet naar klanten, strategie en groei gaat.",
     "shift.b.h3":"Zonder automatisering",
     "shift.b.small":"De tredmolen van routinewerk",
     "shift.b1":"<b>Een halve dag per maand</b> bankafschriften regel voor regel overtypen in het grootboek.",
     "shift.b2":"<b>Uren graven</b> door mappen en inboxen om één beleidsregel of contractclausule te vinden.",
     "shift.b3":"<b>Knip-en-plakrapporten</b> met de hand samengesteld, al verouderd op de dag dat ze landen.",
-    "shift.b4":"<b>Fouten door vermoeidheid</b> &mdash; typfouten en gemiste boekingen die echt geld kosten om te herstellen.",
+    "shift.b4":"<b>Fouten door vermoeidheid</b>: typfouten en gemiste boekingen die echt geld kosten om te herstellen.",
     "shift.a.h3":"Met Intellect Core",
     "shift.a.small":"De intelligente kern aan het werk",
-    "shift.a1":"<b>Afschriften verwerken zichzelf</b> &mdash; gelezen, gecategoriseerd en geëxporteerd in één klik.",
-    "shift.a2":"<b>Stel je documenten vragen</b> &mdash; AI antwoordt in seconden vanuit je eigen bestanden, mét bronnen.",
+    "shift.a1":"<b>Afschriften verwerken zichzelf</b>: gelezen, gecategoriseerd en geëxporteerd in één klik.",
+    "shift.a2":"<b>Stel uw documenten vragen</b> en krijg in seconden antwoord vanuit uw eigen bestanden, mét bronnen.",
     "shift.a3":"<b>Rapporten bouwen zichzelf</b> op basis van live data, volgens schema, elke keer.",
-    "shift.a4":"<b>Draait 24/7 zonder vermoeidheid</b> &mdash; consistente output, altijd een mens aan het stuur.",
+    "shift.a4":"<b>Draait 24/7 zonder vermoeidheid</b>: consistente output, met altijd een mens aan het stuur.",
     "demo.eyebrow":"Zie het, geloof ons niet op ons woord",
     "demo.h2":"Kijk hoe het werk verdwijnt",
     "demo.p":"Dit is <strong>Core Parse</strong>, onze document-AI, met echt werk: kies een documenttype en zie in seconden gestructureerde, grootboek-klare data verschijnen. Dezelfde engine draait vandaag in productie op echte bankafschriften in drie valuta.",
@@ -992,31 +941,31 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     "demo.tab2":"Factuur",
     "demo.tab3":"E-mailinbox",
     "demo.open":"Open de volledige Core Parse demo",
-    "demo.hint":"Wil je het op <em>jouw</em> documenten proberen? Daar is de gratis quickscan precies voor.",
+    "demo.hint":"Wilt u het op <em>uw</em> documenten proberen? Daar is de gratis quickscan precies voor.",
     "demo.ready":"Klaar.",
     "demo.run":"Opnieuw",
     "svcs.eyebrow":"Wat we bouwen",
     "svcs.h2":"Eén studio, van begin tot eind",
-    "svcs.lead":"Van één automatisering tot een volledig platform. Elke oplossing wordt op maat gebouwd, geleverd van concept tot productie, en overgedragen zodat je team er zelf eigenaar van is.",
-    "svcs.automation.p":"Bankafschriften, facturen, goedkeuringen en workflows over meerdere systemen die 24/7 draaien &mdash; het handwerk stopt gewoon.",
-    "svcs.ai.p":"Documentextractie, AI-agents en beslissingsondersteuning, gebouwd rond jouw bedrijfslogica, tools en data.",
-    "svcs.chatbots.p":"WhatsApp- en webbots getraind op je bedrijfsdata &mdash; directe antwoorden voor je team of je klanten.",
+    "svcs.lead":"Van één automatisering tot een volledig platform. Elke oplossing wordt op maat gebouwd, geleverd van concept tot productie, en overgedragen zodat uw team er zelf eigenaar van is.",
+    "svcs.automation.p":"Bankafschriften, facturen, goedkeuringen en workflows over meerdere systemen die 24/7 draaien. Het handwerk stopt gewoon.",
+    "svcs.ai.p":"Documentextractie, AI-agents en beslissingsondersteuning, gebouwd rond uw bedrijfslogica, tools en data.",
+    "svcs.chatbots.p":"WhatsApp- en webbots getraind op uw bedrijfsdata, met directe antwoorden voor uw team of uw klanten.",
     "svcs.data.p":"Ruwe data omgezet in schone pipelines en realtime KPI's, zodat beslissingen op cijfers draaien in plaats van onderbuikgevoel.",
-    "svcs.api.p":"CRM's, ERP's, betalingen, messaging &mdash; verbonden tot één naadloze flow zodat niets twee keer wordt overgetypt.",
-    "svcs.strategy.p":"We brengen je processen in kaart, vinden de kansen met de hoogste ROI en geven je een geprioriteerde, boardroom-klare roadmap.",
-    "svcs.process.p":"Elke automatisering begint met een helder beeld. We brengen in kaart hoe werk écht door je bedrijf stroomt, in scherpe visuele flowcharts en stap-voor-stap procesdocumentatie &mdash; een blauwdruk die je met ons automatiseert, intern verbetert of door elke andere partij laat uitvoeren.",
+    "svcs.api.p":"CRM's, ERP's, betalingen en messaging, verbonden tot één naadloze flow zodat niets twee keer wordt overgetypt.",
+    "svcs.strategy.p":"We brengen uw processen in kaart, vinden de kansen met de hoogste ROI en geven u een geprioriteerde, boardroom-klare roadmap.",
+    "svcs.process.p":"Elke automatisering begint met een helder beeld. We brengen in kaart hoe werk écht door uw bedrijf stroomt, in scherpe visuele flowcharts en stap-voor-stap procesdocumentatie. Een blauwdruk die u met ons automatiseert, intern verbetert of door elke andere partij laat uitvoeren.",
     "roi.eyebrow":"Reken het uit",
-    "roi.h2":"Wat kost routinewerk jou?",
-    "roi.lead":"Schuif naar jouw situatie. De meeste klanten zijn verrast &mdash; en daarna opgelucht dat de oplossing een fractie kost van het lek.",
+    "roi.h2":"Wat kost routinewerk u?",
+    "roi.lead":"Schuif naar uw situatie. De meeste klanten zijn verrast, en daarna opgelucht dat de oplossing een fractie kost van het lek.",
     "roi.l1":"Uren handmatige administratie per week",
     "roi.l2":"Gemiddelde kosten per uur (USD)",
-    "roi.note":"Gaat ervan uit dat automatisering ~90% van het handwerk overneemt &mdash; in lijn met wat we na oplevering zien. Exacte cijfers komen uit je gratis quickscan.",
-    "roi.c1":"Wat dit werk je kost<br><b>per jaar</b>",
+    "roi.note":"Gaat ervan uit dat automatisering ~90% van het handwerk overneemt, in lijn met wat we na oplevering zien. Exacte cijfers komen uit uw gratis quickscan.",
+    "roi.c1":"Wat dit werk u kost<br><b>per jaar</b>",
     "roi.c2":"Wat automatisering teruggeeft<br><b>elk jaar</b>",
-    "roi.c3":"Werkdagen die je team per jaar terugkrijgt",
+    "roi.c3":"Werkdagen die uw team per jaar terugkrijgt",
     "stack.eyebrow":"Tech-stack",
     "stack.h2":"De technologie waarmee we bouwen",
-    "stack.lead":"Een zorgvuldig gekozen stack van frontier-AI, automatiseringsplatformen en bewezen infrastructuur &mdash; per project gekozen, nooit one-size-fits-all.",
+    "stack.lead":"Een zorgvuldig gekozen stack van frontier-AI, automatiseringsplatformen en bewezen infrastructuur, per project gekozen, nooit one-size-fits-all.",
     "stack.c1":"AI &amp; modellen",
     "stack.c2":"Automatisering",
     "stack.c3":"Data &amp; analytics",
@@ -1033,26 +982,15 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     "how.h2":"Van eerste gesprek tot live systeem, zonder risico",
     "how.s1.h3":"Quickscan",
     "how.free":"Gratis",
-    "how.s1.p":"In 30 minuten kijken we waar jouw uren weglekken. Je krijgt een plan van één A4: wat te automatiseren, hoeveel uur het scheelt en wat ervoor nodig is &mdash; of je ons nu inhuurt of niet.",
+    "how.s1.p":"In 30 minuten kijken we waar uw uren weglekken. U krijgt een plan van één A4: wat te automatiseren, hoeveel uur het scheelt en wat ervoor nodig is, of u ons nu inhuurt of niet.",
     "how.s2.h3":"Gebouwd in weken",
-    "how.s2.p":"Korte cycli met elke week een demo, zodat je vanaf week één echte voortgang ziet. Eerste automatiseringen zijn in ongeveer een week live; volledige systemen in 3&ndash;6.",
-    "how.s3.h3":"Live &amp; van jou",
-    "how.s3.p":"Live met monitoring en foutafhandeling, plus documentatie en overdracht zodat je team het zelf draait. Optioneel onderhoudsplan als je liever hebt dat wij het scherp houden.",
-    "gap.eyebrow":"De AI-kloof",
-    "gap.h2":"De prijs van stilstaan",
-    "gap.lead":"Wereldwijd vergroten bedrijven die AI inzetten hun voorsprong elk jaar. In Suriname staat adoptie nog aan het begin &mdash; wie nu beweegt, heeft een echte voorsprong.",
-    "gap.lg1":"Bedrijven met AI",
-    "gap.lg2":"Bedrijven zonder AI",
-    "gap.lg3":"Illustratieve trend",
-    "gap.c1":"van de organisaties wereldwijd gebruikt AI inmiddels regelmatig, bijna een verdubbeling in een jaar",
-    "gap.c2":"potentiële impuls voor de wereldeconomie tegen 2030",
-    "gap.c3v":"Nog vroeg",
-    "gap.c3":"AI-adoptie in Suriname is nog laag &mdash; een echte voorsprong voor de bedrijven die als eerste bewegen",
-    "gap.note":"De lijn hierboven is een illustratieve weergave van een goed gedocumenteerd patroon, geen losse dataset. De genoemde cijfers zijn echt: McKinsey, <a href=\"https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024\" target=\"_blank\" rel=\"noopener noreferrer\"><em>The state of AI</em> (2024)</a>, en PwC, <em>Sizing the Prize</em> (Global AI Study, +14% wereldwijd bbp tegen 2030).",
-    "price.h2":"Simpel, afgestemd op jouw doelen",
-    "price.lead":"Vaste prijzen waar het kan, zodat je weet waar je aan toe bent. Elk project krijgt een exacte offerte bij je gratis quickscan.",
+    "how.s2.p":"Korte cycli met elke week een demo, zodat u vanaf week één echte voortgang ziet. Eerste automatiseringen zijn in ongeveer een week live; volledige systemen in 3-6.",
+    "how.s3.h3":"Live &amp; van u",
+    "how.s3.p":"Live met monitoring en foutafhandeling, plus documentatie en overdracht zodat uw team het zelf draait. Optioneel onderhoudsplan als u liever hebt dat wij het scherp houden.",
+    "price.h2":"Simpel, afgestemd op uw doelen",
+    "price.lead":"Vaste prijzen waar het kan, zodat u weet waar u aan toe bent. Elk project krijgt een exacte offerte bij uw gratis quickscan.",
     "wedge.b":"De vliegende start: bankafschrift-automatisering",
-    "wedge.s":"Elke bank, elke valuta &mdash; afschriften gelezen, gecategoriseerd en grootboek-klaar in één klik. Live in ongeveer een week. Het populairste eerste project voor accountants en mkb.",
+    "wedge.s":"Elke bank, elke valuta: afschriften gelezen, gecategoriseerd en grootboek-klaar in één klik. Live in ongeveer een week. Het populairste eerste project voor accountants en mkb.",
     "wedge.p":"vanaf $350",
     "wedge.small":"vaste prijs · ~1 week",
     "wedge.cta":"Start hier",
@@ -1065,50 +1003,54 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     "p2.per":"een compleet werkend systeem",
     "p2.f1":"Volledige AI-oplossing op maat voor een team of proces",
     "p2.f2":"Tot 5 integraties · geavanceerd dashboard",
-    "p2.f3":"3&ndash;6 weken · 3 maanden support · broncode",
+    "p2.f3":"3-6 weken · 3 maanden support · broncode",
     "p3.amt":"Op maat",
     "p3.per":"strategie + systemen + roadmap",
     "p3.f1":"AI-roadmap &amp; boardroom-klare strategie",
     "p3.f2":"Meerdere systemen · onbeperkte integraties",
     "p3.f3":"Priority support &amp; SLA · doorlopend partnerschap",
     "p3.cta":"Praat met ons",
-    "price.note":"Twijfel je welke past? Doe de gratis quickscan &mdash; we adviseren het kleinste dat jouw probleem oplost. Onderhoudsplannen vanaf $150/maand.",
+    "price.note":"Twijfelt u welke past? Doe de gratis quickscan. We adviseren het kleinste dat uw probleem oplost. Onderhoudsplannen vanaf $150/maand.",
     "faq.eyebrow":"Eerlijke antwoorden",
     "faq.h2":"De vragen die iedereen stelt",
     "faq.q1":"Is AI betrouwbaar genoeg voor echte bedrijfsdata?",
-    "faq.a1":"Precies daarom ontwerpen we elk systeem met een mens aan het stuur en output die je kunt controleren &mdash; onze document-AI rapporteert per veld zijn eigen zekerheid, en alles wat onzeker is wordt gemarkeerd voor review in plaats van stilletjes gegokt. Bewijs zien? De gratis quickscan draait op <em>jouw</em> data, dus je ziet de nauwkeurigheid voordat je iets uitgeeft.",
+    "faq.a1":"Precies daarom ontwerpen we elk systeem met een mens aan het stuur en output die u kunt controleren. Onze document-AI rapporteert per veld zijn eigen zekerheid, en alles wat onzeker is wordt gemarkeerd voor review in plaats van stilletjes gegokt. Bewijs zien? De gratis quickscan draait op <em>uw</em> data, dus u ziet de nauwkeurigheid voordat u iets uitgeeft.",
     "faq.q2":"Wat kost zoiets?",
-    "faq.a2":"Eerste automatiseringen vanaf $350 vast. Maar de betere vraag is wat het handwerk nú kost: gebruik de calculator hierboven &mdash; de meeste projecten verdienen zichzelf binnen weken terug. We offreren waar mogelijk vaste prijzen, dus geen verrassingsuren op een factuur.",
+    "faq.a2":"Eerste automatiseringen vanaf $350 vast. Maar de betere vraag is wat het handwerk nú kost: gebruik de calculator hierboven. De meeste projecten verdienen zichzelf binnen weken terug. We offreren waar mogelijk vaste prijzen, dus geen verrassingsuren op een factuur.",
     "faq.q3":"Hoe snel zien we resultaat?",
-    "faq.a3":"Een eerste automatisering is meestal in ongeveer een week live. Grotere systemen duren 3&ndash;6 weken, met elke week een werkende demo zodat je vanaf dag één voortgang ziet &mdash; nooit een black box die \"ooit af\" is.",
-    "faq.q4":"Kan ons team het daarna zonder jullie draaien?",
-    "faq.a4":"Ja &mdash; dat is de standaard. Elk project wordt geleverd met documentatie, een walkthrough en een echte overdracht, zodat het van jou is en geen afhankelijkheid van ons. Wil je liever dat wij het monitoren en verbeteren, dan zijn er onderhoudsplannen vanaf $150/maand &mdash; maar die zijn optioneel.",
-    "faq.q5":"Onze data is gevoelig. Hoe gaan jullie daarmee om?",
-    "faq.a5":"Je data blijft in jouw systemen en jouw accounts &mdash; we bouwen binnen jouw omgeving volgens least-access-principes, en er wordt niets gedeeld met derden. We tekenen graag een NDA vóór het eerste gesprek.",
+    "faq.a3":"Een eerste automatisering is meestal in ongeveer een week live. Grotere systemen duren 3-6 weken, met elke week een werkende demo zodat u vanaf dag één voortgang ziet, nooit een black box die \"ooit af\" is.",
+    "faq.q4":"Kan ons team het daarna zelfstandig draaien?",
+    "faq.a4":"Ja, dat is de standaard. Elk project wordt geleverd met documentatie, een walkthrough en een echte overdracht, zodat het van u is en geen afhankelijkheid van ons. Wilt u liever dat wij het monitoren en verbeteren, dan zijn er onderhoudsplannen vanaf $150/maand, maar die zijn optioneel.",
+    "faq.q5":"Onze data is gevoelig. Hoe wordt die beschermd?",
+    "faq.a5":"Uw data blijft in uw systemen en uw accounts. We bouwen binnen uw omgeving volgens least-access-principes, en er wordt niets gedeeld met derden. We tekenen graag een NDA vóór het eerste gesprek.",
     "faq.q6":"We weten niet wat we eerst moeten automatiseren.",
-    "faq.a6":"Perfect &mdash; daar is de gratis quickscan voor. In 30 minuten kijken we waar de uren van je team echt naartoe gaan, en je krijgt een plan van één A4 met de kansen gerangschikt op bespaarde uren. Ook als je ons nooit inhuurt, weet je precies waar het lek zit.",
+    "faq.a6":"Perfect, daar is de gratis quickscan voor. In 30 minuten kijken we waar de uren van uw team echt naartoe gaan, en u krijgt een plan van één A4 met de kansen gerangschikt op bespaarde uren. Ook als u ons nooit inhuurt, weet u precies waar het lek zit.",
     "band.eyebrow":"Klaar om te beginnen?",
-    "band.h2":"Jouw bedrijf, <span class=\"gradient-text\">supercharged door AI</span>",
-    "band.p":"Eén gratis quickscan van 30 minuten is genoeg om te zien wat je routinewerk echt kost &mdash; en hoe snel het verdwijnt.",
-    "c.eyebrow":"De volgende 30 minuten kunnen je duizenden dollars besparen",
-    "c.p":"Vertel ons waar de tijd in jouw bedrijf naartoe gaat. Wij laten zien wat automatiseerbaar is, wat het oplevert en wat ervoor nodig is &mdash; in gewone taal, vrijblijvend, zonder jargon.",
+    "band.h2":"Uw bedrijf, <span class=\"gradient-text\">supercharged door AI</span>",
+    "band.p":"Eén gratis quickscan van 30 minuten is genoeg om te zien wat uw routinewerk echt kost, en hoe snel het verdwijnt.",
+    "c.eyebrow":"De volgende 30 minuten kunnen u duizenden dollars besparen",
+    "c.p":"Vertel ons waar de tijd in uw bedrijf naartoe gaat. Wij laten zien wat automatiseerbaar is, wat het oplevert en wat ervoor nodig is, in gewone taal, vrijblijvend, zonder jargon.",
     "c.email":"E-mail",
     "c.wa.s":"De snelste manier om ons te bereiken",
     "c.loc.b":"Locatie",
     "c.loc.s":"Suriname · klanten wereldwijd",
     "f.name":"Naam",
     "f.email":"E-mail",
-    "f.msg":"Waar verliest jouw team de meeste tijd?",
+    "f.msg":"Waar verliest uw team de meeste tijd?",
     "f.submit":"Claim mijn gratis quickscan",
     "f.ok":"✓ Verzonden! We nemen binnen 24 uur contact op.",
-    "f.err":"⚠ Er ging iets mis &mdash; mail ons op hello@intellectcore.com.",
-    "ph.name":"Je naam",
+    "f.err":"⚠ Er ging iets mis. Mail ons op hello@intellectcore.com.",
+    "ph.name":"Uw naam",
     "ph.msg":"bijv. bankafschriften overtypen, dezelfde e-mails beantwoorden, maandrapportages bouwen…",
-    "ft.about":"De intelligente kern van je bedrijf: custom AI, automatisering en data, van concept tot productie.",
-    "ft.explore":"Ontdek",
+    "ft.about":"De intelligente kern van uw bedrijf: custom AI, automatisering en data, van concept tot productie.",
+    "ft.nav":"Navigatie",
+    "ft.services":"Diensten",
     "ft.aboutlink":"Over ons",
-    "ft.touch":"Neem contact op",
+    "ft.touch":"Contact",
     "ft.quickscan":"Gratis quickscan",
+    "ft.legal":"Juridisch",
+    "ft.privacy":"Privacybeleid",
+    "ft.terms":"Algemene voorwaarden",
     "ft.rights":"© 2026 Intellect Core. Alle rechten voorbehouden."
   };
   var EN={},ENP={};
@@ -1321,7 +1263,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       ["currency","\"SRD\""],
       ["confidence","99.5%"]
     ]},
-    email:{file:"Core Parse · inbox — 47 unread",done:{en:"Done in 3.1s · 47 emails triaged",nl:"Klaar in 3,1s · 47 e-mails getriageerd"},rows:[
+    email:{file:"Core Parse · inbox · 47 unread",done:{en:"Done in 3.1s · 47 emails triaged",nl:"Klaar in 3,1s · 47 e-mails getriageerd"},rows:[
       ["classified","47 / 47 emails"],
       ["urgent","3 flagged → team lead"],
       ["invoices found","6 → accounting flow"],

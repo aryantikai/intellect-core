@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Core Parse — AI Document Data Extraction · by Intellect Core</title>
-<meta name="description" content="Core Parse by Intellect Core: AI data extraction that reads PDFs, scans and emails and returns clean, structured data your systems can use — no templates, no manual entry, set up in minutes." />
+<title>Core Parse · AI Document Data Extraction · by Intellect Core</title>
+<meta name="description" content="Core Parse by Intellect Core: AI data extraction that reads PDFs, scans and emails and returns clean, structured data your systems can use. No templates, no manual entry, set up in minutes." />
 <meta name="robots" content="noindex, nofollow" />
 <meta name="theme-color" content="#070d1a" />
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Core Parse — by Intellect Core" />
-<meta property="og:title" content="Core Parse — AI Document Data Extraction" />
-<meta property="og:description" content="AI data extraction that turns documents into clean, structured data — by Intellect Core." />
+<meta property="og:site_name" content="Core Parse · by Intellect Core" />
+<meta property="og:title" content="Core Parse · AI Document Data Extraction" />
+<meta property="og:description" content="AI data extraction that turns documents into clean, structured data, by Intellect Core." />
 <meta property="og:image" content="../../logo.svg" />
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -111,6 +111,8 @@ p{margin:0 0 1rem}
 .theme-toggle{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:border-color .2s,transform .2s,color .2s}
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(15deg)}
 .theme-toggle svg{width:19px;height:19px}
+.lang-toggle{height:40px;min-width:40px;padding:0 12px;display:grid;place-items:center;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);color:var(--text);cursor:pointer;font:inherit;font-weight:600;font-size:.85rem;transition:border-color .2s,color .2s}
+.lang-toggle:hover{border-color:var(--accent);color:var(--accent)}
 .theme-toggle .icon-sun{display:none}
 [data-theme="light"] .theme-toggle .icon-sun{display:block}
 [data-theme="light"] .theme-toggle .icon-moon{display:none}
@@ -358,7 +360,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .footer-grid ul a{color:var(--text-muted);font-size:.92rem;transition:color .2s}
 .footer-grid ul a:hover{color:var(--accent)}
 .footer-about p{color:var(--text-muted);font-size:.92rem;max-width:280px;margin-top:14px}
-.footer-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer-legal{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.footer-legal a{color:var(--text-dim);transition:color .2s}
+.footer-legal a:hover{color:var(--accent)}
 
 /* Reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -382,21 +387,19 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     </a>
     <nav aria-label="Main menu">
       <ul class="nav-links" id="navLinks">
-        <li><a href="#demo">Live demo</a></li>
-        <li><a href="#how">How it works</a></li>
-        <li><a href="#product">Product</a></li>
-        <li><a href="#usecases">Use cases</a></li>
-        <li><a href="#integrations">Integrations</a></li>
-        <li><a href="#roi">ROI</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a data-i18n="nav.demo" href="#demo">Live demo</a></li>
+        <li><a data-i18n="nav.how" href="#how">How it works</a></li>
+        <li><a data-i18n="nav.uc" href="#usecases">Use cases</a></li>
+        <li><a data-i18n="nav.faq" href="#faq">FAQ</a></li>
       </ul>
     </nav>
     <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" title="English / Nederlands" aria-label="Schakel naar Nederlands">NL</button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn-primary cta-nav-desktop" href="../../index.html#contact">Book a demo</a>
+      <a data-i18n="cta.booknav" class="btn btn-primary cta-nav-desktop" href="../../index.html#contact">Book a demo</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -408,49 +411,49 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section class="hero">
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <div class="badge rv"><span class="dot"></span> Product demo · powered by Intellect Core</div>
-      <h1 class="rv d1">From raw documents to <em class="gradient-text">clean, structured data</em> — automatically.</h1>
-      <p class="lead rv d2">Core Parse uses AI to read your PDFs, scans and emails and hand back clean, structured data your systems can use right away — no templates, no manual entry, set up in minutes.</p>
+      <div class="badge rv"><span class="dot"></span> <span data-i18n="h.badge">Product demo · powered by Intellect Core</span></div>
+      <h1 data-i18n="h.h1" class="rv d1">From raw documents to <em class="gradient-text">clean, structured data</em>, automatically.</h1>
+      <p data-i18n="h.lead" class="lead rv d2">Core Parse uses AI to read your PDFs, scans and emails and hand back clean, structured data your systems can use right away. No templates, no manual entry, set up in minutes.</p>
       <div class="hero-cta rv d3">
-        <a href="#demo" class="btn btn-primary btn-lg">Try the live demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></a>
-        <a href="../../index.html#contact" class="btn btn-ghost btn-lg">Talk to Intellect Core</a>
+        <a href="#demo" class="btn btn-primary btn-lg"><span data-i18n="h.cta1">Try the live demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></a>
+        <a data-i18n="h.cta2" href="../../index.html#contact" class="btn btn-ghost btn-lg">Talk to Intellect Core</a>
       </div>
       <div class="hero-trust rv d4">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> No templates</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Set up in minutes</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> GDPR-ready</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t1">No templates</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t2">Set up in minutes</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t3">GDPR-ready</span></span>
       </div>
       <div class="hmet rv d4">
-        <div class="met"><div class="mn gradient-text"><span data-count="99" data-suffix="%">0</span></div><div class="ml">Field accuracy</div></div>
-        <div class="met"><div class="mn gradient-text"><span data-count="5" data-suffix="s">0</span></div><div class="ml">Avg. per page</div></div>
-        <div class="met"><div class="mn gradient-text"><span data-count="40" data-suffix="+">0</span></div><div class="ml">Integrations &amp; exports</div></div>
-        <div class="met"><div class="mn gradient-text"><span data-count="0">0</span></div><div class="ml">Templates to write</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="99" data-suffix="%">0</span></div><div data-i18n="h.m1" class="ml">Field accuracy</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="5" data-suffix="s">0</span></div><div data-i18n="h.m2" class="ml">Avg. per page</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="40" data-suffix="+">0</span></div><div data-i18n="h.m3" class="ml">Integrations &amp; exports</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="0">0</span></div><div data-i18n="h.m4" class="ml">Templates to write</div></div>
       </div>
     </div>
   </section>
 
   <!-- MARQUEE -->
   <div class="mwrap">
-    <div class="container"><div class="mlabel">Extracts every document type your team handles</div></div>
+    <div class="container"><div data-i18n="mq.label" class="mlabel">Extracts every document type your team handles</div></div>
     <div class="mtrack">
-      <span class="mi">Invoices<span class="ms"></span></span>
-      <span class="mi">Bank statements<span class="ms"></span></span>
-      <span class="mi">Purchase orders<span class="ms"></span></span>
-      <span class="mi">Contracts<span class="ms"></span></span>
-      <span class="mi">Resumes / CVs<span class="ms"></span></span>
-      <span class="mi">Bills of lading<span class="ms"></span></span>
-      <span class="mi">Receipts<span class="ms"></span></span>
-      <span class="mi">ID documents<span class="ms"></span></span>
-      <span class="mi">Email enquiries<span class="ms"></span></span>
-      <span class="mi">Invoices<span class="ms"></span></span>
-      <span class="mi">Bank statements<span class="ms"></span></span>
-      <span class="mi">Purchase orders<span class="ms"></span></span>
-      <span class="mi">Contracts<span class="ms"></span></span>
-      <span class="mi">Resumes / CVs<span class="ms"></span></span>
-      <span class="mi">Bills of lading<span class="ms"></span></span>
-      <span class="mi">Receipts<span class="ms"></span></span>
-      <span class="mi">ID documents<span class="ms"></span></span>
-      <span class="mi">Email enquiries<span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.inv">Invoices</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.bank">Bank statements</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.po">Purchase orders</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.contr">Contracts</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.cv">Resumes / CVs</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.bol">Bills of lading</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.rec">Receipts</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.id">ID documents</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.eml">Email enquiries</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.inv">Invoices</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.bank">Bank statements</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.po">Purchase orders</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.contr">Contracts</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.cv">Resumes / CVs</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.bol">Bills of lading</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.rec">Receipts</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.id">ID documents</span><span class="ms"></span></span>
+      <span class="mi"><span data-i18n="doc.eml">Email enquiries</span><span class="ms"></span></span>
     </div>
   </div>
 
@@ -458,9 +461,9 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="demo" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Live demo</div>
-        <h2>Watch it extract, in real time</h2>
-        <p>Hit run. Core Parse reads the document, finds every field and returns clean, structured JSON — the same output your apps and spreadsheets receive.</p>
+        <div data-i18n="dm.eyebrow" class="eyebrow">Live demo</div>
+        <h2 data-i18n="dm.h2">Watch it extract, in real time</h2>
+        <p data-i18n="dm.p">Hit run. Core Parse reads the document, finds every field and returns clean, structured JSON, the same output your apps and spreadsheets receive.</p>
       </div>
       <div class="demo-wrap rv">
         <!-- Document -->
@@ -481,7 +484,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
                 </div>
               </div>
               <div class="doc-row lbl"><span>Description</span><span>Amount</span></div>
-              <div class="doc-row"><span>Data platform — implementation</span><b>SRD 18,500.00</b></div>
+              <div class="doc-row"><span>Data platform implementation</span><b>SRD 18,500.00</b></div>
               <div class="doc-row"><span>AI extraction license (annual)</span><b>SRD 9,200.00</b></div>
               <div class="doc-row"><span>Support &amp; monitoring</span><b>SRD 2,650.00</b></div>
               <div class="doc-row" style="color:var(--text-dim)"><span>VAT (10%)</span><span>SRD 3,035.00</span></div>
@@ -522,10 +525,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         </div>
       </div>
       <div class="demo-actions">
-        <button class="btn btn-primary" id="runDemo">Run extraction <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></button>
-        <span class="hint">Simulated locally in your browser — no upload, no document leaves this page.</span>
+        <button class="btn btn-primary" id="runDemo"><span data-i18n="dm.run">Run extraction</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></button>
+        <span data-i18n="dm.hint" class="hint">Simulated locally in your browser. No upload, no document leaves this page.</span>
       </div>
-      <p class="demo-note">Demo only · figures and document are illustrative.</p>
+      <p data-i18n="dm.note" class="demo-note">Demo only · figures and document are illustrative.</p>
     </div>
   </section>
 
@@ -535,14 +538,14 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="how" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">How it works</div>
-        <h2>Three steps to automated data</h2>
-        <p>No rules to write, no developers to wait on. Show Core Parse a document once — it handles the rest, forever.</p>
+        <div data-i18n="hw.eyebrow" class="eyebrow">How it works</div>
+        <h2 data-i18n="hw.h2">Three steps to automated data</h2>
+        <p data-i18n="hw.p">No rules to write, no developers to wait on. Show Core Parse a document once. It handles the rest, forever.</p>
       </div>
       <div class="steps">
-        <div class="card step rv"><div class="num">01</div><h4>Set it up</h4><p>Upload one example and click the fields you want — or just describe them in plain language. The AI builds the parser instantly. No templates, no regex.</p></div>
-        <div class="card step rv d1"><div class="num">02</div><h4>Feed it documents</h4><p>Forward emails to your private mailbox, drop files in a folder, or push via API. Core Parse ingests PDFs, scans, images and email bodies automatically.</p></div>
-        <div class="card step rv d2"><div class="num">03</div><h4>Let it run</h4><p>Clean, structured data flows straight into your sheets, database or apps over 40+ integrations and webhooks — fully hands-off, 24/7.</p></div>
+        <div class="card step rv"><div class="num">01</div><h4 data-i18n="hw.s1h">Set it up</h4><p data-i18n="hw.s1p">Upload one example and click the fields you want, or just describe them in plain language. The AI builds the parser instantly. No templates, no regex.</p></div>
+        <div class="card step rv d1"><div class="num">02</div><h4 data-i18n="hw.s2h">Feed it documents</h4><p data-i18n="hw.s2p">Forward emails to your private mailbox, drop files in a folder, or push via API. Core Parse ingests PDFs, scans, images and email bodies automatically.</p></div>
+        <div class="card step rv d2"><div class="num">03</div><h4 data-i18n="hw.s3h">Let it run</h4><p data-i18n="hw.s3p">Clean, structured data flows straight into your sheets, database or apps over 40+ integrations and webhooks. Fully hands-off, 24/7.</p></div>
       </div>
     </div>
   </section>
@@ -553,40 +556,40 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="product" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Built for production</div>
-        <h2>Not a toy. A system you can run a business on.</h2>
-        <p>Accuracy, scale and control built in from day one — engineered by Intellect Core to the same standard as our enterprise automation work.</p>
+        <div data-i18n="pr.eyebrow" class="eyebrow">Built for production</div>
+        <h2 data-i18n="pr.h2">Not a toy. A system you can run a business on.</h2>
+        <p data-i18n="pr.p">Accuracy, scale and control built in from day one, engineered by Intellect Core to the same standard as our enterprise automation work.</p>
       </div>
       <div class="grid grid-3">
         <article class="card cap rv">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 7.5 8 10 4.5-2.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Reliable</h3>
-          <p>99.9% target uptime with automatic retries and dead-letter handling, so a single bad file never stalls the queue.</p>
+          <h3 data-i18n="pr.c1h">Reliable</h3>
+          <p data-i18n="pr.c1p">99.9% target uptime with automatic retries and dead-letter handling, so a single bad file never stalls the queue.</p>
         </article>
         <article class="card cap rv d1">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 4-6"/></svg></div>
-          <h3>Scalable</h3>
-          <p>From a handful a day to millions a month. Parsing runs in parallel and grows with you — no infra to manage.</p>
+          <h3 data-i18n="pr.c2h">Scalable</h3>
+          <p data-i18n="pr.c2p">From a handful a day to millions a month. Parsing runs in parallel and grows with you, no infra to manage.</p>
         </article>
         <article class="card cap rv d2">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h10v6H4z"/><path d="M18 14l3 3-3 3"/></svg></div>
-          <h3>Adaptable</h3>
-          <p>Layouts change, the AI keeps up. New vendor format? It maps to your schema without you rebuilding anything.</p>
+          <h3 data-i18n="pr.c3h">Adaptable</h3>
+          <p data-i18n="pr.c3p">Layouts change, the AI keeps up. New vendor format? It maps to your schema without you rebuilding anything.</p>
         </article>
         <article class="card cap rv">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
-          <h3>Normalized</h3>
-          <p>Dates, currencies, numbers and names standardized to one clean format — ready for your database, not a cleanup job.</p>
+          <h3 data-i18n="pr.c4h">Normalized</h3>
+          <p data-i18n="pr.c4p">Dates, currencies, numbers and names standardized to one clean format, ready for your database, not a cleanup job.</p>
         </article>
         <article class="card cap rv d1">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 11l4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
-          <h3>Any export</h3>
-          <p>CSV, Excel, JSON, Google Sheets or a live webhook — get the data where it needs to be, the way you need it.</p>
+          <h3 data-i18n="pr.c5h">Any export</h3>
+          <p data-i18n="pr.c5p">CSV, Excel, JSON, Google Sheets or a live webhook. Get the data where it needs to be, the way you need it.</p>
         </article>
         <article class="card cap rv d2">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
-          <h3>Monitored</h3>
-          <p>Full audit log, confidence scores and alerts on every document. Flag low-confidence fields for a quick human check.</p>
+          <h3 data-i18n="pr.c6h">Monitored</h3>
+          <p data-i18n="pr.c6p">Full audit log, confidence scores and alerts on every document. Flag low-confidence fields for a quick human check.</p>
         </article>
       </div>
     </div>
@@ -598,17 +601,17 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="usecases" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Use cases</div>
-        <h2>Drawn from real Intellect Core projects</h2>
-        <p>Core Parse productizes the document-automation work we already deliver for clients across finance, logistics and operations.</p>
+        <div data-i18n="uc.eyebrow" class="eyebrow">Use cases</div>
+        <h2 data-i18n="uc.h2">Drawn from real Intellect Core projects</h2>
+        <p data-i18n="uc.p">Core Parse productizes the document-automation work we already deliver for clients across finance, logistics and operations.</p>
       </div>
       <div class="grid grid-2">
         <div class="card rv">
           <div class="uc">
             <span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v9h14v-9M9 19v-5h6v5"/></svg></span>
             <div>
-              <h4>Finance &amp; accounts payable</h4>
-              <p>Read invoices, receipts and multi-bank statements; categorize transactions and push ready-made overviews to Excel — the exact flow behind our bank-automation work for Suriname clients.</p>
+              <h4 data-i18n="uc.c1h">Finance &amp; accounts payable</h4>
+              <p data-i18n="uc.c1p">Read invoices, receipts and multi-bank statements; categorize transactions and push ready-made overviews to Excel. It's the exact flow behind our bank-automation work for Suriname clients.</p>
               <div class="uc-tags"><span>Invoices</span><span>Bank statements</span><span>SRD / USD / EUR</span><span>Reconciliation</span></div>
             </div>
           </div>
@@ -617,8 +620,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
           <div class="uc">
             <span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></span>
             <div>
-              <h4>Logistics &amp; supply chain</h4>
-              <p>Turn bills of lading, packing lists and delivery notes into structured shipment records — line items, weights, references and dates, normalized and routed to your ERP.</p>
+              <h4 data-i18n="uc.c2h">Logistics &amp; supply chain</h4>
+              <p data-i18n="uc.c2p">Turn bills of lading, packing lists and delivery notes into structured shipment records: line items, weights, references and dates, normalized and routed to your ERP.</p>
               <div class="uc-tags"><span>Bills of lading</span><span>Packing lists</span><span>Customs docs</span></div>
             </div>
           </div>
@@ -627,8 +630,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
           <div class="uc">
             <span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h6M9 11h6M9 15h4M5 4h14v16H5z"/></svg></span>
             <div>
-              <h4>Contracts &amp; legal</h4>
-              <p>Extract parties, dates, renewal terms, values and clauses into a searchable metadata index — the foundation of our Contract Metadata Extractor and Smart Document Library.</p>
+              <h4 data-i18n="uc.c3h">Contracts &amp; legal</h4>
+              <p data-i18n="uc.c3p">Extract parties, dates, renewal terms, values and clauses into a searchable metadata index, the foundation of our Contract Metadata Extractor and Smart Document Library.</p>
               <div class="uc-tags"><span>Metadata</span><span>Renewal dates</span><span>Clause tagging</span><span>Search</span></div>
             </div>
           </div>
@@ -637,8 +640,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
           <div class="uc">
             <span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
             <div>
-              <h4>Email-driven operations &amp; HR</h4>
-              <p>Classify inbound email, parse attached CVs, orders and forms, and spin up tasks automatically — exactly what our AI email-automation and task-creator flows do today.</p>
+              <h4 data-i18n="uc.c4h">Email-driven operations &amp; HR</h4>
+              <p data-i18n="uc.c4p">Classify inbound email, parse attached CVs, orders and forms, and spin up tasks automatically, exactly what our AI email-automation and task-creator flows do today.</p>
               <div class="uc-tags"><span>Email intake</span><span>Resumes / CVs</span><span>Auto-tasks</span><span>Reports</span></div>
             </div>
           </div>
@@ -653,9 +656,9 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="integrations" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Integrations</div>
-        <h2>Connects to the tools you already use</h2>
-        <p>Send clean data anywhere in a click — or wire it deep with webhooks and our API.</p>
+        <div data-i18n="in.eyebrow" class="eyebrow">Integrations</div>
+        <h2 data-i18n="in.h2">Connects to the tools you already use</h2>
+        <p data-i18n="in.p">Send clean data anywhere in a click, or wire it deep with webhooks and our API.</p>
       </div>
       <div class="intg rv">
         <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><span>Zapier</span></div>
@@ -678,23 +681,23 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="modes" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Two ways to work</div>
-        <h2>No-code for ops. Full API for builders.</h2>
+        <div data-i18n="tm.eyebrow" class="eyebrow">Two ways to work</div>
+        <h2 data-i18n="tm.h2">No-code for ops. Full API for builders.</h2>
       </div>
       <div class="modes">
         <div class="mode rv">
-          <div class="mode-h"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span><div><div class="mtag">For operations teams</div><h3>Web app</h3></div></div>
-          <p>A point-and-click workspace your team can run without IT. Set up a parser in minutes, review extractions, fix the rare miss, and watch the data flow.</p>
+          <div class="mode-h"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span><div><div data-i18n="tm.m1tag" class="mtag">For operations teams</div><h3 data-i18n="tm.m1h">Web app</h3></div></div>
+          <p data-i18n="tm.m1p">A point-and-click workspace your team can run without IT. Set up a parser in minutes, review extractions, fix the rare miss, and watch the data flow.</p>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Visual field picker — no rules to write</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Private email inbox per parser</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> One-click exports &amp; integrations</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Review queue with confidence flags</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="tm.l1">Visual field picker, no rules to write</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="tm.l2">Private email inbox per parser</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="tm.l3">One-click exports &amp; integrations</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="tm.l4">Review queue with confidence flags</span></li>
           </ul>
         </div>
         <div class="mode rv d1">
-          <div class="mode-h"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><div><div class="mtag">For developers</div><h3>REST API</h3></div></div>
-          <p>Push a document, get structured JSON back. Webhooks on every result, idempotent endpoints, and SDKs — drop it straight into your pipeline.</p>
+          <div class="mode-h"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><div><div data-i18n="tm.m2tag" class="mtag">For developers</div><h3>REST API</h3></div></div>
+          <p data-i18n="tm.m2p">Push a document, get structured JSON back. Webhooks on every result, idempotent endpoints, and SDKs, so you can drop it straight into your pipeline.</p>
           <div class="code-panel" aria-label="Code example">
 <span class="c-com"># POST a document, receive structured data</span><br>
 <span class="c-fn">curl</span> https://api.intellectcore.com/v1/parse \<br>
@@ -718,41 +721,41 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="roi" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">ROI calculator</div>
-        <h2>What manual data entry is costing you</h2>
-        <p>Drag the sliders to match your volume. The savings assume Core Parse handles ~95% of the work automatically.</p>
+        <div data-i18n="roi.eyebrow" class="eyebrow">ROI calculator</div>
+        <h2 data-i18n="roi.h2">What manual data entry is costing you</h2>
+        <p data-i18n="roi.p">Drag the sliders to match your volume. The savings assume Core Parse handles ~95% of the work automatically.</p>
       </div>
       <div class="roi rv">
         <div>
           <div class="roi-presets" id="roiPresets">
-            <button data-docs="300" data-min="6" data-rate="18">Small team</button>
-            <button data-docs="1500" data-min="8" data-rate="22" class="active">Growing ops</button>
-            <button data-docs="6000" data-min="10" data-rate="28">Enterprise</button>
+            <button data-i18n="roi.pre1" data-docs="300" data-min="6" data-rate="18">Small team</button>
+            <button data-i18n="roi.pre2" data-docs="1500" data-min="8" data-rate="22" class="active">Growing ops</button>
+            <button data-i18n="roi.pre3" data-docs="6000" data-min="10" data-rate="28">Enterprise</button>
           </div>
           <div class="roi-field">
-            <div class="rl"><span>Documents per month</span><span id="rDocsLbl">1,500</span></div>
+            <div class="rl"><span data-i18n="roi.l1">Documents per month</span><span id="rDocsLbl">1,500</span></div>
             <input type="range" id="rDocs" min="50" max="20000" step="50" value="1500">
           </div>
           <div class="roi-field">
-            <div class="rl"><span>Minutes per document (manual)</span><span id="rMinLbl">8 min</span></div>
+            <div class="rl"><span data-i18n="roi.l2">Minutes per document (manual)</span><span id="rMinLbl">8 min</span></div>
             <input type="range" id="rMin" min="1" max="30" step="1" value="8">
           </div>
           <div class="roi-field">
-            <div class="rl"><span>Loaded hourly cost</span><span id="rRateLbl">$22</span></div>
+            <div class="rl"><span data-i18n="roi.l3">Loaded hourly cost</span><span id="rRateLbl">$22</span></div>
             <input type="range" id="rRate" min="8" max="80" step="1" value="22">
           </div>
         </div>
         <div class="roi-out">
-          <div class="ro-lbl">Estimated annual saving</div>
+          <div data-i18n="roi.o1" class="ro-lbl">Estimated annual saving</div>
           <div class="ro-big gradient-text" id="roiYear">$0</div>
-          <div class="ro-sub">in recovered staff time</div>
+          <div data-i18n="roi.o2" class="ro-sub">in recovered staff time</div>
           <div class="ro-split">
-            <div class="rs"><div class="v" id="roiHours">0</div><div class="k">hours saved / month</div></div>
-            <div class="rs"><div class="v" id="roiMonth">$0</div><div class="k">saved / month</div></div>
+            <div class="rs"><div class="v" id="roiHours">0</div><div data-i18n="roi.o3" class="k">hours saved / month</div></div>
+            <div class="rs"><div class="v" id="roiMonth">$0</div><div data-i18n="roi.o4" class="k">saved / month</div></div>
           </div>
         </div>
       </div>
-      <p class="roi-note">Illustrative estimate for demonstration — not a quote.</p>
+      <p data-i18n="roi.note" class="roi-note">Illustrative estimate for demonstration, not a quote.</p>
     </div>
   </section>
 
@@ -762,26 +765,26 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="security" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">Security &amp; privacy</div>
-        <h2>Your documents stay yours</h2>
-        <p>Built privacy-first, the way Intellect Core builds everything — sensible defaults, encryption everywhere, and you in control of retention.</p>
+        <div data-i18n="se.eyebrow" class="eyebrow">Security &amp; privacy</div>
+        <h2 data-i18n="se.h2">Your documents stay yours</h2>
+        <p data-i18n="se.p">Built privacy-first, the way Intellect Core builds everything: sensible defaults, encryption everywhere, and you in control of retention.</p>
       </div>
       <div class="sec-grid rv">
         <div class="sec-item">
           <div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-          <h4>Encrypted</h4><p>AES-256 at rest and TLS 1.3 in transit on every document and field.</p>
+          <h4 data-i18n="se.c1h">Encrypted</h4><p data-i18n="se.c1p">AES-256 at rest and TLS 1.3 in transit on every document and field.</p>
         </div>
         <div class="sec-item">
           <div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 7.5 8 10 4.5-2.5 8-5 8-10V6l-8-4z"/></svg></div>
-          <h4>GDPR-ready</h4><p>EU-hostable infrastructure and a clear data-processing posture.</p>
+          <h4 data-i18n="se.c2h">GDPR-ready</h4><p data-i18n="se.c2p">EU-hostable infrastructure and a clear data-processing posture.</p>
         </div>
         <div class="sec-item">
           <div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5M12 16h.01M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6A2 2 0 0 0 22 18L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
-          <h4>You set retention</h4><p>Auto-delete documents after parsing, or keep them — your call, per parser.</p>
+          <h4 data-i18n="se.c3h">You set retention</h4><p data-i18n="se.c3p">Auto-delete documents after parsing, or keep them. Your call, per parser.</p>
         </div>
         <div class="sec-item">
           <div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M21 12a9 9 0 1 1-6.2-8.6"/></svg></div>
-          <h4>No training on your data</h4><p>Your documents are never used to train shared models. Full stop.</p>
+          <h4 data-i18n="se.c4h">No training on your data</h4><p data-i18n="se.c4p">Your documents are never used to train shared models. Full stop.</p>
         </div>
       </div>
     </div>
@@ -795,17 +798,17 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="results">
         <div class="quote rv">
           <div class="qmark" aria-hidden="true">&ldquo;</div>
-          <blockquote>We were copying numbers off bank statements and invoices by hand for days each month. Core Parse turned that into a folder we forget about — the data just shows up, clean, in our sheet.</blockquote>
+          <blockquote data-i18n="re.quote">We were copying numbers off bank statements and invoices by hand for days each month. Core Parse turned that into a folder we forget about. The data just shows up, clean, in our sheet.</blockquote>
           <div class="qby">
             <div class="qav">OL</div>
-            <div><div class="qn">Operations lead</div><div class="qr">Finance &amp; admin · illustrative example</div></div>
+            <div><div data-i18n="re.qn" class="qn">Operations lead</div><div data-i18n="re.qr" class="qr">Finance &amp; admin · illustrative example</div></div>
           </div>
         </div>
         <div class="rstats rv d1">
-          <span style="grid-column:1/-1;font-size:.74rem;color:var(--text-dim)">Illustrative scenario — not a specific client. Figures show the kind of outcome the technology makes possible.</span>
-          <div class="rstat"><div class="rv-n">140h</div><div class="rv-l">manual entry eliminated per month, per team</div></div>
-          <div class="rstat"><div class="rv-n">~99%</div><div class="rv-l">field-level accuracy across mixed document layouts</div></div>
-          <div class="rstat"><div class="rv-n">&lt; 1 day</div><div class="rv-l">from first upload to live, automated pipeline</div></div>
+          <span data-i18n="re.disc" style="grid-column:1/-1;font-size:.74rem;color:var(--text-dim)">Illustrative scenario, not a specific client. Figures show the kind of outcome the technology makes possible.</span>
+          <div class="rstat"><div class="rv-n">140h</div><div data-i18n="re.s1" class="rv-l">manual entry eliminated per month, per team</div></div>
+          <div class="rstat"><div class="rv-n">~99%</div><div data-i18n="re.s2" class="rv-l">field-level accuracy across mixed document layouts</div></div>
+          <div class="rstat"><div data-i18n="re.s3n" class="rv-n">&lt; 1 day</div><div data-i18n="re.s3" class="rv-l">from first upload to live, automated pipeline</div></div>
         </div>
       </div>
     </div>
@@ -817,33 +820,33 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="faq" class="section">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow">FAQ</div>
-        <h2>Questions, answered</h2>
+        <div data-i18n="fq.eyebrow" class="eyebrow">FAQ</div>
+        <h2 data-i18n="fq.h2">Questions, answered</h2>
       </div>
       <div class="faq rv" id="faq">
         <div class="qa">
-          <button class="qa-q">How long does it take to get started?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>Minutes. Upload one sample document, pick the fields you want (or describe them), and your parser is live. Most teams have a working pipeline the same day — no templates and no developer required.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q1">How long does it take to get started?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a1">Minutes. Upload one sample document, pick the fields you want (or describe them), and your parser is live. Most teams have a working pipeline the same day, no templates and no developer required.</div></div>
         </div>
         <div class="qa">
-          <button class="qa-q">What document types can it handle?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>PDFs (digital and scanned), images, and the body of emails — invoices, bank statements, purchase orders, contracts, resumes, bills of lading, receipts, ID documents and more. Built-in OCR reads scans and photos.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q2">What document types can it handle?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a2">PDFs (digital and scanned), images, and the body of emails: invoices, bank statements, purchase orders, contracts, resumes, bills of lading, receipts, ID documents and more. Built-in OCR reads scans and photos.</div></div>
         </div>
         <div class="qa">
-          <button class="qa-q">Do I need to write rules or templates?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>No. Core Parse is AI-native — it understands documents instead of matching positions, so it adapts when layouts change or a new vendor format arrives, without you rebuilding anything.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q3">Do I need to write rules or templates?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a3">No. Core Parse is AI-native: it understands documents instead of matching positions, so it adapts when layouts change or a new vendor format arrives, without you rebuilding anything.</div></div>
         </div>
         <div class="qa">
-          <button class="qa-q">How accurate is it, and what about mistakes?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>Accuracy is typically around 99% at the field level. Every field comes with a confidence score, and you can route low-confidence results to a quick human review queue so nothing slips through.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q4">How accurate is it, and what about mistakes?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a4">Accuracy is typically around 99% at the field level. Every field comes with a confidence score, and you can route low-confidence results to a quick human review queue so nothing slips through.</div></div>
         </div>
         <div class="qa">
-          <button class="qa-q">Where does my data go?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>Wherever you want — Google Sheets, Excel, a database, your ERP/CRM, Slack, or your own systems over 40+ integrations, webhooks and the API. Data is encrypted in transit and at rest, and you control retention.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q5">Where does my data go?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a5">Wherever you want: Google Sheets, Excel, a database, your ERP/CRM, Slack, or your own systems over 40+ integrations, webhooks and the API. Data is encrypted in transit and at rest, and you control retention.</div></div>
         </div>
         <div class="qa">
-          <button class="qa-q">Is this a real product I can buy today?<span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="qa-a"><div>This page is a product demo by Intellect Core that showcases the document-extraction capability we build for clients. For a real deployment tailored to your documents and systems, get in touch with the Intellect Core team.</div></div>
+          <button class="qa-q"><span data-i18n="fq.q6">Is this a real product I can buy today?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a6">This page is a product demo by Intellect Core that showcases the document-extraction capability we build for clients. For a real deployment tailored to your documents and systems, get in touch with the Intellect Core team.</div></div>
         </div>
       </div>
     </div>
@@ -854,11 +857,11 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     <div class="container">
       <div class="cta-band rv">
         <div class="eyebrow" style="justify-content:center">Get started</div>
-        <h2>Stop typing. <span class="gradient-text">Start shipping data.</span></h2>
-        <p>See Core Parse on your own documents. Book a 30-minute demo with Intellect Core — no commitment.</p>
+        <h2 data-i18n="ct.h2">Stop typing. <span class="gradient-text">Start shipping data.</span></h2>
+        <p data-i18n="ct.p">See Core Parse on your own documents. Book a 30-minute demo with Intellect Core. No commitment.</p>
         <div class="hero-cta">
-          <a href="../../index.html#contact" class="btn btn-primary btn-lg">Book a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="#demo" class="btn btn-ghost btn-lg">Replay the demo</a>
+          <a href="../../index.html#contact" class="btn btn-primary btn-lg"><span data-i18n="ct.book">Book a demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a data-i18n="ct.replay" href="#demo" class="btn btn-ghost btn-lg">Replay the demo</a>
         </div>
       </div>
     </div>
@@ -871,14 +874,19 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     <div class="footer-grid">
       <div class="footer-about">
         <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#04121b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V4.4M12 12 5.5 16M12 12 18.5 16"/><circle cx="12" cy="4.4" r="1.7" fill="#04121b" stroke="none"/><circle cx="5.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="18.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="12" cy="12" r="2.7" fill="#04121b" stroke="none"/></svg></span><span><b>Core</b> <span class="ac">Parse</span></span></a>
-        <p>AI document data extraction — a product concept by Intellect Core. Raw documents become clean, structured data, automatically.</p>
+        <p data-i18n="ft.about">AI document data extraction, a product concept by Intellect Core. Raw documents become clean, structured data, automatically.</p>
       </div>
-      <div><h4>Product</h4><ul><li><a href="#demo">Live demo</a></li><li><a href="#how">How it works</a></li><li><a href="#product">Features</a></li><li><a href="#roi">ROI calculator</a></li></ul></div>
-      <div><h4>Extract from</h4><ul><li><a href="#usecases">Invoices</a></li><li><a href="#usecases">Bank statements</a></li><li><a href="#usecases">Contracts</a></li><li><a href="#usecases">Resumes</a></li></ul></div>
-      <div><h4>Intellect Core</h4><ul><li><a href="../../index.html">Main site</a></li><li><a href="../../index.html#services">Services</a></li><li><a href="../../index.html#contact">Contact</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4 data-i18n="ft.hp">Product</h4><ul><li><a data-i18n="nav.demo" href="#demo">Live demo</a></li><li><a data-i18n="nav.how" href="#how">How it works</a></li><li><a data-i18n="ft.feat" href="#product">Features</a></li><li><a data-i18n="ft.roi" href="#roi">ROI calculator</a></li></ul></div>
+      <div><h4 data-i18n="ft.he">Extract from</h4><ul><li><a data-i18n="ft.inv" href="#usecases">Invoices</a></li><li><a data-i18n="ft.bank" href="#usecases">Bank statements</a></li><li><a data-i18n="ft.contr" href="#usecases">Contracts</a></li><li><a data-i18n="ft.cv" href="#usecases">Resumes</a></li></ul></div>
+      <div><h4 data-i18n="ft.hi">Intellect Core</h4><ul><li><a data-i18n="ft.main" href="../../index.html">Main site</a></li><li><a data-i18n="ft.serv" href="../../index.html#services">Services</a></li><li><a data-i18n="ft.cont" href="../../index.html#contact">Contact</a></li><li><a data-i18n="nav.faq" href="#faq">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Intellect Core · Core Parse is a product concept demo.</span>
+      <span data-i18n="ft.copy">© 2026 Intellect Core · Core Parse is a product concept demo.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a data-i18n="ft.priv" href="../../privacybeleid.html">Privacy policy</a>
+        <span aria-hidden="true">·</span>
+        <a data-i18n="ft.terms" href="../../algemene-voorwaarden.html">Terms &amp; conditions</a>
+      </nav>
       <span>hello@intellectcore.com</span>
     </div>
   </div>
@@ -1027,6 +1035,179 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     faq.querySelectorAll(".qa.open").forEach(function(o){o.classList.remove("open");o.querySelector(".qa-a").style.maxHeight=null});
     if(!open){item.classList.add("open");var a=item.querySelector(".qa-a");a.style.maxHeight=a.scrollHeight+"px"}
   });
+})();
+</script>
+<script>
+/* Language: EN default, NL via the header toggle; shares 'ic-lang' with the main site */
+(function(){
+  var NL={
+    "nav.uc": "Toepassingen",
+    "cta.booknav": "Boek een demo",
+    "h.h1": "Van ruwe documenten naar <em class=\"gradient-text\">schone, gestructureerde data</em>, automatisch.",
+    "h.lead": "Core Parse leest met AI uw pdf's, scans en e-mails en geeft schone, gestructureerde data terug die uw systemen meteen kunnen gebruiken. Geen templates, geen handmatig typen, in minuten opgezet.",
+    "h.cta2": "Praat met Intellect Core",
+    "h.m1": "Veldnauwkeurigheid",
+    "h.m2": "Gem. per pagina",
+    "h.m3": "Integraties &amp; exports",
+    "h.m4": "Templates te schrijven",
+    "mq.label": "Verwerkt elk documenttype dat uw team gebruikt",
+    "dm.eyebrow": "Live demo",
+    "dm.h2": "Zie het extraheren, in realtime",
+    "dm.p": "Klik op run. Core Parse leest het document, vindt elk veld en geeft schone, gestructureerde JSON terug, dezelfde output die uw apps en spreadsheets ontvangen.",
+    "dm.hint": "Lokaal gesimuleerd in uw browser. Geen upload, geen document verlaat deze pagina.",
+    "dm.note": "Alleen demo · cijfers en document zijn illustratief.",
+    "hw.eyebrow": "Hoe het werkt",
+    "hw.h2": "Drie stappen naar geautomatiseerde data",
+    "hw.p": "Geen regels schrijven, niet wachten op ontwikkelaars. Laat Core Parse één keer een document zien. De rest doet het zelf, voor altijd.",
+    "hw.s1h": "Zet het op",
+    "hw.s1p": "Upload één voorbeeld en klik de velden aan die u wilt, of beschrijf ze gewoon in gewone taal. De AI bouwt de parser direct. Geen templates, geen regex.",
+    "hw.s2h": "Voer documenten in",
+    "hw.s2p": "Stuur e-mails door naar uw privémailbox, zet bestanden in een map, of push via de API. Core Parse verwerkt automatisch pdf's, scans, afbeeldingen en e-mailteksten.",
+    "hw.s3h": "Laat het draaien",
+    "hw.s3p": "Schone, gestructureerde data stroomt direct naar uw sheets, database of apps via 40+ integraties en webhooks. Volledig handenvrij, 24/7.",
+    "pr.eyebrow": "Gebouwd voor productie",
+    "pr.h2": "Geen speeltje. Een systeem waar u een bedrijf op draait.",
+    "pr.p": "Nauwkeurigheid, schaal en controle vanaf dag één ingebouwd, gebouwd door Intellect Core volgens dezelfde standaard als ons enterprise-automatiseringswerk.",
+    "pr.c1h": "Betrouwbaar",
+    "pr.c1p": "99,9% beoogde uptime met automatische retries en dead-letter-afhandeling, zodat één slecht bestand de wachtrij nooit blokkeert.",
+    "pr.c2h": "Schaalbaar",
+    "pr.c2p": "Van een handvol per dag tot miljoenen per maand. Verwerking draait parallel en groeit met u mee, geen infra om te beheren.",
+    "pr.c3h": "Flexibel",
+    "pr.c3p": "Lay-outs veranderen, de AI houdt bij. Nieuw leveranciersformaat? Het mapt naar uw schema zonder dat u iets hoeft te herbouwen.",
+    "pr.c4h": "Genormaliseerd",
+    "pr.c4p": "Datums, valuta, getallen en namen gestandaardiseerd naar één schoon formaat, klaar voor uw database, geen opschoonklus.",
+    "pr.c5h": "Elke export",
+    "pr.c5p": "CSV, Excel, JSON, Google Sheets of een live webhook. Krijg de data waar die moet zijn, precies zoals u wilt.",
+    "pr.c6h": "Bewaakt",
+    "pr.c6p": "Volledige audit log, zekerheidsscores en meldingen bij elk document. Markeer velden met lage zekerheid voor een snelle menselijke check.",
+    "uc.eyebrow": "Toepassingen",
+    "uc.h2": "Uit echte Intellect Core-projecten",
+    "uc.p": "Core Parse maakt een product van het documentautomatiseringswerk dat we al leveren voor klanten in finance, logistiek en operations.",
+    "uc.c1h": "Finance &amp; crediteuren",
+    "uc.c1p": "Lees facturen, bonnen en afschriften van meerdere banken; categoriseer transacties en push kant-en-klare overzichten naar Excel. Precies de flow achter ons bankautomatiseringswerk voor Surinaamse klanten.",
+    "uc.c2h": "Logistiek &amp; supply chain",
+    "uc.c2p": "Zet vrachtbrieven, paklijsten en pakbonnen om in gestructureerde zendingsrecords: regelitems, gewichten, referenties en datums, genormaliseerd en doorgestuurd naar uw ERP.",
+    "uc.c3h": "Contracten &amp; juridisch",
+    "uc.c3p": "Haal partijen, datums, verlengingstermijnen, bedragen en clausules uit contracten in een doorzoekbare metadata-index, de basis van onze Contract Metadata Extractor en Smart Document Library.",
+    "uc.c4h": "E-mailgestuurde operations &amp; HR",
+    "uc.c4p": "Classificeer inkomende e-mail, verwerk bijgevoegde cv's, orders en formulieren, en maak automatisch taken aan, precies wat onze AI-e-mailautomatisering en taakcreatie-flows vandaag doen.",
+    "in.eyebrow": "Integraties",
+    "in.h2": "Werkt samen met de tools die u al gebruikt",
+    "in.p": "Stuur schone data met één klik overal heen, of koppel het diep via webhooks en onze API.",
+    "tm.eyebrow": "Twee manieren om te werken",
+    "tm.h2": "No-code voor operations. Volledige API voor bouwers.",
+    "tm.m1tag": "Voor operationele teams",
+    "tm.m1h": "Web-app",
+    "tm.m1p": "Een point-and-click werkomgeving die uw team zonder IT kan draaien. Zet in minuten een parser op, controleer extracties, corrigeer de zeldzame misser en zie de data stromen.",
+    "tm.m2tag": "Voor ontwikkelaars",
+    "tm.m2p": "Push een document, krijg gestructureerde JSON terug. Webhooks op elk resultaat, idempotente endpoints en SDK's, zodat u het direct in uw pipeline zet.",
+    "roi.eyebrow": "ROI-calculator",
+    "roi.h2": "Wat handmatige data-invoer u kost",
+    "roi.p": "Sleep de schuiven naar uw volume. De besparing gaat ervan uit dat Core Parse ~95% van het werk automatisch doet.",
+    "roi.pre1": "Klein team",
+    "roi.pre2": "Groeiende operatie",
+    "roi.pre3": "Enterprise",
+    "roi.l1": "Documenten per maand",
+    "roi.l2": "Minuten per document (handmatig)",
+    "roi.l3": "Volbelast uurtarief",
+    "roi.o1": "Geschatte jaarlijkse besparing",
+    "roi.o2": "aan teruggewonnen personeelstijd",
+    "roi.o3": "uren bespaard / maand",
+    "roi.o4": "bespaard / maand",
+    "roi.note": "Illustratieve schatting ter demonstratie, geen offerte.",
+    "se.eyebrow": "Beveiliging &amp; privacy",
+    "se.h2": "Uw documenten blijven van u",
+    "se.p": "Privacy-first gebouwd, zoals Intellect Core alles bouwt: verstandige standaardinstellingen, overal encryptie, en u bepaalt de bewaartermijn.",
+    "se.c1h": "Versleuteld",
+    "se.c1p": "AES-256 in rust en TLS 1.3 tijdens transport, op elk document en veld.",
+    "se.c2h": "AVG-proof",
+    "se.c2p": "In de EU te hosten infrastructuur en een heldere gegevensverwerkingshouding.",
+    "se.c3h": "U bepaalt de bewaartermijn",
+    "se.c3p": "Documenten automatisch verwijderen na verwerking, of bewaren. U beslist, per parser.",
+    "se.c4h": "Geen training op uw data",
+    "se.c4p": "Uw documenten worden nooit gebruikt om gedeelde modellen te trainen. Punt.",
+    "re.quote": "We tikten elke maand dagenlang met de hand cijfers over van bankafschriften en facturen. Core Parse maakte daar een map van die we vergeten. De data verschijnt gewoon, schoon, in ons overzicht.",
+    "re.qn": "Operationeel manager",
+    "re.qr": "Finance &amp; admin · illustratief voorbeeld",
+    "re.disc": "Illustratief scenario, geen specifieke klant. De cijfers tonen het soort resultaat dat de technologie mogelijk maakt.",
+    "re.s1": "handmatige invoer geëlimineerd per maand, per team",
+    "re.s2": "nauwkeurigheid op veldniveau over gemengde documentlay-outs",
+    "re.s3": "van eerste upload tot live, geautomatiseerde pipeline",
+    "re.s3n": "&lt; 1 dag",
+    "fq.eyebrow": "FAQ",
+    "fq.h2": "Vragen, beantwoord",
+    "fq.a1": "Minuten. Upload één voorbeelddocument, kies de velden die u wilt (of beschrijf ze), en uw parser staat live. De meeste teams hebben dezelfde dag een werkende pipeline, geen templates en geen ontwikkelaar nodig.",
+    "fq.a2": "Pdf's (digitaal en gescand), afbeeldingen en de tekst van e-mails: facturen, bankafschriften, inkooporders, contracten, cv's, vrachtbrieven, bonnen, ID-documenten en meer. Ingebouwde OCR leest scans en foto's.",
+    "fq.a3": "Nee. Core Parse is AI-native: het begrijpt documenten in plaats van posities te matchen, dus het past zich aan als lay-outs veranderen of een nieuw leveranciersformaat binnenkomt, zonder dat u iets herbouwt.",
+    "fq.a4": "De nauwkeurigheid ligt op veldniveau meestal rond de 99%. Elk veld krijgt een zekerheidsscore, en u kunt resultaten met lage zekerheid naar een snelle menselijke reviewwachtrij sturen zodat er niets doorheen glipt.",
+    "fq.a5": "Waar u maar wilt: Google Sheets, Excel, een database, uw ERP/CRM, Slack, of uw eigen systemen via 40+ integraties, webhooks en de API. Data is versleuteld tijdens transport en in rust, en u bepaalt de bewaartermijn.",
+    "fq.a6": "Deze pagina is een productdemo van Intellect Core die laat zien wat we voor klanten bouwen op het gebied van documentextractie. Voor een echte implementatie op maat van uw documenten en systemen neemt u contact op met het Intellect Core-team.",
+    "ct.h2": "Stop met typen. <span class=\"gradient-text\">Begin met data leveren.</span>",
+    "ct.p": "Zie Core Parse op uw eigen documenten. Boek een demo van 30 minuten met Intellect Core. Vrijblijvend.",
+    "ct.replay": "Speel de demo opnieuw af",
+    "ft.about": "AI-documentdata-extractie, een productconcept van Intellect Core. Ruwe documenten worden schone, gestructureerde data, automatisch.",
+    "ft.hp": "Product",
+    "ft.he": "Extract uit",
+    "ft.hi": "Intellect Core",
+    "ft.feat": "Functies",
+    "ft.roi": "ROI-calculator",
+    "ft.inv": "Facturen",
+    "ft.bank": "Bankafschriften",
+    "ft.contr": "Contracten",
+    "ft.cv": "Cv's",
+    "ft.main": "Hoofdsite",
+    "ft.serv": "Diensten",
+    "ft.cont": "Contact",
+    "ft.copy": "© 2026 Intellect Core · Core Parse is een productconcept-demo.",
+    "ft.priv": "Privacybeleid",
+    "ft.terms": "Algemene voorwaarden",
+    "nav.demo": "Live demo",
+    "nav.how": "Hoe het werkt",
+    "nav.faq": "FAQ",
+    "h.badge": "Productdemo · mogelijk gemaakt door Intellect Core",
+    "h.cta1": "Probeer de live demo",
+    "h.t1": "Geen templates",
+    "h.t2": "In minuten opgezet",
+    "h.t3": "AVG-proof",
+    "dm.run": "Extractie uitvoeren",
+    "doc.inv": "Facturen",
+    "doc.bank": "Bankafschriften",
+    "doc.po": "Inkooporders",
+    "doc.contr": "Contracten",
+    "doc.cv": "Cv's",
+    "doc.bol": "Vrachtbrieven",
+    "doc.rec": "Bonnen",
+    "doc.id": "ID-documenten",
+    "doc.eml": "E-mailvragen",
+    "tm.l1": "Visuele veldkiezer, geen regels schrijven",
+    "tm.l2": "Privé e-mailinbox per parser",
+    "tm.l3": "Exports &amp; integraties met één klik",
+    "tm.l4": "Reviewwachtrij met zekerheidsmarkeringen",
+    "fq.q1": "Hoe snel ben ik aan de slag?",
+    "fq.q2": "Welke documenttypen kan het aan?",
+    "fq.q3": "Moet ik regels of templates schrijven?",
+    "fq.q4": "Hoe nauwkeurig is het, en hoe zit het met fouten?",
+    "fq.q5": "Waar gaat mijn data heen?",
+    "fq.q6": "Is dit een echt product dat ik vandaag kan kopen?",
+    "ct.book": "Boek een demo",
+  };
+  var EN={};
+  var btn=document.getElementById("langToggle");
+  function apply(lang){
+    document.documentElement.setAttribute("lang",lang==="nl"?"nl":"en");
+    document.documentElement.setAttribute("data-lang",lang);
+    var els=document.querySelectorAll("[data-i18n]"),i,el,k;
+    for(i=0;i<els.length;i++){
+      el=els[i];k=el.getAttribute("data-i18n");
+      if(lang==="nl"){if(EN[k]===undefined)EN[k]=el.innerHTML;if(NL[k]!==undefined)el.innerHTML=NL[k];}
+      else if(EN[k]!==undefined)el.innerHTML=EN[k];
+    }
+    if(btn){btn.textContent=lang==="nl"?"EN":"NL";btn.setAttribute("aria-label",lang==="nl"?"Switch to English":"Schakel naar Nederlands");}
+    try{localStorage.setItem("ic-lang",lang)}catch(e){}
+  }
+  var saved=null;try{saved=localStorage.getItem("ic-lang")}catch(e){}
+  if(saved==="nl")apply("nl");
+  btn&&btn.addEventListener("click",function(){apply(document.documentElement.getAttribute("data-lang")==="nl"?"en":"nl")});
 })();
 </script>
 </body>
