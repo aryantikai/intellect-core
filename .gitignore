@@ -5,6 +5,7 @@
 
 # Allow only the public website files (the deployable static site)
 !/.gitignore
+!/wrangler.jsonc
 !/website/
 /website/*
 !/website/main/

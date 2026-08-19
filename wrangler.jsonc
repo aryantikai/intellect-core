@@ -1,0 +1,10 @@
+{
+  // Static-assets Worker for the Intellect Core website.
+  // The deployable site lives in website/main (see .gitignore).
+  // Cloudflare Workers Builds runs: npx wrangler deploy  (root dir: /)
+  "name": "intellect-core",
+  "compatibility_date": "2026-08-19",
+  "assets": {
+    "directory": "./website/main"
+  }
+}
