@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Core Insight · Ask Your Data · by Intellect Core</title>
+<meta name="description" content="Core Insight by Intellect Core: an AI analyst for your data. Ask in plain language and get answers, analyses, recommendations and duplicate checks in seconds." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#070d1a" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Core Insight · by Intellect Core" />
+<meta property="og:title" content="Core Insight · Ask Your Data" />
+<meta property="og:description" content="An AI analyst for your data: answers, analyses, recommendations and duplicate checks, by Intellect Core." />
+<meta property="og:image" content="../../logo.svg" />
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   Core Insight — product demo site
+   Built on the Intellect Core design system (blue + cyan, dark default).
+   ===================================================================== */
+:root{
+  --accent:#2e8bff; --accent-2:#19c8ff; --accent-3:#5ad1ff;
+  --gradient:linear-gradient(120deg,var(--accent),var(--accent-2));
+  --gradient-soft:linear-gradient(120deg,rgba(46,139,255,.16),rgba(25,200,255,.14));
+  --bg:#070d1a; --bg-elev:#0c1426;
+  --bg-card:rgba(255,255,255,.035); --bg-card-hover:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.09); --border-strong:rgba(255,255,255,.16);
+  --text:#eaf0fb; --text-muted:#9aa9c4; --text-dim:#6b7892;
+  --ok:#28c840; --warn:#febc2e; --bad:#ff5f57;
+  --shadow:0 24px 60px -20px rgba(0,0,0,.65);
+  --glow:0 0 60px -10px rgba(46,139,255,.4);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:"Sora",var(--font);
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --maxw:1200px; --radius:16px; --radius-lg:24px; --radius-sm:10px; --header-h:72px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+[data-theme="light"]{
+  --bg:#f4f8ff; --bg-elev:#ffffff;
+  --bg-card:rgba(13,25,48,.025); --bg-card-hover:rgba(13,25,48,.05);
+  --border:rgba(13,25,48,.1); --border-strong:rgba(13,25,48,.18);
+  --text:#0b1426; --text-muted:#46587a; --text-dim:#6b7892;
+  --shadow:0 24px 60px -24px rgba(20,40,90,.25);
+  --glow:0 0 60px -10px rgba(40,120,230,.25);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;transition:background .4s var(--ease),color .4s var(--ease)}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(800px 500px at 12% -5%,rgba(25,200,255,.16),transparent 60%),radial-gradient(700px 500px at 95% 0%,rgba(46,139,255,.18),transparent 55%),radial-gradient(600px 600px at 50% 110%,rgba(90,209,255,.08),transparent 60%);pointer-events:none}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin:0 0 .4em}
+h1{font-size:clamp(2.5rem,5.6vw,4.2rem)}
+h2{font-size:clamp(1.9rem,3.8vw,2.9rem)}
+h3{font-size:clamp(1.2rem,2vw,1.5rem)}
+p{margin:0 0 1rem}
+::selection{background:var(--accent);color:#021018}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:clamp(64px,9vw,120px) 0}
+.text-center{text-align:center}
+.muted{color:var(--text-muted)}
+.gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+.section-head{max-width:740px;margin:0 auto clamp(48px,6vw,72px)}
+.section-head.center{text-align:center}
+.section-head.center .eyebrow{justify-content:center}
+.section-head p{color:var(--text-muted);font-size:1.08rem}
+.grid{display:grid;gap:24px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.97rem;cursor:pointer;border:1px solid transparent;font-family:inherit;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,border-color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--gradient);color:#04121b;box-shadow:0 10px 30px -10px rgba(46,139,255,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(46,139,255,.7)}
+.btn-ghost{background:var(--bg-card);color:var(--text);border-color:var(--border-strong);backdrop-filter:blur(8px)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+.btn-lg{padding:16px 32px;font-size:1.02rem}
+.site-header{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;display:flex;align-items:center;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+.brand .logo-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--gradient);box-shadow:var(--glow)}
+.brand .logo-mark svg{width:19px;height:19px}
+.brand b{font-weight:800}
+.brand .ac{color:var(--accent)}
+.brand .by{display:block;font-family:var(--font);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:9px 14px;border-radius:10px;font-size:.93rem;font-weight:500;color:var(--text-muted);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:var(--bg-card)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.theme-toggle{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:border-color .2s,transform .2s,color .2s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(15deg)}
+.theme-toggle svg{width:19px;height:19px}
+.lang-toggle{height:40px;min-width:40px;padding:0 12px;display:grid;place-items:center;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);color:var(--text);cursor:pointer;font:inherit;font-weight:600;font-size:.85rem;transition:border-color .2s,color .2s}
+.lang-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-sun{display:block}
+[data-theme="light"] .theme-toggle .icon-moon{display:none}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);color:var(--text);cursor:pointer;position:relative}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:11px;width:20px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.nav-toggle span{top:20px}
+.nav-toggle span::before{top:-6px}
+.nav-toggle span::after{top:6px}
+body.nav-open .nav-toggle span{background:transparent}
+body.nav-open .nav-toggle span::before{transform:translateY(6px) rotate(45deg)}
+body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:980px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;padding:16px 20px 24px;background:var(--bg-elev);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transform:translateY(-135%);transition:transform .4s var(--ease)}
+  body.nav-open .nav-links{transform:translateY(0)}
+  .nav-links a{padding:14px 12px;font-size:1.05rem}
+  .cta-nav-desktop{display:none}
+}
+.hero{position:relative;padding:calc(var(--header-h) + 80px) 0 68px;overflow:hidden;text-align:center}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.5}
+.hero-grid::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 50% 28%,black,transparent 72%);-webkit-mask-image:radial-gradient(circle at 50% 28%,black,transparent 72%)}
+.hero-inner{max-width:880px;margin:0 auto}
+.hero h1{margin-bottom:22px}
+.hero h1 em{font-style:normal}
+.hero .lead{font-size:clamp(1.05rem,2vw,1.27rem);color:var(--text-muted);max-width:640px;margin:0 auto}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;justify-content:center}
+.hero-trust{margin-top:22px;font-size:.85rem;color:var(--text-dim);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center}
+.hero-trust span{display:inline-flex;align-items:center;gap:7px}
+.hero-trust svg{width:15px;height:15px;color:var(--accent-3)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);font-size:.8rem;color:var(--text-muted);font-weight:500;margin-bottom:26px}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 10px var(--accent-3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(90,209,255,.4)}50%{box-shadow:0 0 0 6px rgba(90,209,255,0)}}
+.hmet{display:grid;grid-template-columns:repeat(4,1fr);max-width:720px;margin:56px auto 0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg-card)}
+.met{padding:22px 12px;text-align:center;border-right:1px solid var(--border);transition:background .3s}
+.met:last-child{border-right:none}
+.met:hover{background:var(--bg-card-hover)}
+.met .mn{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.03em}
+.met .ml{font-size:.76rem;color:var(--text-muted);margin-top:4px}
+@media(max-width:640px){.hmet{grid-template-columns:1fr 1fr}.met:nth-child(2){border-right:none}.met:nth-child(1),.met:nth-child(2){border-bottom:1px solid var(--border)}}
+.card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:transform .35s var(--ease),border-color .35s,background .35s,box-shadow .35s;overflow:hidden}
+.card:hover{transform:translateY(-5px);border-color:var(--border-strong);background:var(--bg-card-hover);box-shadow:var(--shadow)}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:var(--gradient);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
+.card:hover::after{opacity:.6}
+.card .icon{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent)}
+.card .icon svg{width:26px;height:26px}
+.card h3{margin-bottom:8px}
+.card p{color:var(--text-muted);font-size:.95rem;margin:0}
+.mwrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden;background:var(--bg-elev);position:relative}
+.mwrap .mlabel{text-align:center;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px;font-weight:600}
+.mwrap::before,.mwrap::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:1}
+.mwrap::before{left:0;background:linear-gradient(90deg,var(--bg-elev),transparent)}
+.mwrap::after{right:0;background:linear-gradient(-90deg,var(--bg-elev),transparent)}
+.mtrack{display:flex;width:max-content;animation:mq 32s linear infinite}
+.mtrack:hover{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mi{display:flex;align-items:center;gap:1.25rem;padding:0 1.6rem;font-size:.82rem;color:var(--text-muted);font-weight:600;white-space:nowrap}
+.mi em{font-style:normal;color:var(--accent-3);margin-right:.5rem;font-weight:700}
+.ms{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7}
+.glass-panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);position:relative}
+.glass-panel::before{content:"";position:absolute;top:-40%;right:-20%;width:320px;height:320px;background:var(--gradient);filter:blur(90px);opacity:.18;pointer-events:none}
+.tbar{padding:12px 16px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+.td{width:11px;height:11px;border-radius:50%}
+.td.r{background:#ff5f57}.td.y{background:#febc2e}.td.g{background:#28c840}
+.ttitle{font-size:.72rem;color:var(--text-dim);margin-left:8px;font-family:var(--mono)}
+/* ── Ask-your-data demo ── */
+.demo-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:stretch}
+@media(max-width:880px){.demo-wrap{grid-template-columns:1fr}}
+.demo-col{display:flex;flex-direction:column}
+.demo-col .tbar .ttitle{flex:1}
+.dwrap{padding:6px 6px;overflow:auto;flex:1;max-height:440px}
+.dtable{width:100%;border-collapse:collapse;font-size:.76rem}
+.dtable th{text-align:left;color:var(--text-dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.64rem;padding:9px 12px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg-elev)}
+.dtable th.amt,.dtable td.amt{text-align:right}
+.dtable td{padding:9px 12px;border-bottom:1px dashed var(--border);color:var(--text-muted);white-space:nowrap}
+.dtable td.amt{font-family:var(--mono);color:var(--text)}
+.dt-row{transition:background .4s,box-shadow .4s}
+.dt-row.hl-dup{background:rgba(254,188,46,.13);box-shadow:inset 3px 0 0 var(--warn)}
+.dt-row.hl-anom{background:rgba(255,95,87,.13);box-shadow:inset 3px 0 0 var(--bad)}
+.chat{display:flex;flex-direction:column;height:100%;min-height:440px}
+.chat-log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:10px;max-width:100%}
+.msg .cav{width:26px;height:26px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;background:var(--gradient);color:#04121b;font-size:.78rem;font-weight:800}
+.msg .bubble{background:var(--bg-elev);border:1px solid var(--border);border-radius:12px;padding:11px 14px;font-size:.9rem;color:var(--text-muted);line-height:1.55}
+.msg.a .bubble b{color:var(--text);font-weight:600}
+.msg.q{flex-direction:row-reverse}
+.msg.q .bubble{background:var(--gradient-soft);border-color:var(--border-strong);color:var(--text)}
+.msg.q .cav{background:var(--bg-card);color:var(--text-muted);border:1px solid var(--border)}
+.typing{display:inline-flex;gap:4px;padding:4px 2px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--text-dim);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.mini-bars{margin-top:11px;display:flex;flex-direction:column;gap:8px}
+.mbar{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:10px;font-size:.74rem}
+.mbar .mb-k{color:var(--text-muted)}
+.mbar .mb-t{display:block;width:100%;height:8px;border-radius:999px;background:var(--border);overflow:hidden}
+.mbar .mb-f{display:block;width:0;height:100%;border-radius:999px;background:var(--gradient);transition:width .8s var(--ease)}
+.mbar .mb-v{color:var(--text);font-family:var(--mono);font-size:.72rem}
+.rec-list{margin:11px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.rec-list li{display:flex;gap:9px;font-size:.87rem;color:var(--text-muted)}
+.rec-list li svg{width:16px;height:16px;color:var(--accent-3);flex-shrink:0;margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px;border-top:1px solid var(--border)}
+.chip{font-family:inherit;font-size:.8rem;font-weight:500;padding:8px 14px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip:disabled{opacity:.5;cursor:default}
+.demo-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px;justify-content:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{text-align:left}
+.step .num{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.05rem;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent);margin-bottom:18px}
+.step h4{font-family:var(--font-display);font-size:1.12rem;margin-bottom:6px}
+.step p{color:var(--text-muted);font-size:.92rem;margin:0}
+.uc{display:flex;gap:16px;align-items:flex-start}
+.uc .uc-ic{width:48px;height:48px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent)}
+.uc .uc-ic svg{width:24px;height:24px}
+.uc h4{font-family:var(--font-display);font-size:1.08rem;margin:2px 0 6px}
+.uc p{color:var(--text-muted);font-size:.92rem;margin:0}
+.intg{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(max-width:900px){.intg{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.intg{grid-template-columns:repeat(2,1fr)}}
+.itile{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;transition:border-color .3s,transform .3s var(--ease),background .3s,box-shadow .3s;cursor:default}
+.itile:hover{border-color:var(--border-strong);transform:translateY(-5px);background:var(--bg-card-hover);box-shadow:var(--shadow)}
+.itile .ilogo{width:40px;height:40px;display:grid;place-items:center;color:var(--text)}
+.itile .ilogo svg{width:28px;height:28px}
+.itile span{font-size:.82rem;font-weight:600;color:var(--text-muted)}
+.sec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:10px}
+@media(max-width:820px){.sec-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.sec-grid{grid-template-columns:1fr}}
+.sec-item{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 20px;transition:border-color .3s,transform .3s,background .3s}
+.sec-item:hover{border-color:var(--border-strong);transform:translateY(-3px);background:var(--bg-card-hover)}
+.sec-item .si-ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent);margin-bottom:14px}
+.sec-item .si-ic svg{width:21px;height:21px}
+.sec-item h4{font-family:var(--font-display);font-size:1rem;margin:0 0 5px}
+.sec-item p{font-size:.85rem;color:var(--text-muted);margin:0}
+.faq{max-width:820px;margin:0 auto}
+.qa{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-card);margin-bottom:14px;overflow:hidden;transition:border-color .3s,background .3s}
+.qa.open{border-color:var(--border-strong);background:var(--bg-card-hover)}
+.qa-q{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:var(--font-display);font-weight:600;font-size:1.04rem;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.qa-q .qi{width:26px;height:26px;flex-shrink:0;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;color:var(--accent);transition:transform .3s var(--ease),background .3s}
+.qa-q .qi svg{width:15px;height:15px}
+.qa.open .qa-q .qi{transform:rotate(45deg);background:var(--gradient-soft)}
+.qa-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.qa-a div{padding:0 22px 20px;color:var(--text-muted);font-size:.94rem}
+.cta-band{position:relative;overflow:hidden;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(40px,6vw,72px);text-align:center;box-shadow:var(--shadow)}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:0;background:var(--gradient);opacity:.1}
+.cta-band>*{position:relative;z-index:1}
+.cta-band h2{margin-bottom:12px}
+.cta-band p{color:var(--text-muted);max-width:540px;margin:0 auto 26px}
+.cta-band .hero-cta{justify-content:center;margin-top:0}
+.site-footer{border-top:1px solid var(--border);padding:64px 0 32px;margin-top:40px;background:var(--bg-elev)}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:32px}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.footer-grid h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px;font-family:var(--font)}
+.footer-grid ul{list-style:none;padding:0;margin:0}
+.footer-grid ul li{margin-bottom:10px}
+.footer-grid ul a{color:var(--text-muted);font-size:.92rem;transition:color .2s}
+.footer-grid ul a:hover{color:var(--accent)}
+.footer-about p{color:var(--text-muted);font-size:.92rem;max-width:280px;margin-top:14px}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer-legal{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.footer-legal a{color:var(--text-dim);transition:color .2s}
+.footer-legal a:hover{color:var(--accent)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--accent);color:#04121b;padding:10px 16px;border-radius:0 0 10px 0;z-index:200;font-weight:600}
+.skip-link:focus{left:0}
+.divider{height:1px;background:var(--border);border:none;margin:0}
+.demo-note{font-size:.74rem;color:var(--text-dim);text-align:center;margin-top:30px}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Core Insight home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#04121b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V4.4M12 12 5.5 16M12 12 18.5 16"/><circle cx="12" cy="4.4" r="1.7" fill="#04121b" stroke="none"/><circle cx="5.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="18.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="12" cy="12" r="2.7" fill="#04121b" stroke="none"/></svg></span>
+      <span><b>Core</b> <span class="ac">Insight</span><span class="by">by Intellect Core</span></span>
+    </a>
+    <nav aria-label="Main menu">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#demo" data-i18n="nav.demo">Live demo</a></li>
+        <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+        <li><a href="#capabilities" data-i18n="nav.cap">Capabilities</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" title="English / Nederlands" aria-label="Schakel naar Nederlands">NL</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-primary cta-nav-desktop" href="../../index.html#contact" data-i18n="nav.cta">Book a demo</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="badge rv"><span class="dot"></span> <span data-i18n="h.badge">Product demo · powered by Intellect Core</span></div>
+      <h1 class="rv d1" data-i18n="h.h1">Ask your <em class="gradient-text">data</em> anything.</h1>
+      <p class="lead rv d2" data-i18n="h.lead">Core Insight puts an AI analyst on top of your spreadsheets, exports and databases. Ask in plain language and get answers, analyses, recommendations and duplicate checks in seconds.</p>
+      <div class="hero-cta rv d3">
+        <a href="#demo" class="btn btn-primary btn-lg"><span data-i18n="h.cta1">Try the live demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg></a>
+        <a href="../../index.html#contact" class="btn btn-ghost btn-lg" data-i18n="h.cta2">Talk to Intellect Core</a>
+      </div>
+      <div class="hero-trust rv d4">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t1">No dashboards to build</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t2">Your data stays private</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="h.t3">Answers in seconds</span></span>
+      </div>
+      <div class="hmet rv d4">
+        <div class="met"><div class="mn gradient-text"><span data-count="5" data-suffix="s">0</span></div><div class="ml" data-i18n="h.m1">to your first answer</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="0">0</span></div><div class="ml" data-i18n="h.m2">dashboards to build</div></div>
+        <div class="met"><div class="mn gradient-text"><span data-count="40" data-suffix="+">0</span></div><div class="ml" data-i18n="h.m3">data sources supported</div></div>
+        <div class="met"><div class="mn gradient-text">24/7</div><div class="ml" data-i18n="h.m4">always-on analysis</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="mwrap">
+    <div class="container"><div class="mlabel" data-i18n="mq.label">The questions your team asks every week</div></div>
+    <div class="mtrack">
+      <span class="mi"><em>"</em><span data-i18n="mq.1">What did we spend on marketing?</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.2">Show my top 5 customers</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.3">Are there any duplicate invoices?</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.4">Summarise this sheet</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.5">What changed versus last month?</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.6">Flag anything unusual</span><span class="ms"></span></span>
+      <span class="mi"><em>"</em><span data-i18n="mq.7">Which invoices are overdue?</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.1">What did we spend on marketing?</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.2">Show my top 5 customers</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.3">Are there any duplicate invoices?</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.4">Summarise this sheet</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.5">What changed versus last month?</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.6">Flag anything unusual</span><span class="ms"></span></span>
+      <span class="mi" aria-hidden="true"><em>"</em><span data-i18n="mq.7">Which invoices are overdue?</span><span class="ms"></span></span>
+    </div>
+  </div>
+
+  <!-- LIVE DEMO -->
+  <section id="demo" class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="dm.eyebrow">Live demo</div>
+        <h2 data-i18n="dm.h2">Ask this dataset a question</h2>
+        <p data-i18n="dm.p">This is a sample expense sheet. Click a question and watch Core Insight answer, analyse and flag issues in real time, the same engine we build for clients.</p>
+      </div>
+      <div class="demo-wrap rv">
+        <!-- Data -->
+        <div class="glass-panel demo-col">
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="ttitle">expenses_q2.csv</span></div>
+          <div class="dwrap">
+            <table class="dtable" id="dtable">
+              <thead><tr><th data-i18n="d.th1">Date</th><th data-i18n="d.th2">Vendor</th><th data-i18n="d.th3">Category</th><th class="amt" data-i18n="d.th4">Amount</th></tr></thead>
+              <tbody>
+                <tr class="dt-row" data-r="1"><td>03 Apr</td><td>Datalink N.V.</td><td>Software</td><td class="amt">SRD 4,200</td></tr>
+                <tr class="dt-row" data-r="2"><td>07 Apr</td><td>City Fuel</td><td>Transport</td><td class="amt">SRD 1,850</td></tr>
+                <tr class="dt-row" data-r="3"><td>11 Apr</td><td>Acme Supplies</td><td>Office</td><td class="amt">SRD 920</td></tr>
+                <tr class="dt-row" data-r="4"><td>14 Apr</td><td>Datalink N.V.</td><td>Software</td><td class="amt">SRD 4,200</td></tr>
+                <tr class="dt-row" data-r="5"><td>19 Apr</td><td>Harbor Freight Co</td><td>Logistics</td><td class="amt">SRD 12,400</td></tr>
+                <tr class="dt-row" data-r="6"><td>22 Apr</td><td>City Fuel</td><td>Transport</td><td class="amt">SRD 1,850</td></tr>
+                <tr class="dt-row" data-r="7"><td>26 Apr</td><td>Acme Supplies</td><td>Office</td><td class="amt">SRD 640</td></tr>
+                <tr class="dt-row" data-r="8"><td>29 Apr</td><td>CloudHost</td><td>Software</td><td class="amt">SRD 2,300</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Chat -->
+        <div class="glass-panel demo-col">
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="ttitle">Core Insight</span></div>
+          <div class="chat">
+            <div class="chat-log" id="chatLog">
+              <div class="msg a"><span class="cav">◆</span><div class="bubble" data-i18n="d.greet">Ask me anything about this data. Pick a question below to start.</div></div>
+            </div>
+            <div class="chips" id="chips">
+              <button class="chip" data-q="summary" data-i18n="d.q1">Summarise the spend</button>
+              <button class="chip" data-q="dupes" data-i18n="d.q2">Find duplicates</button>
+              <button class="chip" data-q="save" data-i18n="d.q3">Where can I cut costs?</button>
+              <button class="chip" data-q="anom" data-i18n="d.q4">Spot anomalies</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note" data-i18n="dm.note">Demo only · simulated locally in your browser. Figures and data are illustrative.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="hw.eyebrow">How it works</div>
+        <h2 data-i18n="hw.h2">From raw data to a real answer, in three steps</h2>
+        <p data-i18n="hw.p">No dashboards, no SQL, no waiting on an analyst. Point Core Insight at your data and just ask.</p>
+      </div>
+      <div class="steps">
+        <div class="card step rv"><div class="num">01</div><h4 data-i18n="hw.s1h">Connect your data</h4><p data-i18n="hw.s1p">Upload a spreadsheet or connect a source: Sheets, Excel, CSV, a database or your ERP. Core Insight reads the structure automatically.</p></div>
+        <div class="card step rv d1"><div class="num">02</div><h4 data-i18n="hw.s2h">Ask in plain language</h4><p data-i18n="hw.s2p">Type a question the way you would ask a colleague. No formulas, no query language, in English or Dutch.</p></div>
+        <div class="card step rv d2"><div class="num">03</div><h4 data-i18n="hw.s3h">Get answers and actions</h4><p data-i18n="hw.s3p">Core Insight returns a clear answer with the numbers, a chart where it helps, and concrete recommendations you can act on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities" class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="cap.eyebrow">What it does</div>
+        <h2 data-i18n="cap.h2">One assistant, every data question</h2>
+        <p data-i18n="cap.p">The same engine behind our custom analytics work, packaged so anyone on your team can use it.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card cap rv"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></div><h3 data-i18n="cap.c1h">Instant analysis</h3><p data-i18n="cap.c1p">Totals, breakdowns, trends and comparisons, summarised in plain language with the chart that makes it click.</p></article>
+        <article class="card cap rv d1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></div><h3 data-i18n="cap.c2h">Recommendations &amp; proposals</h3><p data-i18n="cap.c2p">Not just numbers: Core Insight suggests next steps, drafts proposals and flags what deserves your attention.</p></article>
+        <article class="card cap rv d2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V4h12"/></svg></div><h3 data-i18n="cap.c3h">Duplicate &amp; error detection</h3><p data-i18n="cap.c3p">Spots double payments, duplicate records and inconsistencies that quietly cost money, and tells you exactly where.</p></article>
+        <article class="card cap rv"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3 data-i18n="cap.c4h">Anomaly spotting</h3><p data-i18n="cap.c4p">Outliers, unusual spikes and values that break the pattern get surfaced automatically, before they become a problem.</p></article>
+        <article class="card cap rv d1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 3h4v4"/></svg></div><h3 data-i18n="cap.c5h">Trends &amp; forecasts</h3><p data-i18n="cap.c5p">See how the numbers move over time and where they are heading, so decisions run on direction, not guesswork.</p></article>
+        <article class="card cap rv d2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 data-i18n="cap.c6h">Ask anything, in your language</h3><p data-i18n="cap.c6p">Questions and answers in plain English or Dutch, with sources you can trace back to the exact rows.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- DATA SOURCES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="in.eyebrow">Your data</div>
+        <h2 data-i18n="in.h2">Works with the data you already have</h2>
+        <p data-i18n="in.p">Point it at a file or connect a live source. No migration, no rebuild.</p>
+      </div>
+      <div class="intg rv">
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/></svg></span><span>Google Sheets</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m8 8 8 8M16 8l-8 8"/></svg></span><span>Excel</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><span>CSV</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span>Databases</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span>Notion</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M15 9v11"/></svg></span><span>Airtable</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 0 0 8 0 4 4 0 0 0-8 0z"/></svg></span><span>ERP / CRM</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><span>REST API</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3 8 13h4l-2 8 6-10h-4z"/></svg></span><span>Webhooks</span></div>
+        <div class="itile"><span class="ilogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg></span><span>Slack</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- USE CASES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="uc.eyebrow">Use cases</div>
+        <h2 data-i18n="uc.h2">Drawn from real Intellect Core projects</h2>
+        <p data-i18n="uc.p">Core Insight productizes the analytics and data work we already deliver for clients.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card rv"><div class="uc"><span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v9h14v-9M9 19v-5h6v5"/></svg></span><div><h4 data-i18n="uc.c1h">Finance &amp; bookkeeping</h4><p data-i18n="uc.c1p">Ask where the money goes, catch double payments and get a monthly summary written for you, straight from your ledger or bank export.</p></div></div></div>
+        <div class="card rv d1"><div class="uc"><span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></span><div><h4 data-i18n="uc.c2h">Operations &amp; inventory</h4><p data-i18n="uc.c2p">Question stock, orders and throughput, spot the anomaly in a shipment file and get the reorder proposal without building a report.</p></div></div></div>
+        <div class="card rv d2"><div class="uc"><span class="uc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1A4 4 0 0 1 16 11"/></svg></span><div><h4 data-i18n="uc.c3h">Sales &amp; customers</h4><p data-i18n="uc.c3p">Find your top accounts, the churn risks and the duplicate contacts in your CRM export, then ask what to do about them.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SECURITY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="se.eyebrow">Security &amp; privacy</div>
+        <h2 data-i18n="se.h2">Your data stays yours</h2>
+        <p data-i18n="se.p">Built privacy-first, the way Intellect Core builds everything: your data is analysed for you and no one else.</p>
+      </div>
+      <div class="sec-grid rv">
+        <div class="sec-item"><div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><h4 data-i18n="se.c1h">Encrypted</h4><p data-i18n="se.c1p">Encrypted in transit and at rest on every connection and file.</p></div>
+        <div class="sec-item"><div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M21 12a9 9 0 1 1-6.2-8.6"/></svg></div><h4 data-i18n="se.c2h">Not used for training</h4><p data-i18n="se.c2p">Your data is never used to train shared models. It answers your questions, nothing more.</p></div>
+        <div class="sec-item"><div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><h4 data-i18n="se.c3h">You set retention</h4><p data-i18n="se.c3p">Keep a live connection or delete the data after each answer. Your call.</p></div>
+        <div class="sec-item"><div class="si-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 7.5 8 10 4.5-2.5 8-5 8-10V6l-8-4z"/></svg></div><h4 data-i18n="se.c4h">Runs in your environment</h4><p data-i18n="se.c4p">Can be deployed inside your own systems and accounts, with least-access by default.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-head center rv">
+        <div class="eyebrow" data-i18n="fq.eyebrow">FAQ</div>
+        <h2 data-i18n="fq.h2">Questions, answered</h2>
+      </div>
+      <div class="faq rv">
+        <div class="qa">
+          <button class="qa-q"><span data-i18n="fq.q1">Do I need to know SQL or formulas?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a1">No. You ask in plain English or Dutch, the way you would ask a colleague. Core Insight handles the rest and shows its working.</div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q"><span data-i18n="fq.q2">What data can it read?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a2">Spreadsheets (Excel, Google Sheets, CSV), database exports, and live sources like databases, ERPs and CRMs. It reads the structure automatically, with no setup templates.</div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q"><span data-i18n="fq.q3">Can I trust the answers?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a3">Every answer points back to the exact rows it used, so you can verify it. Anything uncertain is flagged rather than guessed, with a human always in control.</div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q"><span data-i18n="fq.q4">Is my data safe?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a4">Your data is encrypted, never used to train shared models, and can run inside your own environment. You control how long anything is kept.</div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q"><span data-i18n="fq.q5">Is this a real product I can use today?</span><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="qa-a"><div data-i18n="fq.a5">This page is a product demo by Intellect Core showing the analytics capability we build for clients. For a deployment tailored to your data, get in touch with the Intellect Core team.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="section">
+    <div class="container">
+      <div class="cta-band rv">
+        <div class="eyebrow" style="justify-content:center" data-i18n="ct.eyebrow">Get started</div>
+        <h2 data-i18n="ct.h2">Stop building dashboards. <span class="gradient-text">Start asking.</span></h2>
+        <p data-i18n="ct.p">See Core Insight on your own data. Book a 30-minute demo with Intellect Core. No commitment.</p>
+        <div class="hero-cta">
+          <a href="../../index.html#contact" class="btn btn-primary btn-lg"><span data-i18n="ct.book">Book a demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#demo" class="btn btn-ghost btn-lg" data-i18n="ct.replay">Replay the demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#04121b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V4.4M12 12 5.5 16M12 12 18.5 16"/><circle cx="12" cy="4.4" r="1.7" fill="#04121b" stroke="none"/><circle cx="5.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="18.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="12" cy="12" r="2.7" fill="#04121b" stroke="none"/></svg></span><span><b>Core</b> <span class="ac">Insight</span></span></a>
+        <p data-i18n="ft.about">An AI analyst for your data, a product concept by Intellect Core. Ask questions, get answers, analyses and actions.</p>
+      </div>
+      <div><h4 data-i18n="ft.hp">Product</h4><ul><li><a href="#demo" data-i18n="nav.demo">Live demo</a></li><li><a href="#how" data-i18n="nav.how">How it works</a></li><li><a href="#capabilities" data-i18n="nav.cap">Capabilities</a></li><li><a href="#faq" data-i18n="nav.faq">FAQ</a></li></ul></div>
+      <div><h4 data-i18n="ft.ha">Ask about</h4><ul><li><a href="#capabilities" data-i18n="ft.a1">Analysis</a></li><li><a href="#capabilities" data-i18n="ft.a2">Duplicates</a></li><li><a href="#capabilities" data-i18n="ft.a3">Anomalies</a></li><li><a href="#capabilities" data-i18n="ft.a4">Recommendations</a></li></ul></div>
+      <div><h4 data-i18n="ft.hi">Intellect Core</h4><ul><li><a href="../../index.html" data-i18n="ft.main">Main site</a></li><li><a href="../../index.html#services" data-i18n="ft.serv">Services</a></li><li><a href="../demo/index.html">Core Parse</a></li><li><a href="../../index.html#contact" data-i18n="ft.cont">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft.copy">© 2026 Intellect Core · Core Insight is a product concept demo.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../../privacybeleid.html" data-i18n="ft.priv">Privacy policy</a>
+        <span aria-hidden="true">·</span>
+        <a href="../../algemene-voorwaarden.html" data-i18n="ft.terms">Terms &amp; conditions</a>
+      </nav>
+      <span>hello@intellectcore.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Theme — shares 'ic-theme' with the rest of the Intellect Core site */
+(function(){
+  var saved=null; try{saved=localStorage.getItem("ic-theme")}catch(e){}
+  if(saved) document.documentElement.setAttribute("data-theme",saved);
+  var t=document.getElementById("themeToggle");
+  t&&t.addEventListener("click",function(){
+    var light=document.documentElement.getAttribute("data-theme")==="light";
+    var next=light?"dark":"light";
+    document.documentElement.setAttribute("data-theme",next);
+    try{localStorage.setItem("ic-theme",next)}catch(e){}
+  });
+})();
+
+/* Mobile nav */
+(function(){
+  var tog=document.getElementById("navToggle"),links=document.getElementById("navLinks");
+  if(!tog||!links)return;
+  tog.addEventListener("click",function(){var o=document.body.classList.toggle("nav-open");tog.setAttribute("aria-expanded",o?"true":"false")});
+  links.addEventListener("click",function(e){if(e.target.tagName==="A"){document.body.classList.remove("nav-open");tog.setAttribute("aria-expanded","false")}});
+})();
+
+/* Sticky header */
+(function(){
+  var h=document.getElementById("siteHeader");
+  function s(){if(window.scrollY>12)h.classList.add("scrolled");else h.classList.remove("scrolled")}
+  s();window.addEventListener("scroll",s,{passive:true});
+})();
+
+/* Reveal on scroll */
+(function(){
+  var els=document.querySelectorAll(".rv");
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("vis")});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("vis");io.unobserve(e.target)}})},{threshold:.14,rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* Counters */
+(function(){
+  var nums=document.querySelectorAll("[data-count]");
+  if(!nums.length)return;
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){
+    if(!e.isIntersecting)return;
+    var el=e.target,target=parseFloat(el.getAttribute("data-count")),suf=el.getAttribute("data-suffix")||"",t0=null;
+    function tick(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1400,1),eased=1-Math.pow(1-p,3);el.textContent=Math.round(target*eased)+suf;if(p<1)requestAnimationFrame(tick)}
+    requestAnimationFrame(tick);io.unobserve(el);
+  })},{threshold:.5});
+  nums.forEach(function(n){io.observe(n)});
+})();
+
+/* FAQ accordion */
+(function(){
+  var qs=document.querySelectorAll(".qa-q");
+  qs.forEach(function(q){q.addEventListener("click",function(){
+    var qa=q.parentElement,a=q.nextElementSibling,open=qa.classList.contains("open");
+    document.querySelectorAll(".qa.open").forEach(function(o){o.classList.remove("open");o.querySelector(".qa-a").style.maxHeight=null});
+    if(!open){qa.classList.add("open");a.style.maxHeight=a.scrollHeight+"px"}
+  })});
+})();
+
+/* ── Ask-your-data demo ── */
+(function(){
+  var log=document.getElementById("chatLog"),chips=document.getElementById("chips"),table=document.getElementById("dtable");
+  if(!log||!chips||!table)return;
+  var busy=false;
+  function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
+  function clearHL(){[].forEach.call(table.querySelectorAll(".dt-row"),function(r){r.classList.remove("hl-dup","hl-anom")})}
+  function bubble(cls,html){var m=document.createElement("div");m.className="msg "+cls;m.innerHTML=(cls==="a"?'<span class="cav">◆</span>':'<span class="cav">U</span>')+'<div class="bubble">'+html+"</div>";log.appendChild(m);log.scrollTop=log.scrollHeight;return m}
+  var CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>';
+  var A={
+    summary:{q:{en:"Summarise the spend",nl:"Vat de uitgaven samen"},
+      a:{en:'Total spend is <b>SRD 28,360</b> across 8 transactions. <b>Logistics</b> is the largest category at 44%, driven by a single SRD 12,400 payment. <b>Software</b> follows at 38%.',
+         nl:'Totale uitgaven zijn <b>SRD 28.360</b> over 8 transacties. <b>Logistiek</b> is de grootste categorie met 44%, door één betaling van SRD 12.400. <b>Software</b> volgt met 38%.'},
+      bars:[["Logistics","Logistiek",44],["Software","Software",38],["Transport","Transport",13],["Office","Kantoor",5]]},
+    dupes:{q:{en:"Find duplicates",nl:"Vind duplicaten"},
+      a:{en:'Found <b>2 likely duplicates</b>: Datalink N.V. (SRD 4,200 on 03 &amp; 14 Apr) and City Fuel (SRD 1,850 on 07 &amp; 22 Apr). That is <b>SRD 6,050</b> possibly paid twice.',
+         nl:'<b>2 waarschijnlijke duplicaten</b> gevonden: Datalink N.V. (SRD 4.200 op 03 &amp; 14 apr) en City Fuel (SRD 1.850 op 07 &amp; 22 apr). Dat is <b>SRD 6.050</b> mogelijk dubbel betaald.'},
+      hl:{cls:"hl-dup",rows:[1,4,2,6]}},
+    save:{q:{en:"Where can I cut costs?",nl:"Waar kan ik besparen?"},
+      a:{en:"Three quick wins from this sheet:",nl:"Drie snelle besparingen uit dit overzicht:"},
+      recs:[["Recover SRD 6,050 in duplicate payments.","Vorder SRD 6.050 aan dubbele betalingen terug."],
+            ["The SRD 12,400 Harbor Freight charge is ~8x your median, verify it before paying.","De post van SRD 12.400 bij Harbor Freight is ~8x uw mediaan, controleer die vóór betaling."],
+            ["Software runs across 3 tools (38% of spend), consolidate the licenses.","Software loopt over 3 tools (38% van de uitgaven), consolideer de licenties."]]},
+    anom:{q:{en:"Spot anomalies",nl:"Spot afwijkingen"},
+      a:{en:'One clear outlier: <b>Harbor Freight Co, SRD 12,400</b> on 19 Apr, roughly 8x your median transaction. Worth a review.',
+         nl:'Eén duidelijke uitschieter: <b>Harbor Freight Co, SRD 12.400</b> op 19 apr, ongeveer 8x uw mediane transactie. Het bekijken waard.'},
+      hl:{cls:"hl-anom",rows:[5]}}
+  };
+  function run(key){
+    if(busy)return;var item=A[key];if(!item)return;busy=true;clearHL();
+    [].forEach.call(chips.children,function(c){c.disabled=true});
+    var L=lang();
+    bubble("q",item.q[L]);
+    var ai=bubble("a",'<span class="typing"><i></i><i></i><i></i></span>');
+    setTimeout(function(){
+      var html=item.a[L];
+      if(item.bars){var b='<div class="mini-bars">';item.bars.forEach(function(x){b+='<div class="mbar"><span class="mb-k">'+(L==="nl"?x[1]:x[0])+'</span><span class="mb-t"><span class="mb-f" data-w="'+x[2]+'"></span></span><span class="mb-v">'+x[2]+'%</span></div>'});b+="</div>";html+=b}
+      if(item.recs){var r='<ul class="rec-list">';item.recs.forEach(function(x){r+="<li>"+CHK+"<span>"+(L==="nl"?x[1]:x[0])+"</span></li>"});r+="</ul>";html+=r}
+      ai.querySelector(".bubble").innerHTML=html;
+      setTimeout(function(){[].forEach.call(ai.querySelectorAll(".mb-f"),function(f){f.style.width=f.getAttribute("data-w")+"%"})},80);
+      if(item.hl){item.hl.rows.forEach(function(n){var row=table.querySelector('.dt-row[data-r="'+n+'"]');if(row)row.classList.add(item.hl.cls)})}
+      log.scrollTop=log.scrollHeight;
+      [].forEach.call(chips.children,function(c){c.disabled=false});
+      busy=false;
+    },850);
+  }
+  chips.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)run(b.getAttribute("data-q"))});
+})();
+
+/* Language — EN default, NL via the header toggle; shares 'ic-lang' with the main site */
+(function(){
+  var NL={
+    "skip":"Naar inhoud",
+    "nav.demo":"Live demo","nav.how":"Hoe het werkt","nav.cap":"Mogelijkheden","nav.faq":"FAQ","nav.cta":"Boek een demo",
+    "h.badge":"Productdemo · mogelijk gemaakt door Intellect Core",
+    "h.h1":"Vraag uw <em class=\"gradient-text\">data</em> alles.",
+    "h.lead":"Core Insight zet een AI-analist bovenop uw spreadsheets, exports en databases. Vraag in gewone taal en krijg in seconden antwoorden, analyses, aanbevelingen en duplicatenchecks.",
+    "h.cta1":"Probeer de live demo","h.cta2":"Praat met Intellect Core",
+    "h.t1":"Geen dashboards bouwen","h.t2":"Uw data blijft privé","h.t3":"Antwoorden in seconden",
+    "h.m1":"tot uw eerste antwoord","h.m2":"dashboards te bouwen","h.m3":"databronnen ondersteund","h.m4":"altijd analyseren",
+    "mq.label":"De vragen die uw team elke week stelt",
+    "mq.1":"Wat gaven we uit aan marketing?","mq.2":"Toon mijn top 5 klanten","mq.3":"Zijn er dubbele facturen?","mq.4":"Vat dit blad samen","mq.5":"Wat veranderde t.o.v. vorige maand?","mq.6":"Markeer iets ongewoons","mq.7":"Welke facturen zijn te laat?",
+    "dm.eyebrow":"Live demo","dm.h2":"Stel deze dataset een vraag",
+    "dm.p":"Dit is een voorbeeld-uitgavenblad. Klik op een vraag en zie Core Insight in realtime antwoorden, analyseren en problemen markeren, dezelfde engine die we voor klanten bouwen.",
+    "dm.note":"Alleen demo · lokaal gesimuleerd in uw browser. Cijfers en data zijn illustratief.",
+    "d.th1":"Datum","d.th2":"Leverancier","d.th3":"Categorie","d.th4":"Bedrag",
+    "d.greet":"Vraag me alles over deze data. Kies hieronder een vraag om te beginnen.",
+    "d.q1":"Vat de uitgaven samen","d.q2":"Vind duplicaten","d.q3":"Waar kan ik besparen?","d.q4":"Spot afwijkingen",
+    "hw.eyebrow":"Hoe het werkt","hw.h2":"Van ruwe data naar een echt antwoord, in drie stappen",
+    "hw.p":"Geen dashboards, geen SQL, niet wachten op een analist. Richt Core Insight op uw data en vraag gewoon.",
+    "hw.s1h":"Koppel uw data","hw.s1p":"Upload een spreadsheet of koppel een bron: Sheets, Excel, CSV, een database of uw ERP. Core Insight leest de structuur automatisch.",
+    "hw.s2h":"Vraag in gewone taal","hw.s2p":"Typ een vraag zoals u die aan een collega zou stellen. Geen formules, geen querytaal, in het Engels of Nederlands.",
+    "hw.s3h":"Krijg antwoorden en acties","hw.s3p":"Core Insight geeft een helder antwoord met de cijfers, een grafiek waar dat helpt, en concrete aanbevelingen waar u iets mee kunt.",
+    "cap.eyebrow":"Wat het doet","cap.h2":"Eén assistent, elke datavraag",
+    "cap.p":"Dezelfde engine achter ons maatwerk-analysewerk, verpakt zodat iedereen in uw team het kan gebruiken.",
+    "cap.c1h":"Directe analyse","cap.c1p":"Totalen, uitsplitsingen, trends en vergelijkingen, samengevat in gewone taal met de grafiek die het duidelijk maakt.",
+    "cap.c2h":"Aanbevelingen &amp; voorstellen","cap.c2p":"Niet alleen cijfers: Core Insight stelt vervolgstappen voor, schrijft voorstellen en markeert wat uw aandacht verdient.",
+    "cap.c3h":"Duplicaten &amp; fouten opsporen","cap.c3p":"Spot dubbele betalingen, dubbele records en inconsistenties die stilletjes geld kosten, en zegt precies waar.",
+    "cap.c4h":"Afwijkingen signaleren","cap.c4p":"Uitschieters, ongewone pieken en waarden die uit het patroon vallen komen automatisch bovendrijven, vóór ze een probleem worden.",
+    "cap.c5h":"Trends &amp; prognoses","cap.c5p":"Zie hoe de cijfers zich over tijd bewegen en waar ze heen gaan, zodat beslissingen op richting draaien in plaats van onderbuikgevoel.",
+    "cap.c6h":"Vraag alles, in uw taal","cap.c6p":"Vragen en antwoorden in gewoon Engels of Nederlands, met bronnen die u kunt terugleiden naar de exacte rijen.",
+    "in.eyebrow":"Uw data","in.h2":"Werkt met de data die u al heeft",
+    "in.p":"Richt het op een bestand of koppel een live bron. Geen migratie, geen herbouw.",
+    "uc.eyebrow":"Toepassingen","uc.h2":"Uit echte Intellect Core-projecten",
+    "uc.p":"Core Insight maakt een product van het analyse- en datawerk dat we al voor klanten leveren.",
+    "uc.c1h":"Finance &amp; boekhouding","uc.c1p":"Vraag waar het geld heen gaat, betrap dubbele betalingen en krijg een maandoverzicht voor u geschreven, rechtstreeks uit uw grootboek of bankexport.",
+    "uc.c2h":"Operations &amp; voorraad","uc.c2p":"Bevraag voorraad, orders en doorlooptijd, spot de afwijking in een zendingsbestand en krijg het bestelvoorstel zonder een rapport te bouwen.",
+    "uc.c3h":"Sales &amp; klanten","uc.c3p":"Vind uw grootste accounts, de opzegrisico's en de dubbele contacten in uw CRM-export, en vraag dan wat u eraan moet doen.",
+    "se.eyebrow":"Beveiliging &amp; privacy","se.h2":"Uw data blijft van u",
+    "se.p":"Privacy-first gebouwd, zoals Intellect Core alles bouwt: uw data wordt voor u geanalyseerd en voor niemand anders.",
+    "se.c1h":"Versleuteld","se.c1p":"Versleuteld tijdens transport en in rust, op elke verbinding en elk bestand.",
+    "se.c2h":"Niet voor training gebruikt","se.c2p":"Uw data wordt nooit gebruikt om gedeelde modellen te trainen. Het beantwoordt uw vragen, meer niet.",
+    "se.c3h":"U bepaalt de bewaartermijn","se.c3p":"Houd een live verbinding of verwijder de data na elk antwoord. U beslist.",
+    "se.c4h":"Draait in uw omgeving","se.c4p":"Kan binnen uw eigen systemen en accounts worden ingezet, standaard volgens least-access.",
+    "fq.eyebrow":"FAQ","fq.h2":"Vragen, beantwoord",
+    "fq.q1":"Moet ik SQL of formules kennen?","fq.a1":"Nee. U vraagt in gewoon Engels of Nederlands, zoals u het een collega zou vragen. Core Insight doet de rest en laat zien hoe het tot het antwoord komt.",
+    "fq.q2":"Welke data kan het lezen?","fq.a2":"Spreadsheets (Excel, Google Sheets, CSV), database-exports en live bronnen zoals databases, ERP's en CRM's. Het leest de structuur automatisch, zonder setup-templates.",
+    "fq.q3":"Kan ik de antwoorden vertrouwen?","fq.a3":"Elk antwoord verwijst terug naar de exacte rijen die het gebruikte, zodat u het kunt controleren. Alles wat onzeker is wordt gemarkeerd in plaats van gegokt, met altijd een mens aan het stuur.",
+    "fq.q4":"Is mijn data veilig?","fq.a4":"Uw data is versleuteld, wordt nooit gebruikt om gedeelde modellen te trainen, en kan binnen uw eigen omgeving draaien. U bepaalt hoe lang iets bewaard blijft.",
+    "fq.q5":"Is dit een echt product dat ik vandaag kan gebruiken?","fq.a5":"Deze pagina is een productdemo van Intellect Core die de analysecapaciteit toont die we voor klanten bouwen. Voor een implementatie op maat van uw data neemt u contact op met het Intellect Core-team.",
+    "ct.eyebrow":"Aan de slag","ct.h2":"Stop met dashboards bouwen. <span class=\"gradient-text\">Begin met vragen.</span>",
+    "ct.p":"Zie Core Insight op uw eigen data. Boek een demo van 30 minuten met Intellect Core. Vrijblijvend.",
+    "ct.book":"Boek een demo","ct.replay":"Speel de demo opnieuw af",
+    "ft.about":"Een AI-analist voor uw data, een productconcept van Intellect Core. Stel vragen, krijg antwoorden, analyses en acties.",
+    "ft.hp":"Product","ft.ha":"Vraag over","ft.hi":"Intellect Core",
+    "ft.a1":"Analyse","ft.a2":"Duplicaten","ft.a3":"Afwijkingen","ft.a4":"Aanbevelingen",
+    "ft.main":"Hoofdsite","ft.serv":"Diensten","ft.cont":"Contact",
+    "ft.copy":"© 2026 Intellect Core · Core Insight is een productconcept-demo.",
+    "ft.priv":"Privacybeleid","ft.terms":"Algemene voorwaarden"
+  };
+  var EN={};
+  var btn=document.getElementById("langToggle");
+  function apply(lang){
+    document.documentElement.setAttribute("lang",lang==="nl"?"nl":"en");
+    document.documentElement.setAttribute("data-lang",lang);
+    var els=document.querySelectorAll("[data-i18n]"),i,el,k;
+    for(i=0;i<els.length;i++){
+      el=els[i];k=el.getAttribute("data-i18n");
+      if(lang==="nl"){if(EN[k]===undefined)EN[k]=el.innerHTML;if(NL[k]!==undefined)el.innerHTML=NL[k];}
+      else if(EN[k]!==undefined)el.innerHTML=EN[k];
+    }
+    if(btn){btn.textContent=lang==="nl"?"EN":"NL";btn.setAttribute("aria-label",lang==="nl"?"Switch to English":"Schakel naar Nederlands");}
+    try{localStorage.setItem("ic-lang",lang)}catch(e){}
+  }
+  var saved=null;try{saved=localStorage.getItem("ic-lang")}catch(e){}
+  if(saved==="nl")apply("nl");
+  btn&&btn.addEventListener("click",function(){apply(document.documentElement.getAttribute("data-lang")==="nl"?"en":"nl")});
+})();
+</script>
+</body>
+</html>
