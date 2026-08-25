@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Intellect Core | AI &amp; Automation that pays for itself</title>
-<meta name="description" content="Intellect Core builds custom AI and automation that erases busywork: bank statements, invoices, email and reports handled automatically. Based in Suriname, serving clients globally. First automation live in about a week." />
+<title>Intellect Core | We think in smart solutions</title>
+<meta name="description" content="Intellect Core is a smart-solutions company. You bring the problem, we think it through and build the smart solution that fits: automation, AI, web and SaaS apps or data, tailored to your business. Based in Suriname, serving clients worldwide." />
 <meta name="robots" content="index, follow" />
 <!-- TODO: replace https://intellectcore.com with your real domain (canonical, OG, JSON-LD) -->
 <link rel="canonical" href="https://intellectcore.com/" />
@@ -13,8 +13,8 @@
 <meta name="geo.placename" content="Suriname" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Intellect Core" />
-<meta property="og:title" content="Intellect Core | AI &amp; Automation that pays for itself" />
-<meta property="og:description" content="Custom AI, automation and data systems that erase busywork. Proven in production. First automation live in about a week." />
+<meta property="og:title" content="Intellect Core | We think in smart solutions" />
+<meta property="og:description" content="A smart-solutions company. You bring the problem, we build the solution that fits, tailored to your business and proven in production." />
 <meta property="og:image" content="logo.svg" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,29 +25,29 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Intellect Core",
-  "description": "AI & automation studio. Custom AI systems, process automation and data solutions, from concept to production.",
+  "description": "Smart-solutions company. Custom automation, AI systems, web and SaaS apps and data solutions built around each client's problem, from concept to production.",
   "url": "https://intellectcore.com/",
   "email": "hello@intellectcore.com",
-  "areaServed": ["Suriname", "Worldwide"],
-  "priceRange": "$350 - $10000+"
+  "areaServed": ["Suriname", "Worldwide"]
 }
 </script>
 <style>
 /* =====================================================================
-   Intellect Core — "fable" edition
-   Conversion-first: prove it (live demo), price the pain (ROI
-   calculator), remove the risk (free quickscan), then ask once.
-   Same palette & type as the main site so the brand stays one thing.
+   Intellect Core — rebuild
+   Lighter, visibility-first. One idea: every problem, a smarter solution.
+   Signature visual: a glowing CORE that radiates capabilities outward.
+   Palette stays blue; the core + its signals glow mint/teal.
    ===================================================================== */
 :root{
   --accent:#2e8bff; --accent-2:#19c8ff; --accent-3:#5ad1ff;
+  --core:#5af0c4; --core-2:#2fd7a5; --core-glow:rgba(90,240,196,.5);
   --gradient:linear-gradient(120deg,var(--accent),var(--accent-2));
   --gradient-soft:linear-gradient(120deg,rgba(46,139,255,.14),rgba(25,200,255,.12));
+  --core-gradient:linear-gradient(120deg,var(--accent),var(--core));
   --bg:#070d1a; --bg-elev:#0b1322; --bg-soft:rgba(255,255,255,.03);
   --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.15);
   --text:#eef2fb; --text-muted:#9aa9c4; --text-dim:#697892;
-  --good:#28c840; --good-soft:rgba(40,200,120,.14);
-  --bad:#ff5f57; --bad-soft:rgba(255,95,87,.12);
+  --spoke:rgba(120,150,210,.30);
   --shadow:0 30px 70px -30px rgba(0,0,0,.7);
   --glow:0 0 60px -10px rgba(46,139,255,.4);
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -61,6 +61,8 @@
   --bg:#f6f9ff; --bg-elev:#ffffff; --bg-soft:rgba(13,25,48,.03);
   --border:rgba(13,25,48,.09); --border-strong:rgba(13,25,48,.16);
   --text:#0b1426; --text-muted:#47587a; --text-dim:#76849c;
+  --core-2:#17b489;
+  --spoke:rgba(40,90,170,.22);
   --shadow:0 30px 70px -34px rgba(20,40,90,.28);
   --glow:0 0 60px -10px rgba(40,120,230,.22);
 }
@@ -68,25 +70,26 @@
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 20px)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;transition:background .4s var(--ease),color .4s var(--ease)}
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(700px 460px at 15% -8%,rgba(25,200,255,.12),transparent 60%),radial-gradient(680px 460px at 92% -2%,rgba(46,139,255,.14),transparent 58%);pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(720px 480px at 14% -8%,rgba(90,240,196,.10),transparent 60%),radial-gradient(760px 500px at 90% -4%,rgba(46,139,255,.15),transparent 58%);pointer-events:none}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.1;letter-spacing:-.022em;margin:0 0 .45em}
-h1{font-size:clamp(2.7rem,6.2vw,4.6rem)}
+h1{font-size:clamp(2.6rem,6vw,4.4rem)}
 h2{font-size:clamp(1.95rem,3.6vw,2.85rem)}
 h3{font-size:clamp(1.15rem,1.8vw,1.4rem)}
 p{margin:0 0 1rem}
 ::selection{background:var(--accent);color:#04121b}
 
 .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.section{padding:clamp(90px,12.5vw,172px) 0}
+.section{padding:clamp(80px,11vw,150px) 0}
 .center{text-align:center}
 .muted{color:var(--text-muted)}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.core-text{background:var(--core-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--accent);border-radius:2px}
 .lead{font-size:clamp(1.08rem,1.6vw,1.24rem);color:var(--text-muted)}
-.section-head{max-width:var(--maxw-text);margin:0 auto clamp(58px,7vw,88px)}
+.section-head{max-width:var(--maxw-text);margin:0 auto clamp(52px,6.5vw,80px)}
 .section-head.center .eyebrow{justify-content:center}
 
 /* Buttons */
@@ -102,35 +105,17 @@ p{margin:0 0 1rem}
 
 /* Header */
 .site-header{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;display:flex;align-items:center;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
-.site-header .container{max-width:1360px}
-@media(max-width:1360px){.cta-nav-desktop{display:none}}
+.site-header .container{max-width:1280px}
+@media(max-width:1180px){.cta-nav-desktop{display:none}}
 .site-header.scrolled{background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px}
 .brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:1.15rem}
 .brand .logo-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--gradient);box-shadow:var(--glow)}
 .brand .logo-mark svg{width:19px;height:19px}
 .brand b{font-weight:800}.brand .ac{color:var(--accent)}
-.nav-menu{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.nav-menu{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 .nav-link{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;font-size:.95rem;font-weight:500;color:var(--text-muted);background:none;border:none;font-family:inherit;cursor:pointer;transition:color .2s,background .2s}
 .nav-link:hover{color:var(--text);background:var(--bg-soft)}
-.nav-link svg{width:15px;height:15px;transition:transform .25s}
-
-/* Services mega dropdown */
-.has-mega{position:relative}
-.mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);width:min(620px,90vw);background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
-.has-mega:hover .mega,.has-mega:focus-within .mega,.has-mega .nav-link[aria-expanded="true"]+.mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.has-mega:hover .nav-link svg,.has-mega:focus-within .nav-link svg,.has-mega .nav-link[aria-expanded="true"] svg{transform:rotate(180deg)}
-.mega::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
-.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.mega-item{display:flex;gap:13px;align-items:flex-start;padding:13px;border-radius:13px;transition:background .2s}
-.mega-item:hover{background:var(--bg-soft)}
-.mega-item b{display:block;font-size:.92rem;color:var(--text);font-weight:600;margin-bottom:1px}
-.mega-item span{display:block;font-size:.79rem;color:var(--text-dim);line-height:1.45}
-.mega-item .mgi{width:38px;height:38px;flex-shrink:0;border-radius:10px;display:grid;place-items:center;background:var(--gradient-soft);color:var(--accent)}
-.mega-item .mgi svg{width:19px;height:19px}
-.mega-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:14px 16px;border-radius:13px;background:var(--gradient-soft);font-size:.88rem;font-weight:600;color:var(--accent)}
-.mega-foot svg{width:17px;height:17px;flex-shrink:0;transition:transform .25s}
-.mega-foot:hover svg{transform:translateX(4px)}
 .nav-actions{display:flex;align-items:center;gap:10px}
 .theme-toggle{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:var(--bg-soft);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:border-color .2s,transform .2s,color .2s}
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(15deg)}
@@ -146,101 +131,65 @@ p{margin:0 0 1rem}
 body.nav-open .nav-toggle span{background:transparent}
 body.nav-open .nav-toggle span::before{transform:translateY(6px) rotate(45deg)}
 body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:1080px){
+@media(max-width:900px){
   .nav-toggle{display:block}
   .nav-menu{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;padding:18px 20px 26px;background:var(--bg-elev);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transform:translateY(-135%);transition:transform .4s var(--ease);max-height:calc(100vh - var(--header-h));overflow-y:auto}
   body.nav-open .nav-menu{transform:translateY(0)}
   .nav-link{padding:14px 12px;font-size:1.05rem;width:100%;justify-content:flex-start}
-  .mega{position:static;width:auto;transform:none;opacity:1;visibility:visible;pointer-events:auto;box-shadow:none;border:none;background:transparent;padding:4px 0 8px}
-  .mega-grid{grid-template-columns:1fr}
-  .mega-foot{display:none}
-  .cta-nav-desktop{display:none}
 }
 
 /* Hero */
-.hero{position:relative;text-align:center;padding:calc(var(--header-h) + 92px) 0 clamp(56px,8vw,96px)}
-.hero-net{position:absolute;inset:0;z-index:-1;overflow:hidden;mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,black 40%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,black 40%,transparent 78%)}
-.hero-net canvas{display:block;width:100%;height:100%;opacity:.55}
-.hero-inner{max-width:900px;margin:0 auto}
-.pill{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--border);font-size:.82rem;color:var(--text-muted);font-weight:500;margin-bottom:30px;backdrop-filter:blur(6px)}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 10px var(--accent-3);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(90,209,255,.4)}50%{box-shadow:0 0 0 7px rgba(90,209,255,0)}}
+.hero{position:relative;text-align:center;padding:calc(var(--header-h) + 74px) 0 clamp(40px,6vw,72px)}
+.hero-inner{max-width:820px;margin:0 auto}
+.hero-net{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;mask-image:radial-gradient(ellipse 92% 82% at 50% 44%,#000 42%,transparent 82%);-webkit-mask-image:radial-gradient(ellipse 92% 82% at 50% 44%,#000 42%,transparent 82%)}
+.hero-net canvas{display:block;width:100%;height:100%;opacity:.5}
+.hero>.container{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--border);font-size:.82rem;color:var(--text-muted);font-weight:500;margin-bottom:26px;backdrop-filter:blur(6px)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--core);box-shadow:0 0 10px var(--core-glow);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--core-glow)}50%{box-shadow:0 0 0 8px rgba(90,240,196,0)}}
 .hero h1{margin-bottom:20px}
-.hero h1 em{font-style:normal;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.type-line{font-family:var(--mono);font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--text-muted);margin:0 0 14px;min-height:1.8em}
-.type-line .tw{color:var(--accent-3);font-weight:600}
-.type-line .caret{display:inline-block;width:9px;height:1.15em;margin-left:2px;background:var(--accent-3);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;border-radius:1px}
-@keyframes blink{50%{opacity:0}}
+.hero h1 em{font-style:normal;background:var(--core-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{max-width:640px;margin:0 auto}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
-.hero-sub{margin-top:22px;font-size:.9rem;color:var(--text-dim)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;margin:clamp(54px,6.5vw,72px) auto 0}
-@media(max-width:640px){.hero-stats{grid-template-columns:1fr;max-width:340px}}
-.hstat{background:color-mix(in srgb,var(--bg-elev) 72%,transparent);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;transition:border-color .3s,transform .3s var(--ease)}
-.hstat:hover{border-color:var(--border-strong);transform:translateY(-3px)}
-.hstat .hv{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-.03em;line-height:1;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hstat .hl{font-size:.82rem;color:var(--text-muted);margin-top:8px;line-height:1.45}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px}
+.hero-sub{margin-top:20px;font-size:.9rem;color:var(--text-dim)}
 
-/* Services marquee — one continuous line of everything we build */
-.mwrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;background:var(--bg-elev);position:relative}
-.mwrap::before,.mwrap::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:1;pointer-events:none}
-.mwrap::before{left:0;background:linear-gradient(90deg,var(--bg-elev),transparent)}
-.mwrap::after{right:0;background:linear-gradient(-90deg,var(--bg-elev),transparent)}
-.mq-track{display:flex;width:max-content;animation:mq 30s linear infinite}
-.mwrap:hover .mq-track{animation-play-state:paused}
-.mq-half{display:flex}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
-.mq-item{display:flex;align-items:center;gap:10px;padding:0 1.6rem;font-size:.78rem;color:var(--text-muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-.mq-item svg{width:15px;height:15px;color:var(--accent);flex-shrink:0}
-.mq-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7;margin-left:1.6rem}
+/* ===== The CORE — capabilities that radiate outward ===== */
+.core-stage{position:relative;width:100%;max-width:820px;margin:clamp(30px,5vw,58px) auto 0;aspect-ratio:749/625}
+.core-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ic-spoke{stroke:var(--spoke);stroke-width:1.4}
+.ic-pulse{fill:var(--core);opacity:0}
+@media(prefers-reduced-motion:no-preference){
+  .ic-pulse{animation:icflow 3.4s linear infinite}
+  .core-ring{transform-box:fill-box;transform-origin:center;animation:corering 3.6s ease-out infinite}
+}
+@keyframes icflow{
+  0%{transform:translate(0,0);opacity:0}
+  12%{opacity:1}
+  86%{opacity:.85}
+  100%{transform:translate(var(--dx),var(--dy));opacity:0}
+}
+@keyframes corering{0%{transform:scale(1);opacity:.55}70%{opacity:0}100%{transform:scale(1.7);opacity:0}}
+.core-label{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:.18em;fill:#052a20;text-anchor:middle;dominant-baseline:central}
+.cap-node{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:color-mix(in srgb,var(--bg-elev) 86%,transparent);border:1px solid var(--border);font-size:.82rem;font-weight:600;color:var(--text-muted);white-space:nowrap;backdrop-filter:blur(7px);cursor:pointer;transition:border-color .25s,color .25s,transform .25s var(--ease),box-shadow .25s;box-shadow:0 8px 24px -16px rgba(0,0,0,.8)}
+.cap-node:hover,.cap-node:focus-visible{border-color:var(--core);color:var(--text);transform:translate(-50%,-50%) scale(1.06);outline:none;box-shadow:0 10px 30px -14px var(--core-glow)}
+.cap-node .nd{width:7px;height:7px;border-radius:50%;background:var(--core);box-shadow:0 0 9px var(--core-glow);flex-shrink:0}
+.core-caption{max-width:560px;margin:clamp(26px,4vw,42px) auto 0;font-size:.9rem;color:var(--text-dim);text-align:center}
 
-/* Before / after */
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto;align-items:stretch}
-@media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
-.ba{border-radius:var(--radius-lg);padding:30px;border:1px solid var(--border);background:var(--bg-soft)}
-.ba.after{border-color:rgba(46,139,255,.35);background:linear-gradient(170deg,rgba(46,139,255,.07),transparent);box-shadow:var(--glow)}
-.ba .bh{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.ba .bh .bi{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex-shrink:0}
-.ba.before .bh .bi{background:var(--bad-soft);color:var(--bad)}
-.ba.after .bh .bi{background:var(--gradient-soft);color:var(--accent)}
-.ba .bh .bi svg{width:20px;height:20px}
-.ba .bh h3{margin:0;font-size:1.1rem}
-.ba .bh small{display:block;font-size:.78rem;color:var(--text-dim);font-weight:500}
-.ba ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
-.ba li{display:flex;gap:11px;align-items:flex-start;font-size:.93rem;color:var(--text-muted)}
-.ba li b{color:var(--text)}
-.ba .mk{flex-shrink:0;width:21px;height:21px;margin-top:2px;border-radius:7px;display:grid;place-items:center;font-size:.72rem;font-weight:800}
-.ba.before .mk{background:var(--bad-soft);color:var(--bad)}
-.ba.after .mk{background:var(--good-soft);color:var(--good)}
-.ba .mk svg{width:12px;height:12px}
+/* Thinking strip — "no fixed stack" */
+.think{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-elev)}
+.think-in{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,34px);align-items:center;padding:clamp(28px,4vw,44px) 0}
+@media(max-width:680px){.think-in{grid-template-columns:1fr;text-align:center}}
+.think-badge{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--core);flex-shrink:0;margin:0 auto}
+.think-badge svg{width:28px;height:28px}
+.think p{margin:0;font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--text);font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;line-height:1.4}
+.think p b{background:var(--core-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* Demo simulator */
-.demo-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,5vw,56px);align-items:center;max-width:1060px;margin:0 auto}
-@media(max-width:880px){.demo-wrap{grid-template-columns:1fr}}
-.demo-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 22px}
-.demo-tab{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text-muted);font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;transition:border-color .25s,color .25s,background .25s,transform .25s}
-.demo-tab:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-.demo-tab.active{background:var(--gradient);color:#04121b;border-color:transparent;box-shadow:0 8px 22px -10px rgba(46,139,255,.6)}
-.panel{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.panel .bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--border)}
-.panel .bar i{width:11px;height:11px;border-radius:50%;display:block}
-.panel .bar .r{background:#ff5f57}.panel .bar .y{background:#febc2e}.panel .bar .g{background:#28c840}
-.panel .bar small{margin-left:8px;color:var(--text-dim);font-size:.72rem;font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.demo-progress{height:3px;background:var(--bg-soft);position:relative}
-.demo-progress .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--gradient)}
-.panel .body{padding:18px 22px;font-family:var(--mono);font-size:.82rem;line-height:2;min-height:238px}
-.panel .body .row{display:flex;align-items:baseline;gap:10px;color:var(--text-muted);animation:rowIn .4s var(--ease) both}
-@keyframes rowIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-.panel .body .ok{color:var(--good)}
-.panel .body .k{color:var(--accent-3);min-width:120px}
-.panel .body .val{color:var(--text)}
-.demo-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-top:1px solid var(--border);font-size:.78rem;font-family:var(--mono);color:var(--text-dim)}
-.demo-foot .st{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.demo-foot .st.done{color:var(--good)}
-.demo-run{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:999px;border:1px solid var(--border-strong);background:transparent;color:var(--text);font-family:var(--font);font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}
-.demo-run:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-.demo-run svg{width:13px;height:13px}
+/* Stats strip */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:840px;margin:0 auto}
+@media(max-width:640px){.stats{grid-template-columns:1fr;max-width:340px}}
+.stat{text-align:center;padding:8px}
+.stat .sv{font-family:var(--font-display);font-size:clamp(2.1rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1;background:var(--core-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .sl{font-size:.9rem;color:var(--text-muted);margin-top:10px;line-height:1.5}
 
 /* Services */
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:980px;margin:0 auto}
@@ -254,129 +203,40 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .svc.wide{grid-column:1/-1;border-color:rgba(46,139,255,.35);background:linear-gradient(170deg,rgba(46,139,255,.06),transparent)}
 .svc.wide:hover{border-color:rgba(46,139,255,.55)}
 
-/* ROI calculator */
-.roi{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);align-items:center;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(28px,4.5vw,52px);box-shadow:var(--shadow);max-width:1040px;margin:0 auto;position:relative;overflow:hidden}
-.roi::before{content:"";position:absolute;inset:0;background:var(--gradient);opacity:.05;pointer-events:none}
-.roi>*{position:relative;z-index:1}
-@media(max-width:860px){.roi{grid-template-columns:1fr}}
-.roi-ctl{margin-bottom:26px}
-.roi-ctl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--text-muted);margin-bottom:12px;gap:12px}
-.roi-ctl output{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--text);letter-spacing:-.02em}
-.roi input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:linear-gradient(90deg,var(--accent) var(--p,50%),var(--border) var(--p,50%));outline:none;cursor:pointer}
-.roi input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gradient);border:3px solid var(--bg-elev);box-shadow:0 4px 14px -3px rgba(46,139,255,.7);transition:transform .2s}
-.roi input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
-.roi input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg-elev);box-shadow:0 4px 14px -3px rgba(46,139,255,.7)}
-.roi-note{font-size:.8rem;color:var(--text-dim);margin:4px 0 0}
-.roi-out{display:flex;flex-direction:column;gap:14px}
-.rcard{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.rcard.big{border-color:rgba(46,139,255,.4);background:linear-gradient(160deg,rgba(46,139,255,.1),transparent)}
-.rcard .rl{font-size:.86rem;color:var(--text-muted);line-height:1.4}
-.rcard .rv-num{font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.03em;white-space:nowrap}
-.rcard.big .rv-num{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.rcard.loss .rv-num{color:var(--bad)}
+/* Process — how we work */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px);max-width:1000px;margin:0 auto}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:16px}}
+.step{position:relative;padding:28px;border-radius:var(--radius-lg);background:var(--bg-soft);border:1px solid var(--border);transition:border-color .3s,transform .3s var(--ease)}
+.step:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.step .num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:13px;font-family:var(--font-display);font-weight:800;background:var(--core-gradient);color:#052a20;margin-bottom:18px}
+.step h3{font-size:1.18rem;margin-bottom:8px}
+.step p{font-size:.94rem;color:var(--text-muted);margin:0}
 
-/* Tool stack */
-.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
-@media(max-width:900px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.stack-grid{grid-template-columns:1fr}}
-.scat{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .3s,transform .3s var(--ease)}
-.scat:hover{border-color:var(--border-strong);transform:translateY(-3px)}
-.scat-h{display:flex;align-items:center;gap:13px;margin-bottom:16px}
-.scat-ic{width:40px;height:40px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent)}
-.scat-ic svg{width:20px;height:20px}
-.scat h4{font-family:var(--font-display);font-size:1.02rem;margin:0}
-.ttags{display:flex;flex-wrap:wrap;gap:8px}
-.tt{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:.78rem;color:var(--text-muted);transition:border-color .3s,color .3s,background .3s,transform .3s;cursor:default}
-.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--gradient-soft);transform:translateY(-2px)}
+/* Cases */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1080px;margin:0 auto}
+@media(max-width:900px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.case-grid{grid-template-columns:1fr}}
+.case{display:flex;flex-direction:column;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;transition:border-color .3s,transform .3s var(--ease)}
+.case:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+.case .tag{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--core-2);background:rgba(90,240,196,.1);border:1px solid rgba(90,240,196,.22);border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.case h3{font-size:1.12rem;margin-bottom:9px}
+.case p{font-size:.92rem;color:var(--text-muted);margin:0}
+.case-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 22px;margin-top:clamp(34px,4vw,46px);text-align:center;flex-direction:column}
+.case-foot p{margin:0;color:var(--text-muted);font-size:.96rem}
 
 /* About — mission & vision */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
 @media(max-width:680px){.about-grid{grid-template-columns:1fr}}
 .about-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px;transition:border-color .3s,transform .3s var(--ease)}
 .about-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
-.about-card .ai{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent);margin-bottom:18px}
+.about-card .ai{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--gradient-soft);border:1px solid var(--border);color:var(--core);margin-bottom:18px}
 .about-card .ai svg{width:24px;height:24px}
 .about-card h3{font-size:1.2rem;margin-bottom:8px}
 .about-card p{font-size:.94rem;color:var(--text-muted);margin:0}
 
-/* Process */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);max-width:1000px;margin:0 auto}
-@media(max-width:760px){.steps{grid-template-columns:1fr;gap:14px}}
-.step{padding:6px}
-.step .num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:13px;font-family:var(--font-display);font-weight:800;background:var(--gradient-soft);border:1px solid var(--border);color:var(--accent);margin-bottom:18px}
-.step h3{font-size:1.18rem;margin-bottom:8px}
-.step p{font-size:.94rem;color:var(--text-muted);margin:0}
-.step .free{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--good);background:var(--good-soft);border-radius:6px;padding:3px 9px;margin-left:9px;vertical-align:middle}
-
-/* AI gap chart */
-.chart-wrap{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(20px,3vw,34px);box-shadow:var(--shadow);overflow:hidden;max-width:1000px;margin:0 auto}
-.chart-legend{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:18px}
-.chart-legend .lg{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;color:var(--text-muted);font-weight:600}
-.chart-legend .sw{width:26px;height:3px;border-radius:2px;flex-shrink:0}
-.chart-legend .sw.ai{background:var(--gradient)}
-.chart-legend .sw.no{background:var(--text-dim)}
-.chart-illus{margin-left:auto;font-size:.78rem;font-weight:500;color:var(--text-dim);display:inline-flex;align-items:center;gap:7px}
-.ai-chart{width:100%;height:auto;display:block;overflow:visible}
-.ai-chart .grid-line{stroke:var(--border);stroke-dasharray:3 6;opacity:.7}
-.ai-chart .axis-line{stroke:var(--border-strong)}
-.ai-chart .ylab,.ai-chart .xlab{fill:var(--text-dim);font-family:var(--font);font-size:13px}
-.cl{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1600;stroke-dashoffset:1600}
-.rv.vis .cl{stroke-dashoffset:0;transition:stroke-dashoffset 2.2s var(--ease)}
-.cl-ai{stroke:url(#lineGrad)}
-.cl-no{stroke:var(--text-dim);opacity:.75}
-.gap-fill{fill:url(#gapGrad);opacity:0}
-.rv.vis .gap-fill{opacity:1;transition:opacity 1.1s ease 1s}
-.cl-dot{opacity:0}
-.rv.vis .cl-dot{opacity:1;transition:opacity .5s ease 1.7s}
-.chart-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-@media(max-width:600px){.chart-stats{grid-template-columns:1fr}}
-.cstat{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px}
-.cstat .cv{font-family:var(--font-display);font-size:1.8rem;font-weight:800;letter-spacing:-.03em;line-height:1}
-.cstat.hl .cv{color:var(--accent)}
-.cstat .clbl{font-size:.8rem;color:var(--text-muted);margin-top:6px}
-.cstat .csrc{display:block;margin-top:7px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);opacity:.85}
-.chart-note{font-size:.78rem;color:var(--text-dim);margin-top:20px;text-align:center;max-width:680px;margin-left:auto;margin-right:auto}
-.chart-note a{color:var(--accent);font-weight:600}
-
-/* Pricing */
-.wedge{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;background:linear-gradient(120deg,rgba(46,139,255,.12),rgba(25,200,255,.07));border:1px solid rgba(46,139,255,.35);border-radius:var(--radius-lg);padding:26px 30px;max-width:1040px;margin:0 auto clamp(34px,4vw,48px);box-shadow:var(--glow)}
-.wedge .wi{width:52px;height:52px;flex-shrink:0;border-radius:14px;display:grid;place-items:center;background:var(--gradient);color:#04121b;box-shadow:0 10px 26px -10px rgba(46,139,255,.7)}
-.wedge .wi svg{width:26px;height:26px}
-.wedge .wt{flex:1;min-width:240px}
-.wedge .wt b{display:block;font-family:var(--font-display);font-size:1.12rem;margin-bottom:3px}
-.wedge .wt span{font-size:.9rem;color:var(--text-muted)}
-.wedge .wp{font-family:var(--font-display);font-weight:800;font-size:1.5rem;letter-spacing:-.03em;white-space:nowrap}
-.wedge .wp small{display:block;font-family:var(--font);font-weight:500;font-size:.74rem;color:var(--text-dim);letter-spacing:0;text-align:right}
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;max-width:1040px;margin:0 auto}
-@media(max-width:880px){.pg{grid-template-columns:1fr;max-width:440px}}
-.pc{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;transition:border-color .3s,transform .3s var(--ease);position:relative}
-.pc:hover{border-color:var(--border-strong);transform:translateY(-4px)}
-.pc.feat{border-color:rgba(46,139,255,.45);background:linear-gradient(170deg,rgba(46,139,255,.07),transparent);box-shadow:var(--glow)}
-.pc.feat::before{content:"Most popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#04121b;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:999px;white-space:nowrap}
-[data-lang="nl"] .pc.feat::before{content:"Meest gekozen"}
-.pc .tier{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
-.pc .from{font-size:.8rem;color:var(--text-dim)}
-.pc .amt{font-family:var(--font-display);font-size:2.5rem;font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:2px 0 4px}
-.pc .per{font-size:.84rem;color:var(--text-muted);padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--border)}
-.pc ul{list-style:none;flex:1;margin:0 0 26px;padding:0}
-.pc ul li{font-size:.9rem;color:var(--text-muted);padding:7px 0;display:flex;gap:11px;align-items:center}
-.pc ul li svg{width:18px;height:18px;color:var(--accent-3);flex-shrink:0}
-.price-note{text-align:center;color:var(--text-dim);font-size:.86rem;margin-top:26px}
-
-/* FAQ */
-.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.faq{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .3s}
-.faq[open]{border-color:rgba(46,139,255,.4);background:var(--bg-elev)}
-.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 24px;cursor:pointer;font-weight:600;font-size:1rem;list-style:none;font-family:var(--font-display)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .fx{flex-shrink:0;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--gradient-soft);color:var(--accent);transition:transform .3s var(--ease)}
-.faq[open] summary .fx{transform:rotate(45deg)}
-.faq summary .fx svg{width:14px;height:14px}
-.faq .fa{padding:0 24px 20px;font-size:.93rem;color:var(--text-muted);margin:0}
-
 /* CTA band */
 .cta-band{position:relative;overflow:hidden;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(40px,6vw,72px);text-align:center;box-shadow:var(--shadow)}
-.cta-band::before{content:"";position:absolute;inset:0;z-index:0;background:var(--gradient);opacity:.1}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:0;background:var(--core-gradient);opacity:.1}
 .cta-band>*{position:relative;z-index:1}
 .cta-band h2{margin-bottom:12px}
 .cta-band p{color:var(--text-muted);max-width:540px;margin:0 auto 26px}
@@ -405,11 +265,11 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .form-msg.err{display:block;background:rgba(255,95,87,.1);border:1px solid rgba(255,95,87,.5)}
 
 /* Footer */
-.site-footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:30px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
-@media(max-width:680px){.footer-grid{grid-template-columns:1fr;gap:26px}}
-.footer-about p{color:var(--text-muted);font-size:.92rem;max-width:300px;margin-top:14px}
+.site-footer{border-top:1px solid var(--border);padding:56px 0 30px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:32px}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr;gap:26px}}
+.footer-about p{color:var(--text-muted);font-size:.92rem;max-width:320px;margin-top:14px}
 .footer-grid h4{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px;font-family:var(--font)}
 .footer-grid ul{list-style:none;padding:0;margin:0}
 .footer-grid ul li{margin-bottom:10px}
@@ -426,10 +286,20 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 .skip-link{position:absolute;left:-999px;top:0;background:var(--accent);color:#04121b;padding:10px 16px;border-radius:0 0 10px 0;z-index:200;font-weight:600}
 .skip-link:focus{left:0}
+
+/* Core diagram — small screens: keep it readable */
+@media(max-width:600px){
+  .cap-node{font-size:.68rem;padding:7px 11px;gap:6px}
+  .cap-node .nd{width:6px;height:6px}
+  .core-label{font-size:20px}
+}
+@media(max-width:380px){
+  .cap-node{font-size:.62rem;padding:6px 9px}
+}
 </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
 
 <!-- HEADER -->
 <header class="site-header" id="siteHeader">
@@ -440,25 +310,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     </a>
     <nav aria-label="Main menu">
       <ul class="nav-menu" id="navMenu">
-        <li class="has-mega">
-          <button class="nav-link" aria-expanded="false" aria-controls="megaServices">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-          <div class="mega" id="megaServices">
-            <div class="mega-grid">
-              <a class="mega-item" href="#svc-automation"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><span><b data-i18n="svc.automation">Process Automation</b><span data-i18n="mega.automation.d">Bank statements, invoices &amp; workflows on autopilot</span></span></a>
-              <a class="mega-item" href="#svc-ai"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></span><span><b data-i18n="svc.ai">Custom AI Systems</b><span data-i18n="mega.ai.d">Document AI, agents &amp; decision support</span></span></a>
-              <a class="mega-item" href="#svc-chatbots"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg></span><span><b data-i18n="svc.chatbots">Chatbots &amp; Assistants</b><span data-i18n="mega.chatbots.d">WhatsApp &amp; web bots on your company data</span></span></a>
-              <a class="mega-item" href="#svc-data"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span><b data-i18n="svc.data">Data &amp; Dashboards</b><span data-i18n="mega.data.d">Clean pipelines &amp; realtime KPIs</span></span></a>
-              <a class="mega-item" href="#svc-api"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><span><b data-i18n="svc.api">API &amp; Integrations</b><span data-i18n="mega.api.d">Every system you use, connected</span></span></a>
-              <a class="mega-item" href="#svc-strategy"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b data-i18n="svc.strategy">AI Strategy &amp; Roadmap</b><span data-i18n="mega.strategy.d">A prioritised, board-ready plan</span></span></a>
-              <a class="mega-item" href="#svc-process" style="grid-column:1/-1"><span class="mgi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><span><b data-i18n="svc.process">Process Mapping &amp; Flows</b><span data-i18n="mega.process.d">Your workflows mapped into clear flowcharts. Automate with us or hand off to anyone</span></span></a>
-            </div>
-            <a class="mega-foot" href="technical/demo/index.html" target="_blank" rel="noopener"><span data-i18n="mega.foot">Try Core Parse, our document AI. Open the full demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="mega-foot" href="technical/insight/index.html" target="_blank" rel="noopener"><span data-i18n="mega.foot2">Try Core Insight, our data AI. Ask your data anything</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </li>
-        <li><a class="nav-link" href="#demo">Live demo</a></li>
-        <li><a class="nav-link" href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
-        <li><a class="nav-link" href="#faq">FAQ</a></li>
+        <li><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a class="nav-link" href="#how" data-i18n="nav.how">How we work</a></li>
+        <li><a class="nav-link" href="#cases" data-i18n="nav.cases">Cases</a></li>
+        <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
       </ul>
     </nav>
     <div class="nav-actions">
@@ -467,7 +322,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn-primary cta-nav-desktop" href="#contact" data-i18n="nav.cta">Get a free quickscan</a>
+      <a class="btn btn-primary cta-nav-desktop" href="#contact" data-i18n="nav.cta">Let's talk</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -476,115 +331,92 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 <main id="main">
   <span id="top"></span>
 
-  <!-- HERO -->
+  <!-- HERO + CORE -->
   <section class="hero">
     <div class="hero-net" aria-hidden="true"><canvas id="heroNet"></canvas></div>
     <div class="container hero-inner">
-      <div class="pill rv vis"><span class="dot"></span> <span data-i18n="hero.pill">AI &amp; Automation Studio · Suriname &amp; worldwide</span></div>
-      <h1 class="rv vis" data-i18n="hero.h1">Work <em>smarter</em>,<br>not harder.</h1>
-      <p class="type-line rv vis" aria-live="off"><span data-i18n="hero.type">We automate your</span> <span class="tw" id="typeWord">bank statements</span><span class="caret" aria-hidden="true"></span></p>
-      <p class="lead rv vis" data-i18n="hero.lead">Custom AI and automation that takes the retyping, sorting and searching off your team. Built around your business, live in weeks, proven in production.</p>
+      <div class="pill rv vis"><span class="dot"></span> <span data-i18n="hero.pill">Smart solutions company · Suriname &amp; worldwide</span></div>
+      <h1 class="rv vis" data-i18n="hero.h1">We think in<br><em>smart solutions</em>.</h1>
+      <p class="lead rv vis" data-i18n="hero.lead">You bring the problem, we think up the smart way to solve it. A solution built around your business, with the right technology for the job.</p>
       <div class="hero-cta rv vis">
-        <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta.quickscan">Get your free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#demo" class="btn btn-ghost btn-lg" data-i18n="hero.watch">Watch it work</a>
+        <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="hero.cta1">Start a conversation</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#cases" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">See our work</a>
       </div>
-      <p class="hero-sub rv vis" data-i18n="hero.sub">30 minutes · you get a one-page savings plan · no obligation</p>
-      <div class="hero-stats">
-        <div class="hstat rv"><div class="hv"><span data-count="20" data-suf="+">0</span></div><div class="hl" data-i18n="hero.s1">hours per week freed up by a typical automated process</div></div>
-        <div class="hstat rv d1"><div class="hv"><span data-count="99.5" data-dec="1" data-suf="%">0</span></div><div class="hl" data-i18n="hero.s2">extraction accuracy of our document AI in production</div></div>
-        <div class="hstat rv d2"><div class="hv"><span data-count="7" data-pre="~">0</span> <span data-i18n="hero.days">days</span></div><div class="hl" data-i18n="hero.s3">from kickoff to your first automation running live</div></div>
+      <p class="hero-sub rv vis" data-i18n="hero.sub">One conversation to map your challenge. No jargon, no obligation.</p>
+    </div>
+
+    <!-- The CORE: capabilities radiating outward -->
+    <div class="container">
+      <div class="core-stage rv" aria-label="Intellect Core capabilities radiating from one core">
+        <svg class="core-svg" viewBox="0 0 749 625" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <radialGradient id="coreGlow" cx="50%" cy="42%" r="60%">
+              <stop offset="0%" stop-color="rgba(90,240,196,.55)"/>
+              <stop offset="55%" stop-color="rgba(90,240,196,.14)"/>
+              <stop offset="100%" stop-color="rgba(90,240,196,0)"/>
+            </radialGradient>
+            <radialGradient id="coreFill" cx="42%" cy="36%" r="72%">
+              <stop offset="0%" stop-color="#c6ffee"/>
+              <stop offset="45%" stop-color="#5af0c4"/>
+              <stop offset="100%" stop-color="#2fd7a5"/>
+            </radialGradient>
+          </defs>
+          <!-- spokes -->
+          <g>
+            <line class="ic-spoke" x1="342" y1="306" x2="342" y2="75"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="162" y2="163"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="523" y2="163"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="117" y2="356"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="567" y2="356"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="242" y2="513"/>
+            <line class="ic-spoke" x1="342" y1="306" x2="441" y2="513"/>
+          </g>
+          <!-- travelling signal pulses (core -> node) -->
+          <g>
+            <circle class="ic-pulse" cx="342" cy="232" r="4.2" style="--dx:0px;--dy:-157px;animation-delay:0s"/>
+            <circle class="ic-pulse" cx="284" cy="260" r="4.2" style="--dx:-122px;--dy:-97px;animation-delay:.45s"/>
+            <circle class="ic-pulse" cx="400" cy="260" r="4.2" style="--dx:123px;--dy:-97px;animation-delay:.9s"/>
+            <circle class="ic-pulse" cx="270" cy="322" r="4.2" style="--dx:-153px;--dy:34px;animation-delay:1.35s"/>
+            <circle class="ic-pulse" cx="414" cy="322" r="4.2" style="--dx:153px;--dy:34px;animation-delay:1.8s"/>
+            <circle class="ic-pulse" cx="310" cy="373" r="4.2" style="--dx:-68px;--dy:140px;animation-delay:2.25s"/>
+            <circle class="ic-pulse" cx="374" cy="373" r="4.2" style="--dx:67px;--dy:140px;animation-delay:2.7s"/>
+          </g>
+          <!-- core orb -->
+          <circle cx="342" cy="306" r="150" fill="url(#coreGlow)"/>
+          <circle class="core-ring" cx="342" cy="306" r="74" fill="none" stroke="#5af0c4" stroke-width="1.5"/>
+          <circle cx="342" cy="306" r="74" fill="url(#coreFill)"/>
+          <text class="core-label" x="342" y="307">CORE</text>
+        </svg>
+        <!-- capability labels (HTML for crisp text + i18n) -->
+        <a class="cap-node" href="#svc-automation" style="left:45.66%;top:12%"   data-i18n="svc.automation"><span class="nd"></span>Process Automation</a>
+        <a class="cap-node" href="#svc-process"    style="left:21.63%;top:26.08%"><span class="nd"></span><span data-i18n="svc.process">Process Mapping</span></a>
+        <a class="cap-node" href="#svc-ai"         style="left:69.83%;top:26.08%"><span class="nd"></span><span data-i18n="svc.ai">Custom AI Systems</span></a>
+        <a class="cap-node" href="#svc-strategy"   style="left:15.62%;top:56.96%"><span class="nd"></span><span data-i18n="svc.strategy">AI Strategy</span></a>
+        <a class="cap-node" href="#svc-chatbots"   style="left:75.70%;top:56.96%"><span class="nd"></span><span data-i18n="svc.chatbots">Chatbots &amp; Assistants</span></a>
+        <a class="cap-node" href="#svc-api"        style="left:32.31%;top:82.08%"><span class="nd"></span><span data-i18n="svc.api">API &amp; Integrations</span></a>
+        <a class="cap-node" href="#svc-data"       style="left:58.88%;top:82.08%"><span class="nd"></span><span data-i18n="svc.data">Data &amp; Dashboards</span></a>
+      </div>
+      <p class="core-caption rv" data-i18n="core.caption">One core, many capabilities. We pick the right one for your problem, and combine them when that is what it takes.</p>
+    </div>
+  </section>
+
+  <!-- THINKING STRIP -->
+  <section class="think" aria-label="How we think">
+    <div class="container">
+      <div class="think-in rv">
+        <span class="think-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z"/><path d="M9 21h6M10 17v4M14 17v4"/></svg></span>
+        <p data-i18n="think.p">We don't sell a fixed stack. We start from <b>your problem</b> and choose the right approach, automation, AI, data or a mix, whatever actually solves it.</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES MARQUEE — one continuous line of everything we build -->
-  <div class="mwrap" aria-label="Our services">
-    <div class="mq-track">
-      <div class="mq-half">
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg> <span data-i18n="svc.automation">Process Automation</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> <span data-i18n="svc.ai">Custom AI Systems</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg> <span data-i18n="svc.chatbots">Chatbots &amp; Assistants</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg> <span data-i18n="svc.data">Data &amp; Dashboards</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg> <span data-i18n="svc.api">API &amp; Integrations</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> <span data-i18n="svc.strategy">AI Strategy &amp; Roadmap</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg> <span data-i18n="svc.process">Process Mapping &amp; Flows</span><span class="mq-dot"></span></span>
-      </div>
-      <div class="mq-half" aria-hidden="true">
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg> <span data-i18n="svc.automation">Process Automation</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> <span data-i18n="svc.ai">Custom AI Systems</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg> <span data-i18n="svc.chatbots">Chatbots &amp; Assistants</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg> <span data-i18n="svc.data">Data &amp; Dashboards</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg> <span data-i18n="svc.api">API &amp; Integrations</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> <span data-i18n="svc.strategy">AI Strategy &amp; Roadmap</span><span class="mq-dot"></span></span>
-        <span class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg> <span data-i18n="svc.process">Process Mapping &amp; Flows</span><span class="mq-dot"></span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- BEFORE / AFTER -->
-  <section id="shift" class="section">
+  <!-- STATS -->
+  <section class="section" style="padding-top:clamp(60px,8vw,96px);padding-bottom:clamp(60px,8vw,96px)">
     <div class="container">
-      <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="shift.eyebrow">The shift</div>
-        <h2 data-i18n="shift.h2">Where your week goes, and where it could go</h2>
-        <p class="lead" data-i18n="shift.lead">Every hour spent retyping, sorting and searching is an hour not spent on customers, strategy and growth.</p>
-      </div>
-      <div class="ba-grid">
-        <div class="ba before rv">
-          <div class="bh">
-            <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-            <div><h3 data-i18n="shift.b.h3">Without automation</h3><small data-i18n="shift.b.small">The busywork treadmill</small></div>
-          </div>
-          <ul>
-            <li><span class="mk">✕</span><span data-i18n="shift.b1"><b>Half a day per month</b> retyping bank statements into the ledger, line by line.</span></li>
-            <li><span class="mk">✕</span><span data-i18n="shift.b2"><b>Hours of digging</b> through folders and inboxes to find one policy or contract clause.</span></li>
-            <li><span class="mk">✕</span><span data-i18n="shift.b3"><b>Copy-paste reports</b> assembled by hand, already outdated the day they land.</span></li>
-            <li><span class="mk">✕</span><span data-i18n="shift.b4"><b>Errors from fatigue</b>: typos and missed entries that cost real money to fix.</span></li>
-          </ul>
-        </div>
-        <div class="ba after rv d2">
-          <div class="bh">
-            <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span>
-            <div><h3 data-i18n="shift.a.h3">With Intellect Core</h3><small data-i18n="shift.a.small">The intelligent core at work</small></div>
-          </div>
-          <ul>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a1"><b>Statements ingest themselves</b>: read, categorised and exported in one click.</span></li>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a2"><b>Ask your documents</b> and get AI answers from your own files in seconds, with sources.</span></li>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a3"><b>Reports build themselves</b> from live data, on schedule, every time.</span></li>
-            <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span data-i18n="shift.a4"><b>Runs 24/7 without fatigue</b>: consistent output, with a human always in control.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIVE DEMO SIMULATOR -->
-  <section id="demo" class="section">
-    <div class="container">
-      <div class="demo-wrap">
-        <div class="rv">
-          <div class="eyebrow" data-i18n="demo.eyebrow">See it, don't take our word</div>
-          <h2 data-i18n="demo.h2">Watch the work disappear</h2>
-          <p class="muted" data-i18n="demo.p">This is <strong>Core Parse</strong>, our document AI, doing a real job: pick a document type and watch structured, ledger-ready data come out in seconds. The same engine runs in production today on real bank statements in three currencies.</p>
-          <div class="demo-tabs" role="tablist" aria-label="Demo document type">
-            <button class="demo-tab active" data-demo="bank" role="tab" aria-selected="true" data-i18n="demo.tab1">Bank statement</button>
-            <button class="demo-tab" data-demo="invoice" role="tab" aria-selected="false" data-i18n="demo.tab2">Invoice</button>
-            <button class="demo-tab" data-demo="email" role="tab" aria-selected="false" data-i18n="demo.tab3">Email inbox</button>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px">
-            <a class="btn btn-ghost" href="technical/demo/index.html" target="_blank" rel="noopener"><span data-i18n="demo.open">Open the full Core Parse demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-          </div>
-          <p class="muted" style="font-size:.88rem" data-i18n="demo.hint">Want to try it on <em>your</em> documents? That's exactly what the free quickscan is for.</p>
-        </div>
-        <div class="panel rv d2">
-          <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><small id="demoFile">Core Parse · bank-statement-may.csv</small></div>
-          <div class="demo-progress"><div class="fill" id="demoBar"></div></div>
-          <div class="body" id="demoBody" aria-live="polite"></div>
-          <div class="demo-foot">
-            <span class="st" id="demoStatus" data-i18n="demo.ready">Ready.</span>
-            <button class="demo-run" id="demoRun" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l14 8-14 8z"/></svg> <span data-i18n="demo.run">Run again</span></button>
-          </div>
-        </div>
+      <div class="stats rv">
+        <div class="stat"><div class="sv"><span data-count="25" data-suf="+">0</span></div><div class="sl" data-i18n="stat.1">solutions designed and shipped for real businesses</div></div>
+        <div class="stat"><div class="sv"><span data-count="7">0</span></div><div class="sl" data-i18n="stat.2">core capabilities we combine to fit your problem</div></div>
+        <div class="stat"><div class="sv"><span data-count="1" data-pre="~">0</span> <span data-i18n="stat.wk">week</span></div><div class="sl" data-i18n="stat.3">from kickoff to a first working result you can see</div></div>
       </div>
     </div>
   </section>
@@ -593,84 +425,82 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   <section id="services" class="section" style="padding-top:0">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="svcs.eyebrow">What we build</div>
-        <h2 data-i18n="svcs.h2">One studio, end to end</h2>
-        <p class="lead" data-i18n="svcs.lead">From a single automation to a full platform. Every solution is custom-built, delivered from concept to production, and handed over so your team owns it.</p>
+        <div class="eyebrow" data-i18n="svcs.eyebrow">What we do</div>
+        <h2 data-i18n="svcs.h2">Solutions we build</h2>
+        <p class="lead" data-i18n="svcs.lead">From a single automation to a full platform. Every solution is custom-built around your problem and handed over so your team owns it.</p>
       </div>
       <div class="svc-grid">
-        <div class="svc rv" id="svc-automation"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><div><h3 data-i18n="svc.automation">Process Automation</h3><p data-i18n="svcs.automation.p">Bank statements, invoices, approvals and multi-system workflows that run 24/7. The manual labour simply stops.</p></div></div>
+        <div class="svc rv" id="svc-automation"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><div><h3 data-i18n="svc.automation">Process Automation</h3><p data-i18n="svcs.automation.p">Bank statements, invoices, approvals and multi-system workflows that run without the manual labour. The busywork simply stops.</p></div></div>
         <div class="svc rv d1" id="svc-ai"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></span><div><h3 data-i18n="svc.ai">Custom AI Systems</h3><p data-i18n="svcs.ai.p">Document extraction, AI agents and decision support built around your business logic, tools and data.</p></div></div>
-        <div class="svc rv" id="svc-chatbots"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg></span><div><h3 data-i18n="svc.chatbots">Chatbots &amp; Assistants</h3><p data-i18n="svcs.chatbots.p">WhatsApp and web bots trained on your company data, with instant answers for your team or your customers.</p></div></div>
-        <div class="svc rv d1" id="svc-data"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><div><h3 data-i18n="svc.data">Data &amp; Dashboards</h3><p data-i18n="svcs.data.p">Raw data turned into clean pipelines and realtime KPIs, so decisions run on numbers instead of gut feeling.</p></div></div>
-        <div class="svc rv" id="svc-api"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><div><h3 data-i18n="svc.api">API &amp; Integrations</h3><p data-i18n="svcs.api.p">CRMs, ERPs, payments and messaging, connected into one seamless flow so nothing gets retyped twice.</p></div></div>
-        <div class="svc rv d1" id="svc-strategy"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3 data-i18n="svc.strategy">AI Strategy &amp; Roadmap</h3><p data-i18n="svcs.strategy.p">We map your processes, find the highest-ROI opportunities and hand you a prioritised, board-ready roadmap.</p></div></div>
-        <div class="svc wide rv d2" id="svc-process"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><div><h3 data-i18n="svc.process">Process Mapping &amp; Flows</h3><p data-i18n="svcs.process.p">Every automation starts with a clear picture. We map how work really flows through your business into sharp visual flowcharts and step-by-step process documentation. It's a blueprint you can automate with us, improve internally, or hand to any other party to execute.</p></div></div>
+        <div class="svc rv" id="svc-chatbots"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 3h6M9 13h.01M15 13h.01M9 17h6"/></svg></span><div><h3 data-i18n="svc.chatbots">Chatbots &amp; Assistants</h3><p data-i18n="svcs.chatbots.p">WhatsApp and web assistants trained on your company data, with instant answers for your team or your customers.</p></div></div>
+        <div class="svc rv d1" id="svc-data"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><div><h3 data-i18n="svc.data">Data &amp; Dashboards</h3><p data-i18n="svcs.data.p">Raw, scattered data turned into clean pipelines and live dashboards, so decisions run on numbers instead of gut feeling.</p></div></div>
+        <div class="svc rv" id="svc-api"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><div><h3 data-i18n="svc.api">API &amp; Integrations</h3><p data-i18n="svcs.api.p">CRMs, ERPs, payments and messaging connected into one seamless flow, so nothing gets retyped twice.</p></div></div>
+        <div class="svc rv d1" id="svc-strategy"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3 data-i18n="svc.strategy">AI Strategy &amp; Roadmap</h3><p data-i18n="svcs.strategy.p">We map your processes, find the highest-impact opportunities and hand you a prioritised, board-ready roadmap.</p></div></div>
+        <div class="svc wide rv d1" id="svc-web"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 14l-2 2 2 2M15 14l2 2-2 2"/></svg></span><div><h3 data-i18n="svc.web">Web &amp; App Development</h3><p data-i18n="svcs.web.p">Websites, web apps and full SaaS products, designed and built end to end. From a sharp marketing site to a product your customers log into every day.</p></div></div>
+        <div class="svc wide rv d2" id="svc-process"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><div><h3 data-i18n="svc.process">Process Mapping &amp; Flows</h3><p data-i18n="svcs.process.p">Every solution starts with a clear picture. We map how work really flows through your business into sharp visual flowcharts and step-by-step documentation. It's a blueprint you can build with us, improve internally, or hand to any other party to execute.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ROI CALCULATOR -->
-  <section id="roi" class="section">
+  <!-- HOW WE WORK -->
+  <section id="how" class="section" style="padding-top:0">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="roi.eyebrow">Do the math</div>
-        <h2 data-i18n="roi.h2">What is busywork costing you?</h2>
-        <p class="lead" data-i18n="roi.lead">Slide to your situation. Most clients are surprised, then relieved that the fix costs a fraction of the leak.</p>
+        <div class="eyebrow" data-i18n="how.eyebrow">How we work</div>
+        <h2 data-i18n="how.h2">We think first, then build</h2>
+        <p class="lead" data-i18n="how.lead">No black boxes and no risk. You see the thinking and a working result early, every time.</p>
       </div>
-      <div class="roi rv">
-        <div>
-          <div class="roi-ctl">
-            <label for="roiHrs"><span data-i18n="roi.l1">Hours of manual admin per week</span><output id="roiHrsVal">10</output></label>
-            <input type="range" id="roiHrs" min="2" max="40" step="1" value="10" aria-label="Hours of manual admin per week">
-          </div>
-          <div class="roi-ctl">
-            <label for="roiRate"><span data-i18n="roi.l2">Average cost per hour (USD)</span><output id="roiRateVal">$15</output></label>
-            <input type="range" id="roiRate" min="5" max="100" step="1" value="15" aria-label="Average cost per hour in US dollars">
-          </div>
-          <p class="roi-note" data-i18n="roi.note">Assumes automation takes over ~90% of the manual work, in line with what we see after handover. Exact numbers come out of your free quickscan.</p>
-        </div>
-        <div class="roi-out">
-          <div class="rcard loss"><div class="rl" data-i18n="roi.c1">What this work costs you<br><b>per year</b></div><div class="rv-num" id="roiYear">$0</div></div>
-          <div class="rcard big"><div class="rl" data-i18n="roi.c2">What automation gives back<br><b>every year</b></div><div class="rv-num" id="roiSave">$0</div></div>
-          <div class="rcard"><div class="rl" data-i18n="roi.c3">Working days returned to your team, annually</div><div class="rv-num" id="roiDays">0</div></div>
-        </div>
+      <div class="steps">
+        <div class="step rv"><div class="num">1</div><h3 data-i18n="how.s1.h3">Understand the problem</h3><p data-i18n="how.s1.p">We listen and map how work really flows through your business, so we solve the actual bottleneck, not a symptom of it.</p></div>
+        <div class="step rv d1"><div class="num">2</div><h3 data-i18n="how.s2.h3">Design the smart solution</h3><p data-i18n="how.s2.p">We shape the approach that fits your situation and pick the right technology for the job, AI or not. You see the plan before we build.</p></div>
+        <div class="step rv d2"><div class="num">3</div><h3 data-i18n="how.s3.h3">Build, prove &amp; hand over</h3><p data-i18n="how.s3.p">Short cycles with something working every week. Live in weeks, documented and handed over so your team runs it.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- TOOL STACK -->
-  <section id="stack" class="section">
+  <!-- CASES -->
+  <section id="cases" class="section" style="padding-top:0">
     <div class="container">
       <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="stack.eyebrow">Tool stack</div>
-        <h2 data-i18n="stack.h2">The technology we build with</h2>
-        <p class="lead" data-i18n="stack.lead">A curated stack of frontier AI, automation platforms and proven infrastructure, picked per project, never one-size-fits-all.</p>
+        <div class="eyebrow" data-i18n="cases.eyebrow">Selected work</div>
+        <h2 data-i18n="cases.h2">Problems we've already solved</h2>
+        <p class="lead" data-i18n="cases.lead">A sample of what we've built, shown without client names. Want to see one working? Ask us for a private demo.</p>
       </div>
-      <div class="stack-grid">
-        <div class="scat rv">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><h4 data-i18n="stack.c1">AI &amp; Models</h4></div>
-          <div class="ttags"><span class="tt">Claude</span><span class="tt">GPT</span><span class="tt">Anthropic API</span><span class="tt">OpenAI API</span><span class="tt">RAG</span><span class="tt">Vector DBs</span></div>
+      <div class="case-grid">
+        <div class="case rv">
+          <span class="tag" data-i18n="cases.c1.tag">Energy · Enterprise</span>
+          <h3 data-i18n="cases.c1.h3">AI transformation, end to end</h3>
+          <p data-i18n="cases.c1.p">A large energy company's roadmap turned into working tools: a field voice assistant, safety and incident reporting, and a WhatsApp knowledge bot across operations.</p>
         </div>
-        <div class="scat rv d1">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span><h4 data-i18n="stack.c2">Automation</h4></div>
-          <div class="ttags"><span class="tt">Power Automate</span><span class="tt">n8n</span><span class="tt">Make.com</span><span class="tt">Zapier</span><span class="tt">Office Scripts</span></div>
+        <div class="case rv d1">
+          <span class="tag" data-i18n="cases.c2.tag">Finance &amp; Accounting</span>
+          <h3 data-i18n="cases.c2.h3">Bank statements on autopilot</h3>
+          <p data-i18n="cases.c2.p">Statements from multiple banks in three currencies read, categorised and turned into ledger-ready output in a single click.</p>
         </div>
-        <div class="scat rv d2">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span><h4 data-i18n="stack.c3">Data &amp; Analytics</h4></div>
-          <div class="ttags"><span class="tt">Microsoft Fabric</span><span class="tt">Power BI</span><span class="tt">PostgreSQL</span><span class="tt">Supabase</span><span class="tt">Pandas</span></div>
+        <div class="case rv d2">
+          <span class="tag" data-i18n="cases.c3.tag">Legal &amp; Compliance</span>
+          <h3 data-i18n="cases.c3.h3">Contracts that read themselves</h3>
+          <p data-i18n="cases.c3.p">Automatic metadata extraction from contracts, plus a searchable knowledge base so the right clause is found in seconds instead of hours.</p>
         </div>
-        <div class="scat rv">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-7.97 5.5 5.5 0 0 1 10.6-1.46A3.75 3.75 0 0 1 17.5 18z"/></svg></span><h4 data-i18n="stack.c4">Cloud &amp; Infra</h4></div>
-          <div class="ttags"><span class="tt">Azure</span><span class="tt">AWS</span><span class="tt">Vercel</span><span class="tt">Docker</span></div>
+        <div class="case rv">
+          <span class="tag" data-i18n="cases.c4.tag">Field Services</span>
+          <h3 data-i18n="cases.c4.h3">From paper to a live work-order system</h3>
+          <p data-i18n="cases.c4.p">A custom work-order platform that replaced paper forms and scattered spreadsheets with one clear, trackable flow.</p>
         </div>
-        <div class="scat rv d1">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><h4 data-i18n="stack.c5">Development</h4></div>
-          <div class="ttags"><span class="tt">Python</span><span class="tt">FastAPI</span><span class="tt">React</span><span class="tt">Node.js</span><span class="tt">TypeScript</span></div>
+        <div class="case rv d1">
+          <span class="tag" data-i18n="cases.c5.tag">Operations</span>
+          <h3 data-i18n="cases.c5.h3">Email that turns into action</h3>
+          <p data-i18n="cases.c5.p">Incoming email triaged and turned into assigned tasks automatically, so nothing slips and the inbox stops being a to-do list.</p>
         </div>
-        <div class="scat rv d2">
-          <div class="scat-h"><span class="scat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span><h4 data-i18n="stack.c6">Integrations &amp; Security</h4></div>
-          <div class="ttags"><span class="tt">REST APIs</span><span class="tt">Webhooks</span><span class="tt">WhatsApp API</span><span class="tt">Stripe</span><span class="tt">Microsoft 365</span><span class="tt">Bitwarden</span></div>
+        <div class="case rv d2">
+          <span class="tag" data-i18n="cases.c6.tag">Data &amp; Platform</span>
+          <h3 data-i18n="cases.c6.h3">One source of truth</h3>
+          <p data-i18n="cases.c6.p">Messy, scattered data migrated into a modern platform with clean pipelines and live dashboards the whole team can trust.</p>
         </div>
+      </div>
+      <div class="case-foot rv">
+        <p data-i18n="cases.foot">Prefer to see it working on real data? We give demos privately, so you see exactly what's relevant to you.</p>
+        <a href="#contact" class="btn btn-primary"><span data-i18n="cases.cta">Request a private demo</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
@@ -681,6 +511,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
       <div class="section-head center rv">
         <div class="eyebrow" data-i18n="about.eyebrow">About us</div>
         <h2 data-i18n="about.h2">Why we exist</h2>
+        <p class="lead" data-i18n="about.lead">Intellect Core is a smart-solutions company. We turn business problems into technology that quietly does the work, so people can focus on what actually matters.</p>
       </div>
       <div class="about-grid">
         <div class="about-card rv">
@@ -691,112 +522,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <div class="about-card rv d1">
           <span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
           <h3 data-i18n="about.v.h3">Our vision</h3>
-          <p data-i18n="about.v.p">A Suriname where businesses don't lag behind but lead the way: data-driven, automated and ready for the age of AI.</p>
+          <p data-i18n="about.v.p">A region where businesses don't lag behind but lead the way: data-driven, automated and ready for the age of AI.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="how" class="section">
-    <div class="container">
-      <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="how.eyebrow">How we work</div>
-        <h2 data-i18n="how.h2">From first call to live system, without the risk</h2>
-      </div>
-      <div class="steps">
-        <div class="step rv"><div class="num">1</div><h3><span data-i18n="how.s1.h3">Quickscan</span> <span class="free" data-i18n="how.free">Free</span></h3><p data-i18n="how.s1.p">A 30-minute look at where your hours leak. You walk away with a one-page plan: what to automate, hours saved, and what it takes, whether you hire us or not.</p></div>
-        <div class="step rv d1"><div class="num">2</div><h3 data-i18n="how.s2.h3">Build in weeks</h3><p data-i18n="how.s2.p">Short cycles with a demo every week, so you see real progress from week one. First automations go live in about a week; full systems in 3-6.</p></div>
-        <div class="step rv d2"><div class="num">3</div><h3 data-i18n="how.s3.h3">Launch &amp; own it</h3><p data-i18n="how.s3.p">Live with monitoring and error handling, plus documentation and handover so your team runs it. Optional care plan if you'd rather we keep it sharp.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="section">
-    <div class="container">
-      <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="nav.pricing">Pricing</div>
-        <h2 data-i18n="price.h2">Simple, scoped to your goals</h2>
-        <p class="lead" data-i18n="price.lead">Fixed prices where possible, so you know what you're in for. Every project gets an exact quote on your free quickscan.</p>
-      </div>
-      <div class="wedge rv">
-        <span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span>
-        <div class="wt">
-          <b data-i18n="wedge.b">The fast start: Bank Statement Automation</b>
-          <span data-i18n="wedge.s">Any bank, any currency: statements read, categorised and ledger-ready in one click. Live in about a week. The most popular first project for accountants and SMBs.</span>
-        </div>
-        <div class="wp"><span data-i18n="wedge.p">from $350</span><small data-i18n="wedge.small">fixed price · ~1 week</small></div>
-        <a href="#contact" class="btn btn-primary" data-i18n="wedge.cta">Start here</a>
-      </div>
-      <div class="pg">
-        <div class="pc rv">
-          <div class="tier">Starter</div>
-          <div class="from" data-i18n="price.from">from</div><div class="amt">$499</div><div class="per" data-i18n="p1.per">one focused project</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p1.f1">One automation or chatbot, solved end to end</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p1.f2">1 integration · basic dashboard</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p1.f3">~2 weeks · 30 days support</span></li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost" style="justify-content:center" data-i18n="p.quote">Get a quote</a>
-        </div>
-        <div class="pc feat rv d1">
-          <div class="tier" style="color:var(--accent)">Growth</div>
-          <div class="from" data-i18n="price.from">from</div><div class="amt">$1,499</div><div class="per" data-i18n="p2.per">a complete working system</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f1">Full custom AI solution for a team or process</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f2">Up to 5 integrations · advanced dashboard</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p2.f3">3-6 weeks · 3 months support · source code</span></li>
-          </ul>
-          <a href="#contact" class="btn btn-primary" style="justify-content:center;width:100%" data-i18n="p.quote">Get a quote</a>
-        </div>
-        <div class="pc rv d2">
-          <div class="tier">Enterprise</div>
-          <div class="from">&nbsp;</div><div class="amt" data-i18n="p3.amt">Tailored</div><div class="per" data-i18n="p3.per">strategy + systems + roadmap</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p3.f1">AI roadmap &amp; board-ready strategy</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p3.f2">Multiple systems · unlimited integrations</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> <span data-i18n="p3.f3">Priority support &amp; SLA · ongoing partnership</span></li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost" style="justify-content:center" data-i18n="p3.cta">Talk to us</a>
-        </div>
-      </div>
-      <p class="price-note" data-i18n="price.note">Not sure which fits? Take the free quickscan. We'll recommend the smallest thing that solves your problem. Ongoing care plans from $150/month.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section" style="padding-top:0">
-    <div class="container">
-      <div class="section-head center rv">
-        <div class="eyebrow" data-i18n="faq.eyebrow">Straight answers</div>
-        <h2 data-i18n="faq.h2">The questions everyone asks</h2>
-      </div>
-      <div class="faq-list rv">
-        <details class="faq">
-          <summary><span data-i18n="faq.q1">Is AI reliable enough for real business data?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a1">That's exactly why we design every system with a human at the wheel and output you can verify. Our document AI reports its own confidence per field, and anything uncertain is flagged for review instead of silently guessed. Want proof? The free quickscan runs on <em>your</em> data, so you see the accuracy before you spend anything.</p>
-        </details>
-        <details class="faq">
-          <summary><span data-i18n="faq.q2">What does something like this cost?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a2">First automations start at $350 fixed. But the better question is what the manual work costs now: use the calculator above. Most projects pay for themselves within weeks. We quote fixed prices wherever possible, so there are no surprise hours on an invoice.</p>
-        </details>
-        <details class="faq">
-          <summary><span data-i18n="faq.q3">How long before we see results?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a3">A first automation is typically live in about a week. Larger systems take 3-6 weeks, with a working demo every week so you see progress from day one, never a black box that "will be ready eventually".</p>
-        </details>
-        <details class="faq">
-          <summary><span data-i18n="faq.q4">Can our team run it without you afterwards?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a4">Yes, that's the standard. Every project ships with documentation, a walkthrough and a proper handover so it's yours, not a dependency on us. If you'd rather we keep it monitored and improving, care plans start at $150/month, but they're optional.</p>
-        </details>
-        <details class="faq">
-          <summary><span data-i18n="faq.q5">Our data is sensitive. How do you handle that?</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a5">Your data stays in your systems and your accounts. We build inside your environment with least-access principles, and nothing is shared with third parties. We're happy to sign an NDA before the first conversation.</p>
-        </details>
-        <details class="faq">
-          <summary><span data-i18n="faq.q6">We don't know what to automate first.</span><span class="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <p class="fa" data-i18n="faq.a6">Perfect, that's what the free quickscan is for. In 30 minutes we look at where your team's hours actually go, and you get a one-page plan ranking the opportunities by hours saved. Even if you never hire us, you'll know exactly where the leak is.</p>
-        </details>
       </div>
     </div>
   </section>
@@ -806,40 +533,40 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     <div class="container">
       <div class="cta-band rv">
         <div class="eyebrow" style="justify-content:center" data-i18n="band.eyebrow">Ready to start?</div>
-        <h2 data-i18n="band.h2">Your business, <span class="gradient-text">supercharged by AI</span></h2>
-        <p data-i18n="band.p">One free 30-minute quickscan is all it takes to see what your busywork really costs, and how fast it disappears.</p>
+        <h2 data-i18n="band.h2">Your business, <span class="core-text">supercharged by AI</span></h2>
+        <p data-i18n="band.p">Bring us a problem. We'll show you the smartest way to solve it, in plain language.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta.quickscan">Get your free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="hero.cta1">Start a conversation</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT / FINAL CTA -->
+  <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <div class="contact rv">
         <div>
-          <div class="eyebrow" data-i18n="c.eyebrow">The next 30 minutes could save you thousands</div>
-          <h2 data-i18n="cta.quickscan">Get your free quickscan</h2>
-          <p class="muted" data-i18n="c.p">Tell us where the time goes in your business. We'll show you what's automatable, what it saves, and what it takes, in plain language, no obligation, no jargon.</p>
+          <div class="eyebrow" data-i18n="c.eyebrow">Let's talk</div>
+          <h2 data-i18n="c.h2">Start a conversation</h2>
+          <p class="muted" data-i18n="c.p">Tell us the challenge you're facing, or ask for a private demo. We'll get back to you within a day, no jargon, no obligation.</p>
           <div class="ways">
             <div class="way"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b data-i18n="c.email">Email</b><span>hello@intellectcore.com</span></div></div>
             <!-- TODO: replace the number below with your real WhatsApp number (incl. country code, no +) -->
-            <a class="way" href="https://wa.me/597000000?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20a%20free%20quickscan" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg></span><div><b>WhatsApp</b><span data-i18n="c.wa.s">Quickest way to reach us</span></div></a>
-            <div class="way"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><b data-i18n="c.loc.b">Location</b><span data-i18n="c.loc.s">Suriname · serving clients globally</span></div></div>
+            <a class="way" href="https://wa.me/597000000?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg></span><div><b>WhatsApp</b><span data-i18n="c.wa.s">Quickest way to reach us</span></div></a>
+            <div class="way"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><b data-i18n="c.loc.b">Location</b><span data-i18n="c.loc.s">Suriname · serving clients worldwide</span></div></div>
           </div>
         </div>
         <div class="fw">
           <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
             <!-- TODO: replace with your Web3Forms access key so submissions are delivered -->
             <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY">
-            <input type="hidden" name="subject" value="New quickscan request via intellectcore.com (fable)">
+            <input type="hidden" name="subject" value="New message via intellectcore.com">
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
             <div class="fg"><label for="cName" data-i18n="f.name">Name</label><input id="cName" name="name" type="text" required placeholder="Your name" data-i18n-ph="ph.name"></div>
             <div class="fg"><label for="cEmail" data-i18n="f.email">Email</label><input id="cEmail" name="email" type="email" required placeholder="you@company.com"></div>
-            <div class="fg"><label for="cMsg" data-i18n="f.msg">Where does your team lose the most time?</label><textarea id="cMsg" name="message" required placeholder="e.g. retyping bank statements, answering the same emails, building monthly reports…" data-i18n-ph="ph.msg"></textarea></div>
-            <button class="btn btn-primary" id="sbtn" type="submit" style="width:100%;justify-content:center"><span data-i18n="f.submit">Claim my free quickscan</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <div class="fg"><label for="cMsg" data-i18n="f.msg">What problem can we solve for you?</label><textarea id="cMsg" name="message" required placeholder="e.g. retyping bank statements, answering the same questions, scattered data… or 'I'd like to see a demo of X'" data-i18n-ph="ph.msg"></textarea></div>
+            <button class="btn btn-primary" id="sbtn" type="submit" style="width:100%;justify-content:center"><span data-i18n="f.submit">Send message</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <div class="form-msg" id="formOk" data-i18n="f.ok">✓ Sent! We'll be in touch within 24 hours.</div>
             <div class="form-msg" id="formErr" data-i18n="f.err">⚠ Something went wrong. Please email hello@intellectcore.com.</div>
           </form>
@@ -855,11 +582,10 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     <div class="footer-grid">
       <div class="footer-about">
         <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#04121b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12V4.4M12 12 5.5 16M12 12 18.5 16"/><circle cx="12" cy="4.4" r="1.7" fill="#04121b" stroke="none"/><circle cx="5.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="18.5" cy="16" r="1.7" fill="#04121b" stroke="none"/><circle cx="12" cy="12" r="2.7" fill="#04121b" stroke="none"/></svg></span><span><b>Intellect</b> <span class="ac">Core</span></span></a>
-        <p data-i18n="ft.about">The intelligent core of your business: custom AI, automation and data, from concept to production.</p>
+        <p data-i18n="ft.about">A smart-solutions company: every problem met with a solution that fits, from concept to production.</p>
       </div>
-      <div><h4 data-i18n="ft.nav">Navigation</h4><ul><li><a href="#demo">Live demo</a></li><li><a href="#about" data-i18n="ft.aboutlink">About us</a></li><li><a href="#roi" data-i18n="nav.roi">ROI calculator</a></li><li><a href="#stack" data-i18n="nav.stack">Tool stack</a></li><li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4 data-i18n="ft.services">Services</h4><ul><li><a href="#svc-automation" data-i18n="svc.automation">Process Automation</a></li><li><a href="#svc-ai" data-i18n="svc.ai">Custom AI Systems</a></li><li><a href="#svc-chatbots" data-i18n="svc.chatbots">Chatbots &amp; Assistants</a></li><li><a href="#svc-data" data-i18n="svc.data">Data &amp; Dashboards</a></li><li><a href="#svc-api" data-i18n="svc.api">API &amp; Integrations</a></li><li><a href="#svc-strategy" data-i18n="svc.strategy">AI Strategy &amp; Roadmap</a></li><li><a href="#svc-process" data-i18n="svc.process">Process Mapping &amp; Flows</a></li></ul></div>
-      <div><h4 data-i18n="ft.touch">Contact</h4><ul><li><a href="#contact" data-i18n="ft.quickscan">Free quickscan</a></li><li><a href="mailto:hello@intellectcore.com">hello@intellectcore.com</a></li><li><a href="technical/demo/index.html" target="_blank" rel="noopener">Core Parse demo ↗</a></li><li><a href="technical/insight/index.html" target="_blank" rel="noopener">Core Insight demo ↗</a></li></ul></div>
+      <div><h4 data-i18n="ft.nav">Navigation</h4><ul><li><a href="#services" data-i18n="nav.services">Services</a></li><li><a href="#how" data-i18n="nav.how">How we work</a></li><li><a href="#cases" data-i18n="nav.cases">Cases</a></li><li><a href="#about" data-i18n="nav.about">About</a></li><li><a href="#contact" data-i18n="ft.touch">Contact</a></li></ul></div>
+      <div><h4 data-i18n="ft.services">Services</h4><ul><li><a href="#svc-automation" data-i18n="svc.automation">Process Automation</a></li><li><a href="#svc-ai" data-i18n="svc.ai">Custom AI Systems</a></li><li><a href="#svc-chatbots" data-i18n="svc.chatbots">Chatbots &amp; Assistants</a></li><li><a href="#svc-data" data-i18n="svc.data">Data &amp; Dashboards</a></li><li><a href="#svc-web" data-i18n="svc.web">Web &amp; App Development</a></li><li><a href="#svc-process" data-i18n="svc.process">Process Mapping &amp; Flows</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span data-i18n="ft.rights">© 2026 Intellect Core. All rights reserved.</span>
@@ -868,7 +594,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
         <span aria-hidden="true">·</span>
         <a href="algemene-voorwaarden.html" data-i18n="ft.terms">Terms &amp; conditions</a>
       </nav>
-      <span data-i18n="c.loc.s">Suriname · serving clients globally</span>
+      <span data-i18n="c.loc.s">Suriname · serving clients worldwide</span>
     </div>
   </div>
 </footer>
@@ -890,167 +616,104 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 /* Language — EN default, NL via the header toggle; stores 'ic-lang' */
 (function(){
   var NL={
-    "nav.roi":"ROI-calculator",
-    "nav.stack":"Tech-stack",
-    "nav.pricing":"Prijzen",
-    "nav.cta":"Gratis quickscan",
+    "skip":"Naar de inhoud",
+    "nav.services":"Diensten",
+    "nav.how":"Zo werken we",
+    "nav.cases":"Cases",
+    "nav.about":"Over ons",
+    "nav.cta":"Neem contact op",
     "svc.automation":"Procesautomatisering",
     "svc.ai":"AI-systemen op maat",
     "svc.chatbots":"Chatbots &amp; assistenten",
     "svc.data":"Data &amp; dashboards",
     "svc.api":"API's &amp; integraties",
-    "svc.strategy":"AI-strategie &amp; roadmap",
+    "svc.strategy":"AI-strategie",
     "svc.process":"Procesmapping &amp; flows",
-    "mega.automation.d":"Bankafschriften, facturen &amp; workflows op de automatische piloot",
-    "mega.ai.d":"Document-AI, agents &amp; beslissingsondersteuning",
-    "mega.chatbots.d":"WhatsApp- en webbots op uw bedrijfsdata",
-    "mega.data.d":"Schone pipelines &amp; realtime KPI's",
-    "mega.api.d":"Al uw systemen met elkaar verbonden",
-    "mega.strategy.d":"Een geprioriteerd, boardroom-klaar plan",
-    "mega.process.d":"Uw workflows in heldere flowcharts. Automatiseer met ons of laat een ander uitvoeren",
-    "mega.foot":"Probeer Core Parse, onze document-AI. Open de volledige demo",
-    "mega.foot2":"Probeer Core Insight, onze data-AI. Vraag uw data alles",
-    "hero.pill":"AI- &amp; automatiseringsstudio · Suriname &amp; wereldwijd",
-    "hero.h1":"Werk <em>slimmer</em>,<br>niet harder.",
-    "hero.type":"Wij automatiseren uw",
-    "hero.lead":"Custom AI en automatisering die het overtypen, sorteren en zoeken bij uw team weghaalt. Gebouwd rond uw bedrijf, live in weken, bewezen in productie.",
-    "cta.quickscan":"Vraag uw gratis quickscan aan",
-    "hero.watch":"Zie het werken",
-    "hero.sub":"30 minuten · u krijgt een besparingsplan van één A4 · vrijblijvend",
-    "hero.s1":"uur per week vrijgespeeld door een typisch geautomatiseerd proces",
-    "hero.s2":"extractienauwkeurigheid van onze document-AI in productie",
-    "hero.s3":"van kick-off tot uw eerste automatisering live draait",
-    "hero.days":"dagen",
-    "shift.eyebrow":"De omslag",
-    "shift.h2":"Waar uw week naartoe gaat, en waar die naartoe kán",
-    "shift.lead":"Elk uur dat opgaat aan overtypen, sorteren en zoeken is een uur dat niet naar klanten, strategie en groei gaat.",
-    "shift.b.h3":"Zonder automatisering",
-    "shift.b.small":"De tredmolen van routinewerk",
-    "shift.b1":"<b>Een halve dag per maand</b> bankafschriften regel voor regel overtypen in het grootboek.",
-    "shift.b2":"<b>Uren graven</b> door mappen en inboxen om één beleidsregel of contractclausule te vinden.",
-    "shift.b3":"<b>Knip-en-plakrapporten</b> met de hand samengesteld, al verouderd op de dag dat ze landen.",
-    "shift.b4":"<b>Fouten door vermoeidheid</b>: typfouten en gemiste boekingen die echt geld kosten om te herstellen.",
-    "shift.a.h3":"Met Intellect Core",
-    "shift.a.small":"De intelligente kern aan het werk",
-    "shift.a1":"<b>Afschriften verwerken zichzelf</b>: gelezen, gecategoriseerd en geëxporteerd in één klik.",
-    "shift.a2":"<b>Stel uw documenten vragen</b> en krijg in seconden antwoord vanuit uw eigen bestanden, mét bronnen.",
-    "shift.a3":"<b>Rapporten bouwen zichzelf</b> op basis van live data, volgens schema, elke keer.",
-    "shift.a4":"<b>Draait 24/7 zonder vermoeidheid</b>: consistente output, met altijd een mens aan het stuur.",
-    "demo.eyebrow":"Zie het, geloof ons niet op ons woord",
-    "demo.h2":"Kijk hoe het werk verdwijnt",
-    "demo.p":"Dit is <strong>Core Parse</strong>, onze document-AI, met echt werk: kies een documenttype en zie in seconden gestructureerde, grootboek-klare data verschijnen. Dezelfde engine draait vandaag in productie op echte bankafschriften in drie valuta.",
-    "demo.tab1":"Bankafschrift",
-    "demo.tab2":"Factuur",
-    "demo.tab3":"E-mailinbox",
-    "demo.open":"Open de volledige Core Parse demo",
-    "demo.hint":"Wilt u het op <em>uw</em> documenten proberen? Daar is de gratis quickscan precies voor.",
-    "demo.ready":"Klaar.",
-    "demo.run":"Opnieuw",
-    "svcs.eyebrow":"Wat we bouwen",
-    "svcs.h2":"Eén studio, van begin tot eind",
-    "svcs.lead":"Van één automatisering tot een volledig platform. Elke oplossing wordt op maat gebouwd, geleverd van concept tot productie, en overgedragen zodat uw team er zelf eigenaar van is.",
-    "svcs.automation.p":"Bankafschriften, facturen, goedkeuringen en workflows over meerdere systemen die 24/7 draaien. Het handwerk stopt gewoon.",
+    "svc.web":"Web- &amp; app-ontwikkeling",
+    "svcs.web.p":"Websites, webapps en volledige SaaS-producten, van ontwerp tot oplevering. Van een scherpe marketingsite tot een product waar uw klanten elke dag op inloggen.",
+    "hero.pill":"Bedrijf voor slimme oplossingen · Suriname &amp; wereldwijd",
+    "hero.h1":"Wij denken in<br><em>slimme oplossingen</em>.",
+    "hero.lead":"U komt met het probleem, wij bedenken de slimme manier om het op te lossen. Een oplossing gebouwd rond uw bedrijf, met de juiste technologie voor de klus.",
+    "hero.cta1":"Begin een gesprek",
+    "hero.cta2":"Bekijk ons werk",
+    "hero.sub":"Eén gesprek om uw uitdaging in kaart te brengen. Geen jargon, vrijblijvend.",
+    "core.caption":"Eén kern, veel capabilities. We kiezen de juiste voor uw probleem, en combineren ze als dat nodig is.",
+    "think.p":"We verkopen geen vaste stack. We starten bij <b>uw probleem</b> en kiezen de juiste aanpak, automatisering, AI, data of een mix, wat het ook echt oplost.",
+    "stat.1":"oplossingen ontworpen en opgeleverd voor échte bedrijven",
+    "stat.2":"kern-capabilities die we combineren rond uw probleem",
+    "stat.wk":"week",
+    "stat.3":"van kick-off tot een eerste werkend resultaat dat u ziet",
+    "svcs.eyebrow":"Wat we doen",
+    "svcs.h2":"Oplossingen die we bouwen",
+    "svcs.lead":"Van één automatisering tot een volledig platform. Elke oplossing wordt op maat gebouwd rond uw probleem en overgedragen zodat uw team er zelf eigenaar van is.",
+    "svcs.automation.p":"Bankafschriften, facturen, goedkeuringen en workflows over meerdere systemen die draaien zonder handwerk. Het routinewerk stopt gewoon.",
     "svcs.ai.p":"Documentextractie, AI-agents en beslissingsondersteuning, gebouwd rond uw bedrijfslogica, tools en data.",
-    "svcs.chatbots.p":"WhatsApp- en webbots getraind op uw bedrijfsdata, met directe antwoorden voor uw team of uw klanten.",
-    "svcs.data.p":"Ruwe data omgezet in schone pipelines en realtime KPI's, zodat beslissingen op cijfers draaien in plaats van onderbuikgevoel.",
-    "svcs.api.p":"CRM's, ERP's, betalingen en messaging, verbonden tot één naadloze flow zodat niets twee keer wordt overgetypt.",
-    "svcs.strategy.p":"We brengen uw processen in kaart, vinden de kansen met de hoogste ROI en geven u een geprioriteerde, boardroom-klare roadmap.",
-    "svcs.process.p":"Elke automatisering begint met een helder beeld. We brengen in kaart hoe werk écht door uw bedrijf stroomt, in scherpe visuele flowcharts en stap-voor-stap procesdocumentatie. Een blauwdruk die u met ons automatiseert, intern verbetert of door elke andere partij laat uitvoeren.",
-    "roi.eyebrow":"Reken het uit",
-    "roi.h2":"Wat kost routinewerk u?",
-    "roi.lead":"Schuif naar uw situatie. De meeste klanten zijn verrast, en daarna opgelucht dat de oplossing een fractie kost van het lek.",
-    "roi.l1":"Uren handmatige administratie per week",
-    "roi.l2":"Gemiddelde kosten per uur (USD)",
-    "roi.note":"Gaat ervan uit dat automatisering ~90% van het handwerk overneemt, in lijn met wat we na oplevering zien. Exacte cijfers komen uit uw gratis quickscan.",
-    "roi.c1":"Wat dit werk u kost<br><b>per jaar</b>",
-    "roi.c2":"Wat automatisering teruggeeft<br><b>elk jaar</b>",
-    "roi.c3":"Werkdagen die uw team per jaar terugkrijgt",
-    "stack.eyebrow":"Tech-stack",
-    "stack.h2":"De technologie waarmee we bouwen",
-    "stack.lead":"Een zorgvuldig gekozen stack van frontier-AI, automatiseringsplatformen en bewezen infrastructuur, per project gekozen, nooit one-size-fits-all.",
-    "stack.c1":"AI &amp; modellen",
-    "stack.c2":"Automatisering",
-    "stack.c3":"Data &amp; analytics",
-    "stack.c4":"Cloud &amp; infra",
-    "stack.c5":"Development",
-    "stack.c6":"Integraties &amp; security",
+    "svcs.chatbots.p":"WhatsApp- en webassistenten getraind op uw bedrijfsdata, met directe antwoorden voor uw team of uw klanten.",
+    "svcs.data.p":"Ruwe, verspreide data omgezet in schone pipelines en live dashboards, zodat beslissingen op cijfers draaien in plaats van onderbuikgevoel.",
+    "svcs.api.p":"CRM's, ERP's, betalingen en messaging verbonden tot één naadloze flow, zodat niets twee keer wordt overgetypt.",
+    "svcs.strategy.p":"We brengen uw processen in kaart, vinden de kansen met de grootste impact en geven u een geprioriteerde, boardroom-klare roadmap.",
+    "svcs.process.p":"Elke oplossing begint met een helder beeld. We brengen in kaart hoe werk écht door uw bedrijf stroomt, in scherpe visuele flowcharts en stap-voor-stap documentatie. Een blauwdruk die u met ons bouwt, intern verbetert of door elke andere partij laat uitvoeren.",
+    "how.eyebrow":"Zo werken we",
+    "how.h2":"Eerst denken, dan bouwen",
+    "how.lead":"Geen black boxes en geen risico. U ziet het denkwerk en al vroeg een werkend resultaat, elke keer.",
+    "how.s1.h3":"Het probleem begrijpen",
+    "how.s1.p":"We luisteren en brengen in kaart hoe werk écht door uw bedrijf stroomt, zodat we het echte knelpunt oplossen en niet een symptoom ervan.",
+    "how.s2.h3":"De slimme oplossing ontwerpen",
+    "how.s2.p":"We vormen de aanpak die bij uw situatie past en kiezen de juiste technologie voor de klus, AI of niet. U ziet het plan voordat we bouwen.",
+    "how.s3.h3":"Bouwen, bewijzen &amp; overdragen",
+    "how.s3.p":"Korte cycli met elke week iets werkends. Live in weken, gedocumenteerd en overgedragen zodat uw team het zelf draait.",
+    "cases.eyebrow":"Uitgelicht werk",
+    "cases.h2":"Problemen die we al oplosten",
+    "cases.lead":"Een greep uit wat we bouwden, zonder klantnamen. Iets live zien? Vraag ons om een besloten demo.",
+    "cases.c1.tag":"Energie · Enterprise",
+    "cases.c1.h3":"AI-transformatie, van begin tot eind",
+    "cases.c1.p":"De roadmap van een groot energiebedrijf omgezet in werkende tools: een spraakassistent voor het veld, veiligheids- en incidentrapportage, en een WhatsApp-kennisbot over de operatie.",
+    "cases.c2.tag":"Finance &amp; accounting",
+    "cases.c2.h3":"Bankafschriften op de automatische piloot",
+    "cases.c2.p":"Afschriften van meerdere banken in drie valuta gelezen, gecategoriseerd en in één klik omgezet naar grootboek-klare output.",
+    "cases.c3.tag":"Juridisch &amp; compliance",
+    "cases.c3.h3":"Contracten die zichzelf lezen",
+    "cases.c3.p":"Automatische metadata-extractie uit contracten, plus een doorzoekbare kennisbank zodat de juiste clausule in seconden gevonden wordt in plaats van uren.",
+    "cases.c4.tag":"Field services",
+    "cases.c4.h3":"Van papier naar een live werkbon-systeem",
+    "cases.c4.p":"Een werkbon-platform op maat dat papieren formulieren en verspreide spreadsheets verving door één heldere, volgbare flow.",
+    "cases.c5.tag":"Operations",
+    "cases.c5.h3":"E-mail die verandert in actie",
+    "cases.c5.p":"Binnenkomende e-mail automatisch getriageerd en omgezet in toegewezen taken, zodat niets blijft liggen en de inbox geen takenlijst meer is.",
+    "cases.c6.tag":"Data &amp; platform",
+    "cases.c6.h3":"Eén bron van waarheid",
+    "cases.c6.p":"Rommelige, verspreide data gemigreerd naar een modern platform met schone pipelines en live dashboards waar het hele team op kan vertrouwen.",
+    "cases.foot":"Liever zien hoe het werkt op echte data? We geven demo's besloten, zodat u precies ziet wat voor u relevant is.",
+    "cases.cta":"Vraag een besloten demo aan",
     "about.eyebrow":"Over ons",
     "about.h2":"Waarom we bestaan",
+    "about.lead":"Intellect Core is een bedrijf voor slimme oplossingen. We zetten bedrijfsproblemen om in technologie die stilletjes het werk doet, zodat mensen zich kunnen richten op wat echt telt.",
     "about.m.h3":"Onze missie",
     "about.m.p":"We helpen organisaties in Suriname en ver daarbuiten excelleren door repetitief werk te elimineren en intelligente technologie binnen handbereik te brengen: meetbaar, veilig en toegankelijk.",
     "about.v.h3":"Onze visie",
-    "about.v.p":"Een Suriname waar bedrijven niet achterlopen maar vooroplopen: datagedreven, geautomatiseerd en klaar voor het AI-tijdperk.",
-    "how.eyebrow":"Zo werken we",
-    "how.h2":"Van eerste gesprek tot live systeem, zonder risico",
-    "how.s1.h3":"Quickscan",
-    "how.free":"Gratis",
-    "how.s1.p":"In 30 minuten kijken we waar uw uren weglekken. U krijgt een plan van één A4: wat te automatiseren, hoeveel uur het scheelt en wat ervoor nodig is, of u ons nu inhuurt of niet.",
-    "how.s2.h3":"Gebouwd in weken",
-    "how.s2.p":"Korte cycli met elke week een demo, zodat u vanaf week één echte voortgang ziet. Eerste automatiseringen zijn in ongeveer een week live; volledige systemen in 3-6.",
-    "how.s3.h3":"Live &amp; van u",
-    "how.s3.p":"Live met monitoring en foutafhandeling, plus documentatie en overdracht zodat uw team het zelf draait. Optioneel onderhoudsplan als u liever hebt dat wij het scherp houden.",
-    "price.h2":"Simpel, afgestemd op uw doelen",
-    "price.lead":"Vaste prijzen waar het kan, zodat u weet waar u aan toe bent. Elk project krijgt een exacte offerte bij uw gratis quickscan.",
-    "wedge.b":"De vliegende start: bankafschrift-automatisering",
-    "wedge.s":"Elke bank, elke valuta: afschriften gelezen, gecategoriseerd en grootboek-klaar in één klik. Live in ongeveer een week. Het populairste eerste project voor accountants en mkb.",
-    "wedge.p":"vanaf $350",
-    "wedge.small":"vaste prijs · ~1 week",
-    "wedge.cta":"Start hier",
-    "price.from":"vanaf",
-    "p1.per":"één gericht project",
-    "p1.f1":"Eén automatisering of chatbot, end-to-end opgelost",
-    "p1.f2":"1 integratie · basis-dashboard",
-    "p1.f3":"~2 weken · 30 dagen support",
-    "p.quote":"Vraag een offerte",
-    "p2.per":"een compleet werkend systeem",
-    "p2.f1":"Volledige AI-oplossing op maat voor een team of proces",
-    "p2.f2":"Tot 5 integraties · geavanceerd dashboard",
-    "p2.f3":"3-6 weken · 3 maanden support · broncode",
-    "p3.amt":"Op maat",
-    "p3.per":"strategie + systemen + roadmap",
-    "p3.f1":"AI-roadmap &amp; boardroom-klare strategie",
-    "p3.f2":"Meerdere systemen · onbeperkte integraties",
-    "p3.f3":"Priority support &amp; SLA · doorlopend partnerschap",
-    "p3.cta":"Praat met ons",
-    "price.note":"Twijfelt u welke past? Doe de gratis quickscan. We adviseren het kleinste dat uw probleem oplost. Onderhoudsplannen vanaf $150/maand.",
-    "faq.eyebrow":"Eerlijke antwoorden",
-    "faq.h2":"De vragen die iedereen stelt",
-    "faq.q1":"Is AI betrouwbaar genoeg voor echte bedrijfsdata?",
-    "faq.a1":"Precies daarom ontwerpen we elk systeem met een mens aan het stuur en output die u kunt controleren. Onze document-AI rapporteert per veld zijn eigen zekerheid, en alles wat onzeker is wordt gemarkeerd voor review in plaats van stilletjes gegokt. Bewijs zien? De gratis quickscan draait op <em>uw</em> data, dus u ziet de nauwkeurigheid voordat u iets uitgeeft.",
-    "faq.q2":"Wat kost zoiets?",
-    "faq.a2":"Eerste automatiseringen vanaf $350 vast. Maar de betere vraag is wat het handwerk nú kost: gebruik de calculator hierboven. De meeste projecten verdienen zichzelf binnen weken terug. We offreren waar mogelijk vaste prijzen, dus geen verrassingsuren op een factuur.",
-    "faq.q3":"Hoe snel zien we resultaat?",
-    "faq.a3":"Een eerste automatisering is meestal in ongeveer een week live. Grotere systemen duren 3-6 weken, met elke week een werkende demo zodat u vanaf dag één voortgang ziet, nooit een black box die \"ooit af\" is.",
-    "faq.q4":"Kan ons team het daarna zelfstandig draaien?",
-    "faq.a4":"Ja, dat is de standaard. Elk project wordt geleverd met documentatie, een walkthrough en een echte overdracht, zodat het van u is en geen afhankelijkheid van ons. Wilt u liever dat wij het monitoren en verbeteren, dan zijn er onderhoudsplannen vanaf $150/maand, maar die zijn optioneel.",
-    "faq.q5":"Onze data is gevoelig. Hoe wordt die beschermd?",
-    "faq.a5":"Uw data blijft in uw systemen en uw accounts. We bouwen binnen uw omgeving volgens least-access-principes, en er wordt niets gedeeld met derden. We tekenen graag een NDA vóór het eerste gesprek.",
-    "faq.q6":"We weten niet wat we eerst moeten automatiseren.",
-    "faq.a6":"Perfect, daar is de gratis quickscan voor. In 30 minuten kijken we waar de uren van uw team echt naartoe gaan, en u krijgt een plan van één A4 met de kansen gerangschikt op bespaarde uren. Ook als u ons nooit inhuurt, weet u precies waar het lek zit.",
+    "about.v.p":"Een regio waar bedrijven niet achterlopen maar vooroplopen: datagedreven, geautomatiseerd en klaar voor het AI-tijdperk.",
     "band.eyebrow":"Klaar om te beginnen?",
-    "band.h2":"Uw bedrijf, <span class=\"gradient-text\">supercharged door AI</span>",
-    "band.p":"Eén gratis quickscan van 30 minuten is genoeg om te zien wat uw routinewerk echt kost, en hoe snel het verdwijnt.",
-    "c.eyebrow":"De volgende 30 minuten kunnen u duizenden dollars besparen",
-    "c.p":"Vertel ons waar de tijd in uw bedrijf naartoe gaat. Wij laten zien wat automatiseerbaar is, wat het oplevert en wat ervoor nodig is, in gewone taal, vrijblijvend, zonder jargon.",
+    "band.h2":"Uw bedrijf, <span class=\"core-text\">supercharged door AI</span>",
+    "band.p":"Kom met een probleem. Wij laten u de slimste manier zien om het op te lossen, in gewone taal.",
+    "c.eyebrow":"Laten we praten",
+    "c.h2":"Begin een gesprek",
+    "c.p":"Vertel ons welke uitdaging u heeft, of vraag om een besloten demo. We reageren binnen een dag, geen jargon, vrijblijvend.",
     "c.email":"E-mail",
     "c.wa.s":"De snelste manier om ons te bereiken",
     "c.loc.b":"Locatie",
     "c.loc.s":"Suriname · klanten wereldwijd",
     "f.name":"Naam",
     "f.email":"E-mail",
-    "f.msg":"Waar verliest uw team de meeste tijd?",
-    "f.submit":"Claim mijn gratis quickscan",
+    "f.msg":"Welk probleem kunnen we voor u oplossen?",
+    "f.submit":"Verstuur bericht",
     "f.ok":"✓ Verzonden! We nemen binnen 24 uur contact op.",
     "f.err":"⚠ Er ging iets mis. Mail ons op hello@intellectcore.com.",
     "ph.name":"Uw naam",
-    "ph.msg":"bijv. bankafschriften overtypen, dezelfde e-mails beantwoorden, maandrapportages bouwen…",
-    "ft.about":"De intelligente kern van uw bedrijf: custom AI, automatisering en data, van concept tot productie.",
+    "ph.msg":"bijv. bankafschriften overtypen, steeds dezelfde vragen, verspreide data… of 'ik wil een demo van X zien'",
+    "ft.about":"Een bedrijf voor slimme oplossingen: elk probleem beantwoord met een oplossing die past, van concept tot productie.",
     "ft.nav":"Navigatie",
     "ft.services":"Diensten",
-    "ft.aboutlink":"Over ons",
     "ft.touch":"Contact",
-    "ft.quickscan":"Gratis quickscan",
-    "ft.legal":"Juridisch",
     "ft.privacy":"Privacybeleid",
     "ft.terms":"Algemene voorwaarden",
     "ft.rights":"© 2026 Intellect Core. Alle rechten voorbehouden."
@@ -1088,24 +751,6 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   menu.addEventListener("click",function(e){if(e.target.closest("a")){document.body.classList.remove("nav-open");tog.setAttribute("aria-expanded","false")}});
 })();
 
-/* Mega dropdown — click toggle (touch/keyboard friendly; hover still works) */
-(function(){
-  var li=document.querySelector(".has-mega"); if(!li)return;
-  var btn=li.querySelector(".nav-link"),mega=li.querySelector(".mega");
-  function open(){btn.setAttribute("aria-expanded","true")}
-  function close(){btn.setAttribute("aria-expanded","false")}
-  btn.addEventListener("click",function(e){
-    e.preventDefault();
-    if(btn.getAttribute("aria-expanded")==="true")close();else open();
-  });
-  mega.addEventListener("click",function(e){
-    if(e.target.closest("a")){close();document.body.classList.remove("nav-open");
-      var tog=document.getElementById("navToggle");tog&&tog.setAttribute("aria-expanded","false");}
-  });
-  document.addEventListener("click",function(e){if(!li.contains(e.target))close()});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
-})();
-
 /* Sticky header */
 (function(){
   var h=document.getElementById("siteHeader");
@@ -1121,7 +766,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   els.forEach(function(e){io.observe(e)});
 })();
 
-/* Hero neural network canvas */
+/* Hero neural network canvas — flowing connections behind the hero */
 (function(){
   var cv=document.getElementById("heroNet"); if(!cv)return;
   if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){cv.style.display="none";return}
@@ -1171,41 +816,12 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   requestAnimationFrame(frame);
 })();
 
-/* Typewriter — reads the word list for the active language on every tick */
-(function(){
-  var el=document.getElementById("typeWord"); if(!el)return;
-  var LISTS={
-    en:["bank statements","invoices","email inbox","monthly reports","contracts","customer questions"],
-    nl:["bankafschriften","facturen","e-mailinbox","maandrapportages","contracten","klantvragen"]
-  };
-  function words(){return document.documentElement.getAttribute("data-lang")==="nl"?LISTS.nl:LISTS.en}
-  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){el.textContent=words()[0];return}
-  var wi=0,ci=words()[0].length,del=false;
-  function tick(){
-    var w=words()[wi];
-    if(!del){
-      ci++;el.textContent=w.slice(0,ci);
-      if(ci>=w.length){del=true;setTimeout(tick,2100);return}
-      setTimeout(tick,70);
-    }else{
-      ci--;el.textContent=w.slice(0,ci);
-      if(ci<=0){del=false;wi=(wi+1)%words().length;setTimeout(tick,300);return}
-      setTimeout(tick,38);
-    }
-  }
-  setTimeout(tick,2100);
-})();
-
 /* Count-up stats */
 (function(){
   var els=document.querySelectorAll("[data-count]");
-  function fin(el){
-    var t=parseFloat(el.getAttribute("data-count")),dec=parseInt(el.getAttribute("data-dec")||"0",10);
-    el.textContent=(el.getAttribute("data-pre")||"")+t.toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec})+(el.getAttribute("data-suf")||"");
-  }
   function animate(el){
     var target=parseFloat(el.getAttribute("data-count")),dec=parseInt(el.getAttribute("data-dec")||"0",10),
-        pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",dur=1500,t0=null;
+        pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",dur=1400,t0=null;
     function step(ts){
       if(t0===null)t0=ts;
       var p=Math.min((ts-t0)/dur,1);p=1-Math.pow(1-p,3);
@@ -1214,108 +830,9 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
     }
     requestAnimationFrame(step);
   }
-  if(!("IntersectionObserver" in window)){els.forEach(fin);return}
+  if(!("IntersectionObserver" in window)){els.forEach(function(el){el.textContent=(el.getAttribute("data-pre")||"")+el.getAttribute("data-count")+(el.getAttribute("data-suf")||"")});return}
   var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){animate(e.target);io.unobserve(e.target)}})},{threshold:.4});
   els.forEach(function(e){io.observe(e)});
-})();
-
-/* ROI calculator */
-(function(){
-  var hrs=document.getElementById("roiHrs"),rate=document.getElementById("roiRate");
-  if(!hrs||!rate)return;
-  var hv=document.getElementById("roiHrsVal"),rv=document.getElementById("roiRateVal"),
-      yEl=document.getElementById("roiYear"),sEl=document.getElementById("roiSave"),dEl=document.getElementById("roiDays");
-  function fmt(n){return "$"+Math.round(n).toLocaleString("en-US")}
-  function fill(s){var p=(s.value-s.min)/(s.max-s.min)*100;s.style.setProperty("--p",p+"%")}
-  function upd(){
-    var h=parseFloat(hrs.value),r=parseFloat(rate.value);
-    hv.textContent=h;rv.textContent="$"+r;
-    var yearly=h*r*52;
-    yEl.textContent=fmt(yearly);
-    sEl.textContent=fmt(yearly*.9);
-    dEl.textContent=Math.round(h*52*.9/8).toLocaleString("en-US");
-    fill(hrs);fill(rate);
-  }
-  hrs.addEventListener("input",upd);
-  rate.addEventListener("input",upd);
-  upd();
-})();
-
-/* Demo simulator */
-(function(){
-  var body=document.getElementById("demoBody"),file=document.getElementById("demoFile"),
-      bar=document.getElementById("demoBar"),status=document.getElementById("demoStatus"),
-      runBtn=document.getElementById("demoRun"),tabs=document.querySelectorAll(".demo-tab");
-  if(!body||!bar)return;
-  function isNL(){return document.documentElement.getAttribute("data-lang")==="nl"}
-  var data={
-    bank:{file:"Core Parse · bank-statement-may.csv",done:{en:"Done in 1.8s · 214 transactions · 0 errors",nl:"Klaar in 1,8s · 214 transacties · 0 fouten"},rows:[
-      ["source","\"Your Bank N.V.\""],
-      ["period","\"01 May – 31 May\""],
-      ["transactions","214 parsed"],
-      ["categorised","214 / 214 (auto)"],
-      ["currencies","SRD · USD · EUR"],
-      ["output","ledger-may.xlsx ✓"]
-    ]},
-    invoice:{file:"Core Parse · invoice-4471.pdf",done:{en:"Done in 2.3s · confidence 99.5%",nl:"Klaar in 2,3s · zekerheid 99,5%"},rows:[
-      ["vendor","\"Acme Supplies N.V.\""],
-      ["invoice_no","\"INV-4471\""],
-      ["date","\"2026-06-14\""],
-      ["total","SRD 33,385.00"],
-      ["currency","\"SRD\""],
-      ["confidence","99.5%"]
-    ]},
-    email:{file:"Core Parse · inbox · 47 unread",done:{en:"Done in 3.1s · 47 emails triaged",nl:"Klaar in 3,1s · 47 e-mails getriageerd"},rows:[
-      ["classified","47 / 47 emails"],
-      ["urgent","3 flagged → team lead"],
-      ["invoices found","6 → accounting flow"],
-      ["tasks created","12 (auto-assigned)"],
-      ["auto-replied","9 routine questions"],
-      ["human review","2 edge cases queued"]
-    ]}
-  };
-  var timers=[],current="bank";
-  function clearTimers(){timers.forEach(clearTimeout);timers=[];}
-  function run(key){
-    clearTimers();
-    current=key;
-    var d=data[key];
-    file.textContent=d.file;
-    body.innerHTML="";
-    status.classList.remove("done");
-    status.textContent=isNL()?"Bezig met analyseren…":"Analyzing…";
-    bar.style.transition="none";bar.style.width="0";
-    void bar.offsetWidth;
-    bar.style.transition="width 1s cubic-bezier(.22,1,.36,1)";bar.style.width="100%";
-    d.rows.forEach(function(r,i){
-      timers.push(setTimeout(function(){
-        var div=document.createElement("div");
-        div.className="row";
-        var ok=document.createElement("span");ok.className="ok";ok.textContent="✓";
-        var k=document.createElement("span");k.className="k";k.textContent=r[0];
-        var v=document.createElement("span");v.className="val";v.textContent=r[1];
-        div.appendChild(ok);div.appendChild(k);div.appendChild(v);
-        body.appendChild(div);
-        if(i===d.rows.length-1){status.textContent="✓ "+(isNL()?d.done.nl:d.done.en);status.classList.add("done");}
-      },850+i*340));
-    });
-  }
-  tabs.forEach(function(t){
-    t.addEventListener("click",function(){
-      tabs.forEach(function(o){o.classList.remove("active");o.setAttribute("aria-selected","false")});
-      t.classList.add("active");t.setAttribute("aria-selected","true");
-      run(t.getAttribute("data-demo"));
-    });
-  });
-  runBtn&&runBtn.addEventListener("click",function(){run(current)});
-  var section=document.getElementById("demo");
-  if("IntersectionObserver" in window&&section){
-    var started=false;
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(e){if(e.isIntersecting&&!started){started=true;run(current);io.unobserve(section)}});
-    },{threshold:.3});
-    io.observe(section);
-  }else{run(current);}
 })();
 
 /* Contact form → Web3Forms */
