@@ -1,6 +1,5 @@
 # Intellect Core — allow all crawlers
-# TODO: replace the domain below with your real domain once chosen.
 User-agent: *
 Allow: /
 
-Sitemap: https://intellectcore.com/sitemap.xml
+Sitemap: https://intellectcore.net/sitemap.xml

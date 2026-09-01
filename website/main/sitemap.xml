@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: replace https://intellectcore.com with your real domain once chosen. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://intellectcore.com/</loc>
+    <loc>https://intellectcore.net/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://intellectcore.com/privacybeleid.html</loc>
+    <loc>https://intellectcore.net/privacybeleid.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://intellectcore.com/algemene-voorwaarden.html</loc>
+    <loc>https://intellectcore.net/algemene-voorwaarden.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

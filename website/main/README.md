@@ -42,14 +42,13 @@ under the `ic-lang` localStorage key. Translations live in one `NL` dictionary a
 the top of the script block, keyed by the `data-i18n` attributes in the markup —
 to change copy, edit the English text in the HTML *and* the matching key there.
 
-## Before going live — 3 TODOs (search for "TODO" in index.html)
+## Before going live - 2 open TODOs (search for "TODO" in index.html)
 
 1. **Web3Forms key** — replace `REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY` in the
    contact form (free key at web3forms.com) or the form won't deliver.
 2. **WhatsApp number** — replace `597000000` in the `wa.me` link with the real
    number (country code, no `+`).
-3. **Domain** — replace `https://intellectcore.com` in the canonical/OG/JSON-LD
-   tags with the real domain.
+3. **Domain** - done: the live domain is `https://intellectcore.net`, already set in the canonical/OG/JSON-LD tags, sitemap.xml and robots.txt.
 
 ## Notes
 

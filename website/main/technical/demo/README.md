@@ -49,7 +49,7 @@ Open daarna **http://localhost:8123/technical/demo/**
 
 ## Let op
 
-Dit is een **demo/concept**: het API-voorbeeld (`api.intellectcore.com`), cijfers en het
+Dit is een **demo/concept**: het API-voorbeeld (`api.intellectcore.net`), cijfers en het
 voorbeelddocument zijn illustratief. De pagina staat op `noindex` zodat hij niet door
 zoekmachines wordt opgepikt. "Book a demo" linkt door naar het contactformulier van de
 hoofdsite.
