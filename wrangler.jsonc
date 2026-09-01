@@ -6,5 +6,11 @@
   "compatibility_date": "2026-08-19",
   "assets": {
     "directory": "./website/main"
-  }
+  },
+  // Custom domains. Wrangler creates the DNS records in the intellectcore.net
+  // zone on deploy; www redirects to the apex via a Cloudflare redirect rule.
+  "routes": [
+    { "pattern": "intellectcore.net", "custom_domain": true },
+    { "pattern": "www.intellectcore.net", "custom_domain": true }
+  ]
 }
