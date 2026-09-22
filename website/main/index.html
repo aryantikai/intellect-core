@@ -216,8 +216,8 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 .core-stage{position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:620/560}
 .core-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .ic-spoke{stroke:var(--rule-2);stroke-width:1.4}
-.ic-pulse{fill:var(--mark);opacity:0}
-.core-ring{opacity:0}
+.ic-pulse{fill:var(--mark);opacity:0;transform-box:fill-box;transform-origin:center}
+.core-ring{opacity:0;transform-box:fill-box;transform-origin:center}
 .core-label{
   font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.2em;
   fill:#fff;text-anchor:middle;dominant-baseline:central;
@@ -251,6 +251,12 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 .cap-node .nd{width:7px;height:7px;border-radius:50%;background:var(--mark);flex:none}
 
 @media(max-width:1180px){.cap-node{font-size:.72rem;padding:7px 11px;gap:7px}}
+@media(max-width:1100px){
+  .hdr{gap:22px}
+  .nav{gap:20px}
+  .nav a{font-size:.88rem}
+  .btn-quote{display:none}   /* Contact in the nav and the WhatsApp button both cover it */
+}
 @media(max-width:1000px){.core-stage{max-width:520px}}
 @media(max-width:560px){
   .cap-node{font-size:.65rem;padding:6px 9px;gap:5px}
