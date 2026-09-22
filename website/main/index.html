@@ -63,7 +63,7 @@
 
   --maxw:1220px;
   --gut:32px;
-  --header-h:70px;
+  --header-h:80px;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -116,8 +116,8 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 }
 .site-header.scrolled{border-bottom-color:var(--rule)}
 .hdr{height:var(--header-h);display:flex;align-items:center;gap:36px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:1.02rem;letter-spacing:-.018em;margin-right:auto}
-.brand .mark{width:30px;height:30px;border-radius:8px;flex:none}
+.brand{display:flex;align-items:center;gap:13px;font-weight:700;font-size:1.28rem;letter-spacing:-.03em;margin-right:auto;font-family:var(--display);white-space:nowrap}
+.brand .mark{width:42px;height:42px;border-radius:12px;flex:none}
 .brand b{font-weight:600}
 .brand span{color:var(--accent);font-weight:600}
 .nav{display:flex;gap:28px}
@@ -195,6 +195,49 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
   font-family:var(--mono);font-size:.76rem;letter-spacing:.05em;
   text-transform:uppercase;color:var(--ink-3);
 }
+
+/* rotating last line of the headline. The whole headline sits in the
+   HTML, so crawlers and the LCP measurement see real text either way. */
+.rot{display:inline-flex;align-items:baseline;color:var(--accent)}
+.rot-w{white-space:nowrap}
+.rot-c{
+  display:inline-block;width:.055em;height:.82em;margin-left:.06em;
+  background:var(--accent);transform:translateY(.04em);
+}
+@media(prefers-reduced-motion:no-preference){
+  .rot-c{animation:caret 1.05s steps(1,end) infinite}
+}
+@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* hero right: three lines of what actually goes in and what comes out */
+.hero-art{width:100%}
+.hero-grid.has-art .hero-art{max-width:none}
+.ha-row{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;
+  padding:15px 2px;border-top:1px solid var(--rule);
+}
+.ha-row:first-child{border-top:0;padding-top:4px}
+.ha-in{
+  font-family:var(--mono);font-size:.72rem;color:var(--ink-3);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.ha-arrow{color:var(--rule-2);display:flex;align-items:center}
+.ha-arrow svg{width:17px;height:17px}
+.ha-out{
+  display:flex;align-items:center;gap:8px;justify-content:flex-end;
+  font-size:.8rem;font-weight:500;color:var(--ink);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.ha-out .pill{
+  font-family:var(--mono);font-size:.64rem;font-weight:500;letter-spacing:.03em;
+  color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:3px 7px;flex:none;
+}
+.ha-foot{
+  border-top:1px solid var(--rule);margin-top:6px;padding-top:12px;
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-3);display:flex;align-items:center;gap:8px;
+}
+.ha-foot .dot{width:6px;height:6px;border-radius:50%;background:var(--mark);flex:none}
 
 /* ── hero collage: real screens, shown at an angle ──────────────── */
 .collage{position:relative;width:100%;aspect-ratio:1/.92}
@@ -415,6 +458,33 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
   .demo-btn{justify-content:center}
 }
 
+/* ── dark sections ────────────────────────────────────
+   Flipping the tokens is enough: cards, rules, labels and figures all
+   read from them, so a whole section inverts without touching children.
+   ──────────────────────────────────────────── */
+.section.dark{
+  --paper:#0b1420; --paper-2:#121d2c; --paper-3:#18243a;
+  --ink:#f2f6fd; --ink-2:#a9b6cc; --ink-3:#8494ad;
+  --rule:rgba(255,255,255,.11); --rule-2:rgba(255,255,255,.2);
+  --accent:#6ea3ff; --accent-soft:rgba(110,163,255,.14); --mark:#4fc8e8;
+  background:#0b1420; color:var(--ink); border-top:0;
+}
+.section.dark + .section{border-top:0}
+.section.dark h2,.section.dark h3{color:var(--ink)}
+.section.dark .btn-ghost{border-color:var(--rule-2);color:var(--ink)}
+.section.dark .btn-ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.06)}
+
+/* demo panels stay light inside a dark section: a lit screen in a dark
+   room reads as a real product rather than a flat card */
+.section.dark .demo{
+  --paper:#eef4fd; --paper-2:#ffffff; --paper-3:#e1ebfa;
+  --ink:#0e1626; --ink-2:#44526b; --ink-3:#566377;
+  --rule:#d5e1f2; --rule-2:#b7c8e2;
+  --accent:#1b4dd8; --accent-soft:#e7eefe; --mark:#0e6f8c;
+  color:var(--ink); border-color:rgba(255,255,255,.14);
+  box-shadow:0 30px 64px -28px rgba(0,0,0,.65);
+}
+
 /* ── services ───────────────────────────────────────────────────── */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .svc-col{padding:0 clamp(20px,2.6vw,36px);border-left:1px solid var(--rule)}
@@ -487,6 +557,8 @@ a.way:hover b{color:var(--accent)}
 
 /* ── footer ─────────────────────────────────────────────────────── */
 .site-footer{border-top:1px solid var(--rule);padding:56px 0 38px;background:var(--paper)}
+.site-footer .brand{font-size:1.14rem}
+.site-footer .brand .mark{width:34px;height:34px;border-radius:10px}
 .foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:40px}
 .foot h5{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin:0 0 16px}
 .foot ul{list-style:none;margin:0;padding:0}
@@ -538,6 +610,8 @@ a.way:hover b{color:var(--accent)}
 }
 @media(max-width:860px){
   :root{--gut:22px}
+  .brand{font-size:1.12rem;gap:10px}
+  .brand .mark{width:36px;height:36px;border-radius:10px}
   .btn-quote{display:none}
   .nav-toggle{display:inline-flex;width:44px;height:44px}
   .langseg button{padding:13px 12px;min-height:44px;min-width:44px}
@@ -557,6 +631,9 @@ a.way:hover b{color:var(--accent)}
 }
 @media(max-width:520px){
   body{font-size:16px}
+  h1{font-size:clamp(2.35rem,10vw,3rem)}
+  .brand{font-size:1.02rem}
+  .brand .mark{width:33px;height:33px;border-radius:9px}
   .foot{grid-template-columns:1fr}
   .hero-cta .btn{width:100%;justify-content:center}
 }
@@ -582,8 +659,8 @@ a.way:hover b{color:var(--accent)}
     </a>
 
     <nav class="nav" id="navMenu" aria-label="Main">
-      <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">What we build</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#approach" data-i18n="nav.approach">Approach</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -614,7 +691,11 @@ a.way:hover b{color:var(--accent)}
      <div class="hero-grid" id="heroGrid">
       <div>
       <span class="label" data-i18n="hero.label">Paramaribo, Suriname · working worldwide</span>
-      <h1 data-i18n="hero.h1">Software for the work your team still does by hand.</h1>
+      <h1>
+        <span data-i18n="hero.h1a">We think first,</span><br>
+        <span data-i18n="hero.h1b">then we build</span><br>
+        <span class="rot"><span class="rot-w" id="rotWord">automation</span><span class="rot-c" aria-hidden="true"></span></span>
+      </h1>
       <p class="lead" data-i18n="hero.lead">Bank statements, invoices, contracts, work orders, incoming email. We map how the work actually moves through your business, build the system that runs it, and hand it over documented so your team owns it.</p>
       <div class="hero-cta">
         <a class="btn btn-wa" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
@@ -624,6 +705,12 @@ a.way:hover b{color:var(--accent)}
         <a class="btn btn-ghost" href="#work" data-i18n="hero.cta2">See the work</a>
       </div>
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <div class="demo" style="position:static">
+          <div class="demo-bar"><i></i><i></i><i></i><b data-i18n="ha.bar">Messy in, structured out</b></div>
+          <div class="demo-body" style="min-height:0;gap:0" id="haBody"></div>
+        </div>
       </div>
       <div class="collage" id="collage" hidden></div>
      </div>
@@ -648,8 +735,53 @@ a.way:hover b{color:var(--accent)}
     </div>
   </section>
 
+
+
+  <!-- ══ SERVICES ══ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="head rv">
+        <div>
+          <span class="label" data-i18n="svc.label">What we build</span>
+          <h2 data-i18n="svc.h2">Three kinds of work.</h2>
+        </div>
+        <p class="deck" data-i18n="svc.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, which is sometimes AI and often simply well-built software.</p>
+      </div>
+
+      <div class="svc rv">
+        <div class="svc-col">
+          <h3 data-i18n="s1.h3">Document &amp; data automation</h3>
+          <ul>
+            <li data-i18n="s1.a">Bank statements and invoices, read and categorised</li>
+            <li data-i18n="s1.b">Contract and document data extraction</li>
+            <li data-i18n="s1.c">Incoming email triaged into assigned tasks</li>
+            <li data-i18n="s1.d">Approval flows that run across systems</li>
+          </ul>
+        </div>
+        <div class="svc-col">
+          <h3 data-i18n="s2.h3">AI systems &amp; assistants</h3>
+          <ul>
+            <li data-i18n="s2.a">Extraction tuned to your own forms and layouts</li>
+            <li data-i18n="s2.b">WhatsApp and web assistants on your documents</li>
+            <li data-i18n="s2.c">Decision support built on your business rules</li>
+            <li data-i18n="s2.d">An AI roadmap, prioritised by what pays back first</li>
+          </ul>
+        </div>
+        <div class="svc-col">
+          <h3 data-i18n="s3.h3">Platforms &amp; integrations</h3>
+          <ul>
+            <li data-i18n="s3.a">Operations and work order platforms</li>
+            <li data-i18n="s3.b">Dashboards on pipelines you can trust</li>
+            <li data-i18n="s3.c">CRM, ERP, payment and messaging integrations</li>
+            <li data-i18n="s3.d">Web apps and full SaaS products, end to end</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ WORK ══ -->
-  <section class="section" id="work">
+  <section class="section dark" id="work">
     <div class="container">
       <div class="head rv">
         <div>
@@ -746,50 +878,6 @@ a.way:hover b{color:var(--accent)}
       </article>
     </div>
   </section>
-
-  <!-- ══ SERVICES ══ -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="head rv">
-        <div>
-          <span class="label" data-i18n="svc.label">What we build</span>
-          <h2 data-i18n="svc.h2">Three kinds of work.</h2>
-        </div>
-        <p class="deck" data-i18n="svc.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, which is sometimes AI and often simply well-built software.</p>
-      </div>
-
-      <div class="svc rv">
-        <div class="svc-col">
-          <h3 data-i18n="s1.h3">Document &amp; data automation</h3>
-          <ul>
-            <li data-i18n="s1.a">Bank statements and invoices, read and categorised</li>
-            <li data-i18n="s1.b">Contract and document data extraction</li>
-            <li data-i18n="s1.c">Incoming email triaged into assigned tasks</li>
-            <li data-i18n="s1.d">Approval flows that run across systems</li>
-          </ul>
-        </div>
-        <div class="svc-col">
-          <h3 data-i18n="s2.h3">AI systems &amp; assistants</h3>
-          <ul>
-            <li data-i18n="s2.a">Extraction tuned to your own forms and layouts</li>
-            <li data-i18n="s2.b">WhatsApp and web assistants on your documents</li>
-            <li data-i18n="s2.c">Decision support built on your business rules</li>
-            <li data-i18n="s2.d">An AI roadmap, prioritised by what pays back first</li>
-          </ul>
-        </div>
-        <div class="svc-col">
-          <h3 data-i18n="s3.h3">Platforms &amp; integrations</h3>
-          <ul>
-            <li data-i18n="s3.a">Operations and work order platforms</li>
-            <li data-i18n="s3.b">Dashboards on pipelines you can trust</li>
-            <li data-i18n="s3.c">CRM, ERP, payment and messaging integrations</li>
-            <li data-i18n="s3.d">Web apps and full SaaS products, end to end</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ APPROACH ══ -->
   <section class="section" id="approach">
     <div class="container">
@@ -822,7 +910,7 @@ a.way:hover b{color:var(--accent)}
   </section>
 
   <!-- ══ ABOUT ══ -->
-  <section class="section" id="about">
+  <section class="section dark" id="about">
     <div class="container">
       <div class="about rv">
         <div class="about-body">
@@ -918,8 +1006,8 @@ a.way:hover b{color:var(--accent)}
       <div>
         <h5 data-i18n="ft.nav">Navigation</h5>
         <ul>
-          <li><a href="#work" data-i18n="nav.work">Work</a></li>
           <li><a href="#services" data-i18n="nav.services">What we build</a></li>
+          <li><a href="#work" data-i18n="nav.work">Work</a></li>
           <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -1001,7 +1089,8 @@ var CONFIG = {
   if(!box||!grid)return;
   var shots=(CONFIG.heroShots||[]).filter(function(x){return x&&x.src}).slice(0,3);
   var preview=/[?&]frames=1/.test(location.search);
-  if(!shots.length&&!preview)return;           /* no art: hero stays one column */
+  if(!shots.length&&!preview)return;           /* the transform panel covers it */
+  var art=document.getElementById("heroArt"); if(art)art.hidden=true;  /* screenshots win */
 
   var pos=["f1","f2","f3"];
   var html="";
@@ -1168,6 +1257,100 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
       })
       .catch(function(){btn.disabled=false;lbl.textContent=prev;err.classList.add("show")});
   });
+})();
+
+/* ── HERO: rotating last line + the "messy in, structured out" panel ──
+   The headline's third line cycles through what we actually build. The
+   word is typed in and out rather than swapped, so it reads as a live
+   thing, but the full first word is already in the HTML: a crawler and
+   the LCP measurement both see real text before any script runs.
+   ──────────────────────────────────────────────────────────────── */
+(function(){
+  var el=document.getElementById("rotWord");
+  if(!el)return;
+  var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var WORDS={
+    en:["automation","AI systems","clean data","the whole platform"],
+    nl:["automatisering","AI-systemen","schone data","het hele platform"]
+  };
+  function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
+  var i=0,t=null,running=true;
+  function clear(){if(t){clearTimeout(t);t=null}}
+  function type(word,pos){
+    el.textContent=word.slice(0,pos);
+    if(pos<word.length){t=setTimeout(function(){type(word,pos+1)},58);return}
+    t=setTimeout(function(){erase(word,word.length)},2100);
+  }
+  function erase(word,pos){
+    el.textContent=word.slice(0,pos);
+    if(pos>0){t=setTimeout(function(){erase(word,pos-1)},28);return}
+    i=(i+1)%WORDS[lang()].length;
+    t=setTimeout(start,180);
+  }
+  function start(){
+    if(!running)return;
+    var list=WORDS[lang()];
+    if(i>=list.length)i=0;
+    type(list[i],0);
+  }
+  window.__rotRelang=function(){
+    clear(); i=0;
+    if(RM){el.textContent=WORDS[lang()][0];return}
+    start();
+  };
+  document.addEventListener("visibilitychange",function(){
+    running=!document.hidden;
+    if(running){clear();start()}else{clear()}
+  });
+  if(RM){el.textContent=WORDS[lang()][0];}   /* no typing, just the word */
+  else {el.textContent="";start();}
+})();
+
+/* the right-hand panel: three real transformations, one line each */
+(function(){
+  var box=document.getElementById("haBody"),grid=document.getElementById("heroGrid");
+  if(!box||!grid)return;
+  var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ROWS={
+    en:[
+      ["bankafschrift-aug.csv","Ledger 4310","-25,00"],
+      ["contract-2024-114.pdf","End date","31-12-2026"],
+      ["bon-foto.jpg","VAT 10%","SRD 1.847,50"]
+    ],
+    nl:[
+      ["bankafschrift-aug.csv","Grootboek 4310","-25,00"],
+      ["contract-2024-114.pdf","Einddatum","31-12-2026"],
+      ["bon-foto.jpg","Btw 10%","SRD 1.847,50"]
+    ]
+  };
+  var FOOT={en:"Read, checked and filed automatically",
+            nl:"Gelezen, gecontroleerd en weggeschreven"};
+  function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
+  var ARROW='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>';
+  function E(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  var timers=[];
+  function render(){
+    timers.forEach(clearTimeout);timers=[];
+    var rows=ROWS[lang()];
+    box.innerHTML="";
+    rows.forEach(function(r,k){
+      var d=document.createElement("div");
+      d.className="ha-row";
+      d.style.opacity=RM?1:0;
+      d.innerHTML='<span class="ha-in">'+E(r[0])+'</span>'
+        +'<span class="ha-arrow">'+ARROW+'</span>'
+        +'<span class="ha-out"><span class="pill">'+E(r[1])+'</span>'+E(r[2])+'</span>';
+      box.appendChild(d);
+      if(!RM)timers.push(setTimeout(function(){d.style.transition="opacity .5s ease";d.style.opacity=1},260+k*260));
+    });
+    var f=document.createElement("div");
+    f.className="ha-foot";
+    f.innerHTML='<span class="dot"></span><span>'+E(FOOT[lang()])+'</span>';
+    box.appendChild(f);
+  }
+  window.__heroArtRelang=render;
+  render();
+  grid.classList.add("has-art");
 })();
 
 /* ── HERO NETWORK ────────────────────────────────────────────────
@@ -1472,7 +1655,9 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "nav.quote":"Vraag een offerte","fab":"WhatsApp ons",
 
     "hero.label":"Paramaribo, Suriname · wereldwijd actief",
-    "hero.h1":"Software voor het werk dat uw team nog met de hand doet.",
+    "hero.h1a":"Wij denken eerst,",
+    "hero.h1b":"daarna bouwen we",
+    "ha.bar":"Rommel erin, structuur eruit",
     "hero.lead":"Bankafschriften, facturen, contracten, werkorders, binnenkomende e-mail. Wij brengen in kaart hoe het werk werkelijk door uw bedrijf loopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
     "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk ons werk",
     "hero.note":"Het eerste gesprek is gratis, en het is een gesprek en geen verkooppraatje. Als automatisering het verkeerde antwoord is op uw probleem, zeggen wij dat.",
@@ -1583,6 +1768,8 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     }
     segs.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false")});
     if(window.__demosRelang)window.__demosRelang();
+    if(window.__rotRelang)window.__rotRelang();
+    if(window.__heroArtRelang)window.__heroArtRelang();
     try{localStorage.setItem("ic-lang",lang)}catch(e){}
   }
   window.__applyLang=apply;
