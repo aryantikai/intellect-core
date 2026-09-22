@@ -209,67 +209,53 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 }
 @keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
 
-/* hero right: paperwork on the left of the scene becoming structure on
-   the screen. Numbers only, so the illustration needs no translation. */
+/* hero right: the core, with capabilities radiating out of it.
+   Brought back from the previous site and retuned for light paper:
+   blue core instead of mint glow, cyan signals running along the spokes. */
 .hero-art{width:100%}
-.ha-svg{width:100%;height:auto;display:block;overflow:visible}
-.ha-t{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
-.ha-t-a{fill:var(--accent);font-size:10px}
-@media(prefers-reduced-motion:no-preference){
-  .ha-papers > g{animation:haFloat 7s ease-in-out infinite}
-  .ha-papers > g:nth-child(2){animation-delay:-2.3s}
-  .ha-papers > g:nth-child(3){animation-delay:-4.6s}
-  .ha-flow path{stroke-dashoffset:18;animation:haDash 1.6s linear infinite}
-  .ha-flow path:last-child{animation:none}
-  .ha-r{opacity:0;animation:haRow .55s var(--ease) forwards;animation-delay:calc(.5s + var(--d))}
-  .ha-check{opacity:0;animation:haRow .55s var(--ease) forwards;animation-delay:1.3s}
-  .ha-spark{stroke-dasharray:420;stroke-dashoffset:420;animation:haDraw 2.2s var(--ease) .3s forwards}
-  .ha-steam{animation:haSteam 3.4s ease-in-out infinite}
+.core-stage{position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:620/560}
+.core-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ic-spoke{stroke:var(--rule-2);stroke-width:1.4}
+.ic-pulse{fill:var(--mark);opacity:0}
+.core-ring{opacity:0}
+.core-label{
+  font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.2em;
+  fill:#fff;text-anchor:middle;dominant-baseline:central;
 }
-@keyframes haFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes haDash{to{stroke-dashoffset:0}}
-@keyframes haRow{to{opacity:1}}
-@keyframes haDraw{to{stroke-dashoffset:0}}
-@keyframes haSteam{0%,100%{opacity:.2;transform:translateY(2px)}50%{opacity:.6;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:no-preference){
+  .ic-pulse{animation:icflow 3.6s linear infinite}
+  .core-ring{animation:corering 3.8s ease-out infinite}
+}
+@keyframes icflow{
+  0%{transform:translate(0,0);opacity:0}
+  14%{opacity:1}
+  86%{opacity:.85}
+  100%{transform:translate(var(--dx),var(--dy));opacity:0}
+}
+@keyframes corering{0%{transform:scale(1);opacity:.5}70%{opacity:0}100%{transform:scale(1.55);opacity:0}}
 
-/* ── hero collage: real screens, shown at an angle ──────────────── */
-.collage{position:relative;width:100%;aspect-ratio:1/.92}
-.frame{
-  position:absolute;border-radius:9px;overflow:hidden;background:var(--paper-2);
-  border:1px solid var(--rule);box-shadow:0 22px 46px -26px rgba(14,22,38,.30),0 3px 10px -4px rgba(14,22,38,.09);
+.cap-node{
+  position:absolute;transform:translate(-50%,-50%);
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  padding:8px 14px;border-radius:999px;
+  background:var(--paper-2);border:1px solid var(--rule-2);
+  font-size:.78rem;font-weight:500;color:var(--ink-2);
+  box-shadow:0 6px 18px -10px rgba(14,22,38,.3);
+  transition:border-color .22s,color .22s,transform .22s var(--ease),box-shadow .22s;
 }
-.frame .bar{
-  height:22px;background:var(--paper-3);border-bottom:1px solid var(--rule);
-  display:flex;align-items:center;gap:5px;padding:0 9px;
+.cap-node:hover,.cap-node:focus-visible{
+  border-color:var(--accent);color:var(--ink);
+  transform:translate(-50%,-50%) scale(1.05);
+  box-shadow:0 10px 24px -10px rgba(27,77,216,.4);
 }
-.frame .bar i{width:7px;height:7px;border-radius:50%;background:var(--rule-2);display:block}
-.frame .bar b{
-  font-family:var(--mono);font-size:.58rem;font-weight:400;color:var(--ink-2);
-  margin-left:7px;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.frame img{width:100%;height:auto;display:block}
-.frame .hold{
-  aspect-ratio:16/10;position:relative;padding:12px;
-  background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(14,22,38,.028) 8px,rgba(14,22,38,.028) 16px);
-}
-.frame .hold .wf{display:grid;grid-template-columns:26% 1fr;gap:8px;height:100%}
-.frame .hold .wf i{display:block;background:rgba(14,22,38,.075);border-radius:3px}
-.frame .hold .wf .side{display:grid;grid-template-rows:repeat(5,1fr);gap:5px}
-.frame .hold .wf .body{display:grid;grid-template-rows:14% 1fr;gap:7px}
-.frame .hold .wf .rows{display:grid;grid-template-rows:repeat(4,1fr);gap:5px}
-.frame .hold .tag{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  font-family:var(--mono);font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink-3);background:var(--paper);padding:5px 9px;border:1px solid var(--rule);border-radius:4px;
-}
-.frame.f1{left:0;top:4%;width:74%;transform:rotate(-2.4deg);z-index:2}
-.frame.f2{right:0;top:0;width:52%;transform:rotate(2.8deg);z-index:1}
-.frame.f3{right:6%;bottom:0;width:62%;transform:rotate(-1.4deg);z-index:3}
-@media(prefers-reduced-motion:no-preference){
-  .frame{transition:transform .5s var(--ease)}
-  .collage:hover .frame.f1{transform:rotate(-1.4deg) translateY(-4px)}
-  .collage:hover .frame.f2{transform:rotate(1.8deg) translateY(-4px)}
-  .collage:hover .frame.f3{transform:rotate(-.6deg) translateY(-4px)}
+.cap-node .nd{width:7px;height:7px;border-radius:50%;background:var(--mark);flex:none}
+
+@media(max-width:1180px){.cap-node{font-size:.72rem;padding:7px 11px;gap:7px}}
+@media(max-width:1000px){.core-stage{max-width:520px}}
+@media(max-width:560px){
+  .cap-node{font-size:.65rem;padding:6px 9px;gap:5px}
+  .cap-node .nd{width:6px;height:6px}
+  .core-label{font-size:17px}
 }
 
 /* ── metrics ────────────────────────────────────────────────────── */
@@ -700,115 +686,52 @@ a.way:hover b{color:var(--accent)}
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
       </div>
       <div class="hero-art" id="heroArt">
-        <svg class="ha-svg" viewBox="0 0 580 450" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <div class="core-stage" role="img" aria-label="One core, with capabilities radiating outward from it">
+        <svg class="core-svg" viewBox="0 0 620 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <defs>
-            <linearGradient id="haScreen" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f4f8fe"/>
-            </linearGradient>
-            <linearGradient id="haWall" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef4fd"/>
-            </linearGradient>
+            <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(46,139,255,.30)"/>
+              <stop offset="55%" stop-color="rgba(46,139,255,.09)"/>
+              <stop offset="100%" stop-color="rgba(46,139,255,0)"/>
+            </radialGradient>
+            <radialGradient id="coreFill" cx="36%" cy="30%" r="78%">
+              <stop offset="0%" stop-color="#4f97ff"/>
+              <stop offset="48%" stop-color="#1f6ae0"/>
+              <stop offset="100%" stop-color="#16409c"/>
+            </radialGradient>
           </defs>
 
-          <!-- wall dashboard -->
-          <g class="ha-wall">
-            <rect x="322" y="18" width="232" height="132" rx="10" fill="url(#haWall)" stroke="var(--rule-2)" stroke-width="1.6"/>
-            <path d="M322 44h232" stroke="var(--rule-2)" stroke-width="1.6"/>
-            <circle cx="336" cy="31" r="3.2" fill="var(--rule-2)"/>
-            <circle cx="347" cy="31" r="3.2" fill="var(--rule-2)"/>
-            <circle cx="358" cy="31" r="3.2" fill="var(--rule-2)"/>
-            <path class="ha-spark" d="M340 122c22-4 30-38 50-40s26 30 46 20 28-48 52-44 24 34 46 30"
-                  stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <g opacity=".5">
-              <path d="M340 134h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
-              <path d="M340 100h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
-              <path d="M340 66h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
-            </g>
+          <g class="ic-spokes">
+            <line class="ic-spoke" x1="310" y1="280" x2="310" y2="78"/>
+            <line class="ic-spoke" x1="310" y1="280" x2="140" y2="158"/>
+            <line class="ic-spoke" x1="310" y1="280" x2="480" y2="158"/>
+            <line class="ic-spoke" x1="310" y1="280" x2="140" y2="402"/>
+            <line class="ic-spoke" x1="310" y1="280" x2="480" y2="402"/>
+            <line class="ic-spoke" x1="310" y1="280" x2="310" y2="482"/>
           </g>
 
-          <!-- loose paperwork, drifting in from the left -->
-          <g class="ha-papers">
-            <g transform="rotate(-11 96 214)">
-              <rect x="48" y="176" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
-              <path d="M62 196h60M62 208h44M62 220h52M62 232h34" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
-            </g>
-            <g transform="rotate(5 118 246)">
-              <rect x="70" y="208" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
-              <path d="M84 228h60M84 240h38M84 252h56M84 264h44" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
-            </g>
-            <g transform="rotate(-4 140 284)">
-              <rect x="92" y="246" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
-              <path d="M106 266h60M106 278h48M106 290h34" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
-              <rect x="106" y="300" width="30" height="9" rx="4.5" fill="var(--mark)" opacity=".55"/>
-            </g>
+          <g class="ic-pulses">
+            <circle class="ic-pulse" cx="310" cy="212" r="4" style="--dx:0px;--dy:-134px;animation-delay:0s"/>
+            <circle class="ic-pulse" cx="253" cy="240" r="4" style="--dx:-113px;--dy:-82px;animation-delay:.52s"/>
+            <circle class="ic-pulse" cx="367" cy="240" r="4" style="--dx:113px;--dy:-82px;animation-delay:1.04s"/>
+            <circle class="ic-pulse" cx="253" cy="320" r="4" style="--dx:-113px;--dy:82px;animation-delay:1.56s"/>
+            <circle class="ic-pulse" cx="367" cy="320" r="4" style="--dx:113px;--dy:82px;animation-delay:2.08s"/>
+            <circle class="ic-pulse" cx="310" cy="348" r="4" style="--dx:0px;--dy:134px;animation-delay:2.6s"/>
           </g>
 
-          <!-- the flow: paperwork becoming structure -->
-          <g class="ha-flow">
-            <path d="M196 236c38-14 58 2 78-6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
-            <path d="M198 268c40-4 56 6 76 2" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
-            <path d="M200 300c36 8 56-10 74-14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
-            <path d="M276 258l12 6-12 6" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-
-          <!-- monitor on the desk, showing the clean result -->
-          <g class="ha-monitor">
-            <rect x="300" y="166" width="238" height="164" rx="12" fill="url(#haScreen)" stroke="var(--rule-2)" stroke-width="2"/>
-            <path d="M300 192h238" stroke="var(--rule-2)" stroke-width="1.6"/>
-            <circle cx="314" cy="179" r="3" fill="var(--rule-2)"/>
-            <circle cx="325" cy="179" r="3" fill="var(--rule-2)"/>
-
-            <!-- three structured rows, numbers only so no translation is needed -->
-            <g class="ha-rowset">
-              <g class="ha-r" style="--d:0s">
-                <rect x="316" y="206" width="52" height="8" rx="4" fill="var(--rule-2)"/>
-                <rect x="380" y="203" width="56" height="14" rx="4" fill="var(--accent-soft)"/>
-                <text x="408" y="214" text-anchor="middle" class="ha-t ha-t-a">4310</text>
-                <text x="522" y="214" text-anchor="end" class="ha-t">-25,00</text>
-              </g>
-              <path d="M316 228h206" stroke="var(--rule-2)" stroke-width="1.2"/>
-              <g class="ha-r" style="--d:.18s">
-                <rect x="316" y="242" width="44" height="8" rx="4" fill="var(--rule-2)"/>
-                <rect x="372" y="239" width="30" height="14" rx="4" fill="var(--accent-soft)"/>
-                <text x="387" y="250" text-anchor="middle" class="ha-t ha-t-a">10%</text>
-                <text x="522" y="250" text-anchor="end" class="ha-t">31-12-2026</text>
-              </g>
-              <path d="M316 264h206" stroke="var(--rule-2)" stroke-width="1.2"/>
-              <g class="ha-r" style="--d:.36s">
-                <rect x="316" y="278" width="60" height="8" rx="4" fill="var(--rule-2)"/>
-                <rect x="388" y="275" width="44" height="14" rx="4" fill="var(--accent-soft)"/>
-                <text x="410" y="286" text-anchor="middle" class="ha-t ha-t-a">4400</text>
-                <text x="522" y="286" text-anchor="end" class="ha-t">1.847,50</text>
-              </g>
-            </g>
-            <g class="ha-check">
-              <circle cx="324" cy="310" r="7" fill="var(--mark)"/>
-              <path d="M320.5 310l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="338" y="306" width="74" height="8" rx="4" fill="var(--rule-2)"/>
-            </g>
-            <!-- stand -->
-            <path d="M404 330v20M378 354h52" stroke="var(--rule-2)" stroke-width="5" stroke-linecap="round"/>
-          </g>
-
-          <!-- desk -->
-          <rect x="24" y="356" width="532" height="11" rx="5.5" fill="var(--paper-3)" stroke="var(--rule-2)" stroke-width="1.6"/>
-          <path d="M74 367l-14 62M506 367l14 62" stroke="var(--rule-2)" stroke-width="5" stroke-linecap="round"/>
-
-          <!-- mug -->
-          <g class="ha-mug">
-            <path d="M232 330h34v18a8 8 0 0 1-8 8h-18a8 8 0 0 1-8-8z" fill="#fff" stroke="var(--rule-2)" stroke-width="1.8"/>
-            <path d="M266 336h7a6 6 0 0 1 0 12h-7" stroke="var(--rule-2)" stroke-width="1.8"/>
-            <path class="ha-steam" d="M243 322c0-5 5-5 5-10M254 322c0-5 5-5 5-10" stroke="var(--mark)" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-          </g>
-
-          <!-- plant -->
-          <g class="ha-plant" transform="translate(6,-36)">
-            <path d="M84 356c0-26 -14-40 -30-44 2 20 10 34 30 44z" fill="var(--mark)" opacity=".28"/>
-            <path d="M84 356c2-28 16-42 34-44-4 20-14 34-34 44z" fill="var(--mark)" opacity=".42"/>
-            <path d="M84 356c-2-34 4-48 2-58-12 14-14 34-2 58z" fill="var(--mark)" opacity=".34"/>
-            <path d="M62 356h44l-6 30a6 6 0 0 1-6 5H74a6 6 0 0 1-6-5z" fill="#fff" stroke="var(--rule-2)" stroke-width="1.8"/>
-          </g>
+          <circle cx="310" cy="280" r="150" fill="url(#coreGlow)"/>
+          <circle class="core-ring" cx="310" cy="280" r="66" fill="none" stroke="#2e8bff" stroke-width="1.6"/>
+          <circle cx="310" cy="280" r="66" fill="url(#coreFill)"/>
+          <text class="core-label" x="310" y="281">CORE</text>
         </svg>
+
+        <a class="cap-node" href="#services" style="left:50%;top:13.9%"><span class="nd"></span><span data-i18n="cap.auto">Process automation</span></a>
+        <a class="cap-node" href="#services" style="left:22.6%;top:28.2%"><span class="nd"></span><span data-i18n="cap.doc">Document extraction</span></a>
+        <a class="cap-node" href="#services" style="left:77.4%;top:28.2%"><span class="nd"></span><span data-i18n="cap.ai">AI assistants</span></a>
+        <a class="cap-node" href="#services" style="left:22.6%;top:71.8%"><span class="nd"></span><span data-i18n="cap.int">Integrations</span></a>
+        <a class="cap-node" href="#services" style="left:77.4%;top:71.8%"><span class="nd"></span><span data-i18n="cap.dash">Dashboards</span></a>
+        <a class="cap-node" href="#services" style="left:50%;top:86.1%"><span class="nd"></span><span data-i18n="cap.apps">Web &amp; apps</span></a>
+      </div>
       </div>
       <div class="collage" id="collage" hidden></div>
      </div>
@@ -1143,7 +1066,7 @@ var CONFIG = {
   /* 1. Contact form. Get a free key at web3forms.com (30 seconds, no account).
         While this is empty the form is REPLACED by WhatsApp + email, so a
         visitor is never handed a form that silently fails. */
-  web3formsKey: "",
+  web3formsKey: "93cfe86d-241c-46a3-8a6a-00c232220ce1",
 
   /* 2. Headline metrics. Real figures only. Delete any you cannot back up;
         the whole strip disappears if the list is empty. */
@@ -1707,7 +1630,12 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "hero.label":"Paramaribo, Suriname · wereldwijd actief",
     "hero.h1a":"Wij denken eerst,",
     "hero.h1b":"daarna bouwen we",
-    "ha.bar":"Rommel erin, structuur eruit",
+    "cap.auto":"Procesautomatisering",
+    "cap.doc":"Documentextractie",
+    "cap.ai":"AI-assistenten",
+    "cap.int":"Integraties",
+    "cap.dash":"Dashboards",
+    "cap.apps":"Web &amp; apps",
     "hero.lead":"Bankafschriften, facturen, contracten, werkorders, binnenkomende e-mail. Wij brengen in kaart hoe het werk werkelijk door uw bedrijf loopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
     "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk ons werk",
     "hero.note":"Het eerste gesprek is gratis, en het is een gesprek en geen verkooppraatje. Als automatisering het verkeerde antwoord is op uw probleem, zeggen wij dat.",
