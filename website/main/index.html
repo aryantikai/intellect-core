@@ -209,35 +209,28 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 }
 @keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
 
-/* hero right: three lines of what actually goes in and what comes out */
+/* hero right: paperwork on the left of the scene becoming structure on
+   the screen. Numbers only, so the illustration needs no translation. */
 .hero-art{width:100%}
-.hero-grid.has-art .hero-art{max-width:none}
-.ha-row{
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;
-  padding:15px 2px;border-top:1px solid var(--rule);
+.ha-svg{width:100%;height:auto;display:block;overflow:visible}
+.ha-t{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
+.ha-t-a{fill:var(--accent);font-size:10px}
+@media(prefers-reduced-motion:no-preference){
+  .ha-papers > g{animation:haFloat 7s ease-in-out infinite}
+  .ha-papers > g:nth-child(2){animation-delay:-2.3s}
+  .ha-papers > g:nth-child(3){animation-delay:-4.6s}
+  .ha-flow path{stroke-dashoffset:18;animation:haDash 1.6s linear infinite}
+  .ha-flow path:last-child{animation:none}
+  .ha-r{opacity:0;animation:haRow .55s var(--ease) forwards;animation-delay:calc(.5s + var(--d))}
+  .ha-check{opacity:0;animation:haRow .55s var(--ease) forwards;animation-delay:1.3s}
+  .ha-spark{stroke-dasharray:420;stroke-dashoffset:420;animation:haDraw 2.2s var(--ease) .3s forwards}
+  .ha-steam{animation:haSteam 3.4s ease-in-out infinite}
 }
-.ha-row:first-child{border-top:0;padding-top:4px}
-.ha-in{
-  font-family:var(--mono);font-size:.72rem;color:var(--ink-3);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-.ha-arrow{color:var(--rule-2);display:flex;align-items:center}
-.ha-arrow svg{width:17px;height:17px}
-.ha-out{
-  display:flex;align-items:center;gap:8px;justify-content:flex-end;
-  font-size:.8rem;font-weight:500;color:var(--ink);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-.ha-out .pill{
-  font-family:var(--mono);font-size:.64rem;font-weight:500;letter-spacing:.03em;
-  color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:3px 7px;flex:none;
-}
-.ha-foot{
-  border-top:1px solid var(--rule);margin-top:6px;padding-top:12px;
-  font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--ink-3);display:flex;align-items:center;gap:8px;
-}
-.ha-foot .dot{width:6px;height:6px;border-radius:50%;background:var(--mark);flex:none}
+@keyframes haFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes haDash{to{stroke-dashoffset:0}}
+@keyframes haRow{to{opacity:1}}
+@keyframes haDraw{to{stroke-dashoffset:0}}
+@keyframes haSteam{0%,100%{opacity:.2;transform:translateY(2px)}50%{opacity:.6;transform:translateY(-3px)}}
 
 /* ── hero collage: real screens, shown at an angle ──────────────── */
 .collage{position:relative;width:100%;aspect-ratio:1/.92}
@@ -688,7 +681,7 @@ a.way:hover b{color:var(--accent)}
   <section class="hero" id="top">
     <div class="hero-net" aria-hidden="true"><canvas id="heroNet"></canvas></div>
     <div class="container">
-     <div class="hero-grid" id="heroGrid">
+     <div class="hero-grid has-art" id="heroGrid">
       <div>
       <span class="label" data-i18n="hero.label">Paramaribo, Suriname · working worldwide</span>
       <h1>
@@ -707,10 +700,115 @@ a.way:hover b{color:var(--accent)}
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
       </div>
       <div class="hero-art" id="heroArt">
-        <div class="demo" style="position:static">
-          <div class="demo-bar"><i></i><i></i><i></i><b data-i18n="ha.bar">Messy in, structured out</b></div>
-          <div class="demo-body" style="min-height:0;gap:0" id="haBody"></div>
-        </div>
+        <svg class="ha-svg" viewBox="0 0 580 450" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="haScreen" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f4f8fe"/>
+            </linearGradient>
+            <linearGradient id="haWall" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef4fd"/>
+            </linearGradient>
+          </defs>
+
+          <!-- wall dashboard -->
+          <g class="ha-wall">
+            <rect x="322" y="18" width="232" height="132" rx="10" fill="url(#haWall)" stroke="var(--rule-2)" stroke-width="1.6"/>
+            <path d="M322 44h232" stroke="var(--rule-2)" stroke-width="1.6"/>
+            <circle cx="336" cy="31" r="3.2" fill="var(--rule-2)"/>
+            <circle cx="347" cy="31" r="3.2" fill="var(--rule-2)"/>
+            <circle cx="358" cy="31" r="3.2" fill="var(--rule-2)"/>
+            <path class="ha-spark" d="M340 122c22-4 30-38 50-40s26 30 46 20 28-48 52-44 24 34 46 30"
+                  stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <g opacity=".5">
+              <path d="M340 134h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
+              <path d="M340 100h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
+              <path d="M340 66h214" stroke="var(--rule-2)" stroke-width="1.2" stroke-dasharray="3 5"/>
+            </g>
+          </g>
+
+          <!-- loose paperwork, drifting in from the left -->
+          <g class="ha-papers">
+            <g transform="rotate(-11 96 214)">
+              <rect x="48" y="176" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
+              <path d="M62 196h60M62 208h44M62 220h52M62 232h34" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g transform="rotate(5 118 246)">
+              <rect x="70" y="208" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
+              <path d="M84 228h60M84 240h38M84 252h56M84 264h44" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g transform="rotate(-4 140 284)">
+              <rect x="92" y="246" width="96" height="76" rx="7" fill="#fff" stroke="var(--rule-2)" stroke-width="1.6"/>
+              <path d="M106 266h60M106 278h48M106 290h34" stroke="var(--rule-2)" stroke-width="3" stroke-linecap="round"/>
+              <rect x="106" y="300" width="30" height="9" rx="4.5" fill="var(--mark)" opacity=".55"/>
+            </g>
+          </g>
+
+          <!-- the flow: paperwork becoming structure -->
+          <g class="ha-flow">
+            <path d="M196 236c38-14 58 2 78-6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
+            <path d="M198 268c40-4 56 6 76 2" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
+            <path d="M200 300c36 8 56-10 74-14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 7" opacity=".75"/>
+            <path d="M276 258l12 6-12 6" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- monitor on the desk, showing the clean result -->
+          <g class="ha-monitor">
+            <rect x="300" y="166" width="238" height="164" rx="12" fill="url(#haScreen)" stroke="var(--rule-2)" stroke-width="2"/>
+            <path d="M300 192h238" stroke="var(--rule-2)" stroke-width="1.6"/>
+            <circle cx="314" cy="179" r="3" fill="var(--rule-2)"/>
+            <circle cx="325" cy="179" r="3" fill="var(--rule-2)"/>
+
+            <!-- three structured rows, numbers only so no translation is needed -->
+            <g class="ha-rowset">
+              <g class="ha-r" style="--d:0s">
+                <rect x="316" y="206" width="52" height="8" rx="4" fill="var(--rule-2)"/>
+                <rect x="380" y="203" width="56" height="14" rx="4" fill="var(--accent-soft)"/>
+                <text x="408" y="214" text-anchor="middle" class="ha-t ha-t-a">4310</text>
+                <text x="522" y="214" text-anchor="end" class="ha-t">-25,00</text>
+              </g>
+              <path d="M316 228h206" stroke="var(--rule-2)" stroke-width="1.2"/>
+              <g class="ha-r" style="--d:.18s">
+                <rect x="316" y="242" width="44" height="8" rx="4" fill="var(--rule-2)"/>
+                <rect x="372" y="239" width="30" height="14" rx="4" fill="var(--accent-soft)"/>
+                <text x="387" y="250" text-anchor="middle" class="ha-t ha-t-a">10%</text>
+                <text x="522" y="250" text-anchor="end" class="ha-t">31-12-2026</text>
+              </g>
+              <path d="M316 264h206" stroke="var(--rule-2)" stroke-width="1.2"/>
+              <g class="ha-r" style="--d:.36s">
+                <rect x="316" y="278" width="60" height="8" rx="4" fill="var(--rule-2)"/>
+                <rect x="388" y="275" width="44" height="14" rx="4" fill="var(--accent-soft)"/>
+                <text x="410" y="286" text-anchor="middle" class="ha-t ha-t-a">4400</text>
+                <text x="522" y="286" text-anchor="end" class="ha-t">1.847,50</text>
+              </g>
+            </g>
+            <g class="ha-check">
+              <circle cx="324" cy="310" r="7" fill="var(--mark)"/>
+              <path d="M320.5 310l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="338" y="306" width="74" height="8" rx="4" fill="var(--rule-2)"/>
+            </g>
+            <!-- stand -->
+            <path d="M404 330v20M378 354h52" stroke="var(--rule-2)" stroke-width="5" stroke-linecap="round"/>
+          </g>
+
+          <!-- desk -->
+          <rect x="24" y="356" width="532" height="11" rx="5.5" fill="var(--paper-3)" stroke="var(--rule-2)" stroke-width="1.6"/>
+          <path d="M74 367l-14 62M506 367l14 62" stroke="var(--rule-2)" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- mug -->
+          <g class="ha-mug">
+            <path d="M232 330h34v18a8 8 0 0 1-8 8h-18a8 8 0 0 1-8-8z" fill="#fff" stroke="var(--rule-2)" stroke-width="1.8"/>
+            <path d="M266 336h7a6 6 0 0 1 0 12h-7" stroke="var(--rule-2)" stroke-width="1.8"/>
+            <path class="ha-steam" d="M243 322c0-5 5-5 5-10M254 322c0-5 5-5 5-10" stroke="var(--mark)" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+          </g>
+
+          <!-- plant -->
+          <g class="ha-plant" transform="translate(6,-36)">
+            <path d="M84 356c0-26 -14-40 -30-44 2 20 10 34 30 44z" fill="var(--mark)" opacity=".28"/>
+            <path d="M84 356c2-28 16-42 34-44-4 20-14 34-34 44z" fill="var(--mark)" opacity=".42"/>
+            <path d="M84 356c-2-34 4-48 2-58-12 14-14 34-2 58z" fill="var(--mark)" opacity=".34"/>
+            <path d="M62 356h44l-6 30a6 6 0 0 1-6 5H74a6 6 0 0 1-6-5z" fill="#fff" stroke="var(--rule-2)" stroke-width="1.8"/>
+          </g>
+        </svg>
       </div>
       <div class="collage" id="collage" hidden></div>
      </div>
@@ -1090,7 +1188,7 @@ var CONFIG = {
   var shots=(CONFIG.heroShots||[]).filter(function(x){return x&&x.src}).slice(0,3);
   var preview=/[?&]frames=1/.test(location.search);
   if(!shots.length&&!preview)return;           /* the transform panel covers it */
-  var art=document.getElementById("heroArt"); if(art)art.hidden=true;  /* screenshots win */
+  var art=document.getElementById("heroArt"); if(art)art.hidden=true;  /* real screenshots win over the illustration */
 
   var pos=["f1","f2","f3"];
   var html="";
@@ -1107,7 +1205,6 @@ var CONFIG = {
   }
   box.innerHTML=html;
   box.hidden=false;
-  grid.classList.add("has-art");
 })();
 
 /* ── floating WhatsApp: appears once the hero is behind you ──────── */
@@ -1304,53 +1401,6 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
   });
   if(RM){el.textContent=WORDS[lang()][0];}   /* no typing, just the word */
   else {el.textContent="";start();}
-})();
-
-/* the right-hand panel: three real transformations, one line each */
-(function(){
-  var box=document.getElementById("haBody"),grid=document.getElementById("heroGrid");
-  if(!box||!grid)return;
-  var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var ROWS={
-    en:[
-      ["bankafschrift-aug.csv","Ledger 4310","-25,00"],
-      ["contract-2024-114.pdf","End date","31-12-2026"],
-      ["bon-foto.jpg","VAT 10%","SRD 1.847,50"]
-    ],
-    nl:[
-      ["bankafschrift-aug.csv","Grootboek 4310","-25,00"],
-      ["contract-2024-114.pdf","Einddatum","31-12-2026"],
-      ["bon-foto.jpg","Btw 10%","SRD 1.847,50"]
-    ]
-  };
-  var FOOT={en:"Read, checked and filed automatically",
-            nl:"Gelezen, gecontroleerd en weggeschreven"};
-  function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
-  var ARROW='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>';
-  function E(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  var timers=[];
-  function render(){
-    timers.forEach(clearTimeout);timers=[];
-    var rows=ROWS[lang()];
-    box.innerHTML="";
-    rows.forEach(function(r,k){
-      var d=document.createElement("div");
-      d.className="ha-row";
-      d.style.opacity=RM?1:0;
-      d.innerHTML='<span class="ha-in">'+E(r[0])+'</span>'
-        +'<span class="ha-arrow">'+ARROW+'</span>'
-        +'<span class="ha-out"><span class="pill">'+E(r[1])+'</span>'+E(r[2])+'</span>';
-      box.appendChild(d);
-      if(!RM)timers.push(setTimeout(function(){d.style.transition="opacity .5s ease";d.style.opacity=1},260+k*260));
-    });
-    var f=document.createElement("div");
-    f.className="ha-foot";
-    f.innerHTML='<span class="dot"></span><span>'+E(FOOT[lang()])+'</span>';
-    box.appendChild(f);
-  }
-  window.__heroArtRelang=render;
-  render();
-  grid.classList.add("has-art");
 })();
 
 /* ── HERO NETWORK ────────────────────────────────────────────────
@@ -1769,7 +1819,6 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     segs.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false")});
     if(window.__demosRelang)window.__demosRelang();
     if(window.__rotRelang)window.__rotRelang();
-    if(window.__heroArtRelang)window.__heroArtRelang();
     try{localStorage.setItem("ic-lang",lang)}catch(e){}
   }
   window.__applyLang=apply;
