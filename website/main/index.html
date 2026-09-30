@@ -528,6 +528,51 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 :root[data-theme="dark"] .theme-toggle .ti-sun{display:none}
 :root[data-theme="dark"] .theme-toggle .ti-moon{display:block}
 
+/* ── products ───────────────────────────────────────────────────── */
+.prod-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(20px,2.4vw,30px);
+}
+.prod-card{
+  display:flex;flex-direction:column;
+  background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;
+  padding:clamp(24px,2.4vw,32px);
+  color:inherit;
+  transition:border-color .22s var(--ease),transform .22s var(--ease),background .22s;
+}
+.prod-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.prod-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.prod-visual{
+  width:64px;height:64px;border-radius:12px;
+  background:var(--paper-3);border:1px solid var(--rule);
+  color:var(--accent);
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:22px;flex:none;
+}
+.prod-visual svg{width:34px;height:34px}
+.prod-tag{
+  font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
+}
+.prod-card h3{font-size:clamp(1.28rem,1.7vw,1.52rem);margin-bottom:.55em;color:var(--ink)}
+.prod-card p{
+  font-size:1rem;color:var(--ink-2);margin:0 0 22px;line-height:1.55;flex:1;
+}
+.prod-more{
+  font-size:.95rem;font-weight:500;color:var(--accent);
+  border-bottom:1px solid transparent;transition:border-color .18s;
+  align-self:flex-start;
+}
+.prod-card:hover .prod-more{border-bottom-color:var(--accent)}
+.prod-note{
+  margin-top:clamp(28px,3vw,42px);
+  font-size:.94rem;color:var(--ink-3);text-align:center;
+  padding-top:22px;border-top:1px solid var(--rule);
+  max-width:64ch;margin-left:auto;margin-right:auto;
+}
+@media(max-width:900px){.prod-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.prod-grid{grid-template-columns:1fr}}
+
 /* ── services ───────────────────────────────────────────────────── */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .svc-col{padding:0 clamp(20px,2.6vw,36px);border-left:1px solid var(--rule)}
@@ -622,14 +667,26 @@ a.way:hover b{color:var(--accent)}
 .form-card{border:1px solid var(--rule);border-radius:9px;padding:clamp(24px,3vw,34px);background:var(--paper-2)}
 .fg{margin-bottom:18px}
 .fg label{display:block;font-size:.86rem;font-weight:500;margin-bottom:7px;color:var(--ink-2)}
-.fg input,.fg textarea{
+.fg input,.fg textarea,.fg select{
   width:100%;font-family:inherit;font-size:.98rem;color:var(--ink);
   background:var(--paper);border:1px solid var(--rule-2);border-radius:6px;
   padding:12px 14px;transition:border-color .18s;
 }
 .fg textarea{min-height:128px;resize:vertical;line-height:1.55}
-.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.fg select{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23566377' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;cursor:pointer;
+}
+:root[data-theme="dark"] .fg select{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%238494ad' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .fg input::placeholder,.fg textarea::placeholder{color:var(--ink-3)}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg-row .fg-col label{display:block;font-size:.86rem;font-weight:500;margin-bottom:7px;color:var(--ink-2)}
+@media(max-width:520px){.fg-row{grid-template-columns:1fr}}
 .form-msg{display:none;font-size:.93rem;margin-top:14px;padding:12px 14px;border-radius:6px}
 .form-msg.show{display:block}
 #formOk{background:#e6f5ec;color:#186238;border:1px solid #b6ddc6}
@@ -743,7 +800,8 @@ a.way:hover b{color:var(--accent)}
     </a>
 
     <nav class="nav" id="navMenu" aria-label="Main">
-      <a href="#services" data-i18n="nav.services">What we build</a>
+      <a href="#products" data-i18n="nav.products">Products</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#approach" data-i18n="nav.approach">Approach</a>
       <a href="#about" data-i18n="nav.about">About</a>
@@ -790,7 +848,7 @@ a.way:hover b{color:var(--accent)}
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg>
           <span data-i18n="hero.cta1">Talk on WhatsApp</span>
         </a>
-        <a class="btn btn-ghost" href="#work" data-i18n="hero.cta2">See the work</a>
+        <a class="btn btn-ghost" href="#products" data-i18n="hero.cta2">See our products</a>
       </div>
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
       </div>
@@ -865,17 +923,81 @@ a.way:hover b{color:var(--accent)}
     </div>
   </section>
 
+  <!-- ══ PRODUCTS ══ -->
+  <section class="section dark" id="products">
+    <div class="container">
+      <div class="head rv">
+        <div>
+          <span class="label" data-i18n="prod.label">Our products</span>
+          <h2 data-i18n="prod.h2">Ready-made tools, on your own data.</h2>
+        </div>
+        <p class="deck" data-i18n="prod.deck">Three products we already built, refined and now run in production. If one of these fits the job, you skip most of the build. Try each live on the spot.</p>
+      </div>
 
+      <div class="prod-grid rv">
+        <a class="prod-card" href="technical/demo/">
+          <div class="prod-visual" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h20l10 10v34a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z"/>
+              <path d="M38 8v10h10"/>
+              <path d="M22 30h20M22 38h20M22 46h13"/>
+              <circle cx="48" cy="46" r="6" stroke="currentColor" fill="none"/>
+              <path d="m52 50 4 4"/>
+            </svg>
+          </div>
+          <span class="prod-tag" data-i18n="p1.tag">Document extraction</span>
+          <h3 data-i18n="p1.h3">Core Parse</h3>
+          <p data-i18n="p1.p">Reads PDFs, scans and email attachments and returns clean, structured data your systems can use. No templates, no manual entry, set up in minutes.</p>
+          <span class="prod-more" data-i18n="p1.more">Try the demo →</span>
+        </a>
+
+        <a class="prod-card" href="technical/insight/">
+          <div class="prod-visual" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="12" width="48" height="34" rx="4"/>
+              <path d="M14 40 22 30l6 6 10-14 12 14"/>
+              <circle cx="22" cy="30" r="2.4" fill="currentColor" stroke="none"/>
+              <circle cx="28" cy="36" r="2.4" fill="currentColor" stroke="none"/>
+              <circle cx="38" cy="22" r="2.4" fill="currentColor" stroke="none"/>
+              <path d="M22 52h20M32 46v6"/>
+            </svg>
+          </div>
+          <span class="prod-tag" data-i18n="p2.tag">Ask your data</span>
+          <h3 data-i18n="p2.h3">Core Insight</h3>
+          <p data-i18n="p2.p">An AI analyst for your spreadsheets and databases. Ask in plain language and get answers, analyses, duplicate checks and recommendations in seconds.</p>
+          <span class="prod-more" data-i18n="p2.more">Try the demo →</span>
+        </a>
+
+        <a class="prod-card" href="#contact">
+          <div class="prod-visual" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="16" y="6" width="32" height="52" rx="5"/>
+              <path d="M24 6v2h16V6"/>
+              <path d="M22 20h20M22 28h20M22 36h13"/>
+              <path d="M40 44l4 4 8-8"/>
+              <circle cx="32" cy="52" r="2" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <span class="prod-tag" data-i18n="p3.tag">Receipts to ledger</span>
+          <h3 data-i18n="p3.h3">Core Bonnen</h3>
+          <p data-i18n="p3.p">Photograph a receipt, the AI reads supplier, date, amount, VAT and category, and you confirm before anything is saved. One Excel file for the bookkeeper, per category, at the end of the month.</p>
+          <span class="prod-more" data-i18n="p3.more">Request access →</span>
+        </a>
+      </div>
+
+      <p class="prod-note rv" data-i18n="prod.note">Every product is set up on your own data, in your own account. Nothing shared, nothing exposed.</p>
+    </div>
+  </section>
 
   <!-- ══ SERVICES ══ -->
   <section class="section" id="services">
     <div class="container">
       <div class="head rv">
         <div>
-          <span class="label" data-i18n="svc.label">What we build</span>
-          <h2 data-i18n="svc.h2">Three kinds of work.</h2>
+          <span class="label" data-i18n="svc.label">Custom work</span>
+          <h2 data-i18n="svc.h2">If a product does not fit, we build it.</h2>
         </div>
-        <p class="deck" data-i18n="svc.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, which is sometimes AI and often simply well-built software.</p>
+        <p class="deck" data-i18n="svc.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, sometimes AI and often simply well-built software. Three kinds of work run through most of what we do.</p>
       </div>
 
       <div class="svc rv">
@@ -1153,6 +1275,33 @@ a.way:hover b{color:var(--accent)}
               <label for="cEmail" data-i18n="f.email">Email</label>
               <input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
             </div>
+            <div class="fg fg-row">
+              <div class="fg-col">
+                <label for="cInterest" data-i18n="f.interest">What do you need?</label>
+                <select id="cInterest" name="interest" required>
+                  <option value="" data-i18n="f.interest.0">Select an option</option>
+                  <option value="Core Parse" data-i18n="f.interest.p1">Core Parse (document extraction)</option>
+                  <option value="Core Insight" data-i18n="f.interest.p2">Core Insight (ask your data)</option>
+                  <option value="Core Bonnen" data-i18n="f.interest.p3">Core Bonnen (receipts to ledger)</option>
+                  <option value="Data automation" data-i18n="f.interest.s1">Custom data automation</option>
+                  <option value="AI systems" data-i18n="f.interest.s2">Custom AI system</option>
+                  <option value="Platform / SaaS" data-i18n="f.interest.s3">Operations platform / SaaS</option>
+                  <option value="Not sure yet" data-i18n="f.interest.x">Not sure yet, help me figure it out</option>
+                </select>
+              </div>
+              <div class="fg-col">
+                <label for="cBudget" data-i18n="f.budget">Budget range</label>
+                <select id="cBudget" name="budget">
+                  <option value="" data-i18n="f.budget.0">Optional</option>
+                  <option value="Under USD 1K" data-i18n="f.budget.1">Under $1,000</option>
+                  <option value="USD 1K-3K" data-i18n="f.budget.2">$1,000 - $3,000</option>
+                  <option value="USD 3K-7K" data-i18n="f.budget.3">$3,000 - $7,000</option>
+                  <option value="USD 7K-15K" data-i18n="f.budget.4">$7,000 - $15,000</option>
+                  <option value="USD 15K+" data-i18n="f.budget.5">$15,000 +</option>
+                  <option value="Not sure yet" data-i18n="f.budget.x">Not sure yet</option>
+                </select>
+              </div>
+            </div>
             <div class="fg">
               <label for="cMsg" data-i18n="f.msg">What task is eating your team's time?</label>
               <textarea id="cMsg" name="message" required placeholder="e.g. we retype bank statements into the ledger every month" data-i18n-ph="ph.msg"></textarea>
@@ -1190,7 +1339,8 @@ a.way:hover b{color:var(--accent)}
       <div>
         <h5 data-i18n="ft.nav">Navigation</h5>
         <ul>
-          <li><a href="#services" data-i18n="nav.services">What we build</a></li>
+          <li><a href="#products" data-i18n="nav.products">Products</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
           <li><a href="#work" data-i18n="nav.work">Work</a></li>
           <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
@@ -1820,7 +1970,7 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
 (function(){
   var NL={
     "skip":"Naar de inhoud",
-    "nav.work":"Werk","nav.services":"Wat we bouwen","nav.approach":"Aanpak","nav.about":"Over ons","nav.contact":"Contact",
+    "nav.products":"Producten","nav.services":"Diensten","nav.work":"Werk","nav.approach":"Aanpak","nav.about":"Over ons","nav.contact":"Contact",
     "nav.quote":"Vraag een offerte","fab":"WhatsApp ons",
 
     "hero.label":"Paramaribo, Suriname · wereldwijd actief",
@@ -1833,7 +1983,7 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "cap.dash":"Dashboards",
     "cap.apps":"Web &amp; apps",
     "hero.lead":"Wij brengen in kaart hoe uw werk werkelijk verloopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
-    "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk ons werk",
+    "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk onze producten",
     "hero.note":"Het eerste gesprek is gratis, en het is een gesprek en geen verkooppraatje. Als automatisering het verkeerde antwoord is op uw probleem, zeggen wij dat.",
     "ix.1":"Procesautomatisering","ix.2":"Document- &amp; data-extractie","ix.3":"AI-assistenten",
     "ix.4":"Operationele platformen","ix.5":"Integraties","ix.6":"Dashboards",
@@ -1869,8 +2019,22 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "c3.before":"Bonnen stapelen zich op in een la tot het einde van het kwartaal, waarna iemand er dagen aan kwijt is om alles over te typen. Vervaagde bonnen worden gegokt, sommige komen er nooit in, en de btw die teruggevraagd had kunnen worden verdwijnt stilletjes.",
     "c3.built":"Fotografeer de bon ter plekke. De AI leest de leverancier, datum, bedrag, btw en categorie, en vraagt u om te bevestigen voordat er iets wordt opgeslagen. De foto blijft bewaard als bewijs, en de boekhouder krijgt één Excel-bestand met een tabblad per categorie. Personeel kan bonnen toevoegen zonder bij de rest van de boeken te kunnen.",
 
-    "svc.label":"Wat we bouwen","svc.h2":"Drie soorten werk.",
-    "svc.deck":"Wij verkopen geen vaste stack. Wij beginnen bij het probleem en kiezen de aanpak die erbij past, soms AI en vaak gewoon goed gebouwde software.",
+    "prod.label":"Onze producten",
+    "prod.h2":"Kant-en-klare tools, op uw eigen data.",
+    "prod.deck":"Drie producten die wij al bouwden, aanscherpen en nu in productie draaien. Past er één bij uw werk, dan slaat u het grootste deel van de bouwtijd over. Elke productkaart opent een live demo die u direct kunt uitproberen.",
+    "p1.tag":"Documentextractie","p1.h3":"Core Parse",
+    "p1.p":"Leest pdf-bestanden, scans en e-mailbijlagen en levert schone, gestructureerde data waar uw systemen mee verder kunnen. Geen sjablonen, geen handmatige invoer, in minuten klaar.",
+    "p1.more":"Probeer de demo →",
+    "p2.tag":"Vraag uw data","p2.h3":"Core Insight",
+    "p2.p":"Een AI-analist voor uw spreadsheets en databases. Stel uw vraag in gewone taal en krijg antwoorden, analyses, duplicaatchecks en aanbevelingen in seconden.",
+    "p2.more":"Probeer de demo →",
+    "p3.tag":"Bonnen naar grootboek","p3.h3":"Core Bonnen",
+    "p3.p":"Fotografeer de bon, de AI leest leverancier, datum, bedrag, btw en categorie, en u bevestigt voor er iets wordt opgeslagen. Aan het einde van de maand één Excel-bestand voor de boekhouder, per categorie.",
+    "p3.more":"Vraag toegang aan →",
+    "prod.note":"Elk product wordt op uw eigen data en in uw eigen account opgezet. Niets gedeeld, niets buiten uw omgeving.",
+
+    "svc.label":"Maatwerk","svc.h2":"Past geen product? Dan bouwen wij het.",
+    "svc.deck":"Wij verkopen geen vaste stack. Wij beginnen bij het probleem en kiezen de aanpak die erbij past, soms AI en vaak gewoon goed gebouwde software. Drie soorten werk lopen door het meeste van wat wij doen.",
     "s1.h3":"Data-automatisering",
     "s1.a":"Bankafschriften en facturen, gelezen en ingedeeld",
     "s1.b":"Data-extractie uit contracten en documenten",
@@ -1919,6 +2083,23 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "ct.wa.s":"· meestal de snelste manier om ons te bereiken",
     "ct.email":"E-mail","ct.loc":"Locatie","ct.loc.s":"Paramaribo, Suriname · klanten wereldwijd",
     "f.name":"Naam","f.email":"E-mail","f.msg":"Welke taak kost uw team de meeste tijd?",
+    "f.interest":"Waar heeft u interesse in?",
+    "f.interest.0":"Kies een optie",
+    "f.interest.p1":"Core Parse (documentextractie)",
+    "f.interest.p2":"Core Insight (vraag uw data)",
+    "f.interest.p3":"Core Bonnen (bonnen naar grootboek)",
+    "f.interest.s1":"Maatwerk data-automatisering",
+    "f.interest.s2":"Maatwerk AI-systeem",
+    "f.interest.s3":"Operationeel platform / SaaS",
+    "f.interest.x":"Nog niet zeker, help mij het uitzoeken",
+    "f.budget":"Budget",
+    "f.budget.0":"Optioneel",
+    "f.budget.1":"Onder $1.000",
+    "f.budget.2":"$1.000 - $3.000",
+    "f.budget.3":"$3.000 - $7.000",
+    "f.budget.4":"$7.000 - $15.000",
+    "f.budget.5":"$15.000 +",
+    "f.budget.x":"Nog niet zeker",
     "f.submit":"Verstuur bericht",
     "f.ok":"Verzonden. Wij komen binnen één werkdag bij u terug.",
     "f.err":"Dat is niet doorgekomen. Stuur ons een WhatsApp of mail hello@intellectcore.net.",
