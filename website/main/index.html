@@ -74,10 +74,6 @@
     </nav>
 
     <div class="hdr-end">
-      <a class="btn-book" href="#contact">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
-        <span data-i18n="nav.book">Book a free call</span>
-      </a>
       <div class="langseg" role="group" aria-label="Language / Taal">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="nl" aria-pressed="false">NL</button>
@@ -105,7 +101,7 @@
       </h1>
       <p class="lead" data-i18n="hero.lead">We map how your work actually flows, build the system that runs it, and hand it over documented so your team owns it.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Book a free call</a>
+        <a class="btn btn-primary" href="book-a-free-call.html" data-i18n="hero.cta1">Book a free call</a>
         <a class="btn btn-ghost" href="services.html" data-i18n="hero.cta2">See what we build</a>
       </div>
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
@@ -283,126 +279,8 @@
           <p data-i18n="rd.p">Book a free call and tell us what is costing your team time. We will say honestly whether it is worth automating and what it would take.</p>
         </div>
         <div class="ready-cta">
-          <a class="btn btn-primary" href="#contact" data-i18n="rd.cta1">Book a free call</a>
+          <a class="btn btn-primary" href="book-a-free-call.html" data-i18n="rd.cta1">Book a free call</a>
           <a class="btn btn-ghost" href="work.html" data-i18n="rd.cta2">Or see our work</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ CONTACT (with card picker instead of dropdown) ══ -->
-  <section class="section dark" id="contact">
-    <div class="container">
-      <div class="contact rv">
-        <div>
-          <span class="label" data-i18n="ct.label">Get in touch</span>
-          <h2 data-i18n="ct.h2">Tell us what you need.</h2>
-          <p class="lead measure" data-i18n="ct.p">Pick what fits best, describe the task in a few words, and we will come back to you within one working day. The first conversation is free.</p>
-
-          <div class="ways">
-            <a class="way" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
-              <span class="wi"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
-              <div><b>WhatsApp</b><span>+597 817 4543 <span data-i18n="ct.wa.s">· usually the fastest way to reach us</span></span></div>
-            </a>
-            <a class="way" href="mailto:hello@intellectcore.net">
-              <span class="wi"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-              <div><b data-i18n="ct.email">Email</b><span>hello@intellectcore.net</span></div>
-            </a>
-            <div class="way">
-              <span class="wi"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-              <div><b data-i18n="ct.loc">Location</b><span data-i18n="ct.loc.s">Paramaribo, Suriname · clients worldwide</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-card" id="formCard">
-          <form id="leadForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-            <input type="hidden" name="access_key" id="w3fKey" value="">
-            <input type="hidden" name="subject" value="New message via intellectcore.net">
-            <input type="hidden" name="from_name" value="intellectcore.net">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-
-            <div class="fg">
-              <label data-i18n="f.interest">What do you need?</label>
-              <div class="pick-grid" role="radiogroup" aria-labelledby="cInterestLabel">
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="Core Parse" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.parse.n">Core Parse</span>
-                  <span class="pick-desc" data-i18n="pk.parse.d">Document extraction</span>
-                </label>
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="Core Insight" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M6 14 10 10l3 3 5-7"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.insight.n">Core Insight</span>
-                  <span class="pick-desc" data-i18n="pk.insight.d">Ask your data</span>
-                </label>
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="Core Bonnen" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h4"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.bonnen.n">Core Bonnen</span>
-                  <span class="pick-desc" data-i18n="pk.bonnen.d">Receipts to ledger</span>
-                </label>
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="Data automation" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h13M4 12h10M4 18h8"/><path d="m18 15 3 3-3 3"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.auto.n">Data automation</span>
-                  <span class="pick-desc" data-i18n="pk.auto.d">Custom workflow</span>
-                </label>
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="AI system" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.ai.n">AI system</span>
-                  <span class="pick-desc" data-i18n="pk.ai.d">Custom AI build</span>
-                </label>
-                <label class="pick-card">
-                  <input type="radio" name="interest" value="Platform / SaaS" required>
-                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
-                  <span class="pick-name" data-i18n="pk.plat.n">Platform / SaaS</span>
-                  <span class="pick-desc" data-i18n="pk.plat.d">Web app build</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="fg fg-row">
-              <div class="fg-col">
-                <label for="cName" data-i18n="f.name">Name</label>
-                <input id="cName" name="name" type="text" required autocomplete="name" placeholder="Your name" data-i18n-ph="ph.name">
-              </div>
-              <div class="fg-col">
-                <label for="cEmail" data-i18n="f.email">Email</label>
-                <input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-              </div>
-            </div>
-            <div class="fg">
-              <label for="cBudget" data-i18n="f.budget">Budget range</label>
-              <select id="cBudget" name="budget">
-                <option value="" data-i18n="f.budget.0">Optional</option>
-                <option value="Under USD 1K" data-i18n="f.budget.1">Under $1,000</option>
-                <option value="USD 1K-3K" data-i18n="f.budget.2">$1,000 - $3,000</option>
-                <option value="USD 3K-7K" data-i18n="f.budget.3">$3,000 - $7,000</option>
-                <option value="USD 7K-15K" data-i18n="f.budget.4">$7,000 - $15,000</option>
-                <option value="USD 15K+" data-i18n="f.budget.5">$15,000 +</option>
-                <option value="Not sure yet" data-i18n="f.budget.x">Not sure yet</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label for="cMsg" data-i18n="f.msg">Tell us a little about the project</label>
-              <textarea id="cMsg" name="message" required placeholder="e.g. we retype bank statements into the ledger every month" data-i18n-ph="ph.msg"></textarea>
-            </div>
-            <button class="btn btn-primary" id="sbtn" type="submit" style="width:100%;justify-content:center">
-              <span data-i18n="f.submit">Send project request</span>
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <div class="form-msg" id="formOk" data-i18n="f.ok">Sent. We will come back to you within one working day.</div>
-            <div class="form-msg" id="formErr" data-i18n="f.err">That did not go through. Please message us on WhatsApp or email hello@intellectcore.net.</div>
-          </form>
         </div>
       </div>
     </div>
@@ -433,7 +311,7 @@
           <li><a href="services.html" data-i18n="nav.services">Services</a></li>
           <li><a href="work.html" data-i18n="nav.work">Work</a></li>
           <li><a href="about.html" data-i18n="nav.about">About us</a></li>
-          <li><a href="#contact" data-i18n="nav.book">Book a free call</a></li>
+          <li><a href="book-a-free-call.html" data-i18n="nav.book">Book a free call</a></li>
         </ul>
       </div>
       <div>
