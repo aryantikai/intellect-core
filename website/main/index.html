@@ -45,747 +45,14 @@
   "areaServed": ["Suriname", "Worldwide"]
 }
 </script>
-<style>
-/* =====================================================================
-   Intellect Core — v2
-   Editorial rebuild. Paper, ink, hairlines, one serif with a real voice.
-   No gradients, no glow, no particles. Evidence over decoration.
-   ===================================================================== */
-:root{
-  --paper:#eef4fd;
-  --paper-2:#ffffff;
-  --paper-3:#e1ebfa;
-  --ink:#0e1626;
-  --ink-2:#44526b;
-  --ink-3:#566377;
-  --rule:#d5e1f2;
-  --rule-2:#b7c8e2;
-  --accent:#1b4dd8;
-  --accent-bright:#2e8bff;
-  --accent-soft:#e7eefe;
-  --mark:#0e6f8c;
-
-  --display:"Sora","Segoe UI",Inter,system-ui,sans-serif;
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-
-  --maxw:1220px;
-  --gut:32px;
-  --header-h:80px;
-  --ease:cubic-bezier(.22,1,.36,1);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 28px);-webkit-text-size-adjust:100%}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--sans);font-size:18px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-p{margin:0 0 1.1em}
-p:last-child{margin-bottom:0}
-::selection{background:#cfe0ff;color:var(--ink)}
-
-h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:1.06;margin:0 0 .42em}
-h1{font-size:clamp(2.8rem,6.2vw,4.6rem);line-height:1.02;letter-spacing:-.035em}
-h2{font-size:clamp(2.1rem,4vw,3.05rem);letter-spacing:-.032em}
-h3{font-size:clamp(1.42rem,2.1vw,1.8rem);line-height:1.2;letter-spacing:-.024em}
-h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005em;margin:0 0 .6em}
-
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
-.section{padding:clamp(76px,9vw,128px) 0}
-.section + .section{border-top:1px solid var(--rule)}
-.lead{font-size:clamp(1.12rem,1.5vw,1.3rem);line-height:1.55;color:var(--ink-2)}
-.dim{color:var(--ink-2)}
-.measure{max-width:62ch}
-
-/* mono label — replaces the letterspaced-uppercase-sans "eyebrow" tic */
-.label{
-  font-family:var(--mono);font-size:.76rem;font-weight:500;
-  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
-  display:block;margin:0 0 1.4em;
-}
-.label.accent{color:var(--accent)}
-
-/* skip link */
-.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:0 0 6px 0;font-size:.9rem}
-.skip:focus{left:0}
-
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-
-/* ── header ─────────────────────────────────────────────────────── */
-.site-header{
-  position:sticky;top:0;z-index:100;height:var(--header-h);
-  background:var(--paper);border-bottom:1px solid transparent;
-  transition:border-color .2s;
-}
-.site-header.scrolled{border-bottom-color:var(--rule)}
-.hdr{height:var(--header-h);display:flex;align-items:center;gap:36px}
-.brand{display:flex;align-items:center;gap:13px;font-weight:700;font-size:1.28rem;letter-spacing:-.03em;margin-right:auto;font-family:var(--display);white-space:nowrap}
-.brand .mark{width:42px;height:42px;border-radius:12px;flex:none}
-.brand b{font-weight:600}
-.brand span{color:var(--accent);font-weight:600}
-.nav{display:flex;gap:28px}
-.nav a{font-size:.925rem;color:var(--ink-2);padding:4px 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
-.nav a:hover{color:var(--ink)}
-.nav a.active{color:var(--ink);border-bottom-color:var(--ink)}
-.hdr-end{display:flex;align-items:center;gap:8px}
-.langseg{display:inline-flex;border:1px solid var(--rule-2);border-radius:6px;overflow:hidden}
-.langseg button{
-  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;
-  background:none;border:0;color:var(--ink-3);padding:8px 10px;cursor:pointer;line-height:1;
-  transition:background .16s,color .16s;
-}
-.langseg button + button{border-left:1px solid var(--rule-2)}
-.langseg button:hover{color:var(--ink)}
-.langseg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.btn-quote{
-  display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper);
-  font-size:.9rem;font-weight:500;padding:10px 18px;border-radius:999px;line-height:1.2;
-  transition:background .18s;
-}
-.btn-quote:hover{background:#000}
-.btn-quote svg{width:14px;height:14px}
-.nav-toggle{display:none;background:none;border:1px solid var(--rule-2);border-radius:5px;width:40px;height:38px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
-
-/* ── buttons ────────────────────────────────────────────────────── */
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  font-family:var(--sans);font-size:.97rem;font-weight:500;
-  padding:14px 24px;border-radius:7px;border:1px solid transparent;
-  cursor:pointer;line-height:1.2;transition:background .18s,border-color .18s,color .18s;
-}
-.btn svg{width:16px;height:16px;flex:none}
-.btn-primary{background:var(--ink);color:var(--paper)}
-.btn-primary:hover{background:#000}
-.btn-ghost{border-color:var(--rule-2);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink);background:var(--paper-3)}
-.btn-wa{background:var(--accent);color:#fff}
-.btn-wa:hover{background:#1640b8}
-.arrow-link{
-  display:inline-flex;align-items:center;gap:7px;font-size:.97rem;font-weight:500;
-  color:var(--accent);border-bottom:1px solid transparent;padding-bottom:2px;
-  transition:border-color .18s;
-}
-.arrow-link:hover{border-bottom-color:var(--accent)}
-.arrow-link svg{width:15px;height:15px;transition:transform .2s var(--ease)}
-.arrow-link:hover svg{transform:translateX(3px)}
-
-/* ── hero ───────────────────────────────────────────────────────── */
-.hero{position:relative;isolation:isolate;padding:clamp(64px,9vw,120px) 0 clamp(52px,6vw,76px)}
-.hero > .container{position:relative;z-index:1}
-.hero-net{
-  position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-  background:
-    radial-gradient(820px 460px at 16% -6%, rgba(46,139,255,.085), transparent 64%),
-    radial-gradient(700px 420px at 90% 2%, rgba(25,200,255,.075), transparent 62%);
-  -webkit-mask-image:radial-gradient(ellipse 104% 92% at 50% 36%,#000 48%,transparent 88%);
-  mask-image:radial-gradient(ellipse 104% 92% at 50% 36%,#000 48%,transparent 88%);
-}
-.hero-net canvas{display:block;width:100%;height:100%;opacity:.62}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:center}
-.hero-grid.has-art{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr)}
-.hero-grid.has-art h1{font-size:clamp(2.6rem,4.4vw,3.9rem);max-width:13ch}
-.hero-grid.has-art .lead{font-size:1.12rem}
-.hero h1{max-width:15ch;margin-bottom:.34em}
-.hero .lead{max-width:56ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:36px}
-.hero-note{font-size:.9rem;color:var(--ink-3);margin-top:22px;max-width:52ch}
-
-/* the index strip: a factual list, not a feature grid */
-.index-strip{border-top:1px solid var(--rule);padding-top:20px;margin-top:clamp(52px,6vw,80px)}
-.index-strip ul{
-  list-style:none;margin:0;padding:0;
-  display:flex;flex-wrap:wrap;gap:8px 30px;
-  font-family:var(--mono);font-size:.76rem;letter-spacing:.05em;
-  text-transform:uppercase;color:var(--ink-3);
-}
-
-/* rotating last line of the headline. The whole headline sits in the
-   HTML, so crawlers and the LCP measurement see real text either way. */
-.rot{display:inline-flex;align-items:baseline;color:var(--accent)}
-.rot-w{white-space:nowrap}
-.rot-c{
-  display:inline-block;width:.055em;height:.82em;margin-left:.06em;
-  background:var(--accent);transform:translateY(.04em);
-}
-@media(prefers-reduced-motion:no-preference){
-  .rot-c{animation:caret 1.05s steps(1,end) infinite}
-}
-@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
-
-/* hero right: the core, with capabilities radiating out of it.
-   Brought back from the previous site and retuned for light paper:
-   blue core instead of mint glow, cyan signals running along the spokes. */
-.hero-art{width:100%}
-.core-stage{position:relative;width:100%;max-width:560px;margin:0 auto;aspect-ratio:620/560}
-.core-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.ic-spoke{stroke:var(--rule-2);stroke-width:1.4}
-.ic-pulse{fill:var(--mark);opacity:0;transform-box:fill-box;transform-origin:center}
-.core-ring{opacity:0;transform-box:fill-box;transform-origin:center}
-.core-label{
-  font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.2em;
-  fill:#fff;text-anchor:middle;dominant-baseline:central;
-}
-@media(prefers-reduced-motion:no-preference){
-  .ic-pulse{animation:icflow 3.6s linear infinite}
-  .core-ring{animation:corering 3.8s ease-out infinite}
-}
-@keyframes icflow{
-  0%{transform:translate(0,0);opacity:0}
-  14%{opacity:1}
-  86%{opacity:.85}
-  100%{transform:translate(var(--dx),var(--dy));opacity:0}
-}
-@keyframes corering{0%{transform:scale(1);opacity:.5}70%{opacity:0}100%{transform:scale(1.55);opacity:0}}
-
-.cap-node{
-  position:absolute;transform:translate(-50%,-50%);
-  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-  padding:8px 14px;border-radius:999px;
-  background:var(--paper-2);border:1px solid var(--rule-2);
-  font-size:.78rem;font-weight:500;color:var(--ink-2);
-  box-shadow:0 6px 18px -10px rgba(14,22,38,.3);
-  transition:border-color .22s,color .22s,transform .22s var(--ease),box-shadow .22s;
-}
-.cap-node:hover,.cap-node:focus-visible{
-  border-color:var(--accent);color:var(--ink);
-  transform:translate(-50%,-50%) scale(1.05);
-  box-shadow:0 10px 24px -10px rgba(27,77,216,.4);
-}
-.cap-node .nd{width:7px;height:7px;border-radius:50%;background:var(--mark);flex:none}
-
-@media(max-width:1180px){.cap-node{font-size:.72rem;padding:7px 11px;gap:7px}}
-@media(max-width:1100px){
-  .hdr{gap:22px}
-  .nav{gap:20px}
-  .nav a{font-size:.88rem}
-  .btn-quote{display:none}   /* Contact in the nav and the WhatsApp button both cover it */
-}
-@media(max-width:1000px){.core-stage{max-width:520px}}
-@media(max-width:560px){
-  .cap-node{font-size:.65rem;padding:6px 9px;gap:5px}
-  .cap-node .nd{width:6px;height:6px}
-  .core-label{font-size:17px}
-}
-
-/* ── metrics ────────────────────────────────────────────────────── */
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.metric{padding:0 34px;border-left:1px solid var(--rule)}
-.metric:first-child{padding-left:0;border-left:0}
-.metric .fig{
-  font-family:var(--display);font-weight:800;font-size:clamp(2.9rem,5.8vw,4.2rem);
-  line-height:1;color:var(--mark);letter-spacing:-.04em;
-}
-.metric .fig sup{font-size:.42em;vertical-align:super;letter-spacing:0}
-.metric .cap{font-size:1rem;color:var(--ink-2);margin-top:14px;max-width:26ch}
-.metric .src{font-family:var(--mono);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-top:12px}
-
-/* ── section head: editorial two-column ─────────────────────────── */
-.head{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(48px,6vw,76px)}
-.head h2{margin-bottom:0;max-width:16ch}
-.head .deck{color:var(--ink-2);font-size:1.04rem;padding-bottom:.5em}
-
-/* ── work ───────────────────────────────────────────────────────── */
-.case{
-  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);
-  gap:clamp(30px,5vw,68px);
-  padding:clamp(44px,5vw,64px) 0;border-top:1px solid var(--rule);
-}
-.case:first-of-type{border-top:0;padding-top:0}
-.case-sector{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
-.case h3{font-size:clamp(1.6rem,2.5vw,2.1rem);margin-bottom:.52em;max-width:20ch}
-.case-block{margin-top:22px}
-.case-block h4{color:var(--ink-3);font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.55em}
-.case-block p{color:var(--ink-2);font-size:1.04rem;margin:0}
-.case-result{
-  margin-top:26px;padding:18px 22px;background:var(--paper-3);
-  border-left:2px solid var(--mark);border-radius:0 5px 5px 0;
-}
-.case-result .r-fig{font-family:var(--display);font-weight:800;font-size:1.72rem;line-height:1.18;letter-spacing:-.03em;color:var(--mark)}
-.case-result .r-cap{font-size:.95rem;color:var(--ink-2);margin-top:4px}
-
-/* screenshot frame */
-.shot{
-  position:sticky;top:calc(var(--header-h) + 34px);align-self:start;
-  border:1px solid var(--rule);border-radius:9px;overflow:hidden;background:var(--paper-2);
-}
-.shot img{width:100%;height:auto}
-.shot-empty{
-  aspect-ratio:16/11;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;background:
-    repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(14,22,38,.024) 9px,rgba(14,22,38,.024) 18px);
-  color:var(--ink-3);text-align:center;padding:28px;
-}
-.shot-empty .se-t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
-.shot-empty .se-s{font-size:.88rem;max-width:30ch;line-height:1.5}
-.shot-cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-3);padding:11px 14px;border-top:1px solid var(--rule);background:var(--paper)}
-
-/* ── live demos in the case panels ───────────────────────────────── */
-.demo{
-  position:sticky;top:calc(var(--header-h) + 34px);align-self:start;margin:0;
-  border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--paper-2);
-  box-shadow:0 20px 44px -28px rgba(14,22,38,.26);
-  display:flex;flex-direction:column;
-}
-.demo-bar{
-  height:30px;flex:none;background:var(--paper-3);border-bottom:1px solid var(--rule);
-  display:flex;align-items:center;gap:6px;padding:0 12px;
-}
-.demo-bar i{width:8px;height:8px;border-radius:50%;background:var(--rule-2);flex:none}
-.demo-bar b{
-  font-family:var(--mono);font-size:.64rem;font-weight:500;color:var(--ink-2);
-  margin-left:8px;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.demo-body{padding:16px;min-height:290px;display:flex;flex-direction:column;gap:10px;flex:1}
-.demo-foot{
-  flex:none;border-top:1px solid var(--rule);background:var(--paper);
-  padding:11px 14px;display:flex;align-items:center;gap:12px;
-}
-.demo-btn{
-  font-family:var(--sans);font-size:.87rem;font-weight:500;line-height:1;
-  background:var(--accent);color:#fff;border:0;border-radius:6px;
-  padding:14px 18px;min-height:44px;cursor:pointer;display:inline-flex;
-  align-items:center;justify-content:center;gap:8px;
-  transition:background .18s;flex:none;
-}
-.demo-btn:hover{background:#1640b8}
-.demo-btn[disabled]{background:var(--rule-2);cursor:default}
-.demo-btn svg{width:13px;height:13px}
-.demo-hint{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--ink-3);line-height:1.4}
-
-/* shared bits */
-.d-step{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
-.fade-in{animation:fadeUp .34s var(--ease) both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.fade-in{animation:none}}
-
-/* 1 · bank statement → ledger */
-.bk-raw{
-  font-family:var(--mono);font-size:.63rem;line-height:1.65;color:var(--ink-2);
-  background:var(--paper-3);border:1px solid var(--rule);border-radius:6px;
-  padding:9px 10px;white-space:pre;overflow:hidden;text-overflow:ellipsis;
-}
-.bk-raw .hl{color:var(--ink-3)}
-.bk-tbl{width:100%;border-collapse:collapse;font-size:.68rem;table-layout:fixed}
-.bk-tbl th{
-  font-family:var(--mono);font-size:.58rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink-3);text-align:left;padding:5px 6px;border-bottom:1px solid var(--rule-2);
-}
-.bk-tbl td{padding:6px;border-bottom:1px solid var(--rule);color:var(--ink-2);vertical-align:top;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bk-tbl td.gb{font-family:var(--mono);font-size:.63rem;color:var(--accent)}
-.bk-tbl td.amt{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
-.bk-tbl td.amt.in{color:var(--mark);font-weight:500}
-.bk-done{
-  display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--mark);font-weight:500;
-  padding-top:2px;
-}
-.bk-done svg{width:15px;height:15px;flex:none}
-
-/* 2 · RAG chat over contracts */
-.ch{display:flex;flex-direction:column;gap:9px;flex:1}
-.ch-msg{max-width:88%;font-size:.8rem;line-height:1.52;padding:9px 12px;border-radius:11px}
-.ch-msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:3px}
-.ch-msg.bot{align-self:flex-start;background:var(--paper-3);color:var(--ink);border-bottom-left-radius:3px}
-.ch-msg.bot b{font-weight:600}
-.ch-typing{display:flex;gap:4px;align-self:flex-start;background:var(--paper-3);padding:12px 14px;border-radius:11px;border-bottom-left-radius:3px}
-.ch-typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);animation:blink 1.3s infinite}
-.ch-typing i:nth-child(2){animation-delay:.18s}
-.ch-typing i:nth-child(3){animation-delay:.36s}
-@keyframes blink{0%,60%,100%{opacity:.28}30%{opacity:1}}
-.ch-src{
-  align-self:flex-start;display:inline-flex;align-items:center;gap:7px;
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;color:var(--ink-3);
-  border:1px solid var(--rule-2);border-radius:5px;padding:5px 9px;background:var(--paper);
-}
-.ch-src svg{width:12px;height:12px;flex:none;color:var(--accent)}
-
-/* 3 · receipt photo → bookkeeping */
-.bn{display:flex;gap:13px;flex:1}
-.bn-photo{
-  width:38%;flex:none;border:1px solid var(--rule);border-radius:7px;overflow:hidden;
-  background:var(--paper-3);display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:.58rem;color:var(--ink-3);text-align:center;padding:10px;
-  min-height:150px;
-}
-.bn-recpt{width:100%;font-family:var(--mono);font-size:.5rem;line-height:1.6;color:var(--ink-2);
-  background:#fff;border:1px solid var(--rule);border-radius:4px;padding:8px 7px;text-align:left;
-  transform:rotate(-1.2deg)}
-.bn-recpt .c{text-align:center}
-.bn-recpt hr{border:0;border-top:1px dashed var(--rule-2);margin:5px 0}
-.bn-fields{flex:1;display:flex;flex-direction:column;gap:0;min-width:0}
-.bn-f{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:.73rem}
-.bn-f:first-child{padding-top:0}
-.bn-f .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);flex:none}
-.bn-f .v{color:var(--ink);font-weight:500;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bn-f .v.pend{color:var(--ink-3);font-weight:400;font-family:var(--mono);font-size:.64rem}
-.bn-ask{display:flex;align-items:center;gap:9px;margin-top:11px;flex-wrap:wrap}
-.bn-ask span{font-size:.73rem;color:var(--ink-2);flex:1;min-width:110px}
-.bn-yes,.bn-no{
-  font-family:var(--sans);font-size:.78rem;font-weight:500;line-height:1;border-radius:5px;
-  padding:0 15px;min-height:40px;border:1px solid transparent;cursor:pointer;
-}
-.bn-yes{background:#136b3a;color:#fff}
-.bn-no{background:none;border-color:var(--rule-2);color:var(--ink-2)}
-.bn-xls{
-  margin-top:11px;border:1px solid var(--rule);border-radius:6px;overflow:hidden;font-size:.66rem;
-}
-.bn-xls .xh{background:var(--paper-3);border-bottom:1px solid var(--rule);padding:5px 9px;
-  font-family:var(--mono);font-size:.58rem;letter-spacing:.05em;color:var(--ink-2)}
-.bn-xls .xr{display:flex;gap:10px;padding:6px 9px;color:var(--ink-2)}
-.bn-xls .xr b{color:var(--ink);font-weight:500}
-.bn-xls .xr .amt{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ink)}
-
-@media(max-width:1000px){
-  .demo{position:static}
-  .demo-body{min-height:250px}
-}
-@media(max-width:520px){
-  .bn{flex-direction:column}
-  .bn-photo{width:100%;min-height:120px}
-  .demo-foot{flex-direction:column;align-items:stretch}
-  .demo-btn{justify-content:center}
-}
-
-/* ── dark sections ────────────────────────────────────
-   Flipping the tokens is enough: cards, rules, labels and figures all
-   read from them, so a whole section inverts without touching children.
-   ──────────────────────────────────────────── */
-.section.dark{
-  --paper:#0b1420; --paper-2:#121d2c; --paper-3:#18243a;
-  --ink:#f2f6fd; --ink-2:#a9b6cc; --ink-3:#8494ad;
-  --rule:rgba(255,255,255,.11); --rule-2:rgba(255,255,255,.2);
-  --accent:#6ea3ff; --accent-soft:rgba(110,163,255,.14); --mark:#4fc8e8;
-  background:#0b1420; color:var(--ink); border-top:0;
-}
-.section.dark + .section{border-top:0}
-.section.dark h2,.section.dark h3{color:var(--ink)}
-.section.dark .btn-ghost{border-color:var(--rule-2);color:var(--ink)}
-.section.dark .btn-ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.06)}
-
-/* demo panels stay light inside a dark section: a lit screen in a dark
-   room reads as a real product rather than a flat card */
-.section.dark .demo{
-  --paper:#eef4fd; --paper-2:#ffffff; --paper-3:#e1ebfa;
-  --ink:#0e1626; --ink-2:#44526b; --ink-3:#566377;
-  --rule:#d5e1f2; --rule-2:#b7c8e2;
-  --accent:#1b4dd8; --accent-soft:#e7eefe; --mark:#0e6f8c;
-  color:var(--ink); border-color:rgba(255,255,255,.14);
-  box-shadow:0 30px 64px -28px rgba(0,0,0,.65);
-}
-
-/* ── site-wide dark theme (user-toggleable) ────────────────────────
-   Same recipe as .section.dark, applied at :root so every section
-   flips. Alternating "dark" sections then use a slightly lighter
-   panel to keep the rhythm rather than double-darkening. */
-:root[data-theme="dark"]{
-  --paper:#0b1420; --paper-2:#121d2c; --paper-3:#18243a;
-  --ink:#f2f6fd; --ink-2:#a9b6cc; --ink-3:#8494ad;
-  --rule:rgba(255,255,255,.11); --rule-2:rgba(255,255,255,.2);
-  --accent:#6ea3ff; --accent-bright:#8fc0ff;
-  --accent-soft:rgba(110,163,255,.14); --mark:#4fc8e8;
-}
-:root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
-:root[data-theme="dark"] .site-header{background:var(--paper)}
-:root[data-theme="dark"] .site-header.scrolled{border-bottom-color:var(--rule)}
-:root[data-theme="dark"] .section.dark{
-  --paper:#111c2e; --paper-2:#1a273c; --paper-3:#22314a;
-  --rule:rgba(255,255,255,.09); --rule-2:rgba(255,255,255,.16);
-  background:#111c2e;
-}
-:root[data-theme="dark"] .btn-quote{background:var(--accent);color:#0b1420}
-:root[data-theme="dark"] .btn-quote:hover{background:var(--accent-bright)}
-:root[data-theme="dark"] .btn-primary{background:var(--accent);color:#0b1420}
-:root[data-theme="dark"] .btn-primary:hover{background:var(--accent-bright)}
-:root[data-theme="dark"] .btn-wa{background:#25d366;color:#0b1420}
-:root[data-theme="dark"] .btn-wa:hover{background:#1fbf5c}
-:root[data-theme="dark"] .langseg button[aria-pressed="true"]{background:var(--accent);color:#0b1420}
-:root[data-theme="dark"] .hero-net{
-  background:
-    radial-gradient(820px 460px at 16% -6%, rgba(110,163,255,.10), transparent 64%),
-    radial-gradient(700px 420px at 90% 2%, rgba(79,200,232,.08), transparent 62%);
-}
-:root[data-theme="dark"] .brand span[style]{color:var(--ink)!important}
-:root[data-theme="dark"] .brand .accent-word{color:var(--accent)}
-:root[data-theme="dark"] ::selection{background:rgba(110,163,255,.35);color:#f2f6fd}
-:root[data-theme="dark"] #formOk{background:rgba(60,170,110,.14);color:#7fd7a4;border-color:rgba(120,200,140,.35)}
-:root[data-theme="dark"] #formErr{background:rgba(210,90,70,.14);color:#f0a999;border-color:rgba(210,90,70,.35)}
-
-/* theme toggle button ─── */
-.theme-toggle{
-  background:none;border:1px solid var(--rule-2);border-radius:6px;
-  width:36px;height:36px;color:var(--ink-2);cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:color .16s,border-color .16s,background .16s;
-}
-.theme-toggle:hover{color:var(--ink);border-color:var(--ink-3)}
-.theme-toggle svg{width:16px;height:16px}
-.theme-toggle .ti-moon{display:none}
-:root[data-theme="dark"] .theme-toggle .ti-sun{display:none}
-:root[data-theme="dark"] .theme-toggle .ti-moon{display:block}
-
-/* ── products ───────────────────────────────────────────────────── */
-.prod-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(20px,2.4vw,30px);
-}
-.prod-card{
-  display:flex;flex-direction:column;
-  background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;
-  padding:clamp(24px,2.4vw,32px);
-  color:inherit;
-  transition:border-color .22s var(--ease),transform .22s var(--ease),background .22s;
-}
-.prod-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.prod-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.prod-visual{
-  width:64px;height:64px;border-radius:12px;
-  background:var(--paper-3);border:1px solid var(--rule);
-  color:var(--accent);
-  display:inline-flex;align-items:center;justify-content:center;
-  margin-bottom:22px;flex:none;
-}
-.prod-visual svg{width:34px;height:34px}
-.prod-tag{
-  font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
-}
-.prod-card h3{font-size:clamp(1.28rem,1.7vw,1.52rem);margin-bottom:.55em;color:var(--ink)}
-.prod-card p{
-  font-size:1rem;color:var(--ink-2);margin:0 0 22px;line-height:1.55;flex:1;
-}
-.prod-more{
-  font-size:.95rem;font-weight:500;color:var(--accent);
-  border-bottom:1px solid transparent;transition:border-color .18s;
-  align-self:flex-start;
-}
-.prod-card:hover .prod-more{border-bottom-color:var(--accent)}
-.prod-note{
-  margin-top:clamp(28px,3vw,42px);
-  font-size:.94rem;color:var(--ink-3);text-align:center;
-  padding-top:22px;border-top:1px solid var(--rule);
-  max-width:64ch;margin-left:auto;margin-right:auto;
-}
-@media(max-width:900px){.prod-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.prod-grid{grid-template-columns:1fr}}
-
-/* ── services ───────────────────────────────────────────────────── */
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.svc-col{padding:0 clamp(20px,2.6vw,36px);border-left:1px solid var(--rule)}
-.svc-col:first-child{padding-left:0;border-left:0}
-.svc-col .svc-ico{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:34px;height:34px;color:var(--accent);margin-bottom:20px;
-}
-.svc-col .svc-ico svg{width:30px;height:30px}
-.svc-col h3{font-size:clamp(1.24rem,1.7vw,1.48rem);margin-bottom:.65em}
-.svc-col ul{list-style:none;margin:0;padding:0}
-.svc-col li{
-  font-size:1.02rem;color:var(--ink-2);padding:12px 0 12px 25px;border-top:1px solid var(--rule);
-  position:relative;
-}
-.svc-col li::before{
-  content:"";position:absolute;left:1px;top:1.02em;width:11px;height:6px;
-  border-left:1.6px solid var(--accent);border-bottom:1.6px solid var(--accent);
-  transform:rotate(-45deg);
-}
-.svc-col li:first-child{border-top:0;padding-top:0}
-
-/* ── approach ───────────────────────────────────────────────────── */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2vw,28px)}
-.step-row{display:flex;flex-direction:column}
-.step-pill{
-  display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;
-  border:1px solid var(--rule-2);border-radius:999px;
-  font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
-  margin-bottom:14px;align-self:flex-start;
-}
-.step-num{
-  display:inline-flex;width:22px;height:22px;border-radius:50%;
-  background:var(--ink);color:var(--paper);
-  align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:.64rem;font-weight:500;letter-spacing:0;
-}
-.step-row h3{font-size:clamp(1.05rem,1.3vw,1.24rem);margin-bottom:.55em;line-height:1.2}
-.step-art{
-  background:transparent;border-radius:12px;overflow:hidden;
-  aspect-ratio:16/10;margin-bottom:16px;
-}
-.step-art img{width:100%;height:100%;object-fit:cover;display:block}
-.step-art svg{width:100%;height:100%;padding:14px}
-:root[data-theme="dark"] .step-art{background:#eef4fd;padding:4px}
-:root[data-theme="dark"] .step-art img{border-radius:8px}
-.step-row p{font-size:.97rem;color:var(--ink-2);margin:0;line-height:1.5}
-@media(max-width:1100px){.steps{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:720px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.steps{grid-template-columns:1fr}}
-
-/* partnership pact — small commitments row under the steps */
-.pact{
-  margin-top:clamp(46px,5vw,72px);
-  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px);
-  padding-top:28px;border-top:1px solid var(--rule);
-}
-@media(max-width:820px){.pact{grid-template-columns:1fr}}
-.pact-item .k{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
-}
-.pact-item p{color:var(--ink-2);font-size:1rem;margin:0}
-
-/* ── about ──────────────────────────────────────────────────────── */
-.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(34px,6vw,86px);align-items:start}
-.about.solo{grid-template-columns:1fr}
-.about.solo .about-body{max-width:68ch}
-.about-body p{font-size:1.1rem;color:var(--ink-2);max-width:56ch}
-.about-body p:first-child{font-size:1.28rem;color:var(--ink);line-height:1.48}
-.person{border:1px solid var(--rule);border-radius:9px;padding:26px;background:var(--paper-2)}
-.person .ph{
-  width:78px;height:78px;border-radius:50%;background:var(--paper-3);
-  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--ink-3);text-align:center;
-  border:1px solid var(--rule);
-}
-.person .pn{font-weight:600;font-size:1.05rem;margin-bottom:2px}
-.person .pr{font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
-.person p{font-size:.97rem;color:var(--ink-2);margin:0}
-
-/* ── contact ────────────────────────────────────────────────────── */
-.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(34px,6vw,86px);align-items:start}
-.ways{margin-top:34px;border-top:1px solid var(--rule)}
-.way{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--rule)}
-.way .wi{width:20px;height:20px;flex:none;color:var(--ink-3);margin-top:3px}
-.way .wi svg{width:20px;height:20px}
-.way b{display:block;font-weight:600;font-size:.98rem;margin-bottom:1px}
-.way span{font-size:.95rem;color:var(--ink-2)}
-a.way:hover b{color:var(--accent)}
-
-.form-card{border:1px solid var(--rule);border-radius:9px;padding:clamp(24px,3vw,34px);background:var(--paper-2)}
-.fg{margin-bottom:18px}
-.fg label{display:block;font-size:.86rem;font-weight:500;margin-bottom:7px;color:var(--ink-2)}
-.fg input,.fg textarea,.fg select{
-  width:100%;font-family:inherit;font-size:.98rem;color:var(--ink);
-  background:var(--paper);border:1px solid var(--rule-2);border-radius:6px;
-  padding:12px 14px;transition:border-color .18s;
-}
-.fg textarea{min-height:128px;resize:vertical;line-height:1.55}
-.fg select{
-  appearance:none;-webkit-appearance:none;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23566377' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  background-repeat:no-repeat;background-position:right 14px center;
-  padding-right:38px;cursor:pointer;
-}
-:root[data-theme="dark"] .fg select{
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%238494ad' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-}
-.fg input:focus,.fg textarea:focus,.fg select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--ink-3)}
-.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fg-row .fg-col label{display:block;font-size:.86rem;font-weight:500;margin-bottom:7px;color:var(--ink-2)}
-@media(max-width:520px){.fg-row{grid-template-columns:1fr}}
-.form-msg{display:none;font-size:.93rem;margin-top:14px;padding:12px 14px;border-radius:6px}
-.form-msg.show{display:block}
-#formOk{background:#e6f5ec;color:#186238;border:1px solid #b6ddc6}
-#formErr{background:#fdecea;color:#8c2f18;border:1px solid #f3c9c0}
-.fallback{text-align:left}
-.fallback p{color:var(--ink-2);font-size:.98rem}
-.fallback .fb-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-
-/* ── footer ─────────────────────────────────────────────────────── */
-.site-footer{border-top:1px solid var(--rule);padding:56px 0 38px;background:var(--paper)}
-.site-footer .brand{font-size:1.14rem}
-.site-footer .brand .mark{width:34px;height:34px;border-radius:10px}
-.foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:40px}
-.foot h5{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin:0 0 16px}
-.foot ul{list-style:none;margin:0;padding:0}
-.foot li{margin-bottom:9px}
-.foot li a{font-size:.94rem;color:var(--ink-2)}
-.foot li a:hover{color:var(--ink)}
-.foot-about{font-size:.94rem;color:var(--ink-2);max-width:34ch;margin-top:14px}
-.foot-bot{
-  display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
-  margin-top:48px;padding-top:22px;border-top:1px solid var(--rule);
-  font-size:.86rem;color:var(--ink-3);
-}
-.foot-bot a:hover{color:var(--ink)}
-
-/* ── floating WhatsApp ──────────────────────────────────────────── */
-.fab{
-  position:fixed;right:20px;bottom:20px;z-index:90;
-  display:inline-flex;align-items:center;gap:10px;
-  background:#136b3a;color:#fff;border-radius:999px;
-  padding:13px 20px 13px 16px;font-size:.94rem;font-weight:500;line-height:1;
-  box-shadow:0 12px 30px -10px rgba(19,107,58,.5);
-  transform:translateY(90px);opacity:0;pointer-events:none;
-  transition:transform .4s var(--ease),opacity .3s,background .18s;
-}
-.fab.in{transform:none;opacity:1;pointer-events:auto}
-.fab:hover{background:#0e552e}
-.fab svg{width:21px;height:21px;flex:none}
-@media(max-width:520px){
-  .fab{right:14px;bottom:14px;padding:14px;gap:0}
-  .fab span{display:none}
-}
-@media print{.fab{display:none}}
-
-/* ── reveal ─────────────────────────────────────────────────────── */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
-.rv.vis{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
-
-/* ── responsive ─────────────────────────────────────────────────── */
-@media(max-width:1000px){
-  .hero-grid.has-art{grid-template-columns:1fr}
-  .hero-grid.has-art h1{font-size:clamp(2.8rem,6.2vw,4.2rem);max-width:15ch}
-  .collage{max-width:540px;width:100%;aspect-ratio:1/.78;margin-inline:auto}
-  .case{grid-template-columns:1fr}
-  .shot{position:static}
-  .about,.contact{grid-template-columns:1fr}
-  .head{grid-template-columns:1fr;align-items:start;gap:18px}
-  .head .deck{padding-bottom:0}
-}
-@media(max-width:860px){
-  :root{--gut:22px}
-  .brand{font-size:1.12rem;gap:10px}
-  .brand .mark{width:36px;height:36px;border-radius:10px}
-  .btn-quote{display:none}
-  .nav-toggle{display:inline-flex;width:44px;height:44px}
-  .langseg button{padding:13px 12px;min-height:44px;min-width:44px}
-  .theme-toggle{width:44px;height:44px}
-  .nav{
-    position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;gap:0;
-    background:var(--paper);border-bottom:1px solid var(--rule);padding:8px 22px 22px;
-    transform:translateY(-130%);transition:transform .32s var(--ease);
-  }
-  body.nav-open .nav{transform:none}
-  .nav a{padding:15px 0;border-bottom:1px solid var(--rule);font-size:1.02rem;min-height:48px;display:flex;align-items:center}
-  .nav a.active{border-bottom-color:var(--rule);color:var(--accent)}
-  .metrics,.svc,.steps{grid-template-columns:1fr}
-  .metric,.svc-col{padding:26px 0;border-left:0;border-top:1px solid var(--rule)}
-  .metric:first-child,.svc-col:first-child{padding-top:0;border-top:0}
-  .foot{grid-template-columns:1fr 1fr}
-  .foot-brand{grid-column:1/-1}
-}
-@media(max-width:520px){
-  body{font-size:16px}
-  h1{font-size:clamp(2.35rem,10vw,3rem)}
-  .brand{font-size:1.02rem}
-  .brand .mark{width:33px;height:33px;border-radius:9px}
-  .foot{grid-template-columns:1fr}
-  .hero-cta .btn{width:100%;justify-content:center}
-}
-</style>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
-<body>
+<body data-page="home">
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-header" id="siteHeader">
   <div class="container hdr">
-    <a class="brand" href="#top" aria-label="Intellect Core, home">
+    <a class="brand" href="/" aria-label="Intellect Core, home">
       <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
         <rect width="100" height="100" rx="26" fill="#1b4dd8"/>
         <g stroke="#fff" stroke-width="6" stroke-linecap="round" fill="#fff">
@@ -800,18 +67,16 @@ a.way:hover b{color:var(--accent)}
     </a>
 
     <nav class="nav" id="navMenu" aria-label="Main">
-      <a href="#products" data-i18n="nav.products">Products</a>
-      <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#work" data-i18n="nav.work">Work</a>
-      <a href="#approach" data-i18n="nav.approach">Approach</a>
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="/" class="current" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="work.html" data-i18n="nav.work">Work</a>
+      <a href="about.html" data-i18n="nav.about">About us</a>
     </nav>
 
     <div class="hdr-end">
-      <a class="btn-quote" href="#contact">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <span data-i18n="nav.quote">Get a quote</span>
+      <a class="btn-book" href="#contact">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        <span data-i18n="nav.book">Book a free call</span>
       </a>
       <div class="langseg" role="group" aria-label="Language / Taal">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -844,11 +109,8 @@ a.way:hover b{color:var(--accent)}
       </h1>
       <p class="lead" data-i18n="hero.lead">We map how your work actually flows, build the system that runs it, and hand it over documented so your team owns it.</p>
       <div class="hero-cta">
-        <a class="btn btn-wa" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg>
-          <span data-i18n="hero.cta1">Talk on WhatsApp</span>
-        </a>
-        <a class="btn btn-ghost" href="#products" data-i18n="hero.cta2">See our products</a>
+        <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Book a free call</a>
+        <a class="btn btn-ghost" href="services.html" data-i18n="hero.cta2">See what we build</a>
       </div>
       <p class="hero-note" data-i18n="hero.note">The first conversation is free, and it is a conversation rather than a pitch. If automation is the wrong answer for your problem, we will say so.</p>
       </div>
@@ -892,15 +154,14 @@ a.way:hover b{color:var(--accent)}
           <text class="core-label" x="310" y="281">CORE</text>
         </svg>
 
-        <a class="cap-node" href="#services" style="left:50%;top:13.9%"><span class="nd"></span><span data-i18n="cap.auto">Process automation</span></a>
-        <a class="cap-node" href="#services" style="left:22.6%;top:28.2%"><span class="nd"></span><span data-i18n="cap.doc">Document extraction</span></a>
-        <a class="cap-node" href="#services" style="left:77.4%;top:28.2%"><span class="nd"></span><span data-i18n="cap.ai">AI assistants</span></a>
-        <a class="cap-node" href="#services" style="left:22.6%;top:71.8%"><span class="nd"></span><span data-i18n="cap.int">Integrations</span></a>
-        <a class="cap-node" href="#services" style="left:77.4%;top:71.8%"><span class="nd"></span><span data-i18n="cap.dash">Dashboards</span></a>
-        <a class="cap-node" href="#services" style="left:50%;top:86.1%"><span class="nd"></span><span data-i18n="cap.apps">Web &amp; apps</span></a>
+        <a class="cap-node" href="services.html#automation" style="left:50%;top:13.9%"><span class="nd"></span><span data-i18n="cap.auto">Process automation</span></a>
+        <a class="cap-node" href="services.html#extraction" style="left:22.6%;top:28.2%"><span class="nd"></span><span data-i18n="cap.doc">Document extraction</span></a>
+        <a class="cap-node" href="services.html#ai" style="left:77.4%;top:28.2%"><span class="nd"></span><span data-i18n="cap.ai">AI assistants</span></a>
+        <a class="cap-node" href="services.html#integrations" style="left:22.6%;top:71.8%"><span class="nd"></span><span data-i18n="cap.int">Integrations</span></a>
+        <a class="cap-node" href="services.html#dashboards" style="left:77.4%;top:71.8%"><span class="nd"></span><span data-i18n="cap.dash">Dashboards</span></a>
+        <a class="cap-node" href="services.html#apps" style="left:50%;top:86.1%"><span class="nd"></span><span data-i18n="cap.apps">Web &amp; apps</span></a>
       </div>
       </div>
-      <div class="collage" id="collage" hidden></div>
      </div>
 
       <div class="index-strip">
@@ -916,242 +177,59 @@ a.way:hover b{color:var(--accent)}
     </div>
   </section>
 
-  <!-- ══ METRICS (rendered from CONFIG; hidden entirely when empty) ══ -->
-  <section class="section" id="metrics" hidden>
-    <div class="container">
-      <div class="metrics rv" id="metricsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ══ PRODUCTS ══ -->
-  <section class="section dark" id="products">
+  <!-- ══ SERVICES OVERVIEW (short intro, links to services.html for detail) ══ -->
+  <section class="section" id="overview">
     <div class="container">
       <div class="head rv">
         <div>
-          <span class="label" data-i18n="prod.label">Our products</span>
-          <h2 data-i18n="prod.h2">Ready-made tools, on your own data.</h2>
+          <span class="label" data-i18n="ov.label">What we build</span>
+          <h2 data-i18n="ov.h2">Three kinds of work.</h2>
         </div>
-        <p class="deck" data-i18n="prod.deck">Three products we already built, refined and now run in production. If one of these fits the job, you skip most of the build. Try each live on the spot.</p>
+        <p class="deck" data-i18n="ov.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, sometimes AI and often simply well-built software. Below is the short version. The full breakdown lives on the services page.</p>
       </div>
 
-      <div class="prod-grid rv">
-        <a class="prod-card" href="technical/demo/">
-          <div class="prod-visual" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8h20l10 10v34a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z"/>
-              <path d="M38 8v10h10"/>
-              <path d="M22 30h20M22 38h20M22 46h13"/>
-              <circle cx="48" cy="46" r="6" stroke="currentColor" fill="none"/>
-              <path d="m52 50 4 4"/>
-            </svg>
-          </div>
-          <span class="prod-tag" data-i18n="p1.tag">Document extraction</span>
-          <h3 data-i18n="p1.h3">Core Parse</h3>
-          <p data-i18n="p1.p">Reads PDFs, scans and email attachments and returns clean, structured data your systems can use. No templates, no manual entry, set up in minutes.</p>
-          <span class="prod-more" data-i18n="p1.more">Try the demo →</span>
-        </a>
-
-        <a class="prod-card" href="technical/insight/">
-          <div class="prod-visual" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="8" y="12" width="48" height="34" rx="4"/>
-              <path d="M14 40 22 30l6 6 10-14 12 14"/>
-              <circle cx="22" cy="30" r="2.4" fill="currentColor" stroke="none"/>
-              <circle cx="28" cy="36" r="2.4" fill="currentColor" stroke="none"/>
-              <circle cx="38" cy="22" r="2.4" fill="currentColor" stroke="none"/>
-              <path d="M22 52h20M32 46v6"/>
-            </svg>
-          </div>
-          <span class="prod-tag" data-i18n="p2.tag">Ask your data</span>
-          <h3 data-i18n="p2.h3">Core Insight</h3>
-          <p data-i18n="p2.p">An AI analyst for your spreadsheets and databases. Ask in plain language and get answers, analyses, duplicate checks and recommendations in seconds.</p>
-          <span class="prod-more" data-i18n="p2.more">Try the demo →</span>
-        </a>
-
-        <a class="prod-card" href="#contact">
-          <div class="prod-visual" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="16" y="6" width="32" height="52" rx="5"/>
-              <path d="M24 6v2h16V6"/>
-              <path d="M22 20h20M22 28h20M22 36h13"/>
-              <path d="M40 44l4 4 8-8"/>
-              <circle cx="32" cy="52" r="2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <span class="prod-tag" data-i18n="p3.tag">Receipts to ledger</span>
-          <h3 data-i18n="p3.h3">Core Bonnen</h3>
-          <p data-i18n="p3.p">Photograph a receipt, the AI reads supplier, date, amount, VAT and category, and you confirm before anything is saved. One Excel file for the bookkeeper, per category, at the end of the month.</p>
-          <span class="prod-more" data-i18n="p3.more">Request access →</span>
-        </a>
-      </div>
-
-      <p class="prod-note rv" data-i18n="prod.note">Every product is set up on your own data, in your own account. Nothing shared, nothing exposed.</p>
-    </div>
-  </section>
-
-  <!-- ══ SERVICES ══ -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="head rv">
-        <div>
-          <span class="label" data-i18n="svc.label">Custom work</span>
-          <h2 data-i18n="svc.h2">If a product does not fit, we build it.</h2>
-        </div>
-        <p class="deck" data-i18n="svc.deck">We do not sell a fixed stack. We start from the problem and pick the approach that fits it, sometimes AI and often simply well-built software. Three kinds of work run through most of what we do.</p>
-      </div>
-
-      <div class="svc rv">
-        <div class="svc-col">
-          <div class="svc-ico" aria-hidden="true">
+      <div class="ov-grid rv">
+        <a class="ov-card" href="services.html#automation">
+          <div class="ov-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
               <path d="M14 3v6h6"/>
               <path d="M8 13h8M8 17h5"/>
             </svg>
           </div>
-          <h3 data-i18n="s1.h3">Data automation</h3>
-          <ul>
-            <li data-i18n="s1.a">Bank statements and invoices, read and categorised</li>
-            <li data-i18n="s1.b">Contract and document data extraction</li>
-            <li data-i18n="s1.c">Incoming email triaged into assigned tasks</li>
-            <li data-i18n="s1.d">Approval flows that run across systems</li>
-          </ul>
-        </div>
-        <div class="svc-col">
-          <div class="svc-ico" aria-hidden="true">
+          <h3 data-i18n="ov1.h3">Data automation</h3>
+          <p data-i18n="ov1.p">Bank statements read into the ledger. Invoices extracted, categorised and routed. Incoming email turned into assigned tasks. Approval flows that run across systems.</p>
+          <span class="ov-more" data-i18n="ov.more">See what is possible →</span>
+        </a>
+        <a class="ov-card" href="services.html#ai">
+          <div class="ov-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/>
               <path d="M19.5 15.2l.7 1.7 1.7.7-1.7.7-.7 1.7-.7-1.7-1.7-.7 1.7-.7z"/>
             </svg>
           </div>
-          <h3 data-i18n="s2.h3">AI systems</h3>
-          <ul>
-            <li data-i18n="s2.a">Extraction tuned to your own forms and layouts</li>
-            <li data-i18n="s2.b">WhatsApp and web assistants on your documents</li>
-            <li data-i18n="s2.c">Decision support built on your business rules</li>
-            <li data-i18n="s2.d">An AI roadmap, prioritised by what pays back first</li>
-          </ul>
-        </div>
-        <div class="svc-col">
-          <div class="svc-ico" aria-hidden="true">
+          <h3 data-i18n="ov2.h3">AI systems</h3>
+          <p data-i18n="ov2.p">Extraction tuned to your own forms. WhatsApp and web assistants that answer only from your own documents, with the source named. Decision support built on your business rules.</p>
+          <span class="ov-more" data-i18n="ov.more">See what is possible →</span>
+        </a>
+        <a class="ov-card" href="services.html#platform">
+          <div class="ov-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3 3 8l9 5 9-5-9-5z"/>
               <path d="M3 13l9 5 9-5"/>
               <path d="M3 18l9 5 9-5"/>
             </svg>
           </div>
-          <h3 data-i18n="s3.h3">Platforms (SaaS)</h3>
-          <ul>
-            <li data-i18n="s3.a">Operations and work order platforms</li>
-            <li data-i18n="s3.b">Dashboards on pipelines you can trust</li>
-            <li data-i18n="s3.c">CRM, ERP, payment and messaging integrations</li>
-            <li data-i18n="s3.d">Web apps and full SaaS products, end to end</li>
-          </ul>
-        </div>
+          <h3 data-i18n="ov3.h3">Platforms &amp; SaaS</h3>
+          <p data-i18n="ov3.p">Operations and work-order platforms. Dashboards on pipelines you can trust. CRM, ERP, payment and messaging integrations. Web apps and full SaaS products, end to end.</p>
+          <span class="ov-more" data-i18n="ov.more">See what is possible →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ══ WORK ══ -->
-  <section class="section dark" id="work">
-    <div class="container">
-      <div class="head rv">
-        <div>
-          <span class="label" data-i18n="work.label">Selected work</span>
-          <h2 data-i18n="work.h2">Three problems, and what we built for them.</h2>
-        </div>
-        <p class="deck" data-i18n="work.deck">Client names are withheld by agreement. Everything described here runs in production today. Ask us for a walkthrough on real data and we will show you the system, not a slide.</p>
-      </div>
-
-      <!-- Case 1 -->
-      <article class="case rv">
-        <div>
-          <div class="case-sector" data-i18n="c1.sector">Finance &amp; accounting</div>
-          <h3 data-i18n="c1.h3">Bank statements that reconcile themselves</h3>
-          <div class="case-block">
-            <h4 data-i18n="lbl.before">The situation</h4>
-            <p data-i18n="c1.before">Three banks, three currencies, three different export formats. Every month the finance team retyped statement lines into the ledger by hand, and every month a handful of entries went in wrong and had to be traced back.</p>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="lbl.built">What we built</h4>
-            <p data-i18n="c1.built">A parser that reads all three formats, categorises each line against the chart of accounts, flags anything it is not confident about for review, and exports a ledger-ready file. One upload, one review pass, done.</p>
-          </div>
-          <div class="case-result" data-result="c1" hidden>
-            <div class="r-fig"></div><div class="r-cap"></div>
-          </div>
-        </div>
-        <figure class="demo" data-demo="bank">
-          <div class="demo-bar"><i></i><i></i><i></i><b data-i18n="d1.bar">Bank statement import</b></div>
-          <div class="demo-body" id="bkBody">
-            <div class="d-step" data-i18n="d1.s1">1 · Raw export from the bank</div>
-            <div class="bk-raw" id="bkRaw"></div>
-            <div class="d-step" style="margin-top:6px" data-i18n="d1.s2">2 · Sorted, categorised, ledger-ready</div>
-            <div id="bkOut"></div>
-          </div>
-          <div class="demo-foot">
-            <button class="demo-btn" type="button" data-play="bank"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> <span data-i18n="d1.btn">Run demo</span></button>
-            <span class="demo-hint" data-i18n="d1.hint">Illustrative data. Real files stay on your own systems.</span>
-          </div>
-        </figure>
-      </article>
-
-      <!-- Case 2 -->
-      <article class="case rv">
-        <div>
-          <div class="case-sector" data-i18n="c2.sector">Legal &amp; compliance</div>
-          <h3 data-i18n="c2.h3">A contract archive you can ask questions</h3>
-          <div class="case-block">
-            <h4 data-i18n="lbl.before">The situation</h4>
-            <p data-i18n="c2.before">Hundreds of contracts sitting in folders. Finding one clause meant opening files one at a time and hoping somebody remembered which agreement it was in.</p>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="lbl.built">What we built</h4>
-            <p data-i18n="c2.built">Automatic extraction of parties, dates, values and renewal terms from every contract into a searchable library. Ask for a clause in plain language, get the clause and the document it came from.</p>
-          </div>
-          <div class="case-result" data-result="c2" hidden>
-            <div class="r-fig"></div><div class="r-cap"></div>
-          </div>
-        </div>
-        <figure class="demo" data-demo="chat">
-          <div class="demo-bar"><i></i><i></i><i></i><b data-i18n="d2.bar">Contract assistant</b></div>
-          <div class="demo-body"><div class="ch" id="chBody"></div></div>
-          <div class="demo-foot">
-            <button class="demo-btn" type="button" data-play="chat"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> <span data-i18n="d2.btn">Ask a question</span></button>
-            <span class="demo-hint" data-i18n="d2.hint">Answers come only from your own documents, with the source named.</span>
-          </div>
-        </figure>
-      </article>
-
-      <!-- Case 3 -->
-      <article class="case rv">
-        <div>
-          <div class="case-sector" data-i18n="c3.sector">Retail, hospitality &amp; trades</div>
-          <h3 data-i18n="c3.h3">The shoebox of receipts, emptied</h3>
-          <div class="case-block">
-            <h4 data-i18n="lbl.before">The situation</h4>
-            <p data-i18n="c3.before">Receipts pile up in a drawer until the end of the quarter, then somebody spends days typing them over. Faded ones get guessed at, some never make it in at all, and the VAT that could have been reclaimed quietly disappears.</p>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="lbl.built">What we built</h4>
-            <p data-i18n="c3.built">Photograph the receipt on the spot. The AI reads the supplier, date, amount, VAT and category, and asks you to confirm before anything is saved. The photo is kept as proof, and the bookkeeper gets one Excel file with a tab per category. Staff can add receipts without seeing the rest of the books.</p>
-          </div>
-          <div class="case-result" data-result="c3" hidden>
-            <div class="r-fig"></div><div class="r-cap"></div>
-          </div>
-        </div>
-        <figure class="demo" data-demo="receipt">
-          <div class="demo-bar"><i></i><i></i><i></i><b data-i18n="d3.bar">Receipts · mobile</b></div>
-          <div class="demo-body" id="bnBody"></div>
-          <div class="demo-foot">
-            <button class="demo-btn" type="button" data-play="receipt"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> <span data-i18n="d3.btn">Send a receipt</span></button>
-            <span class="demo-hint" data-i18n="d3.hint">Nothing is saved until a person taps yes.</span>
-          </div>
-        </figure>
-      </article>
-    </div>
-  </section>
-  <!-- ══ APPROACH ══ -->
-  <section class="section" id="approach">
+  <!-- ══ HOW WE WORK (5 steps, same as before) ══ -->
+  <section class="section dark" id="how">
     <div class="container">
       <div class="head rv">
         <div>
@@ -1197,53 +275,33 @@ a.way:hover b{color:var(--accent)}
           <p data-i18n="ap5.p">Documented, handed to your team, and we stay a WhatsApp away.</p>
         </article>
       </div>
-
-      <div class="pact rv">
-        <div class="pact-item">
-          <div class="k" data-i18n="pact.k1">What you get</div>
-          <p data-i18n="pact.p1">Direct access to the person building your system, weekly progress you can see, and everything documented so your team stays in control.</p>
-        </div>
-        <div class="pact-item">
-          <div class="k" data-i18n="pact.k2">What we ask</div>
-          <p data-i18n="pact.p2">One point of contact on your side who can answer questions and make decisions. Half an hour a week is usually enough.</p>
-        </div>
-        <div class="pact-item">
-          <div class="k" data-i18n="pact.k3">What stays yours</div>
-          <p data-i18n="pact.p3">Your data, your code, your documentation. If you move to another party a year from now, you can. We would rather earn the next project than hold the last one hostage.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ══ ABOUT ══ -->
-  <section class="section dark" id="about">
+  <!-- ══ READY BAND (short bridge to contact) ══ -->
+  <section class="section" id="ready">
     <div class="container">
-      <div class="about rv">
-        <div class="about-body">
-          <span class="label" data-i18n="ab.label">Who we are</span>
-          <h2 data-i18n="ab.h2">A small team that builds things that stay built.</h2>
-          <p data-i18n="ab.p1">Intellect Core builds custom software for businesses in Suriname and beyond. A great deal of the work that keeps companies here running is still done by hand, and most of it does not have to be.</p>
-          <p data-i18n="ab.p2">We are deliberately small. You talk to the person building your system, not to an account manager who relays it. That is also why we turn work down when we think somebody else is a better fit for it.</p>
-          <p data-i18n="ab.p3">Everything we deliver is documented and handed over. If you decide to take it in-house or move to another party a year from now, you can. We would rather earn the next project than hold the last one hostage.</p>
+      <div class="ready-band rv">
+        <div>
+          <h3 data-i18n="rd.h3">Ready to talk about your project?</h3>
+          <p data-i18n="rd.p">Book a free call and tell us what is costing your team time. We will say honestly whether it is worth automating and what it would take.</p>
         </div>
-        <aside class="person" data-person>
-          <div class="ph" data-i18n="ab.photo">Photo</div>
-          <div class="pn" data-person-name>Your name</div>
-          <div class="pr" data-person-role>Founder</div>
-          <p data-i18n="ab.quote">One honest sentence here about why you started this company does more for trust than everything else on this page put together.</p>
-        </aside>
+        <div class="ready-cta">
+          <a class="btn btn-primary" href="#contact" data-i18n="rd.cta1">Book a free call</a>
+          <a class="btn btn-ghost" href="work.html" data-i18n="rd.cta2">Or see our work</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ CONTACT ══ -->
-  <section class="section" id="contact">
+  <!-- ══ CONTACT (with card picker instead of dropdown) ══ -->
+  <section class="section dark" id="contact">
     <div class="container">
       <div class="contact rv">
         <div>
           <span class="label" data-i18n="ct.label">Get in touch</span>
-          <h2 data-i18n="ct.h2">Tell us what is costing you time.</h2>
-          <p class="lead measure" data-i18n="ct.p">Describe the task your team repeats every week. We will tell you whether it is worth automating, roughly what it would take, and what it would cost. That answer is free.</p>
+          <h2 data-i18n="ct.h2">Tell us what you need.</h2>
+          <p class="lead measure" data-i18n="ct.p">Pick what fits best, describe the task in a few words, and we will come back to you within one working day. The first conversation is free.</p>
 
           <div class="ways">
             <a class="way" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
@@ -1267,47 +325,83 @@ a.way:hover b{color:var(--accent)}
             <input type="hidden" name="subject" value="New message via intellectcore.net">
             <input type="hidden" name="from_name" value="intellectcore.net">
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
             <div class="fg">
-              <label for="cName" data-i18n="f.name">Name</label>
-              <input id="cName" name="name" type="text" required autocomplete="name" placeholder="Your name" data-i18n-ph="ph.name">
+              <label data-i18n="f.interest">What do you need?</label>
+              <div class="pick-grid" role="radiogroup" aria-labelledby="cInterestLabel">
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="Core Parse" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.parse.n">Core Parse</span>
+                  <span class="pick-desc" data-i18n="pk.parse.d">Document extraction</span>
+                </label>
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="Core Insight" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M6 14 10 10l3 3 5-7"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.insight.n">Core Insight</span>
+                  <span class="pick-desc" data-i18n="pk.insight.d">Ask your data</span>
+                </label>
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="Core Bonnen" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h4"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.bonnen.n">Core Bonnen</span>
+                  <span class="pick-desc" data-i18n="pk.bonnen.d">Receipts to ledger</span>
+                </label>
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="Data automation" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h13M4 12h10M4 18h8"/><path d="m18 15 3 3-3 3"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.auto.n">Data automation</span>
+                  <span class="pick-desc" data-i18n="pk.auto.d">Custom workflow</span>
+                </label>
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="AI system" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.ai.n">AI system</span>
+                  <span class="pick-desc" data-i18n="pk.ai.d">Custom AI build</span>
+                </label>
+                <label class="pick-card">
+                  <input type="radio" name="interest" value="Platform / SaaS" required>
+                  <span class="pick-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="pick-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+                  <span class="pick-name" data-i18n="pk.plat.n">Platform / SaaS</span>
+                  <span class="pick-desc" data-i18n="pk.plat.d">Web app build</span>
+                </label>
+              </div>
             </div>
-            <div class="fg">
-              <label for="cEmail" data-i18n="f.email">Email</label>
-              <input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-            </div>
+
             <div class="fg fg-row">
               <div class="fg-col">
-                <label for="cInterest" data-i18n="f.interest">What do you need?</label>
-                <select id="cInterest" name="interest" required>
-                  <option value="" data-i18n="f.interest.0">Select an option</option>
-                  <option value="Core Parse" data-i18n="f.interest.p1">Core Parse (document extraction)</option>
-                  <option value="Core Insight" data-i18n="f.interest.p2">Core Insight (ask your data)</option>
-                  <option value="Core Bonnen" data-i18n="f.interest.p3">Core Bonnen (receipts to ledger)</option>
-                  <option value="Data automation" data-i18n="f.interest.s1">Custom data automation</option>
-                  <option value="AI systems" data-i18n="f.interest.s2">Custom AI system</option>
-                  <option value="Platform / SaaS" data-i18n="f.interest.s3">Operations platform / SaaS</option>
-                  <option value="Not sure yet" data-i18n="f.interest.x">Not sure yet, help me figure it out</option>
-                </select>
+                <label for="cName" data-i18n="f.name">Name</label>
+                <input id="cName" name="name" type="text" required autocomplete="name" placeholder="Your name" data-i18n-ph="ph.name">
               </div>
               <div class="fg-col">
-                <label for="cBudget" data-i18n="f.budget">Budget range</label>
-                <select id="cBudget" name="budget">
-                  <option value="" data-i18n="f.budget.0">Optional</option>
-                  <option value="Under USD 1K" data-i18n="f.budget.1">Under $1,000</option>
-                  <option value="USD 1K-3K" data-i18n="f.budget.2">$1,000 - $3,000</option>
-                  <option value="USD 3K-7K" data-i18n="f.budget.3">$3,000 - $7,000</option>
-                  <option value="USD 7K-15K" data-i18n="f.budget.4">$7,000 - $15,000</option>
-                  <option value="USD 15K+" data-i18n="f.budget.5">$15,000 +</option>
-                  <option value="Not sure yet" data-i18n="f.budget.x">Not sure yet</option>
-                </select>
+                <label for="cEmail" data-i18n="f.email">Email</label>
+                <input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
               </div>
             </div>
             <div class="fg">
-              <label for="cMsg" data-i18n="f.msg">What task is eating your team's time?</label>
+              <label for="cBudget" data-i18n="f.budget">Budget range</label>
+              <select id="cBudget" name="budget">
+                <option value="" data-i18n="f.budget.0">Optional</option>
+                <option value="Under USD 1K" data-i18n="f.budget.1">Under $1,000</option>
+                <option value="USD 1K-3K" data-i18n="f.budget.2">$1,000 - $3,000</option>
+                <option value="USD 3K-7K" data-i18n="f.budget.3">$3,000 - $7,000</option>
+                <option value="USD 7K-15K" data-i18n="f.budget.4">$7,000 - $15,000</option>
+                <option value="USD 15K+" data-i18n="f.budget.5">$15,000 +</option>
+                <option value="Not sure yet" data-i18n="f.budget.x">Not sure yet</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="cMsg" data-i18n="f.msg">Tell us a little about the project</label>
               <textarea id="cMsg" name="message" required placeholder="e.g. we retype bank statements into the ledger every month" data-i18n-ph="ph.msg"></textarea>
             </div>
             <button class="btn btn-primary" id="sbtn" type="submit" style="width:100%;justify-content:center">
-              <span data-i18n="f.submit">Send message</span>
+              <span data-i18n="f.submit">Send project request</span>
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
             <div class="form-msg" id="formOk" data-i18n="f.ok">Sent. We will come back to you within one working day.</div>
@@ -1323,7 +417,7 @@ a.way:hover b{color:var(--accent)}
   <div class="container">
     <div class="foot">
       <div class="foot-brand">
-        <a class="brand" href="#top" style="margin:0">
+        <a class="brand" href="/" style="margin:0">
           <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
             <rect width="100" height="100" rx="26" fill="#1b4dd8"/>
             <g stroke="#fff" stroke-width="6" stroke-linecap="round" fill="#fff">
@@ -1339,12 +433,11 @@ a.way:hover b{color:var(--accent)}
       <div>
         <h5 data-i18n="ft.nav">Navigation</h5>
         <ul>
-          <li><a href="#products" data-i18n="nav.products">Products</a></li>
-          <li><a href="#services" data-i18n="nav.services">Services</a></li>
-          <li><a href="#work" data-i18n="nav.work">Work</a></li>
-          <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
-          <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="/" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="work.html" data-i18n="nav.work">Work</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About us</a></li>
+          <li><a href="#contact" data-i18n="nav.book">Book a free call</a></li>
         </ul>
       </div>
       <div>
@@ -1369,782 +462,6 @@ a.way:hover b{color:var(--accent)}
   <span data-i18n="fab">WhatsApp us</span>
 </a>
 
-<script>
-/* =====================================================================
-   CONFIG — the only block you edit to put this site live.
-   Anything left empty hides itself rather than shipping a placeholder.
-   ===================================================================== */
-var CONFIG = {
-
-  /* 1. Contact form. Get a free key at web3forms.com (30 seconds, no account).
-        While this is empty the form is REPLACED by WhatsApp + email, so a
-        visitor is never handed a form that silently fails. */
-  web3formsKey: "93cfe86d-241c-46a3-8a6a-00c232220ce1",
-
-  /* 2. Headline metrics. Real figures only. Delete any you cannot back up;
-        the whole strip disappears if the list is empty. */
-  metrics: [
-    // { fig: "14", unit: "h", cap: "of manual entry removed per month for one finance team", src: "Measured over 6 months" },
-    // { fig: "3",  unit: "",  cap: "banks and currencies reconciled from one upload",        src: "In production since 2025" },
-    // { fig: "0",  unit: "",  cap: "statement lines retyped by hand since go-live",          src: "" }
-  ],
-
-  /* 3. Per-case results. Same rule: real numbers, or leave it out. */
-  results: {
-    // c1: { fig: "2 days → 20 minutes", cap: "Monthly reconciliation, end to end." },
-    // c2: { fig: "Seconds",             cap: "To find a clause that used to take an afternoon." },
-    // c3: { fig: "100%",                cap: "Of open jobs visible in one place, live." }
-  },
-
-  /* 3b. HERO COLLAGE — the first thing a visitor sees. Anonymise first.
-        Two or three shots work best. Empty = the hero stays full-width text,
-        which also looks right, so there is no broken state either way. */
-  heroShots: [
-    // { src: "shots/statements.png",  label: "Statement parser" },
-    // { src: "shots/workorders.png",  label: "Work order board" },
-    // { src: "shots/contracts.png",   label: "Contract library" }
-  ],
-
-  /* 4. Case screenshots. Anonymise them first. Put files in ./shots/ */
-  shots: {
-    // c1: { src: "shots/statements.png", cap: "Statement parser, review screen" },
-    // c2: { src: "shots/contracts.png",  cap: "Contract library, clause search" },
-    // c3: { src: "shots/workorders.png", cap: "Work order board" }
-  },
-
-  /* 5. The person behind the company. Leave name empty to hide the card,
-        but read the note in the review before you do. */
-  person: { name: "", role: "", photo: "" }
-};
-
-/* ── hero collage ────────────────────────────────────────────────── */
-(function(){
-  var box=document.getElementById("collage"),grid=document.getElementById("heroGrid");
-  if(!box||!grid)return;
-  var shots=(CONFIG.heroShots||[]).filter(function(x){return x&&x.src}).slice(0,3);
-  var preview=/[?&]frames=1/.test(location.search);
-  if(!shots.length&&!preview)return;           /* the transform panel covers it */
-  var art=document.getElementById("heroArt"); if(art)art.hidden=true;  /* real screenshots win over the illustration */
-
-  var pos=["f1","f2","f3"];
-  var html="";
-  for(var i=0;i<3;i++){
-    var sh=shots[i];
-    if(!sh&&!preview)continue;
-    html+='<div class="frame '+pos[i]+'">'
-        + '<div class="bar"><i></i><i></i><i></i><b>'+esc((sh&&sh.label)||"intellectcore.net")+'</b></div>'
-        + (sh ? '<img src="'+esc(sh.src)+'" alt="'+esc(sh.label||"")+'" loading="eager" decoding="async">'
-              : '<div class="hold"><div class="wf"><div class="side"><i></i><i></i><i></i><i></i><i></i></div>'
-                + '<div class="body"><i></i><div class="rows"><i></i><i></i><i></i><i></i></div></div></div>'
-                + '<span class="tag">Slot '+(i+1)+'</span></div>')
-        + '</div>';
-  }
-  box.innerHTML=html;
-  box.hidden=false;
-})();
-
-/* ── floating WhatsApp: appears once the hero is behind you ──────── */
-(function(){
-  var fab=document.getElementById("waFab");
-  if(!fab)return;
-  function upd(){fab.classList.toggle("in",window.scrollY>420)}
-  upd();
-  window.addEventListener("scroll",upd,{passive:true});
-  window.addEventListener("load",upd);
-  window.addEventListener("hashchange",upd);
-})();
-
-/* ── metrics ─────────────────────────────────────────────────────── */
-(function(){
-  var sec=document.getElementById("metrics"),grid=document.getElementById("metricsGrid");
-  if(!sec||!grid||!CONFIG.metrics||!CONFIG.metrics.length)return;
-  var html="";
-  CONFIG.metrics.slice(0,3).forEach(function(m){
-    html+='<div class="metric"><div class="fig">'+esc(m.fig)+(m.unit?'<sup>'+esc(m.unit)+'</sup>':'')
-        +'</div><div class="cap">'+esc(m.cap||"")+'</div>'
-        +(m.src?'<div class="src">'+esc(m.src)+'</div>':'')+'</div>';
-  });
-  grid.innerHTML=html;
-  sec.hidden=false;
-})();
-
-/* ── case results + screenshots ──────────────────────────────────── */
-(function(){
-  Object.keys(CONFIG.results||{}).forEach(function(k){
-    var el=document.querySelector('[data-result="'+k+'"]'),r=CONFIG.results[k];
-    if(!el||!r||!r.fig)return;
-    el.querySelector(".r-fig").textContent=r.fig;
-    el.querySelector(".r-cap").textContent=r.cap||"";
-    el.hidden=false;
-  });
-  Object.keys(CONFIG.shots||{}).forEach(function(k){
-    var el=document.querySelector('[data-shot="'+k+'"]'),s=CONFIG.shots[k];
-    if(!el||!s||!s.src)return;
-    var img=new Image();
-    img.alt=s.cap||"";img.loading="lazy";img.decoding="async";
-    img.onload=function(){
-      el.innerHTML="";el.appendChild(img);
-      if(s.cap){var c=document.createElement("figcaption");c.className="shot-cap";c.textContent=s.cap;el.appendChild(c)}
-    };
-    img.src=s.src;
-  });
-  var p=CONFIG.person||{},card=document.querySelector("[data-person]");
-  if(card){
-    if(!p.name){var g=card.closest(".about");card.remove();if(g)g.classList.add("solo")}
-    else{
-      card.querySelector("[data-person-name]").textContent=p.name;
-      card.querySelector("[data-person-role]").textContent=p.role||"";
-      if(p.photo){
-        var ph=card.querySelector(".ph"),i=new Image();
-        i.alt=p.name;i.style.cssText="width:100%;height:100%;object-fit:cover;border-radius:50%";
-        i.onload=function(){ph.textContent="";ph.style.padding="0";ph.appendChild(i)};
-        i.src=p.photo;
-      }
-    }
-  }
-})();
-function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-
-/* ── header shadow ───────────────────────────────────────────────── */
-(function(){
-  var h=document.getElementById("siteHeader");
-  function s(){h.classList.toggle("scrolled",window.scrollY>8)}
-  s();
-  window.addEventListener("scroll",s,{passive:true});
-  window.addEventListener("load",s);
-  window.addEventListener("hashchange",s);
-})();
-
-/* ── mobile nav ──────────────────────────────────────────────────── */
-(function(){
-  var tog=document.getElementById("navToggle"),menu=document.getElementById("navMenu");
-  if(!tog||!menu)return;
-  tog.addEventListener("click",function(){
-    var o=document.body.classList.toggle("nav-open");
-    tog.setAttribute("aria-expanded",o?"true":"false");
-  });
-  menu.addEventListener("click",function(e){
-    if(e.target.closest("a")){document.body.classList.remove("nav-open");tog.setAttribute("aria-expanded","false")}
-  });
-})();
-
-/* ── reveal on scroll ────────────────────────────────────────────── */
-(function(){
-  var els=document.querySelectorAll(".rv");
-  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("vis")});return}
-  var io=new IntersectionObserver(function(en){
-    en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("vis");io.unobserve(e.target)}})
-  },{threshold:.08,rootMargin:"0px 0px -40px 0px"});
-  els.forEach(function(e){io.observe(e)});
-})();
-
-/* ── scrollspy ───────────────────────────────────────────────────── */
-(function(){
-  var links=[].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
-  var secs=links.map(function(l){return document.querySelector(l.getAttribute("href"))}).filter(Boolean);
-  if(!secs.length)return;
-  function upd(){
-    var y=window.scrollY+120,cur=null;
-    secs.forEach(function(s){if(s.offsetTop<=y)cur=s});
-    links.forEach(function(l){l.classList.toggle("active",cur&&l.getAttribute("href")==="#"+cur.id)});
-  }
-  upd();window.addEventListener("scroll",upd,{passive:true});
-})();
-
-/* ── contact form: works, or gets out of the way ─────────────────── */
-(function(){
-  var form=document.getElementById("leadForm"),card=document.getElementById("formCard");
-  if(!form||!card)return;
-  var key=(CONFIG.web3formsKey||"").trim();
-
-  function isNL(){return document.documentElement.getAttribute("data-lang")==="nl"}
-
-  /* No key configured: never show a form that cannot deliver. */
-  if(key.length<10||/REPLACE|YOUR_/i.test(key)){
-    card.innerHTML=
-      '<div class="fallback">'
-      +'<h3 style="font-size:1.5rem;margin-bottom:.45em" data-i18n="fb.h">Reach us directly</h3>'
-      +'<p data-i18n="fb.p">WhatsApp is the quickest way to get an answer from us, usually the same day. Email works just as well if you would rather write it all out.</p>'
-      +'<div class="fb-row">'
-      +'<a class="btn btn-wa" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">WhatsApp</a>'
-      +'<a class="btn btn-ghost" href="mailto:hello@intellectcore.net">hello@intellectcore.net</a>'
-      +'</div></div>';
-    if(window.__applyLang)window.__applyLang(document.documentElement.getAttribute("data-lang")||"en");
-    return;
-  }
-
-  document.getElementById("w3fKey").value=key;
-  var ok=document.getElementById("formOk"),err=document.getElementById("formErr"),btn=document.getElementById("sbtn");
-  var lbl=btn.querySelector("[data-i18n]");
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){form.reportValidity();return}
-    ok.classList.remove("show");err.classList.remove("show");
-    var prev=lbl.textContent;
-    btn.disabled=true;lbl.textContent=isNL()?"Versturen…":"Sending…";
-    fetch(form.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(form)})
-      .then(function(r){return r.json().then(function(d){return r.ok&&d.success})})
-      .then(function(good){
-        btn.disabled=false;lbl.textContent=prev;
-        if(good){form.reset();ok.classList.add("show")}else{err.classList.add("show")}
-      })
-      .catch(function(){btn.disabled=false;lbl.textContent=prev;err.classList.add("show")});
-  });
-})();
-
-/* ── HERO: rotating last line + the "messy in, structured out" panel ──
-   The headline's third line cycles through what we actually build. The
-   word is typed in and out rather than swapped, so it reads as a live
-   thing, but the full first word is already in the HTML: a crawler and
-   the LCP measurement both see real text before any script runs.
-   ──────────────────────────────────────────────────────────────── */
-(function(){
-  var el=document.getElementById("rotWord");
-  if(!el)return;
-  var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var WORDS={
-    en:["data automation","AI systems","SaaS platforms","the whole system"],
-    nl:["data-automatisering","AI-systemen","SaaS-platformen","het hele systeem"]
-  };
-  function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
-  var i=0,t=null,running=true;
-  function clear(){if(t){clearTimeout(t);t=null}}
-  function type(word,pos){
-    el.textContent=word.slice(0,pos);
-    if(pos<word.length){t=setTimeout(function(){type(word,pos+1)},58);return}
-    t=setTimeout(function(){erase(word,word.length)},2100);
-  }
-  function erase(word,pos){
-    el.textContent=word.slice(0,pos);
-    if(pos>0){t=setTimeout(function(){erase(word,pos-1)},28);return}
-    i=(i+1)%WORDS[lang()].length;
-    t=setTimeout(start,180);
-  }
-  function start(){
-    if(!running)return;
-    var list=WORDS[lang()];
-    if(i>=list.length)i=0;
-    type(list[i],0);
-  }
-  window.__rotRelang=function(){
-    clear(); i=0;
-    if(RM){el.textContent=WORDS[lang()][0];return}
-    start();
-  };
-  document.addEventListener("visibilitychange",function(){
-    running=!document.hidden;
-    if(running){clear();start()}else{clear()}
-  });
-  if(RM){el.textContent=WORDS[lang()][0];}   /* no typing, just the word */
-  else {el.textContent="";start();}
-})();
-
-/* ── HERO NETWORK ────────────────────────────────────────────────
-   Drifting nodes that link up when they come close: the logo mark,
-   scaled to the whole hero. Light-theme tuned, so thin blue lines on
-   paper rather than glow on black.
-   It stops drawing when the hero scrolls away and when the tab is
-   hidden, so it is not burning a phone battery further down the page.
-   ──────────────────────────────────────────────────────────────── */
-(function(){
-  var cv=document.getElementById("heroNet");
-  if(!cv)return;
-  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){
-    cv.parentElement.querySelector("canvas").style.display="none";return;
-  }
-  var ctx=cv.getContext&&cv.getContext("2d");
-  if(!ctx)return;
-
-  var dpr=Math.min(window.devicePixelRatio||1,2);
-  var W=0,H=0,pts=[],raf=0,onScreen=true,visible=!document.hidden;
-
-  function build(){
-    var r=cv.parentElement.getBoundingClientRect();
-    W=Math.round(r.width);H=Math.round(r.height);
-    if(W<=0||H<=0)return;
-    cv.width=Math.max(1,W*dpr);cv.height=Math.max(1,H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    var n=Math.max(18,Math.min(54,Math.round(W*H/17000)));
-    pts=[];
-    for(var i=0;i<n;i++){
-      var core=i%7===0;                         /* a few bigger "cores" */
-      pts.push({
-        x:Math.random()*W, y:Math.random()*H,
-        vx:(Math.random()-.5)*.26, vy:(Math.random()-.5)*.26,
-        r:core?2.6+Math.random()*1.1:1+Math.random()*1.2,
-        core:core
-      });
-    }
-  }
-
-  var LINK=138,LINK2=LINK*LINK;
-
-  function frame(){
-    raf=0;
-    if(!(onScreen&&visible&&W>0)){return}
-    ctx.clearRect(0,0,W,H);
-    var i,j,p;
-    for(i=0;i<pts.length;i++){
-      p=pts[i];p.x+=p.vx;p.y+=p.vy;
-      if(p.x<-25)p.x=W+25;else if(p.x>W+25)p.x=-25;
-      if(p.y<-25)p.y=H+25;else if(p.y>H+25)p.y=-25;
-    }
-    var dark=document.documentElement.getAttribute("data-theme")==="dark";
-    var linkRGB=dark?"120,170,255":"27,77,216";
-    var dotFill=dark?"rgba(120,190,240,.55)":"rgba(46,139,255,.46)";
-    var coreFill=dark?"rgba(140,220,240,.62)":"rgba(14,111,140,.52)";
-    ctx.lineWidth=1;
-    for(i=0;i<pts.length;i++){
-      for(j=i+1;j<pts.length;j++){
-        var a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy;
-        if(d2<LINK2){
-          var o=(1-Math.sqrt(d2)/LINK)*.34;
-          ctx.strokeStyle="rgba("+linkRGB+","+o.toFixed(3)+")";
-          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-        }
-      }
-    }
-    for(i=0;i<pts.length;i++){
-      p=pts[i];
-      ctx.fillStyle=p.core?coreFill:dotFill;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill();
-    }
-    kick();
-  }
-  function kick(){if(!raf&&onScreen&&visible)raf=requestAnimationFrame(frame)}
-  function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
-
-  document.addEventListener("visibilitychange",function(){
-    visible=!document.hidden; visible?kick():stop();
-  });
-
-  if("IntersectionObserver" in window){
-    new IntersectionObserver(function(en){
-      onScreen=en[0].isIntersecting;
-      onScreen?kick():stop();
-    },{threshold:0}).observe(cv.parentElement);
-  }
-
-  var rt;
-  function remeasure(){clearTimeout(rt);rt=setTimeout(function(){build();kick()},160)}
-  window.addEventListener("resize",remeasure);
-  window.addEventListener("load",remeasure);
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(remeasure);
-  if("ResizeObserver" in window){
-    var seenFirst=false;
-    new ResizeObserver(function(){
-      if(!seenFirst){seenFirst=true;return}   /* skip the initial fire */
-      remeasure();
-    }).observe(cv.parentElement);
-  }
-
-  build();kick();
-})();
-
-/* ── LIVE DEMOS ───────────────────────────────────────────────────
-   Three scripted demos in the case panels. Every figure below is
-   illustrative, never client data. The ledger accounts and the VAT
-   arithmetic are real though: amounts shown are excl. VAT, so a 10%
-   line of 1.180,00 becomes 1.072,73 exactly as the running tool does.
-   ──────────────────────────────────────────────────────────────── */
-(function(){
-  var isNL=function(){return document.documentElement.getAttribute("data-lang")==="nl"};
-  var RM=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var timers={};
-  function clearTimers(k){(timers[k]||[]).forEach(clearTimeout);timers[k]=[]}
-  function mkAt(k){return function(ms,fn){(timers[k]=timers[k]||[]).push(setTimeout(fn,RM?0:ms))}}
-  function E(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  var TICK='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-
-  /* ---------- 1 · bank statement → ledger ---------- */
-  var BANK={
-    raw:[
-      '16/08/2025,"Service Charge",FT2500000001,"","-25,00","149.975,00"',
-      '16/08/2025,"Internet Debit - EBS - Stroomrekening augustus",FT2500000002,"","-1.180,00","148.795,00"',
-      '17/08/2025,"Inward SNEPS Credit CR - FACTUUR 2025-0841",FT2500000003,"12.100,00","","160.895,00"',
-      '18/08/2025,"Internet Debit - TELESUR N.V. - Betaling factuur augustus",FT2500000004,"","-3.546,70","157.348,30"',
-      '18/08/2025,"POS Transaction SUPERMARKT WANICA   WANICA   SR 17:07",FT2500000005,"","-315,50","157.032,80"'
-    ],
-    rows:[
-      ["16/08","Bankkosten","Bankkosten · 4310","-25,00",false],
-      ["16/08","Stroomrekening augustus","Vaste lasten · 4201","-1.072,73",false],
-      ["17/08","Factuur 2025-0841","Omzet · 8000","+11.000,00",true],
-      ["18/08","Telefoon en internet","Telefoon/internet · 4430","-3.224,27",false],
-      ["18/08","Supermarkt Wanica","R/C aandeelhouder · 1280","-286,82",false]
-    ],
-    en:{head:["Date","Description","Ledger account","Excl. VAT"],done:"5 lines categorised, ready for the ledger"},
-    nl:{head:["Datum","Omschrijving","Grootboek","Excl. btw"],done:"5 regels ingedeeld, klaar voor het grootboek"}
-  };
-  function bankRender(instant){
-    var at=mkAt("bank");
-    var raw=document.getElementById("bkRaw"),out=document.getElementById("bkOut");
-    if(!raw||!out)return;
-    var t=isNL()?BANK.nl:BANK.en;
-    raw.textContent="";out.innerHTML="";
-    var thead='<table class="bk-tbl"><thead><tr>'
-      +'<th style="width:14%">'+t.head[0]+'</th><th style="width:34%">'+t.head[1]+'</th>'
-      +'<th style="width:31%">'+t.head[2]+'</th><th style="width:21%;text-align:right">'+t.head[3]+'</th>'
-      +'</tr></thead><tbody id="bkRows"></tbody></table>';
-    function showRaw(i){
-      if(i>=BANK.raw.length){at(340,function(){out.innerHTML=thead;showRow(0)});return}
-      raw.textContent+=(i?"\n":"")+BANK.raw[i];
-      at(instant?0:170,function(){showRaw(i+1)});
-    }
-    function showRow(i){
-      var tb=document.getElementById("bkRows");if(!tb)return;
-      if(i>=BANK.rows.length){
-        at(260,function(){
-          var d=document.createElement("div");d.className="bk-done fade-in";
-          d.innerHTML=TICK+'<span>'+E(t.done)+'</span>';
-          out.appendChild(d);
-          var b=document.querySelector('[data-play="bank"]');if(b)b.disabled=false;
-        });
-        return;
-      }
-      var r=BANK.rows[i],tr=document.createElement("tr");
-      tr.className="fade-in";
-      tr.innerHTML='<td>'+E(r[0])+'</td><td>'+E(r[1])+'</td><td class="gb">'+E(r[2])+'</td>'
-        +'<td class="amt'+(r[4]?" in":"")+'">'+E(r[3])+'</td>';
-      tb.appendChild(tr);
-      at(instant?0:210,function(){showRow(i+1)});
-    }
-    showRaw(0);
-  }
-
-  /* ---------- 2 · RAG chat over contracts ---------- */
-  var CHAT={
-    en:{q:"When does the maintenance agreement with the supplier expire, and is there a notice period?",
-        a:"The agreement runs to <b>31 December 2026</b>. Clause 8.2 requires written notice <b>three months</b> before the end date, so the last day to cancel is <b>30 September 2026</b>.",
-        src:"Maintenance agreement 2024-114 · clause 8.2"},
-    nl:{q:"Wanneer loopt het onderhoudscontract met de leverancier af, en zit er een opzegtermijn in?",
-        a:"De overeenkomst loopt tot <b>31 december 2026</b>. Artikel 8.2 vereist schriftelijke opzegging <b>drie maanden</b> voor de einddatum, dus de laatste opzegdag is <b>30 september 2026</b>.",
-        src:"Onderhoudsovereenkomst 2024-114 · artikel 8.2"}
-  };
-  function chatRender(instant){
-    var at=mkAt("chat");
-    var box=document.getElementById("chBody");if(!box)return;
-    var t=isNL()?CHAT.nl:CHAT.en;
-    box.innerHTML="";
-    function add(cls,html){var d=document.createElement("div");d.className=cls+" fade-in";d.innerHTML=html;box.appendChild(d);return d}
-    at(instant?0:160,function(){
-      add("ch-msg user",E(t.q));
-      at(instant?0:520,function(){
-        var ty=add("ch-typing",'<i></i><i></i><i></i>');
-        at(instant?0:1150,function(){
-          ty.remove();
-          add("ch-msg bot",t.a);
-          at(instant?0:340,function(){
-            add("ch-src",'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span>'+E(t.src)+'</span>');
-            var b=document.querySelector('[data-play="chat"]');if(b)b.disabled=false;
-          });
-        });
-      });
-    });
-  }
-
-  /* ---------- 3 · receipt photo → bookkeeping ---------- */
-  var RC={
-    vals:["Bouwmarkt Paramaribo N.V.","18-08-2025","SRD 1.847,50","10%  ·  SRD 167,95","Kantoorbenodigdheden · 4400"],
-    en:{keys:["Supplier","Date","Amount","VAT","Category"],reading:"reading…",
-        ask:"Is this correct?",yes:"Yes",no:"Change",
-        xh:"Bookkeeping · August 2025",saved:"Saved · photo kept as proof"},
-    nl:{keys:["Leverancier","Datum","Bedrag","Btw","Categorie"],reading:"lezen…",
-        ask:"Klopt dit?",yes:"Ja",no:"Aanpassen",
-        xh:"Administratie · augustus 2025",saved:"Opgeslagen · foto bewaard als bewijs"}
-  };
-  function rcRender(instant){
-    var at=mkAt("receipt");
-    var body=document.getElementById("bnBody");if(!body)return;
-    var t=isNL()?RC.nl:RC.en;
-    body.innerHTML='<div class="bn"><div class="bn-photo" id="bnPhoto"></div><div class="bn-fields" id="bnFields"></div></div>';
-    var photo=document.getElementById("bnPhoto"),fields=document.getElementById("bnFields");
-    at(instant?0:180,function(){
-      photo.classList.add("fade-in");
-      photo.innerHTML='<div class="bn-recpt"><div class="c"><b>BOUWMARKT</b><br>PARAMARIBO N.V.</div><hr>'
-        +'Cement 25kg &nbsp; 3x<br>Schroeven doos<br>Kwast 50mm &nbsp; 2x<hr>'
-        +'<div class="c">TOTAAL &nbsp; 1.847,50<br>BTW 10% &nbsp; 167,95</div><hr>'
-        +'<div class="c">18-08-2025 &nbsp; 14:32</div></div>';
-      RC.vals.forEach(function(val,i){
-        var row=document.createElement("div");row.className="bn-f";
-        row.innerHTML='<span class="k">'+E(t.keys[i])+'</span><span class="v pend">'+E(t.reading)+'</span>';
-        fields.appendChild(row);
-        at(instant?0:480+i*220,function(){
-          var v=row.querySelector(".v");v.classList.remove("pend");
-          v.textContent=val;v.classList.add("fade-in");
-        });
-      });
-      at(instant?0:480+RC.vals.length*220+240,function(){
-        var ask=document.createElement("div");ask.className="bn-ask fade-in";
-        ask.innerHTML='<span>'+E(t.ask)+'</span>'
-          +'<button class="bn-yes" type="button">'+E(t.yes)+' ✓</button>'
-          +'<button class="bn-no" type="button">'+E(t.no)+'</button>';
-        body.appendChild(ask);
-        function confirmIt(){
-          if(!document.body.contains(ask))return;
-          ask.remove();
-          var x=document.createElement("div");x.className="bn-xls fade-in";
-          x.innerHTML='<div class="xh">'+E(t.xh)+'</div>'
-            +'<div class="xr"><b>18-08</b><span>Bouwmarkt Paramaribo</span><span class="amt">1.679,55</span></div>';
-          body.appendChild(x);
-          var d=document.createElement("div");d.className="bk-done fade-in";d.style.marginTop="9px";
-          d.innerHTML=TICK+'<span>'+E(t.saved)+'</span>';
-          body.appendChild(d);
-          var b=document.querySelector('[data-play="receipt"]');if(b)b.disabled=false;
-        }
-        ask.querySelector(".bn-yes").addEventListener("click",confirmIt);
-        ask.querySelector(".bn-no").addEventListener("click",function(){clearTimers("receipt");rcRender(false)});
-        at(instant?0:3600,confirmIt);
-      });
-    });
-  }
-
-  var RENDER={bank:bankRender,chat:chatRender,receipt:rcRender};
-  var seen={};
-
-  function play(name,instant){
-    clearTimers(name);
-    var btn=document.querySelector('[data-play="'+name+'"]');if(btn)btn.disabled=true;
-    seen[name]=1;
-    RENDER[name](!!instant||RM);
-  }
-  window.__demoPlay=play;
-
-  document.querySelectorAll("[data-play]").forEach(function(b){
-    b.addEventListener("click",function(){play(b.getAttribute("data-play"),false)});
-  });
-
-  /* first time a panel scrolls into view it plays itself once, so the
-     proof lands even for a visitor who never clicks anything */
-  if("IntersectionObserver" in window){
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(e){
-        if(!e.isIntersecting)return;
-        var name=e.target.getAttribute("data-demo");
-        if(seen[name])return;
-        play(name,RM);
-        io.unobserve(e.target);
-      });
-    },{threshold:.4});
-    document.querySelectorAll("[data-demo]").forEach(function(el){io.observe(el)});
-  }else{
-    Object.keys(RENDER).forEach(function(k){play(k,true)});
-  }
-
-  /* language switch redraws whatever has already been shown */
-  window.__demosRelang=function(){
-    Object.keys(seen).forEach(function(k){clearTimers(k);RENDER[k](true)});
-    document.querySelectorAll(".demo-btn").forEach(function(b){b.disabled=false});
-  };
-})();
-
-/* ── THEME: light/dark toggle ────────────────────────────────────
-   Uses [data-theme="dark"] on <html>. Respects OS preference on
-   first visit, then the user's own choice via localStorage. */
-(function(){
-  var b=document.getElementById("themeToggle");
-  var root=document.documentElement;
-  function apply(t){
-    root.setAttribute("data-theme",t);
-    if(b)b.setAttribute("aria-pressed",t==="dark"?"true":"false");
-    var meta=document.querySelector('meta[name="theme-color"]');
-    if(meta)meta.setAttribute("content",t==="dark"?"#0b1420":"#eef4fd");
-    try{localStorage.setItem("ic-theme",t)}catch(e){}
-  }
-  var saved=null;try{saved=localStorage.getItem("ic-theme")}catch(e){}
-  var pref=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
-  apply(saved||pref);
-  if(b)b.addEventListener("click",function(){
-    apply(root.getAttribute("data-theme")==="dark"?"light":"dark");
-  });
-  /* follow the OS if the user has never chosen manually */
-  if(!saved && window.matchMedia){
-    var m=matchMedia("(prefers-color-scheme: dark)");
-    (m.addEventListener||m.addListener).call(m,"change",function(e){
-      var s=null;try{s=localStorage.getItem("ic-theme")}catch(_){}
-      if(!s)apply(e.matches?"dark":"light");
-    });
-  }
-})();
-
-/* ── EN / NL ─────────────────────────────────────────────────────── */
-(function(){
-  var NL={
-    "skip":"Naar de inhoud",
-    "nav.products":"Producten","nav.services":"Diensten","nav.work":"Werk","nav.approach":"Aanpak","nav.about":"Over ons","nav.contact":"Contact",
-    "nav.quote":"Vraag een offerte","fab":"WhatsApp ons",
-
-    "hero.label":"Paramaribo, Suriname · wereldwijd actief",
-    "hero.h1a":"Wij denken eerst,",
-    "hero.h1b":"daarna bouwen we",
-    "cap.auto":"Procesautomatisering",
-    "cap.doc":"Documentextractie",
-    "cap.ai":"AI-assistenten",
-    "cap.int":"Integraties",
-    "cap.dash":"Dashboards",
-    "cap.apps":"Web &amp; apps",
-    "hero.lead":"Wij brengen in kaart hoe uw werk werkelijk verloopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
-    "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk onze producten",
-    "hero.note":"Het eerste gesprek is gratis, en het is een gesprek en geen verkooppraatje. Als automatisering het verkeerde antwoord is op uw probleem, zeggen wij dat.",
-    "ix.1":"Procesautomatisering","ix.2":"Document- &amp; data-extractie","ix.3":"AI-assistenten",
-    "ix.4":"Operationele platformen","ix.5":"Integraties","ix.6":"Dashboards",
-
-    "work.label":"Geselecteerd werk",
-    "work.h2":"Drie problemen, en wat wij ervoor bouwden.",
-    "work.deck":"Klantnamen blijven op afspraak achterwege. Alles wat hier staat draait vandaag in productie. Vraag om een rondleiding op echte data, dan laten wij het systeem zien in plaats van een slide.",
-    "lbl.before":"De situatie","lbl.built":"Wat wij bouwden",
-    "d1.bar":"Bankafschrift importeren",
-    "d1.s1":"1 · Ruwe uitdraai van de bank",
-    "d1.s2":"2 · Gesorteerd, ingedeeld, grootboekklaar",
-    "d1.btn":"Start demo",
-    "d1.hint":"Illustratieve data. Echte bestanden blijven op uw eigen systemen.",
-    "d2.bar":"Contractassistent",
-    "d2.btn":"Stel een vraag",
-    "d2.hint":"Antwoorden komen alleen uit uw eigen documenten, met bronvermelding.",
-    "d3.bar":"Bonnen · mobiel",
-    "d3.btn":"Stuur een bon",
-    "d3.hint":"Er wordt niets opgeslagen tot iemand op ja tikt.",
-
-    "c1.sector":"Financiën &amp; administratie",
-    "c1.h3":"Bankafschriften die zichzelf verwerken",
-    "c1.before":"Drie banken, drie valuta, drie exportformaten. Elke maand typte het financiële team de afschriftregels met de hand over in het grootboek, en elke maand gingen er een paar regels verkeerd die daarna uitgezocht moesten worden.",
-    "c1.built":"Een parser die alle drie de formaten leest, elke regel indeelt volgens het rekeningschema, alles waarover twijfel bestaat markeert voor controle, en een grootboekklaar bestand oplevert. Eén upload, één controleronde, klaar.",
-
-    "c2.sector":"Juridisch &amp; compliance",
-    "c2.h3":"Een contractarchief waaraan u vragen kunt stellen",
-    "c2.before":"Honderden contracten in mappen. Eén clausule vinden betekende bestanden één voor één openen en hopen dat iemand nog wist in welke overeenkomst het stond.",
-    "c2.built":"Automatische extractie van partijen, data, bedragen en verlengingstermijnen uit elk contract, naar een doorzoekbare bibliotheek. Vraag in gewone taal om een clausule en krijg de clausule plus het document waar die uit komt.",
-
-    "c3.sector":"Retail, horeca &amp; ambacht",
-    "c3.h3":"De schoenendoos met bonnen, leeg",
-    "c3.before":"Bonnen stapelen zich op in een la tot het einde van het kwartaal, waarna iemand er dagen aan kwijt is om alles over te typen. Vervaagde bonnen worden gegokt, sommige komen er nooit in, en de btw die teruggevraagd had kunnen worden verdwijnt stilletjes.",
-    "c3.built":"Fotografeer de bon ter plekke. De AI leest de leverancier, datum, bedrag, btw en categorie, en vraagt u om te bevestigen voordat er iets wordt opgeslagen. De foto blijft bewaard als bewijs, en de boekhouder krijgt één Excel-bestand met een tabblad per categorie. Personeel kan bonnen toevoegen zonder bij de rest van de boeken te kunnen.",
-
-    "prod.label":"Onze producten",
-    "prod.h2":"Kant-en-klare tools, op uw eigen data.",
-    "prod.deck":"Drie producten die wij al bouwden, aanscherpen en nu in productie draaien. Past er één bij uw werk, dan slaat u het grootste deel van de bouwtijd over. Elke productkaart opent een live demo die u direct kunt uitproberen.",
-    "p1.tag":"Documentextractie","p1.h3":"Core Parse",
-    "p1.p":"Leest pdf-bestanden, scans en e-mailbijlagen en levert schone, gestructureerde data waar uw systemen mee verder kunnen. Geen sjablonen, geen handmatige invoer, in minuten klaar.",
-    "p1.more":"Probeer de demo →",
-    "p2.tag":"Vraag uw data","p2.h3":"Core Insight",
-    "p2.p":"Een AI-analist voor uw spreadsheets en databases. Stel uw vraag in gewone taal en krijg antwoorden, analyses, duplicaatchecks en aanbevelingen in seconden.",
-    "p2.more":"Probeer de demo →",
-    "p3.tag":"Bonnen naar grootboek","p3.h3":"Core Bonnen",
-    "p3.p":"Fotografeer de bon, de AI leest leverancier, datum, bedrag, btw en categorie, en u bevestigt voor er iets wordt opgeslagen. Aan het einde van de maand één Excel-bestand voor de boekhouder, per categorie.",
-    "p3.more":"Vraag toegang aan →",
-    "prod.note":"Elk product wordt op uw eigen data en in uw eigen account opgezet. Niets gedeeld, niets buiten uw omgeving.",
-
-    "svc.label":"Maatwerk","svc.h2":"Past geen product? Dan bouwen wij het.",
-    "svc.deck":"Wij verkopen geen vaste stack. Wij beginnen bij het probleem en kiezen de aanpak die erbij past, soms AI en vaak gewoon goed gebouwde software. Drie soorten werk lopen door het meeste van wat wij doen.",
-    "s1.h3":"Data-automatisering",
-    "s1.a":"Bankafschriften en facturen, gelezen en ingedeeld",
-    "s1.b":"Data-extractie uit contracten en documenten",
-    "s1.c":"Binnenkomende e-mail omgezet in toegewezen taken",
-    "s1.d":"Goedkeuringsstromen die over systemen heen lopen",
-    "s2.h3":"AI-systemen",
-    "s2.a":"Extractie afgestemd op uw eigen formulieren en indelingen",
-    "s2.b":"WhatsApp- en webassistenten op uw eigen documenten",
-    "s2.c":"Beslisondersteuning op basis van uw bedrijfsregels",
-    "s2.d":"Een AI-roadmap, geprioriteerd op wat zich het eerst terugbetaalt",
-    "s3.h3":"Platformen (SaaS)",
-    "s3.a":"Operationele platformen en werkordersystemen",
-    "s3.b":"Dashboards op datastromen die u kunt vertrouwen",
-    "s3.c":"Koppelingen met CRM, ERP, betalingen en berichtendiensten",
-    "s3.d":"Webapps en volledige SaaS-producten, van begin tot eind",
-
-    "ap.label":"Hoe wij met u samenwerken","ap.h2":"Rustig, wekelijks, in het open.",
-    "ap.deck":"U wordt niet doorgeschoven naar een accountmanager. Van het eerste gesprek tot een jaar na oplevering werkt u met de persoon die uw systeem bouwt.",
-    "ap.pill1":"Stap één","ap.pill2":"Stap twee","ap.pill3":"Stap drie","ap.pill4":"Stap vier","ap.pill5":"Stap vijf",
-    "ap1.h3":"Eerste gesprek",
-    "ap1.p":"Gratis en eerlijk verkennen. Is automatisering het verkeerde antwoord, dan zeggen wij dat vóór er een factuur uitgaat.",
-    "ap2.h3":"Het werk in kaart brengen",
-    "ap2.p":"Wij zitten bij het team dat het werk doet en schrijven op hoe het werkelijk verloopt.",
-    "ap3.h3":"Ontwerpen &amp; afstemmen",
-    "ap3.p":"Plan, kosten en planning afgesproken vóór er één regel code wordt geschreven.",
-    "ap4.h3":"Bouwen in korte cycli",
-    "ap4.p":"Elke week iets zichtbaars, getest op uw eigen data.",
-    "ap5.h3":"Overdragen &amp; bereikbaar blijven",
-    "ap5.p":"Gedocumenteerd, overgedragen aan uw team, en wij blijven één WhatsApp verwijderd.",
-    "pact.k1":"Wat u krijgt",
-    "pact.p1":"Direct contact met de persoon die uw systeem bouwt, wekelijkse voortgang die u kunt zien, en alles gedocumenteerd zodat uw team de regie houdt.",
-    "pact.k2":"Wat wij vragen",
-    "pact.p2":"Eén aanspreekpunt aan uw kant dat vragen kan beantwoorden en beslissingen kan nemen. Een half uur per week is meestal genoeg.",
-    "pact.k3":"Wat van u blijft",
-    "pact.p3":"Uw data, uw code, uw documentatie. Besluit u over een jaar naar een andere partij te gaan, dan kan dat. Wij verdienen liever de volgende opdracht dan dat wij de vorige vasthouden.",
-
-    "ab.label":"Wie we zijn","ab.h2":"Een klein team dat dingen bouwt die blijven staan.",
-    "ab.p1":"Intellect Core bouwt maatwerksoftware voor bedrijven in Suriname en daarbuiten. Een groot deel van het werk dat bedrijven hier draaiende houdt gebeurt nog met de hand, en het meeste daarvan hoeft niet.",
-    "ab.p2":"Wij zijn bewust klein. U spreekt met de persoon die uw systeem bouwt, niet met een accountmanager die het doorgeeft. Daarom zeggen wij ook nee tegen werk waarvan wij denken dat een ander er beter bij past.",
-    "ab.p3":"Alles wat wij opleveren is gedocumenteerd en wordt overgedragen. Besluit u het over een jaar in eigen beheer te nemen of naar een andere partij te gaan, dan kan dat. Wij verdienen liever de volgende opdracht dan dat wij de vorige vasthouden.",
-    "ab.photo":"Foto",
-    "ab.quote":"Eén eerlijke zin hier over waarom u dit bedrijf bent begonnen doet meer voor het vertrouwen dan al het andere op deze pagina bij elkaar.",
-
-    "ct.label":"Neem contact op","ct.h2":"Vertel ons wat u tijd kost.",
-    "ct.p":"Beschrijf de taak die uw team elke week herhaalt. Wij zeggen u of het de moeite waard is om te automatiseren, wat het ongeveer vraagt en wat het zou kosten. Dat antwoord is gratis.",
-    "ct.wa.s":"· meestal de snelste manier om ons te bereiken",
-    "ct.email":"E-mail","ct.loc":"Locatie","ct.loc.s":"Paramaribo, Suriname · klanten wereldwijd",
-    "f.name":"Naam","f.email":"E-mail","f.msg":"Welke taak kost uw team de meeste tijd?",
-    "f.interest":"Waar heeft u interesse in?",
-    "f.interest.0":"Kies een optie",
-    "f.interest.p1":"Core Parse (documentextractie)",
-    "f.interest.p2":"Core Insight (vraag uw data)",
-    "f.interest.p3":"Core Bonnen (bonnen naar grootboek)",
-    "f.interest.s1":"Maatwerk data-automatisering",
-    "f.interest.s2":"Maatwerk AI-systeem",
-    "f.interest.s3":"Operationeel platform / SaaS",
-    "f.interest.x":"Nog niet zeker, help mij het uitzoeken",
-    "f.budget":"Budget",
-    "f.budget.0":"Optioneel",
-    "f.budget.1":"Onder $1.000",
-    "f.budget.2":"$1.000 - $3.000",
-    "f.budget.3":"$3.000 - $7.000",
-    "f.budget.4":"$7.000 - $15.000",
-    "f.budget.5":"$15.000 +",
-    "f.budget.x":"Nog niet zeker",
-    "f.submit":"Verstuur bericht",
-    "f.ok":"Verzonden. Wij komen binnen één werkdag bij u terug.",
-    "f.err":"Dat is niet doorgekomen. Stuur ons een WhatsApp of mail hello@intellectcore.net.",
-    "ph.name":"Uw naam",
-    "ph.msg":"bijv. wij typen elke maand bankafschriften over in het grootboek",
-    "fb.h":"Bereik ons direct",
-    "fb.p":"Via WhatsApp krijgt u het snelst antwoord van ons, meestal dezelfde dag. E-mail werkt net zo goed als u het liever uitschrijft.",
-
-    "ft.about":"Maatwerksoftware en automatisering voor het werk dat nog met de hand gaat. Gebouwd in Paramaribo, draaiend over de hele wereld.",
-    "ft.nav":"Navigatie","ft.touch":"Contact",
-    "ft.privacy":"Privacybeleid","ft.terms":"Algemene voorwaarden",
-    "ft.rights":"© 2026 Intellect Core. Alle rechten voorbehouden.",
-    "ft.where":"Paramaribo, Suriname"
-  };
-  var EN={},ENP={};
-  var segs=[].slice.call(document.querySelectorAll(".langseg button"));
-
-  function apply(lang){
-    document.documentElement.setAttribute("lang",lang==="nl"?"nl":"en");
-    document.documentElement.setAttribute("data-lang",lang);
-    var els=document.querySelectorAll("[data-i18n]"),i,el,k;
-    for(i=0;i<els.length;i++){
-      el=els[i];k=el.getAttribute("data-i18n");
-      if(lang==="nl"){if(EN[k]===undefined)EN[k]=el.innerHTML;if(NL[k]!==undefined)el.innerHTML=NL[k]}
-      else if(EN[k]!==undefined)el.innerHTML=EN[k];
-    }
-    var phs=document.querySelectorAll("[data-i18n-ph]"),j,p,pk;
-    for(j=0;j<phs.length;j++){
-      p=phs[j];pk=p.getAttribute("data-i18n-ph");
-      if(lang==="nl"){if(ENP[pk]===undefined)ENP[pk]=p.getAttribute("placeholder")||"";if(NL[pk]!==undefined)p.setAttribute("placeholder",NL[pk])}
-      else if(ENP[pk]!==undefined)p.setAttribute("placeholder",ENP[pk]);
-    }
-    segs.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false")});
-    if(window.__demosRelang)window.__demosRelang();
-    if(window.__rotRelang)window.__rotRelang();
-    try{localStorage.setItem("ic-lang",lang)}catch(e){}
-  }
-  window.__applyLang=apply;
-
-  var saved=null;try{saved=localStorage.getItem("ic-lang")}catch(e){}
-  if(saved==="nl")apply("nl");
-  segs.forEach(function(b){
-    b.addEventListener("click",function(){apply(b.getAttribute("data-lang"))});
-  });
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
