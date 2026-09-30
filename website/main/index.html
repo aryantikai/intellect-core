@@ -551,17 +551,43 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 .svc-col li:first-child{border-top:0;padding-top:0}
 
 /* ── approach ───────────────────────────────────────────────────── */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.4vw,36px)}
-.step{border-top:2px solid var(--ink);padding-top:20px}
-.step-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.step-ico{color:var(--accent);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:none}
-.step-ico svg{width:22px;height:22px}
-.step .n{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.1em;color:var(--ink-3)}
-.step h3{font-size:clamp(1.05rem,1.28vw,1.22rem);margin-bottom:.55em}
-.step p{font-size:.97rem;color:var(--ink-2);margin:0}
-@media(max-width:1100px){.steps{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:720px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:1fr;gap:0}
+.step-row{
+  border-top:1px solid var(--rule);
+  padding:clamp(36px,4.5vw,60px) 0;
+}
+.step-row:first-child{border-top:0;padding-top:0}
+.step-pill{
+  display:inline-flex;align-items:center;gap:10px;padding:5px 16px 5px 5px;
+  border:1px solid var(--rule-2);border-radius:999px;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+  margin-bottom:18px;
+}
+.step-num{
+  display:inline-flex;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:0;
+}
+.step-row h3{font-size:clamp(1.55rem,2.4vw,2.05rem);margin-bottom:0;max-width:22ch}
+.step-body{
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+  gap:clamp(28px,4vw,60px);align-items:center;margin-top:clamp(20px,2.4vw,30px);
+}
+.step-row:nth-child(even) .step-body{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.step-row:nth-child(even) .step-art{order:2}
+.step-art{
+  background:var(--paper-3);border-radius:14px;
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+  padding:clamp(18px,2vw,28px);color:var(--ink);
+}
+.step-art svg{width:100%;height:100%;max-width:340px}
+.step-body p{font-size:1.08rem;color:var(--ink-2);margin:0;max-width:44ch;line-height:1.55}
+@media(max-width:820px){
+  .step-body,.step-row:nth-child(even) .step-body{grid-template-columns:1fr;gap:22px}
+  .step-row:nth-child(even) .step-art{order:0}
+  .step-art{aspect-ratio:16/9}
+}
 
 /* partnership pact — small commitments row under the steps */
 .pact{
@@ -1024,56 +1050,113 @@ a.way:hover b{color:var(--accent)}
       </div>
 
       <div class="steps rv">
-        <div class="step">
-          <div class="step-top">
-            <span class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4.418-4.03 8-9 8a9.5 9.5 0 0 1-4-.87L3 20l1.87-4A8.5 8.5 0 0 1 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            </span>
-            <span class="n">01</span>
-          </div>
+        <article class="step-row">
+          <span class="step-pill"><span class="step-num">01</span> <span data-i18n="ap.pill1">Step one</span></span>
           <h3 data-i18n="ap1.h3">First conversation</h3>
-          <p data-i18n="ap1.p">Free, honest scoping. We listen, we ask, and if automation is the wrong answer for your problem we say so before we send an invoice.</p>
-        </div>
-        <div class="step">
-          <div class="step-top">
-            <span class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 4 15 6 21 4 21 18 15 20 9 18 3 20"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/></svg>
-            </span>
-            <span class="n">02</span>
+          <div class="step-body">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <rect x="30" y="30" width="86" height="46" rx="10" fill="var(--accent)"/>
+                <path d="M50 76 L54 88 L62 76 Z" fill="var(--accent)"/>
+                <rect x="130" y="52" width="84" height="46" rx="10" fill="currentColor"/>
+                <path d="M198 98 L194 110 L186 98 Z" fill="currentColor"/>
+                <circle cx="52" cy="53" r="4" fill="#fff"/><circle cx="68" cy="53" r="4" fill="#fff"/><circle cx="84" cy="53" r="4" fill="#fff"/>
+                <rect x="146" y="66" width="52" height="4" rx="2" fill="var(--paper-2)"/>
+                <rect x="146" y="78" width="38" height="4" rx="2" fill="var(--paper-2)" opacity=".6"/>
+                <circle cx="60" cy="140" r="10" fill="currentColor"/><rect x="42" y="148" width="36" height="10" rx="4" fill="currentColor"/>
+                <circle cx="180" cy="140" r="10" fill="currentColor"/><rect x="162" y="148" width="36" height="10" rx="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <p data-i18n="ap1.p">Free, honest scoping. If automation is the wrong answer, we say so before an invoice ever goes out.</p>
           </div>
+        </article>
+
+        <article class="step-row">
+          <span class="step-pill"><span class="step-num">02</span> <span data-i18n="ap.pill2">Step two</span></span>
           <h3 data-i18n="ap2.h3">Map the work</h3>
-          <p data-i18n="ap2.p">We sit with the people doing the job and write down how it actually happens, not how the procedure says it happens. You keep that map, whether or not you build with us.</p>
-        </div>
-        <div class="step">
-          <div class="step-top">
-            <span class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-            </span>
-            <span class="n">03</span>
+          <div class="step-body">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <rect x="110" y="20" width="120" height="100" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="122" y="34" width="36" height="22" rx="4" fill="var(--accent)"/>
+                <rect x="182" y="34" width="36" height="22" rx="4" fill="var(--accent)" opacity=".55"/>
+                <rect x="122" y="80" width="36" height="22" rx="4" fill="var(--accent)" opacity=".55"/>
+                <rect x="182" y="80" width="36" height="22" rx="4" fill="var(--accent)"/>
+                <path d="M158 45 L182 45 M140 56 L140 80 M200 56 L200 80" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="52" cy="60" r="14" fill="currentColor"/>
+                <path d="M32 90 Q52 82 72 90 L72 138 L32 138 Z" fill="currentColor"/>
+                <path d="M72 88 L108 55" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="108" cy="55" r="4" fill="var(--accent)"/>
+              </svg>
+            </div>
+            <p data-i18n="ap2.p">We sit with the team doing the job and write down how the work actually flows.</p>
           </div>
+        </article>
+
+        <article class="step-row">
+          <span class="step-pill"><span class="step-num">03</span> <span data-i18n="ap.pill3">Step three</span></span>
           <h3 data-i18n="ap3.h3">Design &amp; agree</h3>
-          <p data-i18n="ap3.p">We choose the approach that fits the problem, with or without AI. You see the plan, the cost and the timeline before a line of code is written.</p>
-        </div>
-        <div class="step">
-          <div class="step-top">
-            <span class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
-            </span>
-            <span class="n">04</span>
+          <div class="step-body">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <rect x="52" y="18" width="120" height="130" rx="6" fill="var(--paper-2)" stroke="currentColor" stroke-width="2.5"/>
+                <line x1="68" y1="40" x2="140" y2="40" stroke="currentColor" stroke-width="3"/>
+                <line x1="68" y1="58" x2="156" y2="58" stroke="currentColor" stroke-width="2" opacity=".7"/>
+                <line x1="68" y1="70" x2="156" y2="70" stroke="currentColor" stroke-width="2" opacity=".7"/>
+                <line x1="68" y1="82" x2="140" y2="82" stroke="currentColor" stroke-width="2" opacity=".7"/>
+                <path d="M68 116 Q88 104 108 116 T156 116" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                <path d="M172 88 L206 54 L214 62 L180 96 Z" fill="currentColor"/>
+                <path d="M172 88 L164 108 L184 100 Z" fill="var(--accent)"/>
+                <line x1="200" y1="60" x2="208" y2="68" stroke="var(--paper-2)" stroke-width="2"/>
+              </svg>
+            </div>
+            <p data-i18n="ap3.p">Plan, cost and timeline agreed before a line of code is written.</p>
           </div>
+        </article>
+
+        <article class="step-row">
+          <span class="step-pill"><span class="step-num">04</span> <span data-i18n="ap.pill4">Step four</span></span>
           <h3 data-i18n="ap4.h3">Build in short cycles</h3>
-          <p data-i18n="ap4.p">Something visible every week. You test it as it grows, on your own data, so what ships is what you asked for and nothing more.</p>
-        </div>
-        <div class="step">
-          <div class="step-top">
-            <span class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
-            </span>
-            <span class="n">05</span>
+          <div class="step-body">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <rect x="72" y="36" width="116" height="76" rx="6" fill="currentColor"/>
+                <rect x="78" y="42" width="104" height="64" rx="3" fill="var(--paper-2)"/>
+                <path d="M52 122 L208 122 L222 138 L38 138 Z" fill="currentColor"/>
+                <rect x="86" y="52" width="38" height="6" rx="3" fill="var(--accent)"/>
+                <rect x="86" y="64" width="60" height="6" rx="3" fill="var(--accent)" opacity=".55"/>
+                <rect x="86" y="76" width="46" height="6" rx="3" fill="var(--accent)"/>
+                <rect x="86" y="88" width="30" height="6" rx="3" fill="var(--accent)" opacity=".55"/>
+                <path d="M28 74 A44 44 0 0 1 90 24" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M90 24 L98 18 M90 24 L88 33" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M212 82 A44 44 0 0 1 150 132" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+                <path d="M150 132 L142 138 M150 132 L152 123" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+              </svg>
+            </div>
+            <p data-i18n="ap4.p">Something visible every week, tested on your own data.</p>
           </div>
+        </article>
+
+        <article class="step-row">
+          <span class="step-pill"><span class="step-num">05</span> <span data-i18n="ap.pill5">Step five</span></span>
           <h3 data-i18n="ap5.h3">Hand over &amp; stay reachable</h3>
-          <p data-i18n="ap5.p">Live in weeks, not quarters. Documented and handed to your team. We stay a WhatsApp away for questions, changes and the next thing.</p>
-        </div>
+          <div class="step-body">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <circle cx="60" cy="48" r="14" fill="currentColor"/>
+                <path d="M40 72 L80 72 L82 128 L38 128 Z" fill="currentColor"/>
+                <circle cx="180" cy="48" r="14" fill="currentColor"/>
+                <path d="M160 72 L200 72 L202 128 L158 128 Z" fill="currentColor"/>
+                <path d="M78 88 Q120 100 162 88" stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <circle cx="120" cy="95" r="12" fill="var(--accent)"/>
+                <path d="M114 95 L118 99 L126 91" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M120 148 L120 118" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M113 126 L120 118 L127 126" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <p data-i18n="ap5.p">Documented, handed to your team, and we stay a WhatsApp away.</p>
+          </div>
+        </article>
       </div>
 
       <div class="pact rv">
@@ -1888,17 +1971,18 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "s3.d":"Webapps en volledige SaaS-producten, van begin tot eind",
 
     "ap.label":"Hoe wij met u samenwerken","ap.h2":"Rustig, wekelijks, in het open.",
-    "ap.deck":"U wordt niet doorgeschoven naar een accountmanager. Van het eerste gesprek tot een jaar na oplevering werkt u met de persoon die uw systeem bouwt. Alles is zichtbaar, alles is gedocumenteerd, en niets leeft binnen een black box.",
+    "ap.deck":"U wordt niet doorgeschoven naar een accountmanager. Van het eerste gesprek tot een jaar na oplevering werkt u met de persoon die uw systeem bouwt.",
+    "ap.pill1":"Stap één","ap.pill2":"Stap twee","ap.pill3":"Stap drie","ap.pill4":"Stap vier","ap.pill5":"Stap vijf",
     "ap1.h3":"Eerste gesprek",
-    "ap1.p":"Gratis en eerlijk verkennen. Wij luisteren, wij vragen door, en als automatisering het verkeerde antwoord is op uw probleem zeggen wij dat voordat er een factuur uitgaat.",
+    "ap1.p":"Gratis en eerlijk verkennen. Is automatisering het verkeerde antwoord, dan zeggen wij dat vóór er een factuur uitgaat.",
     "ap2.h3":"Het werk in kaart brengen",
-    "ap2.p":"Wij gaan zitten bij de mensen die het werk doen en schrijven op hoe het werkelijk gaat, niet hoe de procedure zegt dat het gaat. Die kaart houdt u, of u nu met ons verder bouwt of niet.",
+    "ap2.p":"Wij zitten bij het team dat het werk doet en schrijven op hoe het werkelijk verloopt.",
     "ap3.h3":"Ontwerpen &amp; afstemmen",
-    "ap3.p":"Wij kiezen de aanpak die bij het probleem past, met of zonder AI. U ziet het plan, de kosten en de planning voordat er één regel code geschreven wordt.",
+    "ap3.p":"Plan, kosten en planning afgesproken vóór er één regel code wordt geschreven.",
     "ap4.h3":"Bouwen in korte cycli",
-    "ap4.p":"Elke week iets zichtbaars. U test het terwijl het groeit, op uw eigen data, zodat wat wordt opgeleverd precies is wat u vroeg, niet meer en niet minder.",
+    "ap4.p":"Elke week iets zichtbaars, getest op uw eigen data.",
     "ap5.h3":"Overdragen &amp; bereikbaar blijven",
-    "ap5.p":"Live in weken, niet in kwartalen. Gedocumenteerd en overgedragen aan uw team. Wij blijven één WhatsApp verwijderd voor vragen, aanpassingen en het volgende traject.",
+    "ap5.p":"Gedocumenteerd, overgedragen aan uw team, en wij blijven één WhatsApp verwijderd.",
     "pact.k1":"Wat u krijgt",
     "pact.p1":"Direct contact met de persoon die uw systeem bouwt, wekelijkse voortgang die u kunt zien, en alles gedocumenteerd zodat uw team de regie houdt.",
     "pact.k2":"Wat wij vragen",
