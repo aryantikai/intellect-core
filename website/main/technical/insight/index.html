@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en" data-theme="dark">
+<html lang="en" data-lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -615,10 +615,11 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 </footer>
 
 <script>
-/* Theme — shares 'ic-theme' with the rest of the Intellect Core site */
+/* Theme — light by default across the site now; the toggle still lets a
+   visitor try dark but no OS preference or stale localStorage kicks it in. */
 (function(){
-  var saved=null; try{saved=localStorage.getItem("ic-theme")}catch(e){}
-  if(saved) document.documentElement.setAttribute("data-theme",saved);
+  try{localStorage.removeItem("ic-theme")}catch(e){}
+  document.documentElement.setAttribute("data-theme","light");
   var t=document.getElementById("themeToggle");
   t&&t.addEventListener("click",function(){
     var light=document.documentElement.getAttribute("data-theme")==="light";

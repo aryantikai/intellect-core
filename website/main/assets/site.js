@@ -572,33 +572,16 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
   };
 })();
 
-/* ── THEME: light/dark toggle ────────────────────────────────────
-   Uses [data-theme="dark"] on <html>. Respects OS preference on
-   first visit, then the user's own choice via localStorage. */
+/* ── THEME: forced light ─────────────────────────────────────────
+   The theme toggle was removed at Aryan's request, so the site is
+   always light. Any older stored preference is cleared on load, and
+   we ignore OS prefers-color-scheme. Dark sections still exist as
+   per-section .dark, but the global palette stays light. */
 (function(){
-  var b=document.getElementById("themeToggle");
-  var root=document.documentElement;
-  function apply(t){
-    root.setAttribute("data-theme",t);
-    if(b)b.setAttribute("aria-pressed",t==="dark"?"true":"false");
-    var meta=document.querySelector('meta[name="theme-color"]');
-    if(meta)meta.setAttribute("content",t==="dark"?"#0b1420":"#eef4fd");
-    try{localStorage.setItem("ic-theme",t)}catch(e){}
-  }
-  var saved=null;try{saved=localStorage.getItem("ic-theme")}catch(e){}
-  var pref=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
-  apply(saved||pref);
-  if(b)b.addEventListener("click",function(){
-    apply(root.getAttribute("data-theme")==="dark"?"light":"dark");
-  });
-  /* follow the OS if the user has never chosen manually */
-  if(!saved && window.matchMedia){
-    var m=matchMedia("(prefers-color-scheme: dark)");
-    (m.addEventListener||m.addListener).call(m,"change",function(e){
-      var s=null;try{s=localStorage.getItem("ic-theme")}catch(_){}
-      if(!s)apply(e.matches?"dark":"light");
-    });
-  }
+  try{localStorage.removeItem("ic-theme")}catch(e){}
+  document.documentElement.setAttribute("data-theme","light");
+  var meta=document.querySelector('meta[name="theme-color"]');
+  if(meta)meta.setAttribute("content","#eef4fd");
 })();
 
 /* ── EN / NL ─────────────────────────────────────────────────────── */

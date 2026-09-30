@@ -10,11 +10,11 @@
 <meta name="theme-color" content="#eef4fd" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <script>
-(function(){try{
-  var s=localStorage.getItem("ic-theme");
-  var d=s?s==="dark":(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);
-  if(d)document.documentElement.setAttribute("data-theme","dark");
-}catch(e){}})();
+/* Force light mode. The theme toggle was removed, so this site does not
+   flip to dark based on OS preference anymore. Clears any old preference. */
+(function(){try{localStorage.removeItem("ic-theme")}catch(e){}
+  document.documentElement.setAttribute("data-theme","light");
+})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
