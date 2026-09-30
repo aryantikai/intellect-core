@@ -21,6 +21,14 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://intellectcore.net/og.png" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<script>
+/* Set the theme before the first paint to avoid a flash. */
+(function(){try{
+  var s=localStorage.getItem("ic-theme");
+  var d=s?s==="dark":(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);
+  if(d)document.documentElement.setAttribute("data-theme","dark");
+}catch(e){}})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -470,10 +478,65 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
   box-shadow:0 30px 64px -28px rgba(0,0,0,.65);
 }
 
+/* ── site-wide dark theme (user-toggleable) ────────────────────────
+   Same recipe as .section.dark, applied at :root so every section
+   flips. Alternating "dark" sections then use a slightly lighter
+   panel to keep the rhythm rather than double-darkening. */
+:root[data-theme="dark"]{
+  --paper:#0b1420; --paper-2:#121d2c; --paper-3:#18243a;
+  --ink:#f2f6fd; --ink-2:#a9b6cc; --ink-3:#8494ad;
+  --rule:rgba(255,255,255,.11); --rule-2:rgba(255,255,255,.2);
+  --accent:#6ea3ff; --accent-bright:#8fc0ff;
+  --accent-soft:rgba(110,163,255,.14); --mark:#4fc8e8;
+}
+:root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+:root[data-theme="dark"] .site-header{background:var(--paper)}
+:root[data-theme="dark"] .site-header.scrolled{border-bottom-color:var(--rule)}
+:root[data-theme="dark"] .section.dark{
+  --paper:#111c2e; --paper-2:#1a273c; --paper-3:#22314a;
+  --rule:rgba(255,255,255,.09); --rule-2:rgba(255,255,255,.16);
+  background:#111c2e;
+}
+:root[data-theme="dark"] .btn-quote{background:var(--accent);color:#0b1420}
+:root[data-theme="dark"] .btn-quote:hover{background:var(--accent-bright)}
+:root[data-theme="dark"] .btn-primary{background:var(--accent);color:#0b1420}
+:root[data-theme="dark"] .btn-primary:hover{background:var(--accent-bright)}
+:root[data-theme="dark"] .btn-wa{background:#25d366;color:#0b1420}
+:root[data-theme="dark"] .btn-wa:hover{background:#1fbf5c}
+:root[data-theme="dark"] .langseg button[aria-pressed="true"]{background:var(--accent);color:#0b1420}
+:root[data-theme="dark"] .hero-net{
+  background:
+    radial-gradient(820px 460px at 16% -6%, rgba(110,163,255,.10), transparent 64%),
+    radial-gradient(700px 420px at 90% 2%, rgba(79,200,232,.08), transparent 62%);
+}
+:root[data-theme="dark"] .brand span[style]{color:var(--ink)!important}
+:root[data-theme="dark"] .brand .accent-word{color:var(--accent)}
+:root[data-theme="dark"] ::selection{background:rgba(110,163,255,.35);color:#f2f6fd}
+:root[data-theme="dark"] #formOk{background:rgba(60,170,110,.14);color:#7fd7a4;border-color:rgba(120,200,140,.35)}
+:root[data-theme="dark"] #formErr{background:rgba(210,90,70,.14);color:#f0a999;border-color:rgba(210,90,70,.35)}
+
+/* theme toggle button ─── */
+.theme-toggle{
+  background:none;border:1px solid var(--rule-2);border-radius:6px;
+  width:36px;height:36px;color:var(--ink-2);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:color .16s,border-color .16s,background .16s;
+}
+.theme-toggle:hover{color:var(--ink);border-color:var(--ink-3)}
+.theme-toggle svg{width:16px;height:16px}
+.theme-toggle .ti-moon{display:none}
+:root[data-theme="dark"] .theme-toggle .ti-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .ti-moon{display:block}
+
 /* ── services ───────────────────────────────────────────────────── */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .svc-col{padding:0 clamp(20px,2.6vw,36px);border-left:1px solid var(--rule)}
 .svc-col:first-child{padding-left:0;border-left:0}
+.svc-col .svc-ico{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;color:var(--accent);margin-bottom:20px;
+}
+.svc-col .svc-ico svg{width:30px;height:30px}
 .svc-col h3{font-size:clamp(1.24rem,1.7vw,1.48rem);margin-bottom:.65em}
 .svc-col ul{list-style:none;margin:0;padding:0}
 .svc-col li{
@@ -488,11 +551,30 @@ h4{font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:-.005
 .svc-col li:first-child{border-top:0;padding-top:0}
 
 /* ── approach ───────────────────────────────────────────────────── */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.4vw,36px)}
 .step{border-top:2px solid var(--ink);padding-top:20px}
-.step .n{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px}
-.step h3{font-size:clamp(1.2rem,1.6vw,1.42rem);margin-bottom:.55em}
-.step p{font-size:1.02rem;color:var(--ink-2);margin:0}
+.step-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.step-ico{color:var(--accent);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:none}
+.step-ico svg{width:22px;height:22px}
+.step .n{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.1em;color:var(--ink-3)}
+.step h3{font-size:clamp(1.05rem,1.28vw,1.22rem);margin-bottom:.55em}
+.step p{font-size:.97rem;color:var(--ink-2);margin:0}
+@media(max-width:1100px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* partnership pact — small commitments row under the steps */
+.pact{
+  margin-top:clamp(46px,5vw,72px);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px);
+  padding-top:28px;border-top:1px solid var(--rule);
+}
+@media(max-width:820px){.pact{grid-template-columns:1fr}}
+.pact-item .k{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
+}
+.pact-item p{color:var(--ink-2);font-size:1rem;margin:0}
 
 /* ── about ──────────────────────────────────────────────────────── */
 .about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(34px,6vw,86px);align-items:start}
@@ -600,6 +682,7 @@ a.way:hover b{color:var(--accent)}
   .btn-quote{display:none}
   .nav-toggle{display:inline-flex;width:44px;height:44px}
   .langseg button{padding:13px 12px;min-height:44px;min-width:44px}
+  .theme-toggle{width:44px;height:44px}
   .nav{
     position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;gap:0;
     background:var(--paper);border-bottom:1px solid var(--rule);padding:8px 22px 22px;
@@ -660,6 +743,10 @@ a.way:hover b{color:var(--accent)}
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="nl" aria-pressed="false">NL</button>
       </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg class="ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -679,9 +766,9 @@ a.way:hover b{color:var(--accent)}
       <h1>
         <span data-i18n="hero.h1a">We think first,</span><br>
         <span data-i18n="hero.h1b">then we build</span><br>
-        <span class="rot"><span class="rot-w" id="rotWord">automation</span><span class="rot-c" aria-hidden="true"></span></span>
+        <span class="rot"><span class="rot-w" id="rotWord">data automation</span><span class="rot-c" aria-hidden="true"></span></span>
       </h1>
-      <p class="lead" data-i18n="hero.lead">Bank statements, invoices, contracts, work orders, incoming email. We map how the work actually moves through your business, build the system that runs it, and hand it over documented so your team owns it.</p>
+      <p class="lead" data-i18n="hero.lead">We map how your work actually flows, build the system that runs it, and hand it over documented so your team owns it.</p>
       <div class="hero-cta">
         <a class="btn btn-wa" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -777,7 +864,14 @@ a.way:hover b{color:var(--accent)}
 
       <div class="svc rv">
         <div class="svc-col">
-          <h3 data-i18n="s1.h3">Document &amp; data automation</h3>
+          <div class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+              <path d="M14 3v6h6"/>
+              <path d="M8 13h8M8 17h5"/>
+            </svg>
+          </div>
+          <h3 data-i18n="s1.h3">Data automation</h3>
           <ul>
             <li data-i18n="s1.a">Bank statements and invoices, read and categorised</li>
             <li data-i18n="s1.b">Contract and document data extraction</li>
@@ -786,7 +880,13 @@ a.way:hover b{color:var(--accent)}
           </ul>
         </div>
         <div class="svc-col">
-          <h3 data-i18n="s2.h3">AI systems &amp; assistants</h3>
+          <div class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/>
+              <path d="M19.5 15.2l.7 1.7 1.7.7-1.7.7-.7 1.7-.7-1.7-1.7-.7 1.7-.7z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="s2.h3">AI systems</h3>
           <ul>
             <li data-i18n="s2.a">Extraction tuned to your own forms and layouts</li>
             <li data-i18n="s2.b">WhatsApp and web assistants on your documents</li>
@@ -795,7 +895,14 @@ a.way:hover b{color:var(--accent)}
           </ul>
         </div>
         <div class="svc-col">
-          <h3 data-i18n="s3.h3">Platforms &amp; integrations</h3>
+          <div class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3 3 8l9 5 9-5-9-5z"/>
+              <path d="M3 13l9 5 9-5"/>
+              <path d="M3 18l9 5 9-5"/>
+            </svg>
+          </div>
+          <h3 data-i18n="s3.h3">Platforms (SaaS)</h3>
           <ul>
             <li data-i18n="s3.a">Operations and work order platforms</li>
             <li data-i18n="s3.b">Dashboards on pipelines you can trust</li>
@@ -910,27 +1017,77 @@ a.way:hover b{color:var(--accent)}
     <div class="container">
       <div class="head rv">
         <div>
-          <span class="label" data-i18n="ap.label">How we work</span>
-          <h2 data-i18n="ap.h2">We map it before we build it.</h2>
+          <span class="label" data-i18n="ap.label">How we partner with you</span>
+          <h2 data-i18n="ap.h2">Calm, weekly, in the open.</h2>
         </div>
-        <p class="deck" data-i18n="ap.deck">Short cycles, something working every week, and no stage where you cannot see what you are paying for.</p>
+        <p class="deck" data-i18n="ap.deck">You do not get handed off to an account manager. From the first conversation to the year after we deploy, you work with the person building your system. Everything is visible, everything is documented, and nothing lives inside a black box.</p>
       </div>
 
       <div class="steps rv">
         <div class="step">
-          <div class="n">01</div>
-          <h3 data-i18n="ap1.h3">Map the work</h3>
-          <p data-i18n="ap1.p">We sit with the people doing the job and write down how it actually happens, not how the procedure says it happens. You keep that map whether or not you build with us.</p>
+          <div class="step-top">
+            <span class="step-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4.418-4.03 8-9 8a9.5 9.5 0 0 1-4-.87L3 20l1.87-4A8.5 8.5 0 0 1 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </span>
+            <span class="n">01</span>
+          </div>
+          <h3 data-i18n="ap1.h3">First conversation</h3>
+          <p data-i18n="ap1.p">Free, honest scoping. We listen, we ask, and if automation is the wrong answer for your problem we say so before we send an invoice.</p>
         </div>
         <div class="step">
-          <div class="n">02</div>
-          <h3 data-i18n="ap2.h3">Design the solution</h3>
-          <p data-i18n="ap2.p">We choose the approach that fits the problem, AI or not. You see the plan, the cost and the timeline before a line of code is written.</p>
+          <div class="step-top">
+            <span class="step-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 4 15 6 21 4 21 18 15 20 9 18 3 20"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/></svg>
+            </span>
+            <span class="n">02</span>
+          </div>
+          <h3 data-i18n="ap2.h3">Map the work</h3>
+          <p data-i18n="ap2.p">We sit with the people doing the job and write down how it actually happens, not how the procedure says it happens. You keep that map, whether or not you build with us.</p>
         </div>
         <div class="step">
-          <div class="n">03</div>
-          <h3 data-i18n="ap3.h3">Build and hand over</h3>
-          <p data-i18n="ap3.p">Live in weeks, not quarters. Documented and handed to your team, so running it does not depend on us still being around.</p>
+          <div class="step-top">
+            <span class="step-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+            </span>
+            <span class="n">03</span>
+          </div>
+          <h3 data-i18n="ap3.h3">Design &amp; agree</h3>
+          <p data-i18n="ap3.p">We choose the approach that fits the problem, with or without AI. You see the plan, the cost and the timeline before a line of code is written.</p>
+        </div>
+        <div class="step">
+          <div class="step-top">
+            <span class="step-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+            </span>
+            <span class="n">04</span>
+          </div>
+          <h3 data-i18n="ap4.h3">Build in short cycles</h3>
+          <p data-i18n="ap4.p">Something visible every week. You test it as it grows, on your own data, so what ships is what you asked for and nothing more.</p>
+        </div>
+        <div class="step">
+          <div class="step-top">
+            <span class="step-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+            </span>
+            <span class="n">05</span>
+          </div>
+          <h3 data-i18n="ap5.h3">Hand over &amp; stay reachable</h3>
+          <p data-i18n="ap5.p">Live in weeks, not quarters. Documented and handed to your team. We stay a WhatsApp away for questions, changes and the next thing.</p>
+        </div>
+      </div>
+
+      <div class="pact rv">
+        <div class="pact-item">
+          <div class="k" data-i18n="pact.k1">What you get</div>
+          <p data-i18n="pact.p1">Direct access to the person building your system, weekly progress you can see, and everything documented so your team stays in control.</p>
+        </div>
+        <div class="pact-item">
+          <div class="k" data-i18n="pact.k2">What we ask</div>
+          <p data-i18n="pact.p2">One point of contact on your side who can answer questions and make decisions. Half an hour a week is usually enough.</p>
+        </div>
+        <div class="pact-item">
+          <div class="k" data-i18n="pact.k3">What stays yours</div>
+          <p data-i18n="pact.p3">Your data, your code, your documentation. If you move to another party a year from now, you can. We would rather earn the next project than hold the last one hostage.</p>
         </div>
       </div>
     </div>
@@ -1296,8 +1453,8 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
   if(!el)return;
   var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
   var WORDS={
-    en:["automation","AI systems","clean data","the whole platform"],
-    nl:["automatisering","AI-systemen","schone data","het hele platform"]
+    en:["data automation","AI systems","SaaS platforms","the whole system"],
+    nl:["data-automatisering","AI-systemen","SaaS-platformen","het hele systeem"]
   };
   function lang(){return document.documentElement.getAttribute("data-lang")==="nl"?"nl":"en"}
   var i=0,t=null,running=true;
@@ -1382,20 +1539,24 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
       if(p.x<-25)p.x=W+25;else if(p.x>W+25)p.x=-25;
       if(p.y<-25)p.y=H+25;else if(p.y>H+25)p.y=-25;
     }
+    var dark=document.documentElement.getAttribute("data-theme")==="dark";
+    var linkRGB=dark?"120,170,255":"27,77,216";
+    var dotFill=dark?"rgba(120,190,240,.55)":"rgba(46,139,255,.46)";
+    var coreFill=dark?"rgba(140,220,240,.62)":"rgba(14,111,140,.52)";
     ctx.lineWidth=1;
     for(i=0;i<pts.length;i++){
       for(j=i+1;j<pts.length;j++){
         var a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy;
         if(d2<LINK2){
           var o=(1-Math.sqrt(d2)/LINK)*.34;
-          ctx.strokeStyle="rgba(27,77,216,"+o.toFixed(3)+")";
+          ctx.strokeStyle="rgba("+linkRGB+","+o.toFixed(3)+")";
           ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
         }
       }
     }
     for(i=0;i<pts.length;i++){
       p=pts[i];
-      ctx.fillStyle=p.core?"rgba(14,111,140,.52)":"rgba(46,139,255,.46)";
+      ctx.fillStyle=p.core?coreFill:dotFill;
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill();
     }
     kick();
@@ -1626,6 +1787,35 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
   };
 })();
 
+/* ── THEME: light/dark toggle ────────────────────────────────────
+   Uses [data-theme="dark"] on <html>. Respects OS preference on
+   first visit, then the user's own choice via localStorage. */
+(function(){
+  var b=document.getElementById("themeToggle");
+  var root=document.documentElement;
+  function apply(t){
+    root.setAttribute("data-theme",t);
+    if(b)b.setAttribute("aria-pressed",t==="dark"?"true":"false");
+    var meta=document.querySelector('meta[name="theme-color"]');
+    if(meta)meta.setAttribute("content",t==="dark"?"#0b1420":"#eef4fd");
+    try{localStorage.setItem("ic-theme",t)}catch(e){}
+  }
+  var saved=null;try{saved=localStorage.getItem("ic-theme")}catch(e){}
+  var pref=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  apply(saved||pref);
+  if(b)b.addEventListener("click",function(){
+    apply(root.getAttribute("data-theme")==="dark"?"light":"dark");
+  });
+  /* follow the OS if the user has never chosen manually */
+  if(!saved && window.matchMedia){
+    var m=matchMedia("(prefers-color-scheme: dark)");
+    (m.addEventListener||m.addListener).call(m,"change",function(e){
+      var s=null;try{s=localStorage.getItem("ic-theme")}catch(_){}
+      if(!s)apply(e.matches?"dark":"light");
+    });
+  }
+})();
+
 /* ── EN / NL ─────────────────────────────────────────────────────── */
 (function(){
   var NL={
@@ -1642,7 +1832,7 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
     "cap.int":"Integraties",
     "cap.dash":"Dashboards",
     "cap.apps":"Web &amp; apps",
-    "hero.lead":"Bankafschriften, facturen, contracten, werkorders, binnenkomende e-mail. Wij brengen in kaart hoe het werk werkelijk door uw bedrijf loopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
+    "hero.lead":"Wij brengen in kaart hoe uw werk werkelijk verloopt, bouwen het systeem dat het overneemt, en dragen het gedocumenteerd over zodat uw team er eigenaar van is.",
     "hero.cta1":"Praat via WhatsApp","hero.cta2":"Bekijk ons werk",
     "hero.note":"Het eerste gesprek is gratis, en het is een gesprek en geen verkooppraatje. Als automatisering het verkeerde antwoord is op uw probleem, zeggen wij dat.",
     "ix.1":"Procesautomatisering","ix.2":"Document- &amp; data-extractie","ix.3":"AI-assistenten",
@@ -1681,30 +1871,40 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp
 
     "svc.label":"Wat we bouwen","svc.h2":"Drie soorten werk.",
     "svc.deck":"Wij verkopen geen vaste stack. Wij beginnen bij het probleem en kiezen de aanpak die erbij past, soms AI en vaak gewoon goed gebouwde software.",
-    "s1.h3":"Document- &amp; data-automatisering",
+    "s1.h3":"Data-automatisering",
     "s1.a":"Bankafschriften en facturen, gelezen en ingedeeld",
     "s1.b":"Data-extractie uit contracten en documenten",
     "s1.c":"Binnenkomende e-mail omgezet in toegewezen taken",
     "s1.d":"Goedkeuringsstromen die over systemen heen lopen",
-    "s2.h3":"AI-systemen &amp; assistenten",
+    "s2.h3":"AI-systemen",
     "s2.a":"Extractie afgestemd op uw eigen formulieren en indelingen",
     "s2.b":"WhatsApp- en webassistenten op uw eigen documenten",
     "s2.c":"Beslisondersteuning op basis van uw bedrijfsregels",
     "s2.d":"Een AI-roadmap, geprioriteerd op wat zich het eerst terugbetaalt",
-    "s3.h3":"Platformen &amp; integraties",
+    "s3.h3":"Platformen (SaaS)",
     "s3.a":"Operationele platformen en werkordersystemen",
     "s3.b":"Dashboards op datastromen die u kunt vertrouwen",
     "s3.c":"Koppelingen met CRM, ERP, betalingen en berichtendiensten",
     "s3.d":"Webapps en volledige SaaS-producten, van begin tot eind",
 
-    "ap.label":"Hoe we werken","ap.h2":"Eerst in kaart, dan bouwen.",
-    "ap.deck":"Korte cycli, elke week iets werkends, en geen enkele fase waarin u niet kunt zien waarvoor u betaalt.",
-    "ap1.h3":"Het werk in kaart brengen",
-    "ap1.p":"Wij gaan zitten bij de mensen die het werk doen en schrijven op hoe het werkelijk gaat, niet hoe de procedure zegt dat het gaat. Die kaart houdt u, of u nu met ons verder bouwt of niet.",
-    "ap2.h3":"De oplossing ontwerpen",
-    "ap2.p":"Wij kiezen de aanpak die bij het probleem past, met of zonder AI. U ziet het plan, de kosten en de planning voordat er één regel code geschreven wordt.",
-    "ap3.h3":"Bouwen en overdragen",
-    "ap3.p":"Live in weken, niet in kwartalen. Gedocumenteerd en overgedragen aan uw team, zodat het draaien ervan er niet van afhangt of wij er nog zijn.",
+    "ap.label":"Hoe wij met u samenwerken","ap.h2":"Rustig, wekelijks, in het open.",
+    "ap.deck":"U wordt niet doorgeschoven naar een accountmanager. Van het eerste gesprek tot een jaar na oplevering werkt u met de persoon die uw systeem bouwt. Alles is zichtbaar, alles is gedocumenteerd, en niets leeft binnen een black box.",
+    "ap1.h3":"Eerste gesprek",
+    "ap1.p":"Gratis en eerlijk verkennen. Wij luisteren, wij vragen door, en als automatisering het verkeerde antwoord is op uw probleem zeggen wij dat voordat er een factuur uitgaat.",
+    "ap2.h3":"Het werk in kaart brengen",
+    "ap2.p":"Wij gaan zitten bij de mensen die het werk doen en schrijven op hoe het werkelijk gaat, niet hoe de procedure zegt dat het gaat. Die kaart houdt u, of u nu met ons verder bouwt of niet.",
+    "ap3.h3":"Ontwerpen &amp; afstemmen",
+    "ap3.p":"Wij kiezen de aanpak die bij het probleem past, met of zonder AI. U ziet het plan, de kosten en de planning voordat er één regel code geschreven wordt.",
+    "ap4.h3":"Bouwen in korte cycli",
+    "ap4.p":"Elke week iets zichtbaars. U test het terwijl het groeit, op uw eigen data, zodat wat wordt opgeleverd precies is wat u vroeg, niet meer en niet minder.",
+    "ap5.h3":"Overdragen &amp; bereikbaar blijven",
+    "ap5.p":"Live in weken, niet in kwartalen. Gedocumenteerd en overgedragen aan uw team. Wij blijven één WhatsApp verwijderd voor vragen, aanpassingen en het volgende traject.",
+    "pact.k1":"Wat u krijgt",
+    "pact.p1":"Direct contact met de persoon die uw systeem bouwt, wekelijkse voortgang die u kunt zien, en alles gedocumenteerd zodat uw team de regie houdt.",
+    "pact.k2":"Wat wij vragen",
+    "pact.p2":"Eén aanspreekpunt aan uw kant dat vragen kan beantwoorden en beslissingen kan nemen. Een half uur per week is meestal genoeg.",
+    "pact.k3":"Wat van u blijft",
+    "pact.p3":"Uw data, uw code, uw documentatie. Besluit u over een jaar naar een andere partij te gaan, dan kan dat. Wij verdienen liever de volgende opdracht dan dat wij de vorige vasthouden.",
 
     "ab.label":"Wie we zijn","ab.h2":"Een klein team dat dingen bouwt die blijven staan.",
     "ab.p1":"Intellect Core bouwt maatwerksoftware voor bedrijven in Suriname en daarbuiten. Een groot deel van het werk dat bedrijven hier draaiende houdt gebeurt nog met de hand, en het meeste daarvan hoeft niet.",
