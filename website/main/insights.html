@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights · Intellect Core</title>
+<meta name="description" content="Articles on automation, AI, document extraction, data platforms and the work of building software that stays built." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://intellectcore.net/insights.html" />
+<meta name="theme-color" content="#eef4fd" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<script>
+/* Force light mode. */
+(function(){try{localStorage.removeItem("ic-theme")}catch(e){}
+  document.documentElement.setAttribute("data-theme","light");
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body data-page="insights">
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container hdr">
+    <a class="brand" href="/" aria-label="Intellect Core, home">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="26" fill="#1b4dd8"/>
+        <g stroke="#fff" stroke-width="6" stroke-linecap="round" fill="#fff">
+          <path fill="none" d="M50 50V23 M50 50 26 66 M50 50 74 66"/>
+          <circle cx="50" cy="23" r="7.5" stroke="none"/>
+          <circle cx="26" cy="66" r="7.5" stroke="none"/>
+          <circle cx="74" cy="66" r="7.5" stroke="none"/>
+          <circle cx="50" cy="50" r="11" stroke="none"/>
+        </g>
+      </svg>
+      <span style="color:var(--ink)"><b>Intellect</b> <span>Core</span></span>
+    </a>
+    <nav class="nav" id="navMenu" aria-label="Main">
+      <a href="/" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="insights.html" class="current" data-i18n="nav.insights">Insights</a>
+      <a href="about.html" data-i18n="nav.about">About us</a>
+    </nav>
+    <div class="hdr-end">
+      <div class="langseg" role="group" aria-label="Language / Taal">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="nt-label" data-i18n="nav.menu">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══ HEAD ══ -->
+  <section class="section" id="top">
+    <div class="container">
+      <div class="head rv">
+        <div>
+          <span class="label" data-i18n="ins.label">Knowledge base</span>
+          <h2 data-i18n="ins.h2">Insights &amp; articles.</h2>
+        </div>
+        <p class="deck" data-i18n="ins.deck">Short pieces on automation, AI, document extraction and the work of building software that stays built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ARTICLES ══ -->
+  <section class="section dark" id="articles">
+    <div class="container">
+      <div class="ins-filter rv" role="tablist" aria-label="Filter articles">
+        <button type="button" class="active" data-cat="all" data-i18n="ins.f.all">All</button>
+        <button type="button" data-cat="automation" data-i18n="ins.f.auto">Automation</button>
+        <button type="button" data-cat="ai" data-i18n="ins.f.ai">AI &amp; Data</button>
+        <button type="button" data-cat="case" data-i18n="ins.f.case">Case studies</button>
+        <button type="button" data-cat="industry" data-i18n="ins.f.ind">Industry</button>
+        <button type="button" data-cat="tooling" data-i18n="ins.f.tool">Tooling</button>
+      </div>
+
+      <div class="ins-grid rv">
+
+        <a class="ins-card" href="#" data-cat="automation">
+          <div class="ins-cover">
+            <span class="ins-feat" data-i18n="ins.featured">Featured</span>
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="64" rx="6"/><path d="M12 32h76"/><path d="M22 46h40M22 56h36M22 66h26"/><circle cx="76" cy="60" r="10"/><path d="m82 66 6 6"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a1.tag">Automation</span>
+            <h3 data-i18n="ins.a1.h">Multi-currency reconciliation that runs itself</h3>
+            <p data-i18n="ins.a1.p">Three banks, three currencies, one upload. What the parser does, and why templates were the wrong idea.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>7 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+        <a class="ins-card" href="#" data-cat="ai">
+          <div class="ins-cover">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 10l6 16 16 6-16 6-6 16-6-16-16-6 16-6z"/><path d="M78 56l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a2.tag">AI &amp; Data</span>
+            <h3 data-i18n="ins.a2.h">Extraction without templates</h3>
+            <p data-i18n="ins.a2.p">When an AI pass beats a hand-crafted template, and when it does not. A field guide for finance teams.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>6 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+        <a class="ins-card" href="#" data-cat="case">
+          <div class="ins-cover">
+            <span class="ins-feat" data-i18n="ins.featured">Featured</span>
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="14" width="72" height="72" rx="6"/><path d="M14 32h72"/><path d="M26 48h20v30H26z"/><path d="M54 48h20v18H54z"/><path d="M54 72h20v6H54z"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a3.tag">Case study</span>
+            <h3 data-i18n="ins.a3.h">Two days to twenty minutes</h3>
+            <p data-i18n="ins.a3.p">A monthly close that used to eat a finance team's week, told as it happened, numbers included.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>8 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+        <a class="ins-card" href="#" data-cat="automation">
+          <div class="ins-cover">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="10" width="40" height="80" rx="8"/><path d="M38 22h24M38 30h24M38 38h18"/><path d="m52 48 4 4 10-10"/><circle cx="50" cy="80" r="2.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a4.tag">Automation</span>
+            <h3 data-i18n="ins.a4.h">The hidden cost of the shoebox</h3>
+            <p data-i18n="ins.a4.p">Everyone saves the receipts. Almost nobody enters them in time. What that actually costs in reclaimed VAT.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>5 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+        <a class="ins-card" href="#" data-cat="industry">
+          <div class="ins-cover">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="24" width="76" height="52" rx="4"/><path d="M12 36h76"/><path d="M22 48h12v16H22zM42 44h12v20H42zM62 52h16v12H62z"/><path d="M70 32v-10"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a5.tag">Industry</span>
+            <h3 data-i18n="ins.a5.h">What a work-order platform actually needs</h3>
+            <p data-i18n="ins.a5.p">Not another CRM. The seven things a service team genuinely needs, and the three they usually ask for and never use.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>9 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+        <a class="ins-card" href="#" data-cat="tooling">
+          <div class="ins-cover">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="50" cy="24" rx="30" ry="8"/><path d="M20 24v52a30 8 0 0 0 60 0V24"/><path d="M20 42a30 8 0 0 0 60 0M20 60a30 8 0 0 0 60 0"/></svg>
+          </div>
+          <div class="ins-body">
+            <span class="ins-tag" data-i18n="ins.a6.tag">Tooling</span>
+            <h3 data-i18n="ins.a6.h">Lakehouse pick: when it is worth it</h3>
+            <p data-i18n="ins.a6.p">Databricks or Fabric or neither. A short, honest guide for teams that already run on SQL and Power BI.</p>
+            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>10 min</span></div>
+            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ READY BAND ══ -->
+  <section class="section" id="ready">
+    <div class="container">
+      <div class="ready-band rv">
+        <div>
+          <h3 data-i18n="rd.h3">Ready to talk about your project?</h3>
+          <p data-i18n="rd.p">Tell us what is costing your team time. We will say honestly whether it is worth automating.</p>
+        </div>
+        <div class="ready-cta">
+          <a class="btn btn-primary" href="book-a-free-call.html" data-i18n="rd.cta1">Book a free call</a>
+          <a class="btn btn-ghost" href="services.html" data-i18n="rd.cta2b">Or see the services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">
+        <a class="brand" href="/" style="margin:0">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+            <rect width="100" height="100" rx="26" fill="#1b4dd8"/>
+            <g stroke="#fff" stroke-width="6" stroke-linecap="round" fill="#fff">
+              <path fill="none" d="M50 50V23 M50 50 26 66 M50 50 74 66"/>
+              <circle cx="50" cy="23" r="7.5" stroke="none"/><circle cx="26" cy="66" r="7.5" stroke="none"/>
+              <circle cx="74" cy="66" r="7.5" stroke="none"/><circle cx="50" cy="50" r="11" stroke="none"/>
+            </g>
+          </svg>
+          <span style="color:var(--ink)"><b>Intellect</b> <span>Core</span></span>
+        </a>
+        <p class="foot-about" data-i18n="ft.about">Custom software and automation for the work still done by hand. Built in Paramaribo, running worldwide.</p>
+      </div>
+      <div>
+        <h5 data-i18n="ft.nav">Navigation</h5>
+        <ul>
+          <li><a href="/" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="insights.html" data-i18n="nav.insights">Insights</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About us</a></li>
+          <li><a href="book-a-free-call.html" data-i18n="nav.book">Book a free call</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="ft.touch">Contact</h5>
+        <ul>
+          <li><a href="https://wa.me/5978174543" target="_blank" rel="noopener">WhatsApp +597 817 4543</a></li>
+          <li><a href="mailto:hello@intellectcore.net">hello@intellectcore.net</a></li>
+          <li><a href="privacybeleid.html" data-i18n="ft.privacy">Privacy policy</a></li>
+          <li><a href="algemene-voorwaarden.html" data-i18n="ft.terms">Terms &amp; conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span data-i18n="ft.rights">© 2026 Intellect Core. All rights reserved.</span>
+      <span data-i18n="ft.where">Paramaribo, Suriname</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" id="waFab" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.4c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.24 8.24z"/></svg>
+  <span data-i18n="fab">WhatsApp us</span>
+</a>
+
+<script src="assets/site.js" defer></script>
+<script>
+/* Minimal client-side filter for the insights grid. */
+(function(){
+  var btns=document.querySelectorAll('.ins-filter button');
+  var cards=document.querySelectorAll('.ins-grid .ins-card');
+  if(!btns.length||!cards.length)return;
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      var cat=b.getAttribute('data-cat');
+      cards.forEach(function(c){
+        var show=cat==='all'||c.getAttribute('data-cat')===cat;
+        c.style.display=show?'':'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
