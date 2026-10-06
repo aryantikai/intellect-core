@@ -4,13 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insights · Intellect Core</title>
-<meta name="description" content="Articles on automation, AI, document extraction, data platforms and the work of building software that stays built." />
+<meta name="description" content="See our tools work on real data. No login, no sales call. Open a live demo and try it yourself." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://intellectcore.net/insights.html" />
 <meta name="theme-color" content="#eef4fd" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <script>
-/* Force light mode. */
 (function(){try{localStorage.removeItem("ic-theme")}catch(e){}
   document.documentElement.setAttribute("data-theme","light");
 })();
@@ -59,124 +58,70 @@
 
 <main id="main">
 
-  <!-- ══ HEAD ══ -->
   <section class="section" id="top">
     <div class="container">
       <div class="head rv">
         <div>
-          <span class="label" data-i18n="ins.label">Knowledge base</span>
-          <h2 data-i18n="ins.h2">Insights &amp; articles.</h2>
+          <span class="label" data-i18n="ins.label">Insights</span>
+          <h2 data-i18n="ins.h2">See it working.</h2>
         </div>
-        <p class="deck" data-i18n="ins.deck">Short pieces on automation, AI, document extraction and the work of building software that stays built.</p>
+        <p class="deck" data-i18n="ins.deck">Live demos on real data. No login, no sales call. If one fits what you need, book a conversation.</p>
       </div>
     </div>
   </section>
 
-  <!-- ══ ARTICLES ══ -->
-  <section class="section dark" id="articles">
+  <section class="section dark" id="demos">
     <div class="container">
-      <div class="ins-filter rv" role="tablist" aria-label="Filter articles">
-        <button type="button" class="active" data-cat="all" data-i18n="ins.f.all">All</button>
-        <button type="button" data-cat="automation" data-i18n="ins.f.auto">Automation</button>
-        <button type="button" data-cat="ai" data-i18n="ins.f.ai">AI &amp; Data</button>
-        <button type="button" data-cat="case" data-i18n="ins.f.case">Case studies</button>
-        <button type="button" data-cat="industry" data-i18n="ins.f.ind">Industry</button>
-        <button type="button" data-cat="tooling" data-i18n="ins.f.tool">Tooling</button>
-      </div>
+      <div class="demo-tiles rv">
 
-      <div class="ins-grid rv">
-
-        <a class="ins-card" href="#" data-cat="automation">
-          <div class="ins-cover">
-            <span class="ins-feat" data-i18n="ins.featured">Featured</span>
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="64" rx="6"/><path d="M12 32h76"/><path d="M22 46h40M22 56h36M22 66h26"/><circle cx="76" cy="60" r="10"/><path d="m82 66 6 6"/></svg>
+        <a class="dtile" href="technical/demo/">
+          <div class="dtile-cover" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="60" height="76" rx="4"/><path d="M60 10v14h14"/><path d="M22 32h32M22 42h32M22 52h22"/><circle cx="68" cy="60" r="9"/><path d="m74 66 7 7"/></svg>
           </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a1.tag">Automation</span>
-            <h3 data-i18n="ins.a1.h">Multi-currency reconciliation that runs itself</h3>
-            <p data-i18n="ins.a1.p">Three banks, three currencies, one upload. What the parser does, and why templates were the wrong idea.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>7 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          <div class="dtile-body">
+            <span class="dtile-tag" data-i18n="ins.t1.tag">Document extraction</span>
+            <h3 data-i18n="ins.t1.h">Core Parse</h3>
+            <p data-i18n="ins.t1.p">Upload a PDF, scan or email. Watch it come out as clean, structured data.</p>
+            <span class="dtile-cta" data-i18n="ins.t1.cta">Try the live demo →</span>
           </div>
         </a>
 
-        <a class="ins-card" href="#" data-cat="ai">
-          <div class="ins-cover">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 10l6 16 16 6-16 6-6 16-6-16-16-6 16-6z"/><path d="M78 56l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></svg>
+        <a class="dtile" href="technical/insight/">
+          <div class="dtile-cover" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="18" width="80" height="52" rx="4"/><path d="M18 60 32 44l10 10 18-24 20 24"/><circle cx="32" cy="44" r="3" fill="currentColor" stroke="none"/><circle cx="42" cy="54" r="3" fill="currentColor" stroke="none"/><circle cx="60" cy="30" r="3" fill="currentColor" stroke="none"/><path d="M30 80h40M50 70v10"/></svg>
           </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a2.tag">AI &amp; Data</span>
-            <h3 data-i18n="ins.a2.h">Extraction without templates</h3>
-            <p data-i18n="ins.a2.p">When an AI pass beats a hand-crafted template, and when it does not. A field guide for finance teams.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>6 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
-          </div>
-        </a>
-
-        <a class="ins-card" href="#" data-cat="case">
-          <div class="ins-cover">
-            <span class="ins-feat" data-i18n="ins.featured">Featured</span>
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="14" width="72" height="72" rx="6"/><path d="M14 32h72"/><path d="M26 48h20v30H26z"/><path d="M54 48h20v18H54z"/><path d="M54 72h20v6H54z"/></svg>
-          </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a3.tag">Case study</span>
-            <h3 data-i18n="ins.a3.h">Two days to twenty minutes</h3>
-            <p data-i18n="ins.a3.p">A monthly close that used to eat a finance team's week, told as it happened, numbers included.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>8 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          <div class="dtile-body">
+            <span class="dtile-tag" data-i18n="ins.t2.tag">Ask your data</span>
+            <h3 data-i18n="ins.t2.h">Core Insight</h3>
+            <p data-i18n="ins.t2.p">Load a dataset, ask a question in plain language, see the answer and the analysis.</p>
+            <span class="dtile-cta" data-i18n="ins.t2.cta">Try the live demo →</span>
           </div>
         </a>
 
-        <a class="ins-card" href="#" data-cat="automation">
-          <div class="ins-cover">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="10" width="40" height="80" rx="8"/><path d="M38 22h24M38 30h24M38 38h18"/><path d="m52 48 4 4 10-10"/><circle cx="50" cy="80" r="2.5" fill="currentColor" stroke="none"/></svg>
+        <a class="dtile" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20see%20the%20Core%20Bonnen%20WhatsApp%20demo" target="_blank" rel="noopener">
+          <div class="dtile-cover" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="8" width="40" height="84" rx="7"/><path d="M38 20h24M38 28h24M38 36h18"/><path d="m52 50 5 5 11-12" stroke-width="2.4"/><circle cx="50" cy="80" r="2" fill="currentColor" stroke="none"/></svg>
           </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a4.tag">Automation</span>
-            <h3 data-i18n="ins.a4.h">The hidden cost of the shoebox</h3>
-            <p data-i18n="ins.a4.p">Everyone saves the receipts. Almost nobody enters them in time. What that actually costs in reclaimed VAT.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>5 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
-          </div>
-        </a>
-
-        <a class="ins-card" href="#" data-cat="industry">
-          <div class="ins-cover">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="24" width="76" height="52" rx="4"/><path d="M12 36h76"/><path d="M22 48h12v16H22zM42 44h12v20H42zM62 52h16v12H62z"/><path d="M70 32v-10"/></svg>
-          </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a5.tag">Industry</span>
-            <h3 data-i18n="ins.a5.h">What a work-order platform actually needs</h3>
-            <p data-i18n="ins.a5.p">Not another CRM. The seven things a service team genuinely needs, and the three they usually ask for and never use.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>9 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
-          </div>
-        </a>
-
-        <a class="ins-card" href="#" data-cat="tooling">
-          <div class="ins-cover">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="50" cy="24" rx="30" ry="8"/><path d="M20 24v52a30 8 0 0 0 60 0V24"/><path d="M20 42a30 8 0 0 0 60 0M20 60a30 8 0 0 0 60 0"/></svg>
-          </div>
-          <div class="ins-body">
-            <span class="ins-tag" data-i18n="ins.a6.tag">Tooling</span>
-            <h3 data-i18n="ins.a6.h">Lakehouse pick: when it is worth it</h3>
-            <p data-i18n="ins.a6.p">Databricks or Fabric or neither. A short, honest guide for teams that already run on SQL and Power BI.</p>
-            <div class="ins-meta"><span data-i18n="ins.by">Intellect Core</span><span class="dot"></span><span>10 min</span></div>
-            <span class="ins-more" data-i18n="ins.more">Read more →</span>
+          <div class="dtile-body">
+            <span class="dtile-tag" data-i18n="ins.t3.tag">Receipts to ledger</span>
+            <h3 data-i18n="ins.t3.h">Core Bonnen</h3>
+            <p data-i18n="ins.t3.p">Send a receipt photo on WhatsApp. The AI reads it, you confirm, your sheet updates.</p>
+            <span class="dtile-cta" data-i18n="ins.t3.cta">Try it on WhatsApp →</span>
           </div>
         </a>
 
       </div>
+
+      <p class="dtile-note rv" data-i18n="ins.note">Demos run on illustrative data. Your own files never leave your systems.</p>
     </div>
   </section>
 
-  <!-- ══ READY BAND ══ -->
   <section class="section" id="ready">
     <div class="container">
       <div class="ready-band rv">
         <div>
-          <h3 data-i18n="rd.h3">Ready to talk about your project?</h3>
-          <p data-i18n="rd.p">Tell us what is costing your team time. We will say honestly whether it is worth automating.</p>
+          <h3 data-i18n="rd.h3">Interested in building this on your own data?</h3>
+          <p data-i18n="rd.p">Book a free call. We will say honestly whether it fits what you need.</p>
         </div>
         <div class="ready-cta">
           <a class="btn btn-primary" href="book-a-free-call.html" data-i18n="rd.cta1">Book a free call</a>
@@ -232,29 +177,10 @@
 </footer>
 
 <a class="fab" id="waFab" href="https://wa.me/5978174543?text=Hi%20Intellect%20Core%2C%20I%27d%20like%20to%20talk%20about%20a%20project" target="_blank" rel="noopener">
-  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.4c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.24 8.24z"/></svg>
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2z"/></svg>
   <span data-i18n="fab">WhatsApp us</span>
 </a>
 
 <script src="assets/site.js" defer></script>
-<script>
-/* Minimal client-side filter for the insights grid. */
-(function(){
-  var btns=document.querySelectorAll('.ins-filter button');
-  var cards=document.querySelectorAll('.ins-grid .ins-card');
-  if(!btns.length||!cards.length)return;
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      btns.forEach(function(x){x.classList.remove('active')});
-      b.classList.add('active');
-      var cat=b.getAttribute('data-cat');
-      cards.forEach(function(c){
-        var show=cat==='all'||c.getAttribute('data-cat')===cat;
-        c.style.display=show?'':'none';
-      });
-    });
-  });
-})();
-</script>
 </body>
 </html>
